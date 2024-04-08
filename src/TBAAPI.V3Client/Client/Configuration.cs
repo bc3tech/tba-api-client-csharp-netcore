@@ -66,7 +66,7 @@ public class Configuration : IReadableConfiguration
 
     /// <summary>
     /// Gets or sets the API key based on the authentication name.
-    /// This is the key and value comprising the "secret" for acessing an API.
+    /// This is the key and value comprising the "secret" for accessing an API.
     /// </summary>
     /// <value>The API key.</value>
     private IDictionary<string, string> _apiKey;

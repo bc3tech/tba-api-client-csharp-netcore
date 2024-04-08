@@ -387,7 +387,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchTimeseriesAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchTimeseriesAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -410,7 +410,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetEventMatchesAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetEventMatchesAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -433,7 +433,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchesKeysAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchesKeysAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -456,7 +456,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;MatchSimple&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetEventMatchesSimpleAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetEventMatchesSimpleAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -479,7 +479,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Match)</returns>
-    System.Threading.Tasks.Task<ApiResponse<Match>> GetMatchAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<Match>> GetMatchAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -502,7 +502,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (MatchSimple)</returns>
-    System.Threading.Tasks.Task<ApiResponse<MatchSimple>> GetMatchSimpleAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<MatchSimple>> GetMatchSimpleAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -525,7 +525,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<object>>> GetMatchTimeseriesAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<object>>> GetMatchTimeseriesAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -548,7 +548,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Zebra)</returns>
-    System.Threading.Tasks.Task<ApiResponse<Zebra>> GetMatchZebraAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<Zebra>> GetMatchZebraAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -573,7 +573,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesAsyncWithHttpInfo(string teamKey, string eventKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesAsyncWithHttpInfoAsync(string teamKey, string eventKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -598,7 +598,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamEventMatchesKeysAsyncWithHttpInfo(string teamKey, string eventKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(string teamKey, string eventKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -623,7 +623,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesSimpleAsyncWithHttpInfo(string teamKey, string eventKey, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(string teamKey, string eventKey, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -648,7 +648,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamMatchesByYearAsyncWithHttpInfo(string teamKey, int year, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamMatchesByYearAsyncWithHttpInfoAsync(string teamKey, int year, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -673,7 +673,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamMatchesByYearKeysAsyncWithHttpInfo(string teamKey, int year, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(string teamKey, int year, string ifModifiedSince = default);
     /// <summary>
     /// 
     /// </summary>
@@ -698,7 +698,7 @@ public interface IMatchApiAsync : IApiAccessor
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;MatchSimple&gt;)</returns>
-    System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetTeamMatchesByYearSimpleAsyncWithHttpInfo(string teamKey, int year, string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(string teamKey, int year, string ifModifiedSince = default);
     #endregion Asynchronous Operations
 }
 
@@ -896,7 +896,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;string&gt;</returns>
     public async System.Threading.Tasks.Task<List<string>> GetEventMatchTimeseriesAsync(string eventKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetEventMatchTimeseriesAsyncWithHttpInfo(eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetEventMatchTimeseriesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -908,7 +908,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchTimeseriesAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchTimeseriesAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey == null)
@@ -1048,7 +1048,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;Match&gt;</returns>
     public async System.Threading.Tasks.Task<List<Match>> GetEventMatchesAsync(string eventKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetEventMatchesAsyncWithHttpInfo(eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetEventMatchesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -1060,7 +1060,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetEventMatchesAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetEventMatchesAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey == null)
@@ -1200,7 +1200,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;string&gt;</returns>
     public async System.Threading.Tasks.Task<List<string>> GetEventMatchesKeysAsync(string eventKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetEventMatchesKeysAsyncWithHttpInfo(eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetEventMatchesKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -1212,7 +1212,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchesKeysAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventMatchesKeysAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey == null)
@@ -1352,7 +1352,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;MatchSimple&gt;</returns>
     public async System.Threading.Tasks.Task<List<MatchSimple>> GetEventMatchesSimpleAsync(string eventKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<MatchSimple>> localVarResponse = await GetEventMatchesSimpleAsyncWithHttpInfo(eventKey, ifModifiedSince);
+        ApiResponse<List<MatchSimple>> localVarResponse = await GetEventMatchesSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -1364,7 +1364,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;MatchSimple&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetEventMatchesSimpleAsyncWithHttpInfo(string eventKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetEventMatchesSimpleAsyncWithHttpInfoAsync(string eventKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey == null)
@@ -1504,7 +1504,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of Match</returns>
     public async System.Threading.Tasks.Task<Match> GetMatchAsync(string matchKey, string ifModifiedSince = default)
     {
-        ApiResponse<Match> localVarResponse = await GetMatchAsyncWithHttpInfo(matchKey, ifModifiedSince);
+        ApiResponse<Match> localVarResponse = await GetMatchAsyncWithHttpInfoAsync(matchKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -1516,7 +1516,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Match)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<Match>> GetMatchAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<Match>> GetMatchAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'matchKey' is set
         if (matchKey == null)
@@ -1656,7 +1656,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of MatchSimple</returns>
     public async System.Threading.Tasks.Task<MatchSimple> GetMatchSimpleAsync(string matchKey, string ifModifiedSince = default)
     {
-        ApiResponse<MatchSimple> localVarResponse = await GetMatchSimpleAsyncWithHttpInfo(matchKey, ifModifiedSince);
+        ApiResponse<MatchSimple> localVarResponse = await GetMatchSimpleAsyncWithHttpInfoAsync(matchKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -1668,7 +1668,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (MatchSimple)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<MatchSimple>> GetMatchSimpleAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<MatchSimple>> GetMatchSimpleAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'matchKey' is set
         if (matchKey == null)
@@ -1808,7 +1808,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;Object&gt;</returns>
     public async System.Threading.Tasks.Task<List<object>> GetMatchTimeseriesAsync(string matchKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<object>> localVarResponse = await GetMatchTimeseriesAsyncWithHttpInfo(matchKey, ifModifiedSince);
+        ApiResponse<List<object>> localVarResponse = await GetMatchTimeseriesAsyncWithHttpInfoAsync(matchKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -1820,7 +1820,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<object>>> GetMatchTimeseriesAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<object>>> GetMatchTimeseriesAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'matchKey' is set
         if (matchKey == null)
@@ -1960,7 +1960,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of Zebra</returns>
     public async System.Threading.Tasks.Task<Zebra> GetMatchZebraAsync(string matchKey, string ifModifiedSince = default)
     {
-        ApiResponse<Zebra> localVarResponse = await GetMatchZebraAsyncWithHttpInfo(matchKey, ifModifiedSince);
+        ApiResponse<Zebra> localVarResponse = await GetMatchZebraAsyncWithHttpInfoAsync(matchKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -1972,7 +1972,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg &#x60;2016nytr_qm1&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Zebra)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<Zebra>> GetMatchZebraAsyncWithHttpInfo(string matchKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<Zebra>> GetMatchZebraAsyncWithHttpInfoAsync(string matchKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'matchKey' is set
         if (matchKey == null)
@@ -2122,7 +2122,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;Match&gt;</returns>
     public async System.Threading.Tasks.Task<List<Match>> GetTeamEventMatchesAsync(string teamKey, string eventKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesAsyncWithHttpInfo(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -2135,7 +2135,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesAsyncWithHttpInfo(string teamKey, string eventKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesAsyncWithHttpInfoAsync(string teamKey, string eventKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null)
@@ -2292,7 +2292,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;string&gt;</returns>
     public async System.Threading.Tasks.Task<List<string>> GetTeamEventMatchesKeysAsync(string teamKey, string eventKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfo(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -2305,7 +2305,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamEventMatchesKeysAsyncWithHttpInfo(string teamKey, string eventKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(string teamKey, string eventKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null)
@@ -2462,7 +2462,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;Match&gt;</returns>
     public async System.Threading.Tasks.Task<List<Match>> GetTeamEventMatchesSimpleAsync(string teamKey, string eventKey, string ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesSimpleAsyncWithHttpInfo(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -2475,7 +2475,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesSimpleAsyncWithHttpInfo(string teamKey, string eventKey, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(string teamKey, string eventKey, string ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null)
@@ -2626,7 +2626,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;Match&gt;</returns>
     public async System.Threading.Tasks.Task<List<Match>> GetTeamMatchesByYearAsync(string teamKey, int year, string ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamMatchesByYearAsyncWithHttpInfo(teamKey, year, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamMatchesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -2639,7 +2639,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamMatchesByYearAsyncWithHttpInfo(string teamKey, int year, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<Match>>> GetTeamMatchesByYearAsyncWithHttpInfoAsync(string teamKey, int year, string ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null)
@@ -2784,7 +2784,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;string&gt;</returns>
     public async System.Threading.Tasks.Task<List<string>> GetTeamMatchesByYearKeysAsync(string teamKey, int year, string ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamMatchesByYearKeysAsyncWithHttpInfo(teamKey, year, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -2797,7 +2797,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamMatchesByYearKeysAsyncWithHttpInfo(string teamKey, int year, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(string teamKey, int year, string ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null)
@@ -2942,7 +2942,7 @@ public partial class MatchApi : IMatchApi
     /// <returns>Task of List&lt;MatchSimple&gt;</returns>
     public async System.Threading.Tasks.Task<List<MatchSimple>> GetTeamMatchesByYearSimpleAsync(string teamKey, int year, string ifModifiedSince = default)
     {
-        ApiResponse<List<MatchSimple>> localVarResponse = await GetTeamMatchesByYearSimpleAsyncWithHttpInfo(teamKey, year, ifModifiedSince);
+        ApiResponse<List<MatchSimple>> localVarResponse = await GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -2955,7 +2955,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;MatchSimple&gt;)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetTeamMatchesByYearSimpleAsyncWithHttpInfo(string teamKey, int year, string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<List<MatchSimple>>> GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(string teamKey, int year, string ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey == null)

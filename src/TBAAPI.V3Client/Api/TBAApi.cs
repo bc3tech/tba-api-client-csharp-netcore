@@ -71,7 +71,7 @@ public interface ITBAApiAsync : IApiAccessor
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (APIStatus)</returns>
-    System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfo(string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfoAsync(string ifModifiedSince = default);
     #endregion Asynchronous Operations
 }
 
@@ -259,7 +259,7 @@ public partial class TBAApi : ITBAApi
     /// <returns>Task of APIStatus</returns>
     public async System.Threading.Tasks.Task<APIStatus> GetStatusAsync(string ifModifiedSince = default)
     {
-        ApiResponse<APIStatus> localVarResponse = await GetStatusAsyncWithHttpInfo(ifModifiedSince);
+        ApiResponse<APIStatus> localVarResponse = await GetStatusAsyncWithHttpInfoAsync(ifModifiedSince);
         return localVarResponse.Data;
 
     }
@@ -270,7 +270,7 @@ public partial class TBAApi : ITBAApi
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (APIStatus)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfo(string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfoAsync(string ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
