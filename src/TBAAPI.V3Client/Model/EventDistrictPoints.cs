@@ -34,7 +34,7 @@ public partial class EventDistrictPoints : IEquatable<EventDistrictPoints>, IVal
     /// </summary>
     /// <param name="points">Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value. (required).</param>
     /// <param name="tiebreakers">Tiebreaker values for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the tiebreaker elements as its value..</param>
-    public EventDistrictPoints(Dictionary<string, EventDistrictPointsPoints> points = default, Dictionary<string, EventDistrictPointsTiebreakers> tiebreakers = default)
+    public EventDistrictPoints(IDictionary<string, EventDistrictPointsPoints>? points = default, IDictionary<string, EventDistrictPointsTiebreakers>? tiebreakers = default)
     {
         // to ensure "points" is required (not null)
         this.Points = points ?? throw new ArgumentNullException(nameof(points));
@@ -46,14 +46,14 @@ public partial class EventDistrictPoints : IEquatable<EventDistrictPoints>, IVal
     /// </summary>
     /// <value>Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value.</value>
     [DataMember(Name = "points", EmitDefaultValue = false), JsonPropertyName("points")]
-    public Dictionary<string, EventDistrictPointsPoints> Points { get; set; }
+    public IDictionary<string, EventDistrictPointsPoints>? Points { get; set; }
 
     /// <summary>
     /// Tiebreaker values for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the tiebreaker elements as its value.
     /// </summary>
     /// <value>Tiebreaker values for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the tiebreaker elements as its value.</value>
     [DataMember(Name = "tiebreakers", EmitDefaultValue = false), JsonPropertyName("tiebreakers")]
-    public Dictionary<string, EventDistrictPointsTiebreakers> Tiebreakers { get; set; }
+    public IDictionary<string, EventDistrictPointsTiebreakers>? Tiebreakers { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -80,26 +80,26 @@ public partial class EventDistrictPoints : IEquatable<EventDistrictPoints>, IVal
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventDistrictPoints);
+    public override bool Equals(object? input) => Equals(input as EventDistrictPoints);
 
     /// <summary>
     /// Returns true if EventDistrictPoints instances are equal
     /// </summary>
     /// <param name="input">Instance of EventDistrictPoints to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventDistrictPoints input)
+    public bool Equals(EventDistrictPoints? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Points == input.Points ||
-                (this.Points != null &&
-                input.Points != null &&
+                (this.Points is not null &&
+                input.Points is not null &&
                 this.Points.SequenceEqual(input.Points))
             ) &&
             (
                 this.Tiebreakers == input.Tiebreakers ||
-                (this.Tiebreakers != null &&
-                input.Tiebreakers != null &&
+                (this.Tiebreakers is not null &&
+                input.Tiebreakers is not null &&
                 this.Tiebreakers.SequenceEqual(input.Tiebreakers))
             );
     }
@@ -113,12 +113,12 @@ public partial class EventDistrictPoints : IEquatable<EventDistrictPoints>, IVal
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Points != null)
+            if (this.Points is not null)
             {
                 hashCode = (hashCode * 59) + this.Points.GetHashCode();
             }
 
-            if (this.Tiebreakers != null)
+            if (this.Tiebreakers is not null)
             {
                 hashCode = (hashCode * 59) + this.Tiebreakers.GetHashCode();
             }

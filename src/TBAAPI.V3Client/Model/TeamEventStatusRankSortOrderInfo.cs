@@ -26,7 +26,7 @@ using System.Text.Json.Serialization;
 /// <param name="precision">The number of digits of precision used for this value, eg &#x60;2&#x60; would correspond to a value of &#x60;101.11&#x60; while &#x60;0&#x60; would correspond to &#x60;101&#x60;..</param>
 /// <param name="name">The descriptive name of the value used to sort the ranking..</param>
 [DataContract]
-public partial class TeamEventStatusRankSortOrderInfo(int precision = default, string name = default) : IEquatable<TeamEventStatusRankSortOrderInfo>, IValidatableObject
+public partial class TeamEventStatusRankSortOrderInfo(int precision = default, string? name = default) : IEquatable<TeamEventStatusRankSortOrderInfo>, IValidatableObject
 {
 
     /// <summary>
@@ -68,23 +68,23 @@ public partial class TeamEventStatusRankSortOrderInfo(int precision = default, s
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamEventStatusRankSortOrderInfo);
+    public override bool Equals(object? input) => Equals(input as TeamEventStatusRankSortOrderInfo);
 
     /// <summary>
     /// Returns true if TeamEventStatusRankSortOrderInfo instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamEventStatusRankSortOrderInfo to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusRankSortOrderInfo input)
+    public bool Equals(TeamEventStatusRankSortOrderInfo? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Precision == input.Precision ||
                 this.Precision.Equals(input.Precision)
             ) &&
             (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             );
     }
@@ -99,7 +99,7 @@ public partial class TeamEventStatusRankSortOrderInfo(int precision = default, s
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Precision.GetHashCode();
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }

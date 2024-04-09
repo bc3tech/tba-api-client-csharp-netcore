@@ -27,7 +27,7 @@ using System.Text.Json.Serialization;
 /// <param name="teamKey">The TBA team key for the team that was given the award. May be null..</param>
 /// <param name="awardee">The name of the individual given the award. May be null..</param>
 [DataContract]
-public partial class AwardRecipient(string teamKey = default, string awardee = default) : IEquatable<AwardRecipient>, IValidatableObject
+public partial class AwardRecipient(string? teamKey = default, string? awardee = default) : IEquatable<AwardRecipient>, IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +35,14 @@ public partial class AwardRecipient(string teamKey = default, string awardee = d
     /// </summary>
     /// <value>The TBA team key for the team that was given the award. May be null.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string TeamKey { get; set; } = teamKey;
+    public string? TeamKey { get; set; } = teamKey;
 
     /// <summary>
     /// The name of the individual given the award. May be null.
     /// </summary>
     /// <value>The name of the individual given the award. May be null.</value>
     [DataMember(Name = "awardee", EmitDefaultValue = false), JsonPropertyName("awardee")]
-    public string Awardee { get; set; } = awardee;
+    public string? Awardee { get; set; } = awardee;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -69,24 +69,24 @@ public partial class AwardRecipient(string teamKey = default, string awardee = d
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as AwardRecipient);
+    public override bool Equals(object? input) => Equals(input as AwardRecipient);
 
     /// <summary>
     /// Returns true if AwardRecipient instances are equal
     /// </summary>
     /// <param name="input">Instance of AwardRecipient to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(AwardRecipient input)
+    public bool Equals(AwardRecipient? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.TeamKey == input.TeamKey ||
-                (this.TeamKey != null &&
+                (this.TeamKey is not null &&
                 this.TeamKey.Equals(input.TeamKey))
             ) &&
             (
                 this.Awardee == input.Awardee ||
-                (this.Awardee != null &&
+                (this.Awardee is not null &&
                 this.Awardee.Equals(input.Awardee))
             );
     }
@@ -100,12 +100,12 @@ public partial class AwardRecipient(string teamKey = default, string awardee = d
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.TeamKey != null)
+            if (this.TeamKey is not null)
             {
                 hashCode = (hashCode * 59) + this.TeamKey.GetHashCode();
             }
 
-            if (this.Awardee != null)
+            if (this.Awardee is not null)
             {
                 hashCode = (hashCode * 59) + this.Awardee.GetHashCode();
             }

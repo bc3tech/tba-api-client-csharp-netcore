@@ -29,12 +29,7 @@ public class OpenAPIDateConverter : JsonConverter<DateTime?>
     public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var jsonVal = reader.GetString();
-        if (!string.IsNullOrWhiteSpace(jsonVal))
-        {
-            return DateTime.ParseExact(jsonVal, DateTimeFormat, null);
-        }
-
-        return null;
+        return !string.IsNullOrWhiteSpace(jsonVal) ? DateTime.ParseExact(jsonVal, DateTimeFormat, null) : null;
     }
 
     /// <inheritdoc/>

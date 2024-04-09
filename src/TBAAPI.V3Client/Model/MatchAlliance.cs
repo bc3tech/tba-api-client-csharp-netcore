@@ -29,6 +29,7 @@ public partial class MatchAlliance : IEquatable<MatchAlliance>, IValidatableObje
     /// </summary>
     [JsonConstructor]
     protected MatchAlliance() { }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MatchAlliance" /> class.
     /// </summary>
@@ -36,7 +37,7 @@ public partial class MatchAlliance : IEquatable<MatchAlliance>, IValidatableObje
     /// <param name="teamKeys">teamKeys (required).</param>
     /// <param name="surrogateTeamKeys">TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate..</param>
     /// <param name="dqTeamKeys">TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams..</param>
-    public MatchAlliance(int score = default, List<string> teamKeys = default, List<string> surrogateTeamKeys = default, List<string> dqTeamKeys = default)
+    public MatchAlliance(int score = default, IList<string>? teamKeys = default, IList<string>? surrogateTeamKeys = default, IList<string>? dqTeamKeys = default)
     {
         this.Score = score;
         // to ensure "teamKeys" is required (not null)
@@ -56,21 +57,21 @@ public partial class MatchAlliance : IEquatable<MatchAlliance>, IValidatableObje
     /// Gets or Sets TeamKeys
     /// </summary>
     [DataMember(Name = "team_keys", EmitDefaultValue = false), JsonPropertyName("team_keys")]
-    public List<string> TeamKeys { get; set; }
+    public IList<string> TeamKeys { get; set; } = [];
 
     /// <summary>
     /// TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate.
     /// </summary>
     /// <value>TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate.</value>
     [DataMember(Name = "surrogate_team_keys", EmitDefaultValue = false), JsonPropertyName("surrogate_team_keys")]
-    public List<string> SurrogateTeamKeys { get; set; }
+    public IList<string>? SurrogateTeamKeys { get; set; }
 
     /// <summary>
     /// TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams.
     /// </summary>
     /// <value>TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams.</value>
     [DataMember(Name = "dq_team_keys", EmitDefaultValue = false), JsonPropertyName("dq_team_keys")]
-    public List<string> DqTeamKeys { get; set; }
+    public IList<string>? DqTeamKeys { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -99,36 +100,36 @@ public partial class MatchAlliance : IEquatable<MatchAlliance>, IValidatableObje
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchAlliance);
+    public override bool Equals(object? input) => Equals(input as MatchAlliance);
 
     /// <summary>
     /// Returns true if MatchAlliance instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchAlliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchAlliance input)
+    public bool Equals(MatchAlliance? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Score == input.Score ||
                 this.Score.Equals(input.Score)
             ) &&
             (
                 this.TeamKeys == input.TeamKeys ||
-                (this.TeamKeys != null &&
-                input.TeamKeys != null &&
+                (this.TeamKeys is not null &&
+                input.TeamKeys is not null &&
                 this.TeamKeys.SequenceEqual(input.TeamKeys))
             ) &&
             (
                 this.SurrogateTeamKeys == input.SurrogateTeamKeys ||
-                (this.SurrogateTeamKeys != null &&
-                input.SurrogateTeamKeys != null &&
+                (this.SurrogateTeamKeys is not null &&
+                input.SurrogateTeamKeys is not null &&
                 this.SurrogateTeamKeys.SequenceEqual(input.SurrogateTeamKeys))
             ) &&
             (
                 this.DqTeamKeys == input.DqTeamKeys ||
-                (this.DqTeamKeys != null &&
-                input.DqTeamKeys != null &&
+                (this.DqTeamKeys is not null &&
+                input.DqTeamKeys is not null &&
                 this.DqTeamKeys.SequenceEqual(input.DqTeamKeys))
             );
     }
@@ -143,17 +144,17 @@ public partial class MatchAlliance : IEquatable<MatchAlliance>, IValidatableObje
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Score.GetHashCode();
-            if (this.TeamKeys != null)
+            if (this.TeamKeys is not null)
             {
                 hashCode = (hashCode * 59) + this.TeamKeys.GetHashCode();
             }
 
-            if (this.SurrogateTeamKeys != null)
+            if (this.SurrogateTeamKeys is not null)
             {
                 hashCode = (hashCode * 59) + this.SurrogateTeamKeys.GetHashCode();
             }
 
-            if (this.DqTeamKeys != null)
+            if (this.DqTeamKeys is not null)
             {
                 hashCode = (hashCode * 59) + this.DqTeamKeys.GetHashCode();
             }

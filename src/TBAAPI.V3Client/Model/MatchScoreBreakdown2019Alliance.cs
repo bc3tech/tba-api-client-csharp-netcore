@@ -75,7 +75,7 @@ using System.Text.Json.Serialization;
 /// <param name="topRightRocketNear">topRightRocketNear.</param>
 /// <param name="totalPoints">totalPoints.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default, int autoPoints = default, string bay1 = default, string bay2 = default, string bay3 = default, string bay4 = default, string bay5 = default, string bay6 = default, string bay7 = default, string bay8 = default, int cargoPoints = default, bool completeRocketRankingPoint = default, bool completedRocketFar = default, bool completedRocketNear = default, string endgameRobot1 = default, string endgameRobot2 = default, string endgameRobot3 = default, int foulCount = default, int foulPoints = default, int habClimbPoints = default, bool habDockingRankingPoint = default, string habLineRobot1 = default, string habLineRobot2 = default, string habLineRobot3 = default, int hatchPanelPoints = default, string lowLeftRocketFar = default, string lowLeftRocketNear = default, string lowRightRocketFar = default, string lowRightRocketNear = default, string midLeftRocketFar = default, string midLeftRocketNear = default, string midRightRocketFar = default, string midRightRocketNear = default, string preMatchBay1 = default, string preMatchBay2 = default, string preMatchBay3 = default, string preMatchBay6 = default, string preMatchBay7 = default, string preMatchBay8 = default, string preMatchLevelRobot1 = default, string preMatchLevelRobot2 = default, string preMatchLevelRobot3 = default, int rp = default, int sandStormBonusPoints = default, int techFoulCount = default, int teleopPoints = default, string topLeftRocketFar = default, string topLeftRocketNear = default, string topRightRocketFar = default, string topRightRocketNear = default, int totalPoints = default) : IEquatable<MatchScoreBreakdown2019Alliance>, IValidatableObject
+public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default, int autoPoints = default, string? bay1 = default, string? bay2 = default, string? bay3 = default, string? bay4 = default, string? bay5 = default, string? bay6 = default, string? bay7 = default, string? bay8 = default, int cargoPoints = default, bool completeRocketRankingPoint = default, bool completedRocketFar = default, bool completedRocketNear = default, string? endgameRobot1 = default, string? endgameRobot2 = default, string? endgameRobot3 = default, int foulCount = default, int foulPoints = default, int habClimbPoints = default, bool habDockingRankingPoint = default, string? habLineRobot1 = default, string? habLineRobot2 = default, string? habLineRobot3 = default, int hatchPanelPoints = default, string? lowLeftRocketFar = default, string? lowLeftRocketNear = default, string? lowRightRocketFar = default, string? lowRightRocketNear = default, string? midLeftRocketFar = default, string? midLeftRocketNear = default, string? midRightRocketFar = default, string? midRightRocketNear = default, string? preMatchBay1 = default, string? preMatchBay2 = default, string? preMatchBay3 = default, string? preMatchBay6 = default, string? preMatchBay7 = default, string? preMatchBay8 = default, string? preMatchLevelRobot1 = default, string? preMatchLevelRobot2 = default, string? preMatchLevelRobot3 = default, int rp = default, int sandStormBonusPoints = default, int techFoulCount = default, int teleopPoints = default, string? topLeftRocketFar = default, string? topLeftRocketNear = default, string? topRightRocketFar = default, string? topRightRocketNear = default, int totalPoints = default) : IEquatable<MatchScoreBreakdown2019Alliance>, IValidatableObject
 {
 
     /// <summary>
@@ -458,16 +458,16 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2019Alliance);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2019Alliance);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2019Alliance instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2019Alliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2019Alliance input)
+    public bool Equals(MatchScoreBreakdown2019Alliance? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.AdjustPoints == input.AdjustPoints ||
                 this.AdjustPoints.Equals(input.AdjustPoints)
@@ -478,42 +478,42 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             ) &&
             (
                 this.Bay1 == input.Bay1 ||
-                (this.Bay1 != null &&
+                (this.Bay1 is not null &&
                 this.Bay1.Equals(input.Bay1))
             ) &&
             (
                 this.Bay2 == input.Bay2 ||
-                (this.Bay2 != null &&
+                (this.Bay2 is not null &&
                 this.Bay2.Equals(input.Bay2))
             ) &&
             (
                 this.Bay3 == input.Bay3 ||
-                (this.Bay3 != null &&
+                (this.Bay3 is not null &&
                 this.Bay3.Equals(input.Bay3))
             ) &&
             (
                 this.Bay4 == input.Bay4 ||
-                (this.Bay4 != null &&
+                (this.Bay4 is not null &&
                 this.Bay4.Equals(input.Bay4))
             ) &&
             (
                 this.Bay5 == input.Bay5 ||
-                (this.Bay5 != null &&
+                (this.Bay5 is not null &&
                 this.Bay5.Equals(input.Bay5))
             ) &&
             (
                 this.Bay6 == input.Bay6 ||
-                (this.Bay6 != null &&
+                (this.Bay6 is not null &&
                 this.Bay6.Equals(input.Bay6))
             ) &&
             (
                 this.Bay7 == input.Bay7 ||
-                (this.Bay7 != null &&
+                (this.Bay7 is not null &&
                 this.Bay7.Equals(input.Bay7))
             ) &&
             (
                 this.Bay8 == input.Bay8 ||
-                (this.Bay8 != null &&
+                (this.Bay8 is not null &&
                 this.Bay8.Equals(input.Bay8))
             ) &&
             (
@@ -534,17 +534,17 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             ) &&
             (
                 this.EndgameRobot1 == input.EndgameRobot1 ||
-                (this.EndgameRobot1 != null &&
+                (this.EndgameRobot1 is not null &&
                 this.EndgameRobot1.Equals(input.EndgameRobot1))
             ) &&
             (
                 this.EndgameRobot2 == input.EndgameRobot2 ||
-                (this.EndgameRobot2 != null &&
+                (this.EndgameRobot2 is not null &&
                 this.EndgameRobot2.Equals(input.EndgameRobot2))
             ) &&
             (
                 this.EndgameRobot3 == input.EndgameRobot3 ||
-                (this.EndgameRobot3 != null &&
+                (this.EndgameRobot3 is not null &&
                 this.EndgameRobot3.Equals(input.EndgameRobot3))
             ) &&
             (
@@ -565,17 +565,17 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             ) &&
             (
                 this.HabLineRobot1 == input.HabLineRobot1 ||
-                (this.HabLineRobot1 != null &&
+                (this.HabLineRobot1 is not null &&
                 this.HabLineRobot1.Equals(input.HabLineRobot1))
             ) &&
             (
                 this.HabLineRobot2 == input.HabLineRobot2 ||
-                (this.HabLineRobot2 != null &&
+                (this.HabLineRobot2 is not null &&
                 this.HabLineRobot2.Equals(input.HabLineRobot2))
             ) &&
             (
                 this.HabLineRobot3 == input.HabLineRobot3 ||
-                (this.HabLineRobot3 != null &&
+                (this.HabLineRobot3 is not null &&
                 this.HabLineRobot3.Equals(input.HabLineRobot3))
             ) &&
             (
@@ -584,87 +584,87 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             ) &&
             (
                 this.LowLeftRocketFar == input.LowLeftRocketFar ||
-                (this.LowLeftRocketFar != null &&
+                (this.LowLeftRocketFar is not null &&
                 this.LowLeftRocketFar.Equals(input.LowLeftRocketFar))
             ) &&
             (
                 this.LowLeftRocketNear == input.LowLeftRocketNear ||
-                (this.LowLeftRocketNear != null &&
+                (this.LowLeftRocketNear is not null &&
                 this.LowLeftRocketNear.Equals(input.LowLeftRocketNear))
             ) &&
             (
                 this.LowRightRocketFar == input.LowRightRocketFar ||
-                (this.LowRightRocketFar != null &&
+                (this.LowRightRocketFar is not null &&
                 this.LowRightRocketFar.Equals(input.LowRightRocketFar))
             ) &&
             (
                 this.LowRightRocketNear == input.LowRightRocketNear ||
-                (this.LowRightRocketNear != null &&
+                (this.LowRightRocketNear is not null &&
                 this.LowRightRocketNear.Equals(input.LowRightRocketNear))
             ) &&
             (
                 this.MidLeftRocketFar == input.MidLeftRocketFar ||
-                (this.MidLeftRocketFar != null &&
+                (this.MidLeftRocketFar is not null &&
                 this.MidLeftRocketFar.Equals(input.MidLeftRocketFar))
             ) &&
             (
                 this.MidLeftRocketNear == input.MidLeftRocketNear ||
-                (this.MidLeftRocketNear != null &&
+                (this.MidLeftRocketNear is not null &&
                 this.MidLeftRocketNear.Equals(input.MidLeftRocketNear))
             ) &&
             (
                 this.MidRightRocketFar == input.MidRightRocketFar ||
-                (this.MidRightRocketFar != null &&
+                (this.MidRightRocketFar is not null &&
                 this.MidRightRocketFar.Equals(input.MidRightRocketFar))
             ) &&
             (
                 this.MidRightRocketNear == input.MidRightRocketNear ||
-                (this.MidRightRocketNear != null &&
+                (this.MidRightRocketNear is not null &&
                 this.MidRightRocketNear.Equals(input.MidRightRocketNear))
             ) &&
             (
                 this.PreMatchBay1 == input.PreMatchBay1 ||
-                (this.PreMatchBay1 != null &&
+                (this.PreMatchBay1 is not null &&
                 this.PreMatchBay1.Equals(input.PreMatchBay1))
             ) &&
             (
                 this.PreMatchBay2 == input.PreMatchBay2 ||
-                (this.PreMatchBay2 != null &&
+                (this.PreMatchBay2 is not null &&
                 this.PreMatchBay2.Equals(input.PreMatchBay2))
             ) &&
             (
                 this.PreMatchBay3 == input.PreMatchBay3 ||
-                (this.PreMatchBay3 != null &&
+                (this.PreMatchBay3 is not null &&
                 this.PreMatchBay3.Equals(input.PreMatchBay3))
             ) &&
             (
                 this.PreMatchBay6 == input.PreMatchBay6 ||
-                (this.PreMatchBay6 != null &&
+                (this.PreMatchBay6 is not null &&
                 this.PreMatchBay6.Equals(input.PreMatchBay6))
             ) &&
             (
                 this.PreMatchBay7 == input.PreMatchBay7 ||
-                (this.PreMatchBay7 != null &&
+                (this.PreMatchBay7 is not null &&
                 this.PreMatchBay7.Equals(input.PreMatchBay7))
             ) &&
             (
                 this.PreMatchBay8 == input.PreMatchBay8 ||
-                (this.PreMatchBay8 != null &&
+                (this.PreMatchBay8 is not null &&
                 this.PreMatchBay8.Equals(input.PreMatchBay8))
             ) &&
             (
                 this.PreMatchLevelRobot1 == input.PreMatchLevelRobot1 ||
-                (this.PreMatchLevelRobot1 != null &&
+                (this.PreMatchLevelRobot1 is not null &&
                 this.PreMatchLevelRobot1.Equals(input.PreMatchLevelRobot1))
             ) &&
             (
                 this.PreMatchLevelRobot2 == input.PreMatchLevelRobot2 ||
-                (this.PreMatchLevelRobot2 != null &&
+                (this.PreMatchLevelRobot2 is not null &&
                 this.PreMatchLevelRobot2.Equals(input.PreMatchLevelRobot2))
             ) &&
             (
                 this.PreMatchLevelRobot3 == input.PreMatchLevelRobot3 ||
-                (this.PreMatchLevelRobot3 != null &&
+                (this.PreMatchLevelRobot3 is not null &&
                 this.PreMatchLevelRobot3.Equals(input.PreMatchLevelRobot3))
             ) &&
             (
@@ -685,22 +685,22 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             ) &&
             (
                 this.TopLeftRocketFar == input.TopLeftRocketFar ||
-                (this.TopLeftRocketFar != null &&
+                (this.TopLeftRocketFar is not null &&
                 this.TopLeftRocketFar.Equals(input.TopLeftRocketFar))
             ) &&
             (
                 this.TopLeftRocketNear == input.TopLeftRocketNear ||
-                (this.TopLeftRocketNear != null &&
+                (this.TopLeftRocketNear is not null &&
                 this.TopLeftRocketNear.Equals(input.TopLeftRocketNear))
             ) &&
             (
                 this.TopRightRocketFar == input.TopRightRocketFar ||
-                (this.TopRightRocketFar != null &&
+                (this.TopRightRocketFar is not null &&
                 this.TopRightRocketFar.Equals(input.TopRightRocketFar))
             ) &&
             (
                 this.TopRightRocketNear == input.TopRightRocketNear ||
-                (this.TopRightRocketNear != null &&
+                (this.TopRightRocketNear is not null &&
                 this.TopRightRocketNear.Equals(input.TopRightRocketNear))
             ) &&
             (
@@ -720,42 +720,42 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.AdjustPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.AutoPoints.GetHashCode();
-            if (this.Bay1 != null)
+            if (this.Bay1 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay1.GetHashCode();
             }
 
-            if (this.Bay2 != null)
+            if (this.Bay2 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay2.GetHashCode();
             }
 
-            if (this.Bay3 != null)
+            if (this.Bay3 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay3.GetHashCode();
             }
 
-            if (this.Bay4 != null)
+            if (this.Bay4 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay4.GetHashCode();
             }
 
-            if (this.Bay5 != null)
+            if (this.Bay5 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay5.GetHashCode();
             }
 
-            if (this.Bay6 != null)
+            if (this.Bay6 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay6.GetHashCode();
             }
 
-            if (this.Bay7 != null)
+            if (this.Bay7 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay7.GetHashCode();
             }
 
-            if (this.Bay8 != null)
+            if (this.Bay8 is not null)
             {
                 hashCode = (hashCode * 59) + this.Bay8.GetHashCode();
             }
@@ -764,17 +764,17 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             hashCode = (hashCode * 59) + this.CompleteRocketRankingPoint.GetHashCode();
             hashCode = (hashCode * 59) + this.CompletedRocketFar.GetHashCode();
             hashCode = (hashCode * 59) + this.CompletedRocketNear.GetHashCode();
-            if (this.EndgameRobot1 != null)
+            if (this.EndgameRobot1 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot1.GetHashCode();
             }
 
-            if (this.EndgameRobot2 != null)
+            if (this.EndgameRobot2 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot2.GetHashCode();
             }
 
-            if (this.EndgameRobot3 != null)
+            if (this.EndgameRobot3 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot3.GetHashCode();
             }
@@ -783,103 +783,103 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             hashCode = (hashCode * 59) + this.FoulPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.HabClimbPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.HabDockingRankingPoint.GetHashCode();
-            if (this.HabLineRobot1 != null)
+            if (this.HabLineRobot1 is not null)
             {
                 hashCode = (hashCode * 59) + this.HabLineRobot1.GetHashCode();
             }
 
-            if (this.HabLineRobot2 != null)
+            if (this.HabLineRobot2 is not null)
             {
                 hashCode = (hashCode * 59) + this.HabLineRobot2.GetHashCode();
             }
 
-            if (this.HabLineRobot3 != null)
+            if (this.HabLineRobot3 is not null)
             {
                 hashCode = (hashCode * 59) + this.HabLineRobot3.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.HatchPanelPoints.GetHashCode();
-            if (this.LowLeftRocketFar != null)
+            if (this.LowLeftRocketFar is not null)
             {
                 hashCode = (hashCode * 59) + this.LowLeftRocketFar.GetHashCode();
             }
 
-            if (this.LowLeftRocketNear != null)
+            if (this.LowLeftRocketNear is not null)
             {
                 hashCode = (hashCode * 59) + this.LowLeftRocketNear.GetHashCode();
             }
 
-            if (this.LowRightRocketFar != null)
+            if (this.LowRightRocketFar is not null)
             {
                 hashCode = (hashCode * 59) + this.LowRightRocketFar.GetHashCode();
             }
 
-            if (this.LowRightRocketNear != null)
+            if (this.LowRightRocketNear is not null)
             {
                 hashCode = (hashCode * 59) + this.LowRightRocketNear.GetHashCode();
             }
 
-            if (this.MidLeftRocketFar != null)
+            if (this.MidLeftRocketFar is not null)
             {
                 hashCode = (hashCode * 59) + this.MidLeftRocketFar.GetHashCode();
             }
 
-            if (this.MidLeftRocketNear != null)
+            if (this.MidLeftRocketNear is not null)
             {
                 hashCode = (hashCode * 59) + this.MidLeftRocketNear.GetHashCode();
             }
 
-            if (this.MidRightRocketFar != null)
+            if (this.MidRightRocketFar is not null)
             {
                 hashCode = (hashCode * 59) + this.MidRightRocketFar.GetHashCode();
             }
 
-            if (this.MidRightRocketNear != null)
+            if (this.MidRightRocketNear is not null)
             {
                 hashCode = (hashCode * 59) + this.MidRightRocketNear.GetHashCode();
             }
 
-            if (this.PreMatchBay1 != null)
+            if (this.PreMatchBay1 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchBay1.GetHashCode();
             }
 
-            if (this.PreMatchBay2 != null)
+            if (this.PreMatchBay2 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchBay2.GetHashCode();
             }
 
-            if (this.PreMatchBay3 != null)
+            if (this.PreMatchBay3 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchBay3.GetHashCode();
             }
 
-            if (this.PreMatchBay6 != null)
+            if (this.PreMatchBay6 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchBay6.GetHashCode();
             }
 
-            if (this.PreMatchBay7 != null)
+            if (this.PreMatchBay7 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchBay7.GetHashCode();
             }
 
-            if (this.PreMatchBay8 != null)
+            if (this.PreMatchBay8 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchBay8.GetHashCode();
             }
 
-            if (this.PreMatchLevelRobot1 != null)
+            if (this.PreMatchLevelRobot1 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchLevelRobot1.GetHashCode();
             }
 
-            if (this.PreMatchLevelRobot2 != null)
+            if (this.PreMatchLevelRobot2 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchLevelRobot2.GetHashCode();
             }
 
-            if (this.PreMatchLevelRobot3 != null)
+            if (this.PreMatchLevelRobot3 is not null)
             {
                 hashCode = (hashCode * 59) + this.PreMatchLevelRobot3.GetHashCode();
             }
@@ -888,22 +888,22 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
             hashCode = (hashCode * 59) + this.SandStormBonusPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.TechFoulCount.GetHashCode();
             hashCode = (hashCode * 59) + this.TeleopPoints.GetHashCode();
-            if (this.TopLeftRocketFar != null)
+            if (this.TopLeftRocketFar is not null)
             {
                 hashCode = (hashCode * 59) + this.TopLeftRocketFar.GetHashCode();
             }
 
-            if (this.TopLeftRocketNear != null)
+            if (this.TopLeftRocketNear is not null)
             {
                 hashCode = (hashCode * 59) + this.TopLeftRocketNear.GetHashCode();
             }
 
-            if (this.TopRightRocketFar != null)
+            if (this.TopRightRocketFar is not null)
             {
                 hashCode = (hashCode * 59) + this.TopRightRocketFar.GetHashCode();
             }
 
-            if (this.TopRightRocketNear != null)
+            if (this.TopRightRocketNear is not null)
             {
                 hashCode = (hashCode * 59) + this.TopRightRocketNear.GetHashCode();
             }

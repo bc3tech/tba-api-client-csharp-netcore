@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Client;
 
-using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
@@ -23,7 +22,7 @@ public interface IReadableConfiguration
     /// Gets the access token.
     /// </summary>
     /// <value>Access token.</value>
-    string AccessToken { get; }
+    string? AccessToken { get; }
 
     /// <summary>
     /// Gets the API key.
@@ -48,13 +47,6 @@ public interface IReadableConfiguration
     /// </summary>
     /// <value>Date time foramt.</value>
     string DateTimeFormat { get; }
-
-    /// <summary>
-    /// Gets the default header.
-    /// </summary>
-    /// <value>Default header.</value>
-    [Obsolete("Use DefaultHeaders instead.")]
-    IDictionary<string, string> DefaultHeader { get; }
 
     /// <summary>
     /// Gets the default headers.
@@ -84,24 +76,24 @@ public interface IReadableConfiguration
     /// Gets the username.
     /// </summary>
     /// <value>Username.</value>
-    string Username { get; }
+    string? Username { get; }
 
     /// <summary>
     /// Gets the password.
     /// </summary>
     /// <value>Password.</value>
-    string Password { get; }
+    string? Password { get; }
 
     /// <summary>
     /// Gets the API key with prefix.
     /// </summary>
     /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
     /// <returns>API key with prefix.</returns>
-    string GetApiKeyWithPrefix(string apiKeyIdentifier);
+    string? GetApiKeyWithPrefix(string apiKeyIdentifier);
 
     /// <summary>
     /// Gets certificate collection to be sent with requests.
     /// </summary>
     /// <value>X509 Certificate collection.</value>
-    X509CertificateCollection ClientCertificates { get; }
+    X509CertificateCollection? ClientCertificates { get; }
 }

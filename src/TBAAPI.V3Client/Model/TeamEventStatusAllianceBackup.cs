@@ -27,7 +27,7 @@ using System.Text.Json.Serialization;
 /// <param name="_out">TBA key for the team replaced by the backup..</param>
 /// <param name="_in">TBA key for the backup team called in..</param>
 [DataContract]
-public partial class TeamEventStatusAllianceBackup(string _out = default, string _in = default) : IEquatable<TeamEventStatusAllianceBackup>, IValidatableObject
+public partial class TeamEventStatusAllianceBackup(string? _out = default, string? _in = default) : IEquatable<TeamEventStatusAllianceBackup>, IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +35,14 @@ public partial class TeamEventStatusAllianceBackup(string _out = default, string
     /// </summary>
     /// <value>TBA key for the team replaced by the backup.</value>
     [DataMember(Name = "out", EmitDefaultValue = false), JsonPropertyName("out")]
-    public string Out { get; set; } = _out;
+    public string? Out { get; set; } = _out;
 
     /// <summary>
     /// TBA key for the backup team called in.
     /// </summary>
     /// <value>TBA key for the backup team called in.</value>
     [DataMember(Name = "in", EmitDefaultValue = false), JsonPropertyName("in")]
-    public string In { get; set; } = _in;
+    public string? In { get; set; } = _in;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -69,24 +69,24 @@ public partial class TeamEventStatusAllianceBackup(string _out = default, string
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamEventStatusAllianceBackup);
+    public override bool Equals(object? input) => Equals(input as TeamEventStatusAllianceBackup);
 
     /// <summary>
     /// Returns true if TeamEventStatusAllianceBackup instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamEventStatusAllianceBackup to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusAllianceBackup input)
+    public bool Equals(TeamEventStatusAllianceBackup? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Out == input.Out ||
-                (this.Out != null &&
+                (this.Out is not null &&
                 this.Out.Equals(input.Out))
             ) &&
             (
                 this.In == input.In ||
-                (this.In != null &&
+                (this.In is not null &&
                 this.In.Equals(input.In))
             );
     }
@@ -100,12 +100,12 @@ public partial class TeamEventStatusAllianceBackup(string _out = default, string
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Out != null)
+            if (this.Out is not null)
             {
                 hashCode = (hashCode * 59) + this.Out.GetHashCode();
             }
 
-            if (this.In != null)
+            if (this.In is not null)
             {
                 hashCode = (hashCode * 59) + this.In.GetHashCode();
             }

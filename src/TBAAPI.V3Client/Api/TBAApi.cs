@@ -30,7 +30,7 @@ public interface ITBAApiSync : IApiAccessor
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>APIStatus</returns>
-    APIStatus GetStatus(string ifModifiedSince = default);
+    APIStatus GetStatus(string? ifModifiedSince = default);
 
     /// <summary>
     /// 
@@ -41,7 +41,7 @@ public interface ITBAApiSync : IApiAccessor
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of APIStatus</returns>
-    ApiResponse<APIStatus> GetStatusWithHttpInfo(string ifModifiedSince = default);
+    ApiResponse<APIStatus> GetStatusWithHttpInfo(string? ifModifiedSince = default);
     #endregion Synchronous Operations
 }
 
@@ -60,7 +60,7 @@ public interface ITBAApiAsync : IApiAccessor
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of APIStatus</returns>
-    System.Threading.Tasks.Task<APIStatus> GetStatusAsync(string ifModifiedSince = default);
+    System.Threading.Tasks.Task<APIStatus> GetStatusAsync(string? ifModifiedSince = default);
 
     /// <summary>
     /// 
@@ -71,7 +71,7 @@ public interface ITBAApiAsync : IApiAccessor
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (APIStatus)</returns>
-    System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfoAsync(string ifModifiedSince = default);
+    System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfoAsync(string? ifModifiedSince = default);
     #endregion Asynchronous Operations
 }
 
@@ -89,14 +89,6 @@ public interface ITBAApi : ITBAApiSync, ITBAApiAsync
 public partial class TBAApi : ITBAApi
 {
     private ExceptionFactory _exceptionFactory = (name, response) => null;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TBAApi"/> class.
-    /// </summary>
-    /// <returns></returns>
-    public TBAApi() : this((string)null)
-    {
-    }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TBAApi"/> class.
@@ -178,7 +170,7 @@ public partial class TBAApi : ITBAApi
     /// </summary>
     public ExceptionFactory ExceptionFactory
     {
-        get => _exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1
+        get => _exceptionFactory.GetInvocationList().Length > 1
                 ? throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.")
                 : _exceptionFactory;
         set => _exceptionFactory = value;
@@ -190,7 +182,7 @@ public partial class TBAApi : ITBAApi
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>APIStatus</returns>
-    public APIStatus GetStatus(string ifModifiedSince = default)
+    public APIStatus GetStatus(string? ifModifiedSince = default)
     {
         ApiResponse<APIStatus> localVarResponse = GetStatusWithHttpInfo(ifModifiedSince);
         return localVarResponse.Data;
@@ -202,7 +194,7 @@ public partial class TBAApi : ITBAApi
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of APIStatus</returns>
-    public ApiResponse<APIStatus> GetStatusWithHttpInfo(string ifModifiedSince = default)
+    public ApiResponse<APIStatus> GetStatusWithHttpInfo(string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -214,18 +206,18 @@ public partial class TBAApi : ITBAApi
         ];
 
         var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
-        if (localVarContentType != null)
+        if (localVarContentType is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
         }
 
         var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
-        if (localVarAccept != null)
+        if (localVarAccept is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
         }
 
-        if (ifModifiedSince != null)
+        if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
         }
@@ -239,10 +231,10 @@ public partial class TBAApi : ITBAApi
         // make the HTTP request
         ApiResponse<APIStatus> localVarResponse = this.Client.Get<APIStatus>("/status", localVarRequestOptions, this.Configuration);
 
-        if (this.ExceptionFactory != null)
+        if (this.ExceptionFactory is not null)
         {
-            Exception _exception = this.ExceptionFactory("GetStatus", localVarResponse);
-            if (_exception != null)
+            Exception? _exception = this.ExceptionFactory("GetStatus", localVarResponse);
+            if (_exception is not null)
             {
                 throw _exception;
             }
@@ -257,7 +249,7 @@ public partial class TBAApi : ITBAApi
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of APIStatus</returns>
-    public async System.Threading.Tasks.Task<APIStatus> GetStatusAsync(string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<APIStatus> GetStatusAsync(string? ifModifiedSince = default)
     {
         ApiResponse<APIStatus> localVarResponse = await GetStatusAsyncWithHttpInfoAsync(ifModifiedSince);
         return localVarResponse.Data;
@@ -270,7 +262,7 @@ public partial class TBAApi : ITBAApi
     /// <exception cref="ApiException">Thrown when fails to make API call</exception>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (APIStatus)</returns>
-    public async System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfoAsync(string ifModifiedSince = default)
+    public async System.Threading.Tasks.Task<ApiResponse<APIStatus>> GetStatusAsyncWithHttpInfoAsync(string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
@@ -292,7 +284,7 @@ public partial class TBAApi : ITBAApi
             localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
         }
 
-        if (ifModifiedSince != null)
+        if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
         }
@@ -307,10 +299,10 @@ public partial class TBAApi : ITBAApi
 
         ApiResponse<APIStatus> localVarResponse = await this.AsynchronousClient.GetAsync<APIStatus>("/status", localVarRequestOptions, this.Configuration);
 
-        if (this.ExceptionFactory != null)
+        if (this.ExceptionFactory is not null)
         {
-            Exception _exception = this.ExceptionFactory("GetStatus", localVarResponse);
-            if (_exception != null)
+            Exception? _exception = this.ExceptionFactory("GetStatus", localVarResponse);
+            if (_exception is not null)
             {
                 throw _exception;
             }

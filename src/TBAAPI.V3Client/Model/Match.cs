@@ -126,7 +126,7 @@ public partial class Match : IEquatable<Match>, IValidatableObject
     /// <param name="postResultTime">UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted..</param>
     /// <param name="scoreBreakdown">Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null..</param>
     /// <param name="videos">Array of video objects associated with this match..</param>
-    public Match(string key = default, CompLevelEnum compLevel = default, int setNumber = default, int matchNumber = default, MatchSimpleAlliances alliances = default, WinningAllianceEnum? winningAlliance = default, string eventKey = default, long time = default, long actualTime = default, long predictedTime = default, long postResultTime = default, object scoreBreakdown = default, List<MatchVideos> videos = default)
+    public Match(string? key = default, CompLevelEnum compLevel = default, int setNumber = default, int matchNumber = default, MatchSimpleAlliances? alliances = default, WinningAllianceEnum? winningAlliance = default, string? eventKey = default, long time = default, long actualTime = default, long predictedTime = default, long postResultTime = default, object? scoreBreakdown = default, List<MatchVideos>? videos = default)
     {
         // to ensure "key" is required (not null)
         this.Key = key ?? throw new ArgumentNullException(nameof(key));
@@ -150,7 +150,7 @@ public partial class Match : IEquatable<Match>, IValidatableObject
     /// </summary>
     /// <value>TBA match key with the format &#x60;yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]&#x60;, where &#x60;yyyy&#x60; is the year, and &#x60;EVENT_CODE&#x60; is the event code of the event, &#x60;COMP_LEVEL&#x60; is (qm, ef, qf, sf, f), and &#x60;MATCH_NUMBER&#x60; is the match number in the competition level. A set number may be appended to the competition level if more than one match in required per set.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
-    public string Key { get; set; }
+    public string? Key { get; set; }
 
     /// <summary>
     /// The set number in a series of matches where more than one match is required in the match series.
@@ -170,14 +170,14 @@ public partial class Match : IEquatable<Match>, IValidatableObject
     /// Gets or Sets Alliances
     /// </summary>
     [DataMember(Name = "alliances", EmitDefaultValue = false), JsonPropertyName("alliances")]
-    public MatchSimpleAlliances Alliances { get; set; }
+    public MatchSimpleAlliances? Alliances { get; set; }
 
     /// <summary>
     /// Event key of the event the match was played at.
     /// </summary>
     /// <value>Event key of the event the match was played at.</value>
     [DataMember(Name = "event_key", EmitDefaultValue = false), JsonPropertyName("event_key")]
-    public string EventKey { get; set; }
+    public string? EventKey { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.
@@ -212,14 +212,14 @@ public partial class Match : IEquatable<Match>, IValidatableObject
     /// </summary>
     /// <value>Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null.</value>
     [DataMember(Name = "score_breakdown", EmitDefaultValue = false), JsonPropertyName("score_breakdown")]
-    public object ScoreBreakdown { get; set; }
+    public object? ScoreBreakdown { get; set; }
 
     /// <summary>
     /// Array of video objects associated with this match.
     /// </summary>
     /// <value>Array of video objects associated with this match.</value>
     [DataMember(Name = "videos", EmitDefaultValue = false), JsonPropertyName("videos")]
-    public List<MatchVideos> Videos { get; set; }
+    public IList<MatchVideos>? Videos { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -257,19 +257,19 @@ public partial class Match : IEquatable<Match>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as Match);
+    public override bool Equals(object? input) => Equals(input as Match);
 
     /// <summary>
     /// Returns true if Match instances are equal
     /// </summary>
     /// <param name="input">Instance of Match to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(Match input)
+    public bool Equals(Match? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
@@ -286,7 +286,7 @@ public partial class Match : IEquatable<Match>, IValidatableObject
             ) &&
             (
                 this.Alliances == input.Alliances ||
-                (this.Alliances != null &&
+                (this.Alliances is not null &&
                 this.Alliances.Equals(input.Alliances))
             ) &&
             (
@@ -295,7 +295,7 @@ public partial class Match : IEquatable<Match>, IValidatableObject
             ) &&
             (
                 this.EventKey == input.EventKey ||
-                (this.EventKey != null &&
+                (this.EventKey is not null &&
                 this.EventKey.Equals(input.EventKey))
             ) &&
             (
@@ -316,13 +316,13 @@ public partial class Match : IEquatable<Match>, IValidatableObject
             ) &&
             (
                 this.ScoreBreakdown == input.ScoreBreakdown ||
-                (this.ScoreBreakdown != null &&
+                (this.ScoreBreakdown is not null &&
                 this.ScoreBreakdown.Equals(input.ScoreBreakdown))
             ) &&
             (
                 this.Videos == input.Videos ||
-                (this.Videos != null &&
-                input.Videos != null &&
+                (this.Videos is not null &&
+                input.Videos is not null &&
                 this.Videos.SequenceEqual(input.Videos))
             );
     }
@@ -336,7 +336,7 @@ public partial class Match : IEquatable<Match>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }
@@ -344,13 +344,13 @@ public partial class Match : IEquatable<Match>, IValidatableObject
             hashCode = (hashCode * 59) + this.CompLevel.GetHashCode();
             hashCode = (hashCode * 59) + this.SetNumber.GetHashCode();
             hashCode = (hashCode * 59) + this.MatchNumber.GetHashCode();
-            if (this.Alliances != null)
+            if (this.Alliances is not null)
             {
                 hashCode = (hashCode * 59) + this.Alliances.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.WinningAlliance.GetHashCode();
-            if (this.EventKey != null)
+            if (this.EventKey is not null)
             {
                 hashCode = (hashCode * 59) + this.EventKey.GetHashCode();
             }
@@ -359,12 +359,12 @@ public partial class Match : IEquatable<Match>, IValidatableObject
             hashCode = (hashCode * 59) + this.ActualTime.GetHashCode();
             hashCode = (hashCode * 59) + this.PredictedTime.GetHashCode();
             hashCode = (hashCode * 59) + this.PostResultTime.GetHashCode();
-            if (this.ScoreBreakdown != null)
+            if (this.ScoreBreakdown is not null)
             {
                 hashCode = (hashCode * 59) + this.ScoreBreakdown.GetHashCode();
             }
 
-            if (this.Videos != null)
+            if (this.Videos is not null)
             {
                 hashCode = (hashCode * 59) + this.Videos.GetHashCode();
             }

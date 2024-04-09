@@ -88,17 +88,17 @@ public partial class WLTRecord : IEquatable<WLTRecord>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as WLTRecord);
+    public override bool Equals(object? input) => Equals(input as WLTRecord);
 
     /// <summary>
     /// Returns true if WLTRecord instances are equal
     /// </summary>
     /// <param name="input">Instance of WLTRecord to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(WLTRecord input)
+    public bool Equals(WLTRecord? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Losses == input.Losses ||
                 this.Losses.Equals(input.Losses)
             ) &&

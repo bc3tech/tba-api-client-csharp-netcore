@@ -28,14 +28,14 @@ using System.Text.Json.Serialization;
 /// <param name="highestQualScores">highestQualScores.</param>
 /// <param name="qualWins">qualWins.</param>
 [DataContract]
-public partial class EventDistrictPointsTiebreakers(List<int> highestQualScores = default, int qualWins = default) : IEquatable<EventDistrictPointsTiebreakers>, IValidatableObject
+public partial class EventDistrictPointsTiebreakers(List<int>? highestQualScores = default, int qualWins = default) : IEquatable<EventDistrictPointsTiebreakers>, IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets HighestQualScores
     /// </summary>
     [DataMember(Name = "highest_qual_scores", EmitDefaultValue = false), JsonPropertyName("highest_qual_scores")]
-    public List<int> HighestQualScores { get; set; } = highestQualScores;
+    public IList<int>? HighestQualScores { get; set; } = highestQualScores;
 
     /// <summary>
     /// Gets or Sets QualWins
@@ -68,20 +68,20 @@ public partial class EventDistrictPointsTiebreakers(List<int> highestQualScores 
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventDistrictPointsTiebreakers);
+    public override bool Equals(object? input) => Equals(input as EventDistrictPointsTiebreakers);
 
     /// <summary>
     /// Returns true if EventDistrictPointsTiebreakers instances are equal
     /// </summary>
     /// <param name="input">Instance of EventDistrictPointsTiebreakers to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventDistrictPointsTiebreakers input)
+    public bool Equals(EventDistrictPointsTiebreakers? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.HighestQualScores == input.HighestQualScores ||
-                (this.HighestQualScores != null &&
-                input.HighestQualScores != null &&
+                (this.HighestQualScores is not null &&
+                input.HighestQualScores is not null &&
                 this.HighestQualScores.SequenceEqual(input.HighestQualScores))
             ) &&
             (
@@ -99,7 +99,7 @@ public partial class EventDistrictPointsTiebreakers(List<int> highestQualScores 
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.HighestQualScores != null)
+            if (this.HighestQualScores is not null)
             {
                 hashCode = (hashCode * 59) + this.HighestQualScores.GetHashCode();
             }

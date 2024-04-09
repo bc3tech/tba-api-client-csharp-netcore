@@ -33,7 +33,7 @@ using System.Text.Json.Serialization;
 /// <param name="dq">Number of matches the team was disqualified for..</param>
 /// <param name="teamKey">TBA team key for this rank..</param>
 [DataContract]
-public partial class TeamEventStatusRankRanking(int matchesPlayed = default, double qualAverage = default, List<decimal> sortOrders = default, WLTRecord record = default, int rank = default, int dq = default, string teamKey = default) : IEquatable<TeamEventStatusRankRanking>, IValidatableObject
+public partial class TeamEventStatusRankRanking(int matchesPlayed = default, double qualAverage = default, List<decimal>? sortOrders = default, WLTRecord? record = default, int rank = default, int dq = default, string? teamKey = default) : IEquatable<TeamEventStatusRankRanking>, IValidatableObject
 {
 
     /// <summary>
@@ -55,13 +55,13 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
     /// </summary>
     /// <value>Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value.</value>
     [DataMember(Name = "sort_orders", EmitDefaultValue = false), JsonPropertyName("sort_orders")]
-    public List<decimal> SortOrders { get; set; } = sortOrders;
+    public IList<decimal>? SortOrders { get; set; } = sortOrders;
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
     [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
-    public WLTRecord Record { get; set; } = record;
+    public WLTRecord? Record { get; set; } = record;
 
     /// <summary>
     /// Relative rank of this team.
@@ -82,7 +82,7 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
     /// </summary>
     /// <value>TBA team key for this rank.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string TeamKey { get; set; } = teamKey;
+    public string? TeamKey { get; set; } = teamKey;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -114,17 +114,17 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamEventStatusRankRanking);
+    public override bool Equals(object? input) => Equals(input as TeamEventStatusRankRanking);
 
     /// <summary>
     /// Returns true if TeamEventStatusRankRanking instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamEventStatusRankRanking to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusRankRanking input)
+    public bool Equals(TeamEventStatusRankRanking? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.MatchesPlayed == input.MatchesPlayed ||
                 this.MatchesPlayed.Equals(input.MatchesPlayed)
             ) &&
@@ -134,14 +134,14 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
             ) &&
             (
                 this.SortOrders == input.SortOrders ||
-                (this.SortOrders != null &&
-                input.SortOrders != null &&
+                (this.SortOrders is not null &&
+                input.SortOrders is not null &&
                 this.SortOrders.SequenceEqual(input.SortOrders))
             ) &&
             (
                 this.Record == input.Record ||
-                (this.Record != null &&
-                this.Record.Equals(input.Record))
+                (this.Record is not null &&
+                this.Record.Equals(input?.Record))
             ) &&
             (
                 this.Rank == input.Rank ||
@@ -153,7 +153,7 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
             ) &&
             (
                 this.TeamKey == input.TeamKey ||
-                (this.TeamKey != null &&
+                (this.TeamKey is not null &&
                 this.TeamKey.Equals(input.TeamKey))
             );
     }
@@ -169,19 +169,19 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.MatchesPlayed.GetHashCode();
             hashCode = (hashCode * 59) + this.QualAverage.GetHashCode();
-            if (this.SortOrders != null)
+            if (this.SortOrders is not null)
             {
                 hashCode = (hashCode * 59) + this.SortOrders.GetHashCode();
             }
 
-            if (this.Record != null)
+            if (this.Record is not null)
             {
                 hashCode = (hashCode * 59) + this.Record.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.Rank.GetHashCode();
             hashCode = (hashCode * 59) + this.Dq.GetHashCode();
-            if (this.TeamKey != null)
+            if (this.TeamKey is not null)
             {
                 hashCode = (hashCode * 59) + this.TeamKey.GetHashCode();
             }

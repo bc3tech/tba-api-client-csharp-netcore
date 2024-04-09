@@ -38,7 +38,7 @@ public partial class DistrictRankingEventPoints : IEquatable<DistrictRankingEven
     /// <param name="awardPoints">Points awarded for event awards. (required).</param>
     /// <param name="eventKey">TBA Event key for this event. (required).</param>
     /// <param name="qualPoints">Points awarded for qualification match performance. (required).</param>
-    public DistrictRankingEventPoints(bool districtCmp = default, int total = default, int alliancePoints = default, int elimPoints = default, int awardPoints = default, string eventKey = default, int qualPoints = default)
+    public DistrictRankingEventPoints(bool districtCmp = default, int total = default, int alliancePoints = default, int elimPoints = default, int awardPoints = default, string? eventKey = default, int qualPoints = default)
     {
         this.DistrictCmp = districtCmp;
         this.Total = total;
@@ -129,16 +129,16 @@ public partial class DistrictRankingEventPoints : IEquatable<DistrictRankingEven
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as DistrictRankingEventPoints);
+    public override bool Equals(object? input) => Equals(input as DistrictRankingEventPoints);
 
     /// <summary>
     /// Returns true if DistrictRankingEventPoints instances are equal
     /// </summary>
     /// <param name="input">Instance of DistrictRankingEventPoints to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(DistrictRankingEventPoints input)
+    public bool Equals(DistrictRankingEventPoints? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.DistrictCmp == input.DistrictCmp ||
                 this.DistrictCmp.Equals(input.DistrictCmp)
@@ -161,7 +161,7 @@ public partial class DistrictRankingEventPoints : IEquatable<DistrictRankingEven
             ) &&
             (
                 this.EventKey == input.EventKey ||
-                (this.EventKey != null &&
+                (this.EventKey is not null &&
                 this.EventKey.Equals(input.EventKey))
             ) &&
             (
@@ -184,7 +184,7 @@ public partial class DistrictRankingEventPoints : IEquatable<DistrictRankingEven
             hashCode = (hashCode * 59) + this.AlliancePoints.GetHashCode();
             hashCode = (hashCode * 59) + this.ElimPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.AwardPoints.GetHashCode();
-            if (this.EventKey != null)
+            if (this.EventKey is not null)
             {
                 hashCode = (hashCode * 59) + this.EventKey.GetHashCode();
             }

@@ -9,9 +9,6 @@
  */
 
 namespace TBAAPI.V3Client.Client;
-
-using System.Collections.Generic;
-
 /// <summary>
 /// <see cref="GlobalConfiguration"/> provides a compile-time extension point for globally configuring
 /// API Clients.
@@ -22,42 +19,12 @@ using System.Collections.Generic;
 /// </remarks>
 public partial class GlobalConfiguration : Configuration
 {
-    #region Private Members
-
-    private static readonly object GlobalConfigSync = new { };
-    private static IReadableConfiguration _globalConfiguration;
-
-    #endregion Private Members
-
-    #region Constructors
-
     /// <inheritdoc />
-    private GlobalConfiguration()
-    {
-    }
-
-    /// <inheritdoc />
-    public GlobalConfiguration(IDictionary<string, string> defaultHeader, IDictionary<string, string> apiKey, IDictionary<string, string> apiKeyPrefix, string basePath = "http://localhost:3000/api") : base(defaultHeader, apiKey, apiKeyPrefix, basePath)
-    {
-    }
-
-    static GlobalConfiguration() => Instance = new GlobalConfiguration();
-
-    #endregion Constructors
+    private GlobalConfiguration() : base() { }
 
     /// <summary>
     /// Gets or sets the default Configuration.
     /// </summary>
     /// <value>Configuration.</value>
-    public static IReadableConfiguration Instance
-    {
-        get => _globalConfiguration;
-        set
-        {
-            lock (GlobalConfigSync)
-            {
-                _globalConfiguration = value;
-            }
-        }
-    }
+    public static IReadableConfiguration Instance { get; } = new GlobalConfiguration();
 }

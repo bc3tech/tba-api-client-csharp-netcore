@@ -28,12 +28,13 @@ public partial class EventRankingSortOrderInfo : IEquatable<EventRankingSortOrde
     /// </summary>
     [JsonConstructor]
     protected EventRankingSortOrderInfo() { }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="EventRankingSortOrderInfo" /> class.
     /// </summary>
     /// <param name="precision">Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;. (required).</param>
     /// <param name="name">Name of the field used in the &#x60;sort_order&#x60; array. (required).</param>
-    public EventRankingSortOrderInfo(int precision = default, string name = default)
+    public EventRankingSortOrderInfo(int precision = default, string? name = default)
     {
         this.Precision = precision;
         // to ensure "name" is required (not null)
@@ -52,7 +53,7 @@ public partial class EventRankingSortOrderInfo : IEquatable<EventRankingSortOrde
     /// </summary>
     /// <value>Name of the field used in the &#x60;sort_order&#x60; array.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -79,23 +80,23 @@ public partial class EventRankingSortOrderInfo : IEquatable<EventRankingSortOrde
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventRankingSortOrderInfo);
+    public override bool Equals(object? input) => Equals(input as EventRankingSortOrderInfo);
 
     /// <summary>
     /// Returns true if EventRankingSortOrderInfo instances are equal
     /// </summary>
     /// <param name="input">Instance of EventRankingSortOrderInfo to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventRankingSortOrderInfo input)
+    public bool Equals(EventRankingSortOrderInfo? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Precision == input.Precision ||
                 this.Precision.Equals(input.Precision)
             ) &&
             (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             );
     }
@@ -110,7 +111,7 @@ public partial class EventRankingSortOrderInfo : IEquatable<EventRankingSortOrde
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Precision.GetHashCode();
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }

@@ -26,7 +26,7 @@ using System.Text.Json.Serialization;
 /// <param name="qual">Inights for the qualification round of an event.</param>
 /// <param name="playoff">Insights for the playoff round of an event.</param>
 [DataContract]
-public partial class EventInsights(object qual = default, object playoff = default) : IEquatable<EventInsights>, IValidatableObject
+public partial class EventInsights(object? qual = default, object? playoff = default) : IEquatable<EventInsights>, IValidatableObject
 {
 
     /// <summary>
@@ -34,14 +34,14 @@ public partial class EventInsights(object qual = default, object playoff = defau
     /// </summary>
     /// <value>Inights for the qualification round of an event</value>
     [DataMember(Name = "qual", EmitDefaultValue = false), JsonPropertyName("qual")]
-    public object Qual { get; set; } = qual;
+    public object? Qual { get; set; } = qual;
 
     /// <summary>
     /// Insights for the playoff round of an event
     /// </summary>
     /// <value>Insights for the playoff round of an event</value>
     [DataMember(Name = "playoff", EmitDefaultValue = false), JsonPropertyName("playoff")]
-    public object Playoff { get; set; } = playoff;
+    public object? Playoff { get; set; } = playoff;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -68,24 +68,24 @@ public partial class EventInsights(object qual = default, object playoff = defau
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventInsights);
+    public override bool Equals(object? input) => Equals(input as EventInsights);
 
     /// <summary>
     /// Returns true if EventInsights instances are equal
     /// </summary>
     /// <param name="input">Instance of EventInsights to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventInsights input)
+    public bool Equals(EventInsights? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Qual == input.Qual ||
-                (this.Qual != null &&
+                (this.Qual is not null &&
                 this.Qual.Equals(input.Qual))
             ) &&
             (
                 this.Playoff == input.Playoff ||
-                (this.Playoff != null &&
+                (this.Playoff is not null &&
                 this.Playoff.Equals(input.Playoff))
             );
     }
@@ -94,32 +94,12 @@ public partial class EventInsights(object qual = default, object playoff = defau
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        unchecked // Overflow is fine, just wrap
-        {
-            var hashCode = 41;
-            if (this.Qual != null)
-            {
-                hashCode = (hashCode * 59) + this.Qual.GetHashCode();
-            }
-
-            if (this.Playoff != null)
-            {
-                hashCode = (hashCode * 59) + this.Playoff.GetHashCode();
-            }
-
-            return hashCode;
-        }
-    }
+    public override int GetHashCode() => HashCode.Combine(this.Qual, this.Playoff);
 
     /// <summary>
     /// To validate all properties of the instance
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

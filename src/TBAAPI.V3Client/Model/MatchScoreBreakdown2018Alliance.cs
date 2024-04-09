@@ -61,7 +61,7 @@ using System.Text.Json.Serialization;
 /// <param name="vaultPoints">vaultPoints.</param>
 /// <param name="tbaGameData">Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing &#x60;L&#x60; and &#x60;R&#x60; only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance&#39;s perspective. An &#x60;L&#x60; in a position indicates the platform on the left will be lit for the alliance while an &#x60;R&#x60; will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details)..</param>
 [DataContract]
-public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default, int autoOwnershipPoints = default, int autoPoints = default, bool autoQuestRankingPoint = default, string autoRobot1 = default, string autoRobot2 = default, string autoRobot3 = default, int autoRunPoints = default, int autoScaleOwnershipSec = default, bool autoSwitchAtZero = default, int autoSwitchOwnershipSec = default, int endgamePoints = default, string endgameRobot1 = default, string endgameRobot2 = default, string endgameRobot3 = default, bool faceTheBossRankingPoint = default, int foulCount = default, int foulPoints = default, int rp = default, int techFoulCount = default, int teleopOwnershipPoints = default, int teleopPoints = default, int teleopScaleBoostSec = default, int teleopScaleForceSec = default, int teleopScaleOwnershipSec = default, int teleopSwitchBoostSec = default, int teleopSwitchForceSec = default, int teleopSwitchOwnershipSec = default, int totalPoints = default, int vaultBoostPlayed = default, int vaultBoostTotal = default, int vaultForcePlayed = default, int vaultForceTotal = default, int vaultLevitatePlayed = default, int vaultLevitateTotal = default, int vaultPoints = default, string tbaGameData = default) : IEquatable<MatchScoreBreakdown2018Alliance>, IValidatableObject
+public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default, int autoOwnershipPoints = default, int autoPoints = default, bool autoQuestRankingPoint = default, string? autoRobot1 = default, string? autoRobot2 = default, string? autoRobot3 = default, int autoRunPoints = default, int autoScaleOwnershipSec = default, bool autoSwitchAtZero = default, int autoSwitchOwnershipSec = default, int endgamePoints = default, string? endgameRobot1 = default, string? endgameRobot2 = default, string? endgameRobot3 = default, bool faceTheBossRankingPoint = default, int foulCount = default, int foulPoints = default, int rp = default, int techFoulCount = default, int teleopOwnershipPoints = default, int teleopPoints = default, int teleopScaleBoostSec = default, int teleopScaleForceSec = default, int teleopScaleOwnershipSec = default, int teleopSwitchBoostSec = default, int teleopSwitchForceSec = default, int teleopSwitchOwnershipSec = default, int totalPoints = default, int vaultBoostPlayed = default, int vaultBoostTotal = default, int vaultForcePlayed = default, int vaultForceTotal = default, int vaultLevitatePlayed = default, int vaultLevitateTotal = default, int vaultPoints = default, string? tbaGameData = default) : IEquatable<MatchScoreBreakdown2018Alliance>, IValidatableObject
 {
 
     /// <summary>
@@ -347,16 +347,16 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2018Alliance);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2018Alliance);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2018Alliance instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2018Alliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2018Alliance input)
+    public bool Equals(MatchScoreBreakdown2018Alliance? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.AdjustPoints == input.AdjustPoints ||
                 this.AdjustPoints.Equals(input.AdjustPoints)
@@ -375,17 +375,17 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
             ) &&
             (
                 this.AutoRobot1 == input.AutoRobot1 ||
-                (this.AutoRobot1 != null &&
+                (this.AutoRobot1 is not null &&
                 this.AutoRobot1.Equals(input.AutoRobot1))
             ) &&
             (
                 this.AutoRobot2 == input.AutoRobot2 ||
-                (this.AutoRobot2 != null &&
+                (this.AutoRobot2 is not null &&
                 this.AutoRobot2.Equals(input.AutoRobot2))
             ) &&
             (
                 this.AutoRobot3 == input.AutoRobot3 ||
-                (this.AutoRobot3 != null &&
+                (this.AutoRobot3 is not null &&
                 this.AutoRobot3.Equals(input.AutoRobot3))
             ) &&
             (
@@ -410,17 +410,17 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
             ) &&
             (
                 this.EndgameRobot1 == input.EndgameRobot1 ||
-                (this.EndgameRobot1 != null &&
+                (this.EndgameRobot1 is not null &&
                 this.EndgameRobot1.Equals(input.EndgameRobot1))
             ) &&
             (
                 this.EndgameRobot2 == input.EndgameRobot2 ||
-                (this.EndgameRobot2 != null &&
+                (this.EndgameRobot2 is not null &&
                 this.EndgameRobot2.Equals(input.EndgameRobot2))
             ) &&
             (
                 this.EndgameRobot3 == input.EndgameRobot3 ||
-                (this.EndgameRobot3 != null &&
+                (this.EndgameRobot3 is not null &&
                 this.EndgameRobot3.Equals(input.EndgameRobot3))
             ) &&
             (
@@ -509,7 +509,7 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
             ) &&
             (
                 this.TbaGameData == input.TbaGameData ||
-                (this.TbaGameData != null &&
+                (this.TbaGameData is not null &&
                 this.TbaGameData.Equals(input.TbaGameData))
             );
     }
@@ -527,17 +527,17 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
             hashCode = (hashCode * 59) + this.AutoOwnershipPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.AutoPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.AutoQuestRankingPoint.GetHashCode();
-            if (this.AutoRobot1 != null)
+            if (this.AutoRobot1 is not null)
             {
                 hashCode = (hashCode * 59) + this.AutoRobot1.GetHashCode();
             }
 
-            if (this.AutoRobot2 != null)
+            if (this.AutoRobot2 is not null)
             {
                 hashCode = (hashCode * 59) + this.AutoRobot2.GetHashCode();
             }
 
-            if (this.AutoRobot3 != null)
+            if (this.AutoRobot3 is not null)
             {
                 hashCode = (hashCode * 59) + this.AutoRobot3.GetHashCode();
             }
@@ -547,17 +547,17 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
             hashCode = (hashCode * 59) + this.AutoSwitchAtZero.GetHashCode();
             hashCode = (hashCode * 59) + this.AutoSwitchOwnershipSec.GetHashCode();
             hashCode = (hashCode * 59) + this.EndgamePoints.GetHashCode();
-            if (this.EndgameRobot1 != null)
+            if (this.EndgameRobot1 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot1.GetHashCode();
             }
 
-            if (this.EndgameRobot2 != null)
+            if (this.EndgameRobot2 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot2.GetHashCode();
             }
 
-            if (this.EndgameRobot3 != null)
+            if (this.EndgameRobot3 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot3.GetHashCode();
             }
@@ -583,7 +583,7 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
             hashCode = (hashCode * 59) + this.VaultLevitatePlayed.GetHashCode();
             hashCode = (hashCode * 59) + this.VaultLevitateTotal.GetHashCode();
             hashCode = (hashCode * 59) + this.VaultPoints.GetHashCode();
-            if (this.TbaGameData != null)
+            if (this.TbaGameData is not null)
             {
                 hashCode = (hashCode * 59) + this.TbaGameData.GetHashCode();
             }

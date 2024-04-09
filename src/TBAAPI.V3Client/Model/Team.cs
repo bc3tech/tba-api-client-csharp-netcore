@@ -50,7 +50,7 @@ public partial class Team : IEquatable<Team>, IValidatableObject
     /// <param name="rookieYear">First year the team officially competed..</param>
     /// <param name="motto">Team&#39;s motto as provided by FIRST. This field is deprecated and will return null - will be removed at end-of-season in 2019..</param>
     /// <param name="homeChampionship">Location of the team&#39;s home championship each year as a key-value pair. The year (as a string) is the key, and the city is the value..</param>
-    public Team(string key = default, int teamNumber = default, string nickname = default, string name = default, string schoolName = default, string city = default, string stateProv = default, string country = default, string address = default, string postalCode = default, string gmapsPlaceId = default, string gmapsUrl = default, double lat = default, double lng = default, string locationName = default, string website = default, int rookieYear = default, string motto = default, object homeChampionship = default)
+    public Team(string? key = default, int teamNumber = default, string? nickname = default, string? name = default, string? schoolName = default, string? city = default, string? stateProv = default, string? country = default, string? address = default, string? postalCode = default, string? gmapsPlaceId = default, string? gmapsUrl = default, double lat = default, double lng = default, string? locationName = default, string? website = default, int rookieYear = default, string? motto = default, object? homeChampionship = default)
     {
         // to ensure "key" is required (not null)
         this.Key = key ?? throw new ArgumentNullException(nameof(key));
@@ -250,19 +250,19 @@ public partial class Team : IEquatable<Team>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as Team);
+    public override bool Equals(object? input) => Equals(input as Team);
 
     /// <summary>
     /// Returns true if Team instances are equal
     /// </summary>
     /// <param name="input">Instance of Team to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(Team input)
+    public bool Equals(Team? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
@@ -271,52 +271,52 @@ public partial class Team : IEquatable<Team>, IValidatableObject
             ) &&
             (
                 this.Nickname == input.Nickname ||
-                (this.Nickname != null &&
+                (this.Nickname is not null &&
                 this.Nickname.Equals(input.Nickname))
             ) &&
             (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             ) &&
             (
                 this.SchoolName == input.SchoolName ||
-                (this.SchoolName != null &&
+                (this.SchoolName is not null &&
                 this.SchoolName.Equals(input.SchoolName))
             ) &&
             (
                 this.City == input.City ||
-                (this.City != null &&
+                (this.City is not null &&
                 this.City.Equals(input.City))
             ) &&
             (
                 this.StateProv == input.StateProv ||
-                (this.StateProv != null &&
+                (this.StateProv is not null &&
                 this.StateProv.Equals(input.StateProv))
             ) &&
             (
                 this.Country == input.Country ||
-                (this.Country != null &&
+                (this.Country is not null &&
                 this.Country.Equals(input.Country))
             ) &&
             (
                 this.Address == input.Address ||
-                (this.Address != null &&
+                (this.Address is not null &&
                 this.Address.Equals(input.Address))
             ) &&
             (
                 this.PostalCode == input.PostalCode ||
-                (this.PostalCode != null &&
+                (this.PostalCode is not null &&
                 this.PostalCode.Equals(input.PostalCode))
             ) &&
             (
                 this.GmapsPlaceId == input.GmapsPlaceId ||
-                (this.GmapsPlaceId != null &&
+                (this.GmapsPlaceId is not null &&
                 this.GmapsPlaceId.Equals(input.GmapsPlaceId))
             ) &&
             (
                 this.GmapsUrl == input.GmapsUrl ||
-                (this.GmapsUrl != null &&
+                (this.GmapsUrl is not null &&
                 this.GmapsUrl.Equals(input.GmapsUrl))
             ) &&
             (
@@ -329,12 +329,12 @@ public partial class Team : IEquatable<Team>, IValidatableObject
             ) &&
             (
                 this.LocationName == input.LocationName ||
-                (this.LocationName != null &&
+                (this.LocationName is not null &&
                 this.LocationName.Equals(input.LocationName))
             ) &&
             (
                 this.Website == input.Website ||
-                (this.Website != null &&
+                (this.Website is not null &&
                 this.Website.Equals(input.Website))
             ) &&
             (
@@ -343,12 +343,12 @@ public partial class Team : IEquatable<Team>, IValidatableObject
             ) &&
             (
                 this.Motto == input.Motto ||
-                (this.Motto != null &&
+                (this.Motto is not null &&
                 this.Motto.Equals(input.Motto))
             ) &&
             (
                 this.HomeChampionship == input.HomeChampionship ||
-                (this.HomeChampionship != null &&
+                (this.HomeChampionship is not null &&
                 this.HomeChampionship.Equals(input.HomeChampionship))
             );
     }
@@ -362,81 +362,81 @@ public partial class Team : IEquatable<Team>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.TeamNumber.GetHashCode();
-            if (this.Nickname != null)
+            if (this.Nickname is not null)
             {
                 hashCode = (hashCode * 59) + this.Nickname.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }
 
-            if (this.SchoolName != null)
+            if (this.SchoolName is not null)
             {
                 hashCode = (hashCode * 59) + this.SchoolName.GetHashCode();
             }
 
-            if (this.City != null)
+            if (this.City is not null)
             {
                 hashCode = (hashCode * 59) + this.City.GetHashCode();
             }
 
-            if (this.StateProv != null)
+            if (this.StateProv is not null)
             {
                 hashCode = (hashCode * 59) + this.StateProv.GetHashCode();
             }
 
-            if (this.Country != null)
+            if (this.Country is not null)
             {
                 hashCode = (hashCode * 59) + this.Country.GetHashCode();
             }
 
-            if (this.Address != null)
+            if (this.Address is not null)
             {
                 hashCode = (hashCode * 59) + this.Address.GetHashCode();
             }
 
-            if (this.PostalCode != null)
+            if (this.PostalCode is not null)
             {
                 hashCode = (hashCode * 59) + this.PostalCode.GetHashCode();
             }
 
-            if (this.GmapsPlaceId != null)
+            if (this.GmapsPlaceId is not null)
             {
                 hashCode = (hashCode * 59) + this.GmapsPlaceId.GetHashCode();
             }
 
-            if (this.GmapsUrl != null)
+            if (this.GmapsUrl is not null)
             {
                 hashCode = (hashCode * 59) + this.GmapsUrl.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.Lat.GetHashCode();
             hashCode = (hashCode * 59) + this.Lng.GetHashCode();
-            if (this.LocationName != null)
+            if (this.LocationName is not null)
             {
                 hashCode = (hashCode * 59) + this.LocationName.GetHashCode();
             }
 
-            if (this.Website != null)
+            if (this.Website is not null)
             {
                 hashCode = (hashCode * 59) + this.Website.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.RookieYear.GetHashCode();
-            if (this.Motto != null)
+            if (this.Motto is not null)
             {
                 hashCode = (hashCode * 59) + this.Motto.GetHashCode();
             }
 
-            if (this.HomeChampionship != null)
+            if (this.HomeChampionship is not null)
             {
                 hashCode = (hashCode * 59) + this.HomeChampionship.GetHashCode();
             }

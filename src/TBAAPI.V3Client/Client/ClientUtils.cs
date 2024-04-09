@@ -12,6 +12,7 @@ namespace TBAAPI.V3Client.Client;
 
 using System;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -41,9 +42,9 @@ public static partial class ClientUtils
     /// <param name="name">Key name.</param>
     /// <param name="value">Value object.</param>
     /// <returns>A multimap of keys with 1..n associated values.</returns>
-    public static Multimap<string, string> ParameterToMultiMap(string collectionFormat, string name, object value)
+    public static Multimap<string, string?> ParameterToMultiMap(string collectionFormat, string name, object value)
     {
-        var parameters = new Multimap<string, string>();
+        var parameters = new Multimap<string, string?>();
 
         if (value is ICollection collection && collectionFormat == "multi")
         {
@@ -68,30 +69,57 @@ public static partial class ClientUtils
     /// <param name="obj">The parameter (header, path, query, form).</param>
     /// <param name="configuration">An optional configuration instance, providing formatting options used in processing.</param>
     /// <returns>Formatted string.</returns>
-    public static string ParameterToString(object obj, IReadableConfiguration configuration = null)
+    public static string? ParameterToString(object? obj, IReadableConfiguration? configuration = null)
     {
-        if (obj is DateTime dateTime)
+        return obj switch
         {
             // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
             // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
             // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
             // For example: 2009-06-15T13:45:30.0000000
-            return dateTime.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
-        }
-
-        if (obj is DateTimeOffset dateTimeOffset)
-        {
+            DateTime dateTime => ParameterToString(dateTime, configuration),
             // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
             // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
             // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
             // For example: 2009-06-15T13:45:30.0000000
-            return dateTimeOffset.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
-        }
-
-        return obj is bool boolean
-            ? boolean ? "true" : "false"
-            : obj is ICollection collection ? string.Join(",", collection.Cast<object>()) : Convert.ToString(obj);
+            DateTimeOffset dateTimeOffset => ParameterToString(dateTimeOffset, configuration),
+            ICollection collection => ParameterToString(collection),
+            bool boolean => boolean.ToString().ToLowerInvariant(),
+            string s => s,
+            _ => Convert.ToString(obj)
+        };
     }
+    /// <summary>
+    /// Join the list with ",".
+    /// </summary>
+    /// <param name="obj">The parameter (header, path, query, form).</param>
+    /// <returns>Formatted string.</returns>
+    [return: NotNullIfNotNull(nameof(obj))]
+    public static string? ParameterToString<T>(ICollection<T>? obj) => obj is not null ? string.Join(",", obj) : null;
+
+    /// <summary>
+    /// Return a formatted date string - Can be customized with Configuration.DateTimeFormat
+    /// Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
+    /// https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
+    /// For example: 2009-06-15T13:45:30.0000000
+    /// </summary>
+    /// <param name="obj">The parameter (header, path, query, form).</param>
+    /// <param name="configuration">An optional configuration instance, providing formatting options used in processing.</param>
+    /// <returns>Formatted string.</returns>
+    [return: NotNullIfNotNull(nameof(obj))]
+    public static string? ParameterToString(DateTime? obj, IReadableConfiguration? configuration = null) => obj?.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
+
+    /// <summary>
+    /// Return a formatted date string - Can be customized with Configuration.DateTimeFormat
+    /// Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
+    /// https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
+    /// For example: 2009-06-15T13:45:30.0000000
+    /// </summary>
+    /// <param name="obj">The parameter (header, path, query, form).</param>
+    /// <param name="configuration">An optional configuration instance, providing formatting options used in processing.</param>
+    /// <returns>Formatted string.</returns>
+    [return: NotNullIfNotNull(nameof(obj))]
+    public static string? ParameterToString(DateTimeOffset? obj, IReadableConfiguration? configuration = null) => obj?.ToString((configuration ?? GlobalConfiguration.Instance).DateTimeFormat);
 
     /// <summary>
     /// URL encode a string
@@ -151,7 +179,7 @@ public static partial class ClientUtils
     /// </summary>
     /// <param name="contentTypes">The Content-Type array to select from.</param>
     /// <returns>The Content-Type header to use.</returns>
-    public static string SelectHeaderContentType(string[] contentTypes)
+    public static string? SelectHeaderContentType(string[] contentTypes)
     {
         if (contentTypes.Length == 0)
         {
@@ -176,7 +204,7 @@ public static partial class ClientUtils
     /// </summary>
     /// <param name="accepts">The accepts array to select from.</param>
     /// <returns>The Accept header to use.</returns>
-    public static string SelectHeaderAccept(string[] accepts)
+    public static string? SelectHeaderAccept(string[] accepts)
     {
         return accepts.Length == 0
             ? null

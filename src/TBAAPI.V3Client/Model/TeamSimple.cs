@@ -39,7 +39,7 @@ public partial class TeamSimple : IEquatable<TeamSimple>, IValidatableObject
     /// <param name="city">City of team derived from parsing the address registered with FIRST..</param>
     /// <param name="stateProv">State of team derived from parsing the address registered with FIRST..</param>
     /// <param name="country">Country of team derived from parsing the address registered with FIRST..</param>
-    public TeamSimple(string key = default, int teamNumber = default, string nickname = default, string name = default, string city = default, string stateProv = default, string country = default)
+    public TeamSimple(string? key = default, int teamNumber = default, string? nickname = default, string? name = default, string? city = default, string? stateProv = default, string? country = default)
     {
         // to ensure "key" is required (not null)
         this.Key = key ?? throw new ArgumentNullException(nameof(key));
@@ -131,19 +131,19 @@ public partial class TeamSimple : IEquatable<TeamSimple>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamSimple);
+    public override bool Equals(object? input) => Equals(input as TeamSimple);
 
     /// <summary>
     /// Returns true if TeamSimple instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamSimple to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamSimple input)
+    public bool Equals(TeamSimple? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
@@ -152,27 +152,27 @@ public partial class TeamSimple : IEquatable<TeamSimple>, IValidatableObject
             ) &&
             (
                 this.Nickname == input.Nickname ||
-                (this.Nickname != null &&
+                (this.Nickname is not null &&
                 this.Nickname.Equals(input.Nickname))
             ) &&
             (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             ) &&
             (
                 this.City == input.City ||
-                (this.City != null &&
+                (this.City is not null &&
                 this.City.Equals(input.City))
             ) &&
             (
                 this.StateProv == input.StateProv ||
-                (this.StateProv != null &&
+                (this.StateProv is not null &&
                 this.StateProv.Equals(input.StateProv))
             ) &&
             (
                 this.Country == input.Country ||
-                (this.Country != null &&
+                (this.Country is not null &&
                 this.Country.Equals(input.Country))
             );
     }
@@ -186,33 +186,33 @@ public partial class TeamSimple : IEquatable<TeamSimple>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.TeamNumber.GetHashCode();
-            if (this.Nickname != null)
+            if (this.Nickname is not null)
             {
                 hashCode = (hashCode * 59) + this.Nickname.GetHashCode();
             }
 
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }
 
-            if (this.City != null)
+            if (this.City is not null)
             {
                 hashCode = (hashCode * 59) + this.City.GetHashCode();
             }
 
-            if (this.StateProv != null)
+            if (this.StateProv is not null)
             {
                 hashCode = (hashCode * 59) + this.StateProv.GetHashCode();
             }
 
-            if (this.Country != null)
+            if (this.Country is not null)
             {
                 hashCode = (hashCode * 59) + this.Country.GetHashCode();
             }

@@ -27,7 +27,7 @@ using System.Text.Json.Serialization;
 /// <param name="_in">Team key that was called in as the backup..</param>
 /// <param name="_out">Team key that was replaced by the backup team..</param>
 [DataContract]
-public partial class EliminationAllianceBackup(string _in = default, string _out = default) : IEquatable<EliminationAllianceBackup>, IValidatableObject
+public partial class EliminationAllianceBackup(string? _in = default, string? _out = default) : IEquatable<EliminationAllianceBackup>, IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +35,14 @@ public partial class EliminationAllianceBackup(string _in = default, string _out
     /// </summary>
     /// <value>Team key that was called in as the backup.</value>
     [DataMember(Name = "in", EmitDefaultValue = false), JsonPropertyName("in")]
-    public string In { get; set; } = _in;
+    public string? In { get; set; } = _in;
 
     /// <summary>
     /// Team key that was replaced by the backup team.
     /// </summary>
     /// <value>Team key that was replaced by the backup team.</value>
     [DataMember(Name = "out", EmitDefaultValue = false), JsonPropertyName("out")]
-    public string Out { get; set; } = _out;
+    public string? Out { get; set; } = _out;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -69,24 +69,24 @@ public partial class EliminationAllianceBackup(string _in = default, string _out
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EliminationAllianceBackup);
+    public override bool Equals(object? input) => Equals(input as EliminationAllianceBackup);
 
     /// <summary>
     /// Returns true if EliminationAllianceBackup instances are equal
     /// </summary>
     /// <param name="input">Instance of EliminationAllianceBackup to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EliminationAllianceBackup input)
+    public bool Equals(EliminationAllianceBackup? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.In == input.In ||
-                (this.In != null &&
+                (this.In is not null &&
                 this.In.Equals(input.In))
             ) &&
             (
                 this.Out == input.Out ||
-                (this.Out != null &&
+                (this.Out is not null &&
                 this.Out.Equals(input.Out))
             );
     }
@@ -95,32 +95,12 @@ public partial class EliminationAllianceBackup(string _in = default, string _out
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        unchecked // Overflow is fine, just wrap
-        {
-            var hashCode = 41;
-            if (this.In != null)
-            {
-                hashCode = (hashCode * 59) + this.In.GetHashCode();
-            }
-
-            if (this.Out != null)
-            {
-                hashCode = (hashCode * 59) + this.Out.GetHashCode();
-            }
-
-            return hashCode;
-        }
-    }
+    public override int GetHashCode() => HashCode.Combine(this.In, this.Out);
 
     /// <summary>
     /// To validate all properties of the instance
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

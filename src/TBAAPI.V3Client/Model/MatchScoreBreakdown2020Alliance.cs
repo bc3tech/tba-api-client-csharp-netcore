@@ -58,44 +58,44 @@ using System.Text.Json.Serialization;
 /// <param name="rp">rp.</param>
 /// <param name="totalPoints">totalPoints.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2020Alliance(string initLineRobot1 = default, string endgameRobot1 = default, string initLineRobot2 = default, string endgameRobot2 = default, string initLineRobot3 = default, string endgameRobot3 = default, int autoCellsBottom = default, int autoCellsOuter = default, int autoCellsInner = default, int teleopCellsBottom = default, int teleopCellsOuter = default, int teleopCellsInner = default, bool stage1Activated = default, bool stage2Activated = default, bool stage3Activated = default, string stage3TargetColor = default, string endgameRungIsLevel = default, int autoInitLinePoints = default, int autoCellPoints = default, int autoPoints = default, int teleopCellPoints = default, int controlPanelPoints = default, int endgamePoints = default, int teleopPoints = default, bool shieldOperationalRankingPoint = default, bool shieldEnergizedRankingPoint = default, bool tbaShieldEnergizedRankingPointFromFoul = default, int tbaNumRobotsHanging = default, int foulCount = default, int techFoulCount = default, int adjustPoints = default, int foulPoints = default, int rp = default, int totalPoints = default) : IEquatable<MatchScoreBreakdown2020Alliance>, IValidatableObject
+public partial class MatchScoreBreakdown2020Alliance(string? initLineRobot1 = default, string? endgameRobot1 = default, string? initLineRobot2 = default, string? endgameRobot2 = default, string? initLineRobot3 = default, string? endgameRobot3 = default, int autoCellsBottom = default, int autoCellsOuter = default, int autoCellsInner = default, int teleopCellsBottom = default, int teleopCellsOuter = default, int teleopCellsInner = default, bool stage1Activated = default, bool stage2Activated = default, bool stage3Activated = default, string? stage3TargetColor = default, string? endgameRungIsLevel = default, int autoInitLinePoints = default, int autoCellPoints = default, int autoPoints = default, int teleopCellPoints = default, int controlPanelPoints = default, int endgamePoints = default, int teleopPoints = default, bool shieldOperationalRankingPoint = default, bool shieldEnergizedRankingPoint = default, bool tbaShieldEnergizedRankingPointFromFoul = default, int tbaNumRobotsHanging = default, int foulCount = default, int techFoulCount = default, int adjustPoints = default, int foulPoints = default, int rp = default, int totalPoints = default) : IEquatable<MatchScoreBreakdown2020Alliance>, IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets InitLineRobot1
     /// </summary>
     [DataMember(Name = "initLineRobot1", EmitDefaultValue = false), JsonPropertyName("initLineRobot1")]
-    public string InitLineRobot1 { get; set; } = initLineRobot1;
+    public string? InitLineRobot1 { get; set; } = initLineRobot1;
 
     /// <summary>
     /// Gets or Sets EndgameRobot1
     /// </summary>
     [DataMember(Name = "endgameRobot1", EmitDefaultValue = false), JsonPropertyName("endgameRobot1")]
-    public string EndgameRobot1 { get; set; } = endgameRobot1;
+    public string? EndgameRobot1 { get; set; } = endgameRobot1;
 
     /// <summary>
     /// Gets or Sets InitLineRobot2
     /// </summary>
     [DataMember(Name = "initLineRobot2", EmitDefaultValue = false), JsonPropertyName("initLineRobot2")]
-    public string InitLineRobot2 { get; set; } = initLineRobot2;
+    public string? InitLineRobot2 { get; set; } = initLineRobot2;
 
     /// <summary>
     /// Gets or Sets EndgameRobot2
     /// </summary>
     [DataMember(Name = "endgameRobot2", EmitDefaultValue = false), JsonPropertyName("endgameRobot2")]
-    public string EndgameRobot2 { get; set; } = endgameRobot2;
+    public string? EndgameRobot2 { get; set; } = endgameRobot2;
 
     /// <summary>
     /// Gets or Sets InitLineRobot3
     /// </summary>
     [DataMember(Name = "initLineRobot3", EmitDefaultValue = false), JsonPropertyName("initLineRobot3")]
-    public string InitLineRobot3 { get; set; } = initLineRobot3;
+    public string? InitLineRobot3 { get; set; } = initLineRobot3;
 
     /// <summary>
     /// Gets or Sets EndgameRobot3
     /// </summary>
     [DataMember(Name = "endgameRobot3", EmitDefaultValue = false), JsonPropertyName("endgameRobot3")]
-    public string EndgameRobot3 { get; set; } = endgameRobot3;
+    public string? EndgameRobot3 { get; set; } = endgameRobot3;
 
     /// <summary>
     /// Gets or Sets AutoCellsBottom
@@ -155,13 +155,13 @@ public partial class MatchScoreBreakdown2020Alliance(string initLineRobot1 = def
     /// Gets or Sets Stage3TargetColor
     /// </summary>
     [DataMember(Name = "stage3TargetColor", EmitDefaultValue = false), JsonPropertyName("stage3TargetColor")]
-    public string Stage3TargetColor { get; set; } = stage3TargetColor;
+    public string? Stage3TargetColor { get; set; } = stage3TargetColor;
 
     /// <summary>
     /// Gets or Sets EndgameRungIsLevel
     /// </summary>
     [DataMember(Name = "endgameRungIsLevel", EmitDefaultValue = false), JsonPropertyName("endgameRungIsLevel")]
-    public string EndgameRungIsLevel { get; set; } = endgameRungIsLevel;
+    public string? EndgameRungIsLevel { get; set; } = endgameRungIsLevel;
 
     /// <summary>
     /// Gets or Sets AutoInitLinePoints
@@ -324,44 +324,44 @@ public partial class MatchScoreBreakdown2020Alliance(string initLineRobot1 = def
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2020Alliance);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2020Alliance);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2020Alliance instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2020Alliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2020Alliance input)
+    public bool Equals(MatchScoreBreakdown2020Alliance? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.InitLineRobot1 == input.InitLineRobot1 ||
-                (this.InitLineRobot1 != null &&
+                (this.InitLineRobot1 is not null &&
                 this.InitLineRobot1.Equals(input.InitLineRobot1))
             ) &&
             (
                 this.EndgameRobot1 == input.EndgameRobot1 ||
-                (this.EndgameRobot1 != null &&
+                (this.EndgameRobot1 is not null &&
                 this.EndgameRobot1.Equals(input.EndgameRobot1))
             ) &&
             (
                 this.InitLineRobot2 == input.InitLineRobot2 ||
-                (this.InitLineRobot2 != null &&
+                (this.InitLineRobot2 is not null &&
                 this.InitLineRobot2.Equals(input.InitLineRobot2))
             ) &&
             (
                 this.EndgameRobot2 == input.EndgameRobot2 ||
-                (this.EndgameRobot2 != null &&
+                (this.EndgameRobot2 is not null &&
                 this.EndgameRobot2.Equals(input.EndgameRobot2))
             ) &&
             (
                 this.InitLineRobot3 == input.InitLineRobot3 ||
-                (this.InitLineRobot3 != null &&
+                (this.InitLineRobot3 is not null &&
                 this.InitLineRobot3.Equals(input.InitLineRobot3))
             ) &&
             (
                 this.EndgameRobot3 == input.EndgameRobot3 ||
-                (this.EndgameRobot3 != null &&
+                (this.EndgameRobot3 is not null &&
                 this.EndgameRobot3.Equals(input.EndgameRobot3))
             ) &&
             (
@@ -402,12 +402,12 @@ public partial class MatchScoreBreakdown2020Alliance(string initLineRobot1 = def
             ) &&
             (
                 this.Stage3TargetColor == input.Stage3TargetColor ||
-                (this.Stage3TargetColor != null &&
+                (this.Stage3TargetColor is not null &&
                 this.Stage3TargetColor.Equals(input.Stage3TargetColor))
             ) &&
             (
                 this.EndgameRungIsLevel == input.EndgameRungIsLevel ||
-                (this.EndgameRungIsLevel != null &&
+                (this.EndgameRungIsLevel is not null &&
                 this.EndgameRungIsLevel.Equals(input.EndgameRungIsLevel))
             ) &&
             (
@@ -489,32 +489,32 @@ public partial class MatchScoreBreakdown2020Alliance(string initLineRobot1 = def
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.InitLineRobot1 != null)
+            if (this.InitLineRobot1 is not null)
             {
                 hashCode = (hashCode * 59) + this.InitLineRobot1.GetHashCode();
             }
 
-            if (this.EndgameRobot1 != null)
+            if (this.EndgameRobot1 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot1.GetHashCode();
             }
 
-            if (this.InitLineRobot2 != null)
+            if (this.InitLineRobot2 is not null)
             {
                 hashCode = (hashCode * 59) + this.InitLineRobot2.GetHashCode();
             }
 
-            if (this.EndgameRobot2 != null)
+            if (this.EndgameRobot2 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot2.GetHashCode();
             }
 
-            if (this.InitLineRobot3 != null)
+            if (this.InitLineRobot3 is not null)
             {
                 hashCode = (hashCode * 59) + this.InitLineRobot3.GetHashCode();
             }
 
-            if (this.EndgameRobot3 != null)
+            if (this.EndgameRobot3 is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRobot3.GetHashCode();
             }
@@ -528,12 +528,12 @@ public partial class MatchScoreBreakdown2020Alliance(string initLineRobot1 = def
             hashCode = (hashCode * 59) + this.Stage1Activated.GetHashCode();
             hashCode = (hashCode * 59) + this.Stage2Activated.GetHashCode();
             hashCode = (hashCode * 59) + this.Stage3Activated.GetHashCode();
-            if (this.Stage3TargetColor != null)
+            if (this.Stage3TargetColor is not null)
             {
                 hashCode = (hashCode * 59) + this.Stage3TargetColor.GetHashCode();
             }
 
-            if (this.EndgameRungIsLevel != null)
+            if (this.EndgameRungIsLevel is not null)
             {
                 hashCode = (hashCode * 59) + this.EndgameRungIsLevel.GetHashCode();
             }

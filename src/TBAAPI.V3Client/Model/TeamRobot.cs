@@ -36,7 +36,7 @@ public partial class TeamRobot : IEquatable<TeamRobot>, IValidatableObject
     /// <param name="robotName">Name of the robot as provided by the team. (required).</param>
     /// <param name="key">Internal TBA identifier for this robot. (required).</param>
     /// <param name="teamKey">TBA team key for this robot. (required).</param>
-    public TeamRobot(int year = default, string robotName = default, string key = default, string teamKey = default)
+    public TeamRobot(int year = default, string? robotName = default, string? key = default, string? teamKey = default)
     {
         this.Year = year;
         // to ensure "robotName" is required (not null)
@@ -73,7 +73,7 @@ public partial class TeamRobot : IEquatable<TeamRobot>, IValidatableObject
     /// </summary>
     /// <value>TBA team key for this robot.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string TeamKey { get; set; }
+    public string? TeamKey { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -102,33 +102,33 @@ public partial class TeamRobot : IEquatable<TeamRobot>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamRobot);
+    public override bool Equals(object? input) => Equals(input as TeamRobot);
 
     /// <summary>
     /// Returns true if TeamRobot instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamRobot to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamRobot input)
+    public bool Equals(TeamRobot? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Year == input.Year ||
                 this.Year.Equals(input.Year)
             ) &&
             (
                 this.RobotName == input.RobotName ||
-                (this.RobotName != null &&
+                (this.RobotName is not null &&
                 this.RobotName.Equals(input.RobotName))
             ) &&
             (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
                 this.TeamKey == input.TeamKey ||
-                (this.TeamKey != null &&
+                (this.TeamKey is not null &&
                 this.TeamKey.Equals(input.TeamKey))
             );
     }
@@ -143,17 +143,17 @@ public partial class TeamRobot : IEquatable<TeamRobot>, IValidatableObject
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Year.GetHashCode();
-            if (this.RobotName != null)
+            if (this.RobotName is not null)
             {
                 hashCode = (hashCode * 59) + this.RobotName.GetHashCode();
             }
 
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }
 
-            if (this.TeamKey != null)
+            if (this.TeamKey is not null)
             {
                 hashCode = (hashCode * 59) + this.TeamKey.GetHashCode();
             }

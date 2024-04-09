@@ -22,6 +22,8 @@ public class OpenAPIEnumConverter<T> : JsonConverter<T?> where T : Enum
 {
     /// <inheritdoc/>
     public override bool CanConvert(Type typeToConvert) => typeToConvert == typeof(T?) || typeToConvert == typeof(T);
+
+    /// <inheritdoc/>
     public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         var jsonString = reader.GetString();
@@ -30,6 +32,7 @@ public class OpenAPIEnumConverter<T> : JsonConverter<T?> where T : Enum
             : (T)enumVal;
     }
 
+    /// <inheritdoc/>
     public override void Write(Utf8JsonWriter writer, T? value, JsonSerializerOptions options)
     {
         if (value is null)

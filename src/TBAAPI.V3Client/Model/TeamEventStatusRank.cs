@@ -30,7 +30,7 @@ using System.Text.Json.Serialization;
 /// <param name="sortOrderInfo">Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array..</param>
 /// <param name="status">status.</param>
 [DataContract]
-public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatusRankRanking ranking = default, List<TeamEventStatusRankSortOrderInfo> sortOrderInfo = default, string status = default) : IEquatable<TeamEventStatusRank>, IValidatableObject
+public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatusRankRanking? ranking = default, IList<TeamEventStatusRankSortOrderInfo>? sortOrderInfo = default, string? status = default) : IEquatable<TeamEventStatusRank>, IValidatableObject
 {
 
     /// <summary>
@@ -44,20 +44,20 @@ public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatus
     /// Gets or Sets Ranking
     /// </summary>
     [DataMember(Name = "ranking", EmitDefaultValue = false), JsonPropertyName("ranking")]
-    public TeamEventStatusRankRanking Ranking { get; set; } = ranking;
+    public TeamEventStatusRankRanking? Ranking { get; set; } = ranking;
 
     /// <summary>
     /// Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.
     /// </summary>
     /// <value>Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.</value>
     [DataMember(Name = "sort_order_info", EmitDefaultValue = false), JsonPropertyName("sort_order_info")]
-    public List<TeamEventStatusRankSortOrderInfo> SortOrderInfo { get; set; } = sortOrderInfo;
+    public IList<TeamEventStatusRankSortOrderInfo>? SortOrderInfo { get; set; } = sortOrderInfo;
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
     [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
-    public string Status { get; set; } = status;
+    public string? Status { get; set; } = status;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -86,34 +86,34 @@ public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatus
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamEventStatusRank);
+    public override bool Equals(object? input) => Equals(input as TeamEventStatusRank);
 
     /// <summary>
     /// Returns true if TeamEventStatusRank instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamEventStatusRank to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusRank input)
+    public bool Equals(TeamEventStatusRank? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.NumTeams == input.NumTeams ||
                 this.NumTeams.Equals(input.NumTeams)
             ) &&
             (
                 this.Ranking == input.Ranking ||
-                (this.Ranking != null &&
+                (this.Ranking is not null &&
                 this.Ranking.Equals(input.Ranking))
             ) &&
             (
                 this.SortOrderInfo == input.SortOrderInfo ||
-                (this.SortOrderInfo != null &&
-                input.SortOrderInfo != null &&
+                (this.SortOrderInfo is not null &&
+                input.SortOrderInfo is not null &&
                 this.SortOrderInfo.SequenceEqual(input.SortOrderInfo))
             ) &&
             (
                 this.Status == input.Status ||
-                (this.Status != null &&
+                (this.Status is not null &&
                 this.Status.Equals(input.Status))
             );
     }
@@ -128,17 +128,17 @@ public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatus
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.NumTeams.GetHashCode();
-            if (this.Ranking != null)
+            if (this.Ranking is not null)
             {
                 hashCode = (hashCode * 59) + this.Ranking.GetHashCode();
             }
 
-            if (this.SortOrderInfo != null)
+            if (this.SortOrderInfo is not null)
             {
                 hashCode = (hashCode * 59) + this.SortOrderInfo.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (this.Status is not null)
             {
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
             }

@@ -62,7 +62,7 @@ using System.Text.Json.Serialization;
 /// <param name="position4crossings">position4crossings.</param>
 /// <param name="position5crossings">position5crossings.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, int teleopPoints = default, int breachPoints = default, int foulPoints = default, int capturePoints = default, int adjustPoints = default, int totalPoints = default, MatchScoreBreakdown2016Alliance.Robot1AutoEnum? robot1Auto = default, MatchScoreBreakdown2016Alliance.Robot2AutoEnum? robot2Auto = default, MatchScoreBreakdown2016Alliance.Robot3AutoEnum? robot3Auto = default, int autoReachPoints = default, int autoCrossingPoints = default, int autoBouldersLow = default, int autoBouldersHigh = default, int autoBoulderPoints = default, int teleopCrossingPoints = default, int teleopBouldersLow = default, int teleopBouldersHigh = default, int teleopBoulderPoints = default, bool teleopDefensesBreached = default, int teleopChallengePoints = default, int teleopScalePoints = default, int teleopTowerCaptured = default, string towerFaceA = default, string towerFaceB = default, string towerFaceC = default, int towerEndStrength = default, int techFoulCount = default, int foulCount = default, string position2 = default, string position3 = default, string position4 = default, string position5 = default, int position1crossings = default, int position2crossings = default, int position3crossings = default, int position4crossings = default, int position5crossings = default) : IEquatable<MatchScoreBreakdown2016Alliance>, IValidatableObject
+public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, int teleopPoints = default, int breachPoints = default, int foulPoints = default, int capturePoints = default, int adjustPoints = default, int totalPoints = default, MatchScoreBreakdown2016Alliance.Robot1AutoEnum? robot1Auto = default, MatchScoreBreakdown2016Alliance.Robot2AutoEnum? robot2Auto = default, MatchScoreBreakdown2016Alliance.Robot3AutoEnum? robot3Auto = default, int autoReachPoints = default, int autoCrossingPoints = default, int autoBouldersLow = default, int autoBouldersHigh = default, int autoBoulderPoints = default, int teleopCrossingPoints = default, int teleopBouldersLow = default, int teleopBouldersHigh = default, int teleopBoulderPoints = default, bool teleopDefensesBreached = default, int teleopChallengePoints = default, int teleopScalePoints = default, int teleopTowerCaptured = default, string? towerFaceA = default, string? towerFaceB = default, string? towerFaceC = default, int towerEndStrength = default, int techFoulCount = default, int foulCount = default, string? position2 = default, string? position3 = default, string? position4 = default, string? position5 = default, int position1crossings = default, int position2crossings = default, int position3crossings = default, int position4crossings = default, int position5crossings = default) : IEquatable<MatchScoreBreakdown2016Alliance>, IValidatableObject
 {
     /// <summary>
     /// Defines Robot1Auto
@@ -429,16 +429,16 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2016Alliance);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2016Alliance);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2016Alliance instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2016Alliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2016Alliance input)
+    public bool Equals(MatchScoreBreakdown2016Alliance? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.AutoPoints == input.AutoPoints ||
                 this.AutoPoints.Equals(input.AutoPoints)
@@ -533,17 +533,17 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
             ) &&
             (
                 this.TowerFaceA == input.TowerFaceA ||
-                (this.TowerFaceA != null &&
+                (this.TowerFaceA is not null &&
                 this.TowerFaceA.Equals(input.TowerFaceA))
             ) &&
             (
                 this.TowerFaceB == input.TowerFaceB ||
-                (this.TowerFaceB != null &&
+                (this.TowerFaceB is not null &&
                 this.TowerFaceB.Equals(input.TowerFaceB))
             ) &&
             (
                 this.TowerFaceC == input.TowerFaceC ||
-                (this.TowerFaceC != null &&
+                (this.TowerFaceC is not null &&
                 this.TowerFaceC.Equals(input.TowerFaceC))
             ) &&
             (
@@ -560,22 +560,22 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
             ) &&
             (
                 this.Position2 == input.Position2 ||
-                (this.Position2 != null &&
+                (this.Position2 is not null &&
                 this.Position2.Equals(input.Position2))
             ) &&
             (
                 this.Position3 == input.Position3 ||
-                (this.Position3 != null &&
+                (this.Position3 is not null &&
                 this.Position3.Equals(input.Position3))
             ) &&
             (
                 this.Position4 == input.Position4 ||
-                (this.Position4 != null &&
+                (this.Position4 is not null &&
                 this.Position4.Equals(input.Position4))
             ) &&
             (
                 this.Position5 == input.Position5 ||
-                (this.Position5 != null &&
+                (this.Position5 is not null &&
                 this.Position5.Equals(input.Position5))
             ) &&
             (
@@ -632,17 +632,17 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
             hashCode = (hashCode * 59) + this.TeleopChallengePoints.GetHashCode();
             hashCode = (hashCode * 59) + this.TeleopScalePoints.GetHashCode();
             hashCode = (hashCode * 59) + this.TeleopTowerCaptured.GetHashCode();
-            if (this.TowerFaceA != null)
+            if (this.TowerFaceA is not null)
             {
                 hashCode = (hashCode * 59) + this.TowerFaceA.GetHashCode();
             }
 
-            if (this.TowerFaceB != null)
+            if (this.TowerFaceB is not null)
             {
                 hashCode = (hashCode * 59) + this.TowerFaceB.GetHashCode();
             }
 
-            if (this.TowerFaceC != null)
+            if (this.TowerFaceC is not null)
             {
                 hashCode = (hashCode * 59) + this.TowerFaceC.GetHashCode();
             }
@@ -650,22 +650,22 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
             hashCode = (hashCode * 59) + this.TowerEndStrength.GetHashCode();
             hashCode = (hashCode * 59) + this.TechFoulCount.GetHashCode();
             hashCode = (hashCode * 59) + this.FoulCount.GetHashCode();
-            if (this.Position2 != null)
+            if (this.Position2 is not null)
             {
                 hashCode = (hashCode * 59) + this.Position2.GetHashCode();
             }
 
-            if (this.Position3 != null)
+            if (this.Position3 is not null)
             {
                 hashCode = (hashCode * 59) + this.Position3.GetHashCode();
             }
 
-            if (this.Position4 != null)
+            if (this.Position4 is not null)
             {
                 hashCode = (hashCode * 59) + this.Position4.GetHashCode();
             }
 
-            if (this.Position5 != null)
+            if (this.Position5 is not null)
             {
                 hashCode = (hashCode * 59) + this.Position5.GetHashCode();
             }

@@ -26,7 +26,7 @@ using System.Text.Json.Serialization;
 /// <param name="type">Can be one of &#39;youtube&#39; or &#39;tba&#39;.</param>
 /// <param name="key">Unique key representing this video.</param>
 [DataContract]
-public partial class MatchVideos(string type = default, string key = default) : IEquatable<MatchVideos>, IValidatableObject
+public partial class MatchVideos(string? type = default, string? key = default) : IEquatable<MatchVideos>, IValidatableObject
 {
 
     /// <summary>
@@ -68,24 +68,24 @@ public partial class MatchVideos(string type = default, string key = default) : 
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchVideos);
+    public override bool Equals(object? input) => Equals(input as MatchVideos);
 
     /// <summary>
     /// Returns true if MatchVideos instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchVideos to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchVideos input)
+    public bool Equals(MatchVideos? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Type == input.Type ||
-                (this.Type != null &&
+                (this.Type is not null &&
                 this.Type.Equals(input.Type))
             ) &&
             (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             );
     }
@@ -99,12 +99,12 @@ public partial class MatchVideos(string type = default, string key = default) : 
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Type != null)
+            if (this.Type is not null)
             {
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
             }
 
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }

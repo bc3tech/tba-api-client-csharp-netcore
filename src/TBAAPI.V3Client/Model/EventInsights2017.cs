@@ -64,7 +64,7 @@ public partial class EventInsights2017 : IEquatable<EventInsights2017>, IValidat
     /// <param name="rotor4Engaged">An array with three values, number of times rotor 4 engaged, number of opportunities to engage, and percentage. (required).</param>
     /// <param name="takeoffCounts">An array with three values, number of times takeoff was counted, number of opportunities to takeoff, and percentage. (required).</param>
     /// <param name="unicornMatches">An array with three values, number of times a unicorn match (Win + kPa &amp; Rotor Bonuses) occured, number of opportunities to have a unicorn match, and percentage. (required).</param>
-    public EventInsights2017(float averageFoulScore = default, float averageFuelPoints = default, float averageFuelPointsAuto = default, float averageFuelPointsTeleop = default, float averageHighGoals = default, float averageHighGoalsAuto = default, float averageHighGoalsTeleop = default, float averageLowGoals = default, float averageLowGoalsAuto = default, float averageLowGoalsTeleop = default, float averageMobilityPointsAuto = default, float averagePointsAuto = default, float averagePointsTeleop = default, float averageRotorPoints = default, float averageRotorPointsAuto = default, float averageRotorPointsTeleop = default, float averageScore = default, float averageTakeoffPointsTeleop = default, float averageWinMargin = default, float averageWinScore = default, List<string> highKpa = default, List<string> highScore = default, List<float> kpaAchieved = default, List<float> mobilityCounts = default, List<float> rotor1Engaged = default, List<float> rotor1EngagedAuto = default, List<float> rotor2Engaged = default, List<float> rotor2EngagedAuto = default, List<float> rotor3Engaged = default, List<float> rotor4Engaged = default, List<float> takeoffCounts = default, List<float> unicornMatches = default)
+    public EventInsights2017(float averageFoulScore = default, float averageFuelPoints = default, float averageFuelPointsAuto = default, float averageFuelPointsTeleop = default, float averageHighGoals = default, float averageHighGoalsAuto = default, float averageHighGoalsTeleop = default, float averageLowGoals = default, float averageLowGoalsAuto = default, float averageLowGoalsTeleop = default, float averageMobilityPointsAuto = default, float averagePointsAuto = default, float averagePointsTeleop = default, float averageRotorPoints = default, float averageRotorPointsAuto = default, float averageRotorPointsTeleop = default, float averageScore = default, float averageTakeoffPointsTeleop = default, float averageWinMargin = default, float averageWinScore = default, List<string>? highKpa = default, List<string>? highScore = default, List<float>? kpaAchieved = default, List<float>? mobilityCounts = default, List<float>? rotor1Engaged = default, List<float>? rotor1EngagedAuto = default, List<float>? rotor2Engaged = default, List<float>? rotor2EngagedAuto = default, List<float>? rotor3Engaged = default, List<float>? rotor4Engaged = default, List<float>? takeoffCounts = default, List<float>? unicornMatches = default)
     {
         this.AverageFoulScore = averageFoulScore;
         this.AverageFuelPoints = averageFuelPoints;
@@ -257,84 +257,84 @@ public partial class EventInsights2017 : IEquatable<EventInsights2017>, IValidat
     /// </summary>
     /// <value>An array with three values, kPa scored, match key from the match with the high kPa, and the name of the match</value>
     [DataMember(Name = "high_kpa", EmitDefaultValue = false), JsonPropertyName("high_kpa")]
-    public List<string> HighKpa { get; set; }
+    public IList<string>? HighKpa { get; set; }
 
     /// <summary>
     /// An array with three values, high score, match key from the match with the high score, and the name of the match
     /// </summary>
     /// <value>An array with three values, high score, match key from the match with the high score, and the name of the match</value>
     [DataMember(Name = "high_score", EmitDefaultValue = false), JsonPropertyName("high_score")]
-    public List<string> HighScore { get; set; }
+    public IList<string>? HighScore { get; set; }
 
     /// <summary>
     /// An array with three values, number of times kPa bonus achieved, number of opportunities to bonus, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times kPa bonus achieved, number of opportunities to bonus, and percentage.</value>
     [DataMember(Name = "kpa_achieved", EmitDefaultValue = false), JsonPropertyName("kpa_achieved")]
-    public List<float> KpaAchieved { get; set; }
+    public IList<float>? KpaAchieved { get; set; }
 
     /// <summary>
     /// An array with three values, number of times mobility bonus achieved, number of opportunities to bonus, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times mobility bonus achieved, number of opportunities to bonus, and percentage.</value>
     [DataMember(Name = "mobility_counts", EmitDefaultValue = false), JsonPropertyName("mobility_counts")]
-    public List<float> MobilityCounts { get; set; }
+    public IList<float>? MobilityCounts { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 1 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 1 engaged, number of opportunities to engage, and percentage.</value>
     [DataMember(Name = "rotor_1_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_1_engaged")]
-    public List<float> Rotor1Engaged { get; set; }
+    public IList<float>? Rotor1Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 1 engaged in auto, number of opportunities to engage in auto, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 1 engaged in auto, number of opportunities to engage in auto, and percentage.</value>
     [DataMember(Name = "rotor_1_engaged_auto", EmitDefaultValue = false), JsonPropertyName("rotor_1_engaged_auto")]
-    public List<float> Rotor1EngagedAuto { get; set; }
+    public IList<float>? Rotor1EngagedAuto { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 2 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 2 engaged, number of opportunities to engage, and percentage.</value>
     [DataMember(Name = "rotor_2_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_2_engaged")]
-    public List<float> Rotor2Engaged { get; set; }
+    public IList<float>? Rotor2Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 2 engaged in auto, number of opportunities to engage in auto, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 2 engaged in auto, number of opportunities to engage in auto, and percentage.</value>
     [DataMember(Name = "rotor_2_engaged_auto", EmitDefaultValue = false), JsonPropertyName("rotor_2_engaged_auto")]
-    public List<float> Rotor2EngagedAuto { get; set; }
+    public IList<float>? Rotor2EngagedAuto { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 3 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 3 engaged, number of opportunities to engage, and percentage.</value>
     [DataMember(Name = "rotor_3_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_3_engaged")]
-    public List<float> Rotor3Engaged { get; set; }
+    public IList<float>? Rotor3Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 4 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 4 engaged, number of opportunities to engage, and percentage.</value>
     [DataMember(Name = "rotor_4_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_4_engaged")]
-    public List<float> Rotor4Engaged { get; set; }
+    public IList<float>? Rotor4Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times takeoff was counted, number of opportunities to takeoff, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times takeoff was counted, number of opportunities to takeoff, and percentage.</value>
     [DataMember(Name = "takeoff_counts", EmitDefaultValue = false), JsonPropertyName("takeoff_counts")]
-    public List<float> TakeoffCounts { get; set; }
+    public IList<float>? TakeoffCounts { get; set; }
 
     /// <summary>
     /// An array with three values, number of times a unicorn match (Win + kPa &amp; Rotor Bonuses) occured, number of opportunities to have a unicorn match, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times a unicorn match (Win + kPa &amp; Rotor Bonuses) occured, number of opportunities to have a unicorn match, and percentage.</value>
     [DataMember(Name = "unicorn_matches", EmitDefaultValue = false), JsonPropertyName("unicorn_matches")]
-    public List<float> UnicornMatches { get; set; }
+    public IList<float>? UnicornMatches { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -391,16 +391,16 @@ public partial class EventInsights2017 : IEquatable<EventInsights2017>, IValidat
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventInsights2017);
+    public override bool Equals(object? input) => Equals(input as EventInsights2017);
 
     /// <summary>
     /// Returns true if EventInsights2017 instances are equal
     /// </summary>
     /// <param name="input">Instance of EventInsights2017 to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventInsights2017 input)
+    public bool Equals(EventInsights2017? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.AverageFoulScore == input.AverageFoulScore ||
                 this.AverageFoulScore.Equals(input.AverageFoulScore)
@@ -483,74 +483,74 @@ public partial class EventInsights2017 : IEquatable<EventInsights2017>, IValidat
             ) &&
             (
                 this.HighKpa == input.HighKpa ||
-                (this.HighKpa != null &&
-                input.HighKpa != null &&
+                (this.HighKpa is not null &&
+                input.HighKpa is not null &&
                 this.HighKpa.SequenceEqual(input.HighKpa))
             ) &&
             (
                 this.HighScore == input.HighScore ||
-                (this.HighScore != null &&
-                input.HighScore != null &&
+                (this.HighScore is not null &&
+                input.HighScore is not null &&
                 this.HighScore.SequenceEqual(input.HighScore))
             ) &&
             (
                 this.KpaAchieved == input.KpaAchieved ||
-                (this.KpaAchieved != null &&
-                input.KpaAchieved != null &&
+                (this.KpaAchieved is not null &&
+                input.KpaAchieved is not null &&
                 this.KpaAchieved.SequenceEqual(input.KpaAchieved))
             ) &&
             (
                 this.MobilityCounts == input.MobilityCounts ||
-                (this.MobilityCounts != null &&
-                input.MobilityCounts != null &&
+                (this.MobilityCounts is not null &&
+                input.MobilityCounts is not null &&
                 this.MobilityCounts.SequenceEqual(input.MobilityCounts))
             ) &&
             (
                 this.Rotor1Engaged == input.Rotor1Engaged ||
-                (this.Rotor1Engaged != null &&
-                input.Rotor1Engaged != null &&
+                (this.Rotor1Engaged is not null &&
+                input.Rotor1Engaged is not null &&
                 this.Rotor1Engaged.SequenceEqual(input.Rotor1Engaged))
             ) &&
             (
                 this.Rotor1EngagedAuto == input.Rotor1EngagedAuto ||
-                (this.Rotor1EngagedAuto != null &&
-                input.Rotor1EngagedAuto != null &&
+                (this.Rotor1EngagedAuto is not null &&
+                input.Rotor1EngagedAuto is not null &&
                 this.Rotor1EngagedAuto.SequenceEqual(input.Rotor1EngagedAuto))
             ) &&
             (
                 this.Rotor2Engaged == input.Rotor2Engaged ||
-                (this.Rotor2Engaged != null &&
-                input.Rotor2Engaged != null &&
+                (this.Rotor2Engaged is not null &&
+                input.Rotor2Engaged is not null &&
                 this.Rotor2Engaged.SequenceEqual(input.Rotor2Engaged))
             ) &&
             (
                 this.Rotor2EngagedAuto == input.Rotor2EngagedAuto ||
-                (this.Rotor2EngagedAuto != null &&
-                input.Rotor2EngagedAuto != null &&
+                (this.Rotor2EngagedAuto is not null &&
+                input.Rotor2EngagedAuto is not null &&
                 this.Rotor2EngagedAuto.SequenceEqual(input.Rotor2EngagedAuto))
             ) &&
             (
                 this.Rotor3Engaged == input.Rotor3Engaged ||
-                (this.Rotor3Engaged != null &&
-                input.Rotor3Engaged != null &&
+                (this.Rotor3Engaged is not null &&
+                input.Rotor3Engaged is not null &&
                 this.Rotor3Engaged.SequenceEqual(input.Rotor3Engaged))
             ) &&
             (
                 this.Rotor4Engaged == input.Rotor4Engaged ||
-                (this.Rotor4Engaged != null &&
-                input.Rotor4Engaged != null &&
+                (this.Rotor4Engaged is not null &&
+                input.Rotor4Engaged is not null &&
                 this.Rotor4Engaged.SequenceEqual(input.Rotor4Engaged))
             ) &&
             (
                 this.TakeoffCounts == input.TakeoffCounts ||
-                (this.TakeoffCounts != null &&
-                input.TakeoffCounts != null &&
+                (this.TakeoffCounts is not null &&
+                input.TakeoffCounts is not null &&
                 this.TakeoffCounts.SequenceEqual(input.TakeoffCounts))
             ) &&
             (
                 this.UnicornMatches == input.UnicornMatches ||
-                (this.UnicornMatches != null &&
-                input.UnicornMatches != null &&
+                (this.UnicornMatches is not null &&
+                input.UnicornMatches is not null &&
                 this.UnicornMatches.SequenceEqual(input.UnicornMatches))
             );
     }
@@ -584,62 +584,62 @@ public partial class EventInsights2017 : IEquatable<EventInsights2017>, IValidat
             hashCode = (hashCode * 59) + this.AverageTakeoffPointsTeleop.GetHashCode();
             hashCode = (hashCode * 59) + this.AverageWinMargin.GetHashCode();
             hashCode = (hashCode * 59) + this.AverageWinScore.GetHashCode();
-            if (this.HighKpa != null)
+            if (this.HighKpa is not null)
             {
                 hashCode = (hashCode * 59) + this.HighKpa.GetHashCode();
             }
 
-            if (this.HighScore != null)
+            if (this.HighScore is not null)
             {
                 hashCode = (hashCode * 59) + this.HighScore.GetHashCode();
             }
 
-            if (this.KpaAchieved != null)
+            if (this.KpaAchieved is not null)
             {
                 hashCode = (hashCode * 59) + this.KpaAchieved.GetHashCode();
             }
 
-            if (this.MobilityCounts != null)
+            if (this.MobilityCounts is not null)
             {
                 hashCode = (hashCode * 59) + this.MobilityCounts.GetHashCode();
             }
 
-            if (this.Rotor1Engaged != null)
+            if (this.Rotor1Engaged is not null)
             {
                 hashCode = (hashCode * 59) + this.Rotor1Engaged.GetHashCode();
             }
 
-            if (this.Rotor1EngagedAuto != null)
+            if (this.Rotor1EngagedAuto is not null)
             {
                 hashCode = (hashCode * 59) + this.Rotor1EngagedAuto.GetHashCode();
             }
 
-            if (this.Rotor2Engaged != null)
+            if (this.Rotor2Engaged is not null)
             {
                 hashCode = (hashCode * 59) + this.Rotor2Engaged.GetHashCode();
             }
 
-            if (this.Rotor2EngagedAuto != null)
+            if (this.Rotor2EngagedAuto is not null)
             {
                 hashCode = (hashCode * 59) + this.Rotor2EngagedAuto.GetHashCode();
             }
 
-            if (this.Rotor3Engaged != null)
+            if (this.Rotor3Engaged is not null)
             {
                 hashCode = (hashCode * 59) + this.Rotor3Engaged.GetHashCode();
             }
 
-            if (this.Rotor4Engaged != null)
+            if (this.Rotor4Engaged is not null)
             {
                 hashCode = (hashCode * 59) + this.Rotor4Engaged.GetHashCode();
             }
 
-            if (this.TakeoffCounts != null)
+            if (this.TakeoffCounts is not null)
             {
                 hashCode = (hashCode * 59) + this.TakeoffCounts.GetHashCode();
             }
 
-            if (this.UnicornMatches != null)
+            if (this.UnicornMatches is not null)
             {
                 hashCode = (hashCode * 59) + this.UnicornMatches.GetHashCode();
             }

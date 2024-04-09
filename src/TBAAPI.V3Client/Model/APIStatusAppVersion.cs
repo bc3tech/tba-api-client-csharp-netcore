@@ -79,16 +79,16 @@ public partial class APIStatusAppVersion : IEquatable<APIStatusAppVersion>, IVal
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as APIStatusAppVersion);
+    public override bool Equals(object? input) => Equals(input as APIStatusAppVersion);
 
     /// <summary>
     /// Returns true if APIStatusAppVersion instances are equal
     /// </summary>
     /// <param name="input">Instance of APIStatusAppVersion to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(APIStatusAppVersion input)
+    public bool Equals(APIStatusAppVersion? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.MinAppVersion == input.MinAppVersion ||
                 this.MinAppVersion.Equals(input.MinAppVersion)

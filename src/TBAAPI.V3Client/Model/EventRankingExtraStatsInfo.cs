@@ -33,7 +33,7 @@ public partial class EventRankingExtraStatsInfo : IEquatable<EventRankingExtraSt
     /// </summary>
     /// <param name="precision">Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;. (required).</param>
     /// <param name="name">Name of the field used in the &#x60;extra_stats&#x60; array. (required).</param>
-    public EventRankingExtraStatsInfo(decimal precision = default, string name = default)
+    public EventRankingExtraStatsInfo(decimal precision = default, string? name = default)
     {
         this.Precision = precision;
         // to ensure "name" is required (not null)
@@ -79,23 +79,23 @@ public partial class EventRankingExtraStatsInfo : IEquatable<EventRankingExtraSt
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventRankingExtraStatsInfo);
+    public override bool Equals(object? input) => Equals(input as EventRankingExtraStatsInfo);
 
     /// <summary>
     /// Returns true if EventRankingExtraStatsInfo instances are equal
     /// </summary>
     /// <param name="input">Instance of EventRankingExtraStatsInfo to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventRankingExtraStatsInfo input)
+    public bool Equals(EventRankingExtraStatsInfo? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Precision == input.Precision ||
                 this.Precision.Equals(input.Precision)
             ) &&
             (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             );
     }
@@ -110,7 +110,7 @@ public partial class EventRankingExtraStatsInfo : IEquatable<EventRankingExtraSt
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Precision.GetHashCode();
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }

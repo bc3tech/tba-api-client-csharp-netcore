@@ -26,7 +26,7 @@ using System.Text.Json.Serialization;
 /// <param name="blue">blue.</param>
 /// <param name="red">red.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2019(MatchScoreBreakdown2019Alliance blue = default, MatchScoreBreakdown2019Alliance red = default) : IEquatable<MatchScoreBreakdown2019>, IValidatableObject
+public partial class MatchScoreBreakdown2019(MatchScoreBreakdown2019Alliance? blue = default, MatchScoreBreakdown2019Alliance? red = default) : IEquatable<MatchScoreBreakdown2019>, IValidatableObject
 {
 
     /// <summary>
@@ -66,24 +66,24 @@ public partial class MatchScoreBreakdown2019(MatchScoreBreakdown2019Alliance blu
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2019);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2019);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2019 instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2019 to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2019 input)
+    public bool Equals(MatchScoreBreakdown2019? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Blue == input.Blue ||
-                (this.Blue != null &&
+                (this.Blue is not null &&
                 this.Blue.Equals(input.Blue))
             ) &&
             (
                 this.Red == input.Red ||
-                (this.Red != null &&
+                (this.Red is not null &&
                 this.Red.Equals(input.Red))
             );
     }
@@ -97,12 +97,12 @@ public partial class MatchScoreBreakdown2019(MatchScoreBreakdown2019Alliance blu
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Blue != null)
+            if (this.Blue is not null)
             {
                 hashCode = (hashCode * 59) + this.Blue.GetHashCode();
             }
 
-            if (this.Red != null)
+            if (this.Red is not null)
             {
                 hashCode = (hashCode * 59) + this.Red.GetHashCode();
             }

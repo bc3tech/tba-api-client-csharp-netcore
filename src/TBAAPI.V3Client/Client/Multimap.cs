@@ -13,13 +13,14 @@ namespace TBAAPI.V3Client.Client;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 /// <summary>
 /// A dictionary in which one key has many associated values.
 /// </summary>
 /// <typeparam name="TKey">The type of the key</typeparam>
 /// <typeparam name="TValue">The type of the value associated with the key.</typeparam>
-public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>>
+public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>> where TKey : notnull
 {
     #region Private Fields
 
@@ -135,9 +136,9 @@ public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>>
     /// <exception cref="InvalidOperationException">Thrown when couldn't add the value to Multimap.</exception>
     public void Add(TKey key, IList<TValue> value)
     {
-        if (value != null && value.Count > 0)
+        if (value is not null && value.Count > 0)
         {
-            if (_dictionary.TryGetValue(key, out IList<TValue> list))
+            if (_dictionary.TryGetValue(key, out IList<TValue>? list))
             {
                 foreach (TValue k in value)
                 {
@@ -146,7 +147,7 @@ public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>>
             }
             else
             {
-                list = new List<TValue>(value);
+                list = [.. value];
                 if (!TryAdd(key, list))
                 {
                     throw new InvalidOperationException("Could not add values to Multimap.");
@@ -168,7 +169,7 @@ public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>>
     /// </summary>
     /// <param name="key">The key to locate in the Multimap.</param>
     /// <returns>true if the item is successfully removed; otherwise, false.</returns>
-    public bool Remove(TKey key) => TryRemove(key, out IList<TValue> _);
+    public bool Remove(TKey key) => TryRemove(key, out _);
 
     /// <summary>
     /// Gets the value associated with the specified key.
@@ -179,7 +180,7 @@ public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>>
     ///     This parameter is passed uninitialized.</param>
     /// <returns> true if the object that implements Multimap contains
     ///     an item with the specified key; otherwise, false.</returns>
-    public bool TryGetValue(TKey key, out IList<TValue> value) => _dictionary.TryGetValue(key, out value);
+    public bool TryGetValue(TKey key, [NotNullWhen(true)] out IList<TValue>? value) => _dictionary.TryGetValue(key, out value);
 
     /// <summary>
     /// Gets or sets the item with the specified key.
@@ -217,11 +218,11 @@ public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>>
     /// <param name="key">The object to use as the key of the item to add.</param>
     /// <param name="value">The object to use as the value of the item to add.</param>
     /// <exception cref="InvalidOperationException">Thrown when couldn't add value to Multimap.</exception>
-    public void Add(TKey key, TValue value)
+    public void Add(TKey key, TValue? value)
     {
-        if (value != null)
+        if (value is not null)
         {
-            if (_dictionary.TryGetValue(key, out IList<TValue> list))
+            if (_dictionary.TryGetValue(key, out IList<TValue>? list))
             {
                 list.Add(value);
             }
@@ -243,7 +244,7 @@ public class Multimap<TKey, TValue> : IDictionary<TKey, IList<TValue>>
     /**
      * Helper method to encapsulate generator differences between dictionary types.
      */
-    private bool TryRemove(TKey key, out IList<TValue> value)
+    private bool TryRemove(TKey key, out IList<TValue>? value)
     {
         _dictionary.TryGetValue(key, out value);
         return _dictionary.Remove(key);

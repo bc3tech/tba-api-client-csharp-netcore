@@ -108,16 +108,16 @@ public partial class EventDistrictPointsPoints : IEquatable<EventDistrictPointsP
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventDistrictPointsPoints);
+    public override bool Equals(object? input) => Equals(input as EventDistrictPointsPoints);
 
     /// <summary>
     /// Returns true if EventDistrictPointsPoints instances are equal
     /// </summary>
     /// <param name="input">Instance of EventDistrictPointsPoints to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventDistrictPointsPoints input)
+    public bool Equals(EventDistrictPointsPoints? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Total == input.Total ||
                 this.Total.Equals(input.Total)

@@ -28,7 +28,7 @@ using System.Text.Json.Serialization;
 /// <param name="coopertition">coopertition.</param>
 /// <param name="coopertitionPoints">coopertitionPoints.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2015(MatchScoreBreakdown2015Alliance blue = default, MatchScoreBreakdown2015Alliance red = default, MatchScoreBreakdown2015.CoopertitionEnum? coopertition = default, int coopertitionPoints = default) : IEquatable<MatchScoreBreakdown2015>, IValidatableObject
+public partial class MatchScoreBreakdown2015(MatchScoreBreakdown2015Alliance? blue = default, MatchScoreBreakdown2015Alliance? red = default, MatchScoreBreakdown2015.CoopertitionEnum? coopertition = default, int coopertitionPoints = default) : IEquatable<MatchScoreBreakdown2015>, IValidatableObject
 {
     /// <summary>
     /// Defines Coopertition
@@ -107,24 +107,24 @@ public partial class MatchScoreBreakdown2015(MatchScoreBreakdown2015Alliance blu
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2015);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2015);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2015 instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2015 to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2015 input)
+    public bool Equals(MatchScoreBreakdown2015? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Blue == input.Blue ||
-                (this.Blue != null &&
+                (this.Blue is not null &&
                 this.Blue.Equals(input.Blue))
             ) &&
             (
                 this.Red == input.Red ||
-                (this.Red != null &&
+                (this.Red is not null &&
                 this.Red.Equals(input.Red))
             ) &&
             (
@@ -146,12 +146,12 @@ public partial class MatchScoreBreakdown2015(MatchScoreBreakdown2015Alliance blu
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Blue != null)
+            if (this.Blue is not null)
             {
                 hashCode = (hashCode * 59) + this.Blue.GetHashCode();
             }
 
-            if (this.Red != null)
+            if (this.Red is not null)
             {
                 hashCode = (hashCode * 59) + this.Red.GetHashCode();
             }

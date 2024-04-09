@@ -27,7 +27,7 @@ using System.Text.Json.Serialization;
 /// <param name="red">Zebra MotionWorks data for teams on the red alliance.</param>
 /// <param name="blue">Zebra data for teams on the blue alliance.</param>
 [DataContract]
-public partial class ZebraAlliances(List<ZebraTeam> red = default, List<ZebraTeam> blue = default) : IEquatable<ZebraAlliances>, IValidatableObject
+public partial class ZebraAlliances(List<ZebraTeam>? red = default, List<ZebraTeam>? blue = default) : IEquatable<ZebraAlliances>, IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +35,14 @@ public partial class ZebraAlliances(List<ZebraTeam> red = default, List<ZebraTea
     /// </summary>
     /// <value>Zebra MotionWorks data for teams on the red alliance</value>
     [DataMember(Name = "red", EmitDefaultValue = false), JsonPropertyName("red")]
-    public List<ZebraTeam> Red { get; set; } = red;
+    public IList<ZebraTeam>? Red { get; set; } = red;
 
     /// <summary>
     /// Zebra data for teams on the blue alliance
     /// </summary>
     /// <value>Zebra data for teams on the blue alliance</value>
     [DataMember(Name = "blue", EmitDefaultValue = false), JsonPropertyName("blue")]
-    public List<ZebraTeam> Blue { get; set; } = blue;
+    public IList<ZebraTeam>? Blue { get; set; } = blue;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -69,26 +69,26 @@ public partial class ZebraAlliances(List<ZebraTeam> red = default, List<ZebraTea
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as ZebraAlliances);
+    public override bool Equals(object? input) => Equals(input as ZebraAlliances);
 
     /// <summary>
     /// Returns true if ZebraAlliances instances are equal
     /// </summary>
     /// <param name="input">Instance of ZebraAlliances to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(ZebraAlliances input)
+    public bool Equals(ZebraAlliances? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Red == input.Red ||
-                (this.Red != null &&
-                input.Red != null &&
+                (this.Red is not null &&
+                input.Red is not null &&
                 this.Red.SequenceEqual(input.Red))
             ) &&
             (
                 this.Blue == input.Blue ||
-                (this.Blue != null &&
-                input.Blue != null &&
+                (this.Blue is not null &&
+                input.Blue is not null &&
                 this.Blue.SequenceEqual(input.Blue))
             );
     }
@@ -102,12 +102,12 @@ public partial class ZebraAlliances(List<ZebraTeam> red = default, List<ZebraTea
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Red != null)
+            if (this.Red is not null)
             {
                 hashCode = (hashCode * 59) + this.Red.GetHashCode();
             }
 
-            if (this.Blue != null)
+            if (this.Blue is not null)
             {
                 hashCode = (hashCode * 59) + this.Blue.GetHashCode();
             }

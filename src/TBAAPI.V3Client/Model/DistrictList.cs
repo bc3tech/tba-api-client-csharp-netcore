@@ -35,7 +35,7 @@ public partial class DistrictList : IEquatable<DistrictList>, IValidatableObject
     /// <param name="displayName">The long name for the district. (required).</param>
     /// <param name="key">Key for this district, e.g. &#x60;2016ne&#x60;. (required).</param>
     /// <param name="year">Year this district participated. (required).</param>
-    public DistrictList(string abbreviation = default, string displayName = default, string key = default, int year = default)
+    public DistrictList(string? abbreviation = default, string? displayName = default, string? key = default, int year = default)
     {
         // to ensure "abbreviation" is required (not null)
         this.Abbreviation = abbreviation ?? throw new ArgumentNullException(nameof(abbreviation));
@@ -101,29 +101,29 @@ public partial class DistrictList : IEquatable<DistrictList>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as DistrictList);
+    public override bool Equals(object? input) => Equals(input as DistrictList);
 
     /// <summary>
     /// Returns true if DistrictList instances are equal
     /// </summary>
     /// <param name="input">Instance of DistrictList to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(DistrictList input)
+    public bool Equals(DistrictList? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Abbreviation == input.Abbreviation ||
-                (this.Abbreviation != null &&
+                (this.Abbreviation is not null &&
                 this.Abbreviation.Equals(input.Abbreviation))
             ) &&
             (
                 this.DisplayName == input.DisplayName ||
-                (this.DisplayName != null &&
+                (this.DisplayName is not null &&
                 this.DisplayName.Equals(input.DisplayName))
             ) &&
             (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
@@ -141,17 +141,17 @@ public partial class DistrictList : IEquatable<DistrictList>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Abbreviation != null)
+            if (this.Abbreviation is not null)
             {
                 hashCode = (hashCode * 59) + this.Abbreviation.GetHashCode();
             }
 
-            if (this.DisplayName != null)
+            if (this.DisplayName is not null)
             {
                 hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
             }
 
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }

@@ -37,7 +37,7 @@ public partial class EliminationAlliance : IEquatable<EliminationAlliance>, IVal
     /// <param name="declines">List of teams that declined the alliance..</param>
     /// <param name="picks">List of team keys picked for the alliance. First pick is captain. (required).</param>
     /// <param name="status">status.</param>
-    public EliminationAlliance(string name = default, EliminationAllianceBackup backup = default, List<string> declines = default, List<string> picks = default, EliminationAllianceStatus status = default)
+    public EliminationAlliance(string? name = default, EliminationAllianceBackup? backup = default, List<string>? declines = default, List<string>? picks = default, EliminationAllianceStatus? status = default)
     {
         // to ensure "picks" is required (not null)
         this.Picks = picks ?? throw new ArgumentNullException(nameof(picks));
@@ -52,33 +52,33 @@ public partial class EliminationAlliance : IEquatable<EliminationAlliance>, IVal
     /// </summary>
     /// <value>Alliance name, may be null.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Gets or Sets Backup
     /// </summary>
     [DataMember(Name = "backup", EmitDefaultValue = false), JsonPropertyName("backup")]
-    public EliminationAllianceBackup Backup { get; set; }
+    public EliminationAllianceBackup? Backup { get; set; }
 
     /// <summary>
     /// List of teams that declined the alliance.
     /// </summary>
     /// <value>List of teams that declined the alliance.</value>
     [DataMember(Name = "declines", EmitDefaultValue = false), JsonPropertyName("declines")]
-    public List<string> Declines { get; set; }
+    public IList<string>? Declines { get; set; }
 
     /// <summary>
     /// List of team keys picked for the alliance. First pick is captain.
     /// </summary>
     /// <value>List of team keys picked for the alliance. First pick is captain.</value>
     [DataMember(Name = "picks", EmitDefaultValue = false), JsonPropertyName("picks")]
-    public List<string> Picks { get; set; }
+    public IList<string>? Picks { get; set; }
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
     [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
-    public EliminationAllianceStatus Status { get; set; }
+    public EliminationAllianceStatus? Status { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -108,41 +108,41 @@ public partial class EliminationAlliance : IEquatable<EliminationAlliance>, IVal
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EliminationAlliance);
+    public override bool Equals(object? input) => Equals(input as EliminationAlliance);
 
     /// <summary>
     /// Returns true if EliminationAlliance instances are equal
     /// </summary>
     /// <param name="input">Instance of EliminationAlliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EliminationAlliance input)
+    public bool Equals(EliminationAlliance? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             ) &&
             (
                 this.Backup == input.Backup ||
-                (this.Backup != null &&
+                (this.Backup is not null &&
                 this.Backup.Equals(input.Backup))
             ) &&
             (
                 this.Declines == input.Declines ||
-                (this.Declines != null &&
-                input.Declines != null &&
+                (this.Declines is not null &&
+                input.Declines is not null &&
                 this.Declines.SequenceEqual(input.Declines))
             ) &&
             (
                 this.Picks == input.Picks ||
-                (this.Picks != null &&
-                input.Picks != null &&
+                (this.Picks is not null &&
+                input.Picks is not null &&
                 this.Picks.SequenceEqual(input.Picks))
             ) &&
             (
                 this.Status == input.Status ||
-                (this.Status != null &&
+                (this.Status is not null &&
                 this.Status.Equals(input.Status))
             );
     }
@@ -156,27 +156,27 @@ public partial class EliminationAlliance : IEquatable<EliminationAlliance>, IVal
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }
 
-            if (this.Backup != null)
+            if (this.Backup is not null)
             {
                 hashCode = (hashCode * 59) + this.Backup.GetHashCode();
             }
 
-            if (this.Declines != null)
+            if (this.Declines is not null)
             {
                 hashCode = (hashCode * 59) + this.Declines.GetHashCode();
             }
 
-            if (this.Picks != null)
+            if (this.Picks is not null)
             {
                 hashCode = (hashCode * 59) + this.Picks.GetHashCode();
             }
 
-            if (this.Status != null)
+            if (this.Status is not null)
             {
                 hashCode = (hashCode * 59) + this.Status.GetHashCode();
             }

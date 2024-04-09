@@ -123,7 +123,7 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
     /// <param name="time">UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule..</param>
     /// <param name="predictedTime">UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time..</param>
     /// <param name="actualTime">UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time..</param>
-    public MatchSimple(string key = default, CompLevelEnum compLevel = default, int setNumber = default, int matchNumber = default, MatchSimpleAlliances alliances = default, WinningAllianceEnum? winningAlliance = default, string eventKey = default, long time = default, long predictedTime = default, long actualTime = default)
+    public MatchSimple(string? key = default, CompLevelEnum compLevel = default, int setNumber = default, int matchNumber = default, MatchSimpleAlliances? alliances = default, WinningAllianceEnum? winningAlliance = default, string? eventKey = default, long time = default, long predictedTime = default, long actualTime = default)
     {
         // to ensure "key" is required (not null)
         this.Key = key ?? throw new ArgumentNullException(nameof(key));
@@ -227,19 +227,19 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchSimple);
+    public override bool Equals(object? input) => Equals(input as MatchSimple);
 
     /// <summary>
     /// Returns true if MatchSimple instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchSimple to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchSimple input)
+    public bool Equals(MatchSimple? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
@@ -256,7 +256,7 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
             ) &&
             (
                 this.Alliances == input.Alliances ||
-                (this.Alliances != null &&
+                (this.Alliances is not null &&
                 this.Alliances.Equals(input.Alliances))
             ) &&
             (
@@ -265,7 +265,7 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
             ) &&
             (
                 this.EventKey == input.EventKey ||
-                (this.EventKey != null &&
+                (this.EventKey is not null &&
                 this.EventKey.Equals(input.EventKey))
             ) &&
             (
@@ -291,7 +291,7 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }
@@ -299,13 +299,13 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
             hashCode = (hashCode * 59) + this.CompLevel.GetHashCode();
             hashCode = (hashCode * 59) + this.SetNumber.GetHashCode();
             hashCode = (hashCode * 59) + this.MatchNumber.GetHashCode();
-            if (this.Alliances != null)
+            if (this.Alliances is not null)
             {
                 hashCode = (hashCode * 59) + this.Alliances.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.WinningAlliance.GetHashCode();
-            if (this.EventKey != null)
+            if (this.EventKey is not null)
             {
                 hashCode = (hashCode * 59) + this.EventKey.GetHashCode();
             }

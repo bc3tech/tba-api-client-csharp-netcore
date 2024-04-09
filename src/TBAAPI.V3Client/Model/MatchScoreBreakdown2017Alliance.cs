@@ -57,7 +57,7 @@ using System.Text.Json.Serialization;
 /// <param name="touchpadMiddle">touchpadMiddle.</param>
 /// <param name="touchpadFar">touchpadFar.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, int teleopPoints = default, int foulPoints = default, int adjustPoints = default, int totalPoints = default, MatchScoreBreakdown2017Alliance.Robot1AutoEnum? robot1Auto = default, MatchScoreBreakdown2017Alliance.Robot2AutoEnum? robot2Auto = default, MatchScoreBreakdown2017Alliance.Robot3AutoEnum? robot3Auto = default, bool rotor1Auto = default, bool rotor2Auto = default, int autoFuelLow = default, int autoFuelHigh = default, int autoMobilityPoints = default, int autoRotorPoints = default, int autoFuelPoints = default, int teleopFuelPoints = default, int teleopFuelLow = default, int teleopFuelHigh = default, int teleopRotorPoints = default, bool kPaRankingPointAchieved = default, int teleopTakeoffPoints = default, int kPaBonusPoints = default, int rotorBonusPoints = default, bool rotor1Engaged = default, bool rotor2Engaged = default, bool rotor3Engaged = default, bool rotor4Engaged = default, bool rotorRankingPointAchieved = default, int techFoulCount = default, int foulCount = default, string touchpadNear = default, string touchpadMiddle = default, string touchpadFar = default) : IEquatable<MatchScoreBreakdown2017Alliance>, IValidatableObject
+public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, int teleopPoints = default, int foulPoints = default, int adjustPoints = default, int totalPoints = default, MatchScoreBreakdown2017Alliance.Robot1AutoEnum? robot1Auto = default, MatchScoreBreakdown2017Alliance.Robot2AutoEnum? robot2Auto = default, MatchScoreBreakdown2017Alliance.Robot3AutoEnum? robot3Auto = default, bool rotor1Auto = default, bool rotor2Auto = default, int autoFuelLow = default, int autoFuelHigh = default, int autoMobilityPoints = default, int autoRotorPoints = default, int autoFuelPoints = default, int teleopFuelPoints = default, int teleopFuelLow = default, int teleopFuelHigh = default, int teleopRotorPoints = default, bool kPaRankingPointAchieved = default, int teleopTakeoffPoints = default, int kPaBonusPoints = default, int rotorBonusPoints = default, bool rotor1Engaged = default, bool rotor2Engaged = default, bool rotor3Engaged = default, bool rotor4Engaged = default, bool rotorRankingPointAchieved = default, int techFoulCount = default, int foulCount = default, string? touchpadNear = default, string? touchpadMiddle = default, string? touchpadFar = default) : IEquatable<MatchScoreBreakdown2017Alliance>, IValidatableObject
 {
     /// <summary>
     /// Defines Robot1Auto
@@ -389,16 +389,16 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2017Alliance);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2017Alliance);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2017Alliance instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2017Alliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2017Alliance input)
+    public bool Equals(MatchScoreBreakdown2017Alliance? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.AutoPoints == input.AutoPoints ||
                 this.AutoPoints.Equals(input.AutoPoints)
@@ -521,17 +521,17 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
             ) &&
             (
                 this.TouchpadNear == input.TouchpadNear ||
-                (this.TouchpadNear != null &&
+                (this.TouchpadNear is not null &&
                 this.TouchpadNear.Equals(input.TouchpadNear))
             ) &&
             (
                 this.TouchpadMiddle == input.TouchpadMiddle ||
-                (this.TouchpadMiddle != null &&
+                (this.TouchpadMiddle is not null &&
                 this.TouchpadMiddle.Equals(input.TouchpadMiddle))
             ) &&
             (
                 this.TouchpadFar == input.TouchpadFar ||
-                (this.TouchpadFar != null &&
+                (this.TouchpadFar is not null &&
                 this.TouchpadFar.Equals(input.TouchpadFar))
             );
     }
@@ -575,17 +575,17 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
             hashCode = (hashCode * 59) + this.RotorRankingPointAchieved.GetHashCode();
             hashCode = (hashCode * 59) + this.TechFoulCount.GetHashCode();
             hashCode = (hashCode * 59) + this.FoulCount.GetHashCode();
-            if (this.TouchpadNear != null)
+            if (this.TouchpadNear is not null)
             {
                 hashCode = (hashCode * 59) + this.TouchpadNear.GetHashCode();
             }
 
-            if (this.TouchpadMiddle != null)
+            if (this.TouchpadMiddle is not null)
             {
                 hashCode = (hashCode * 59) + this.TouchpadMiddle.GetHashCode();
             }
 
-            if (this.TouchpadFar != null)
+            if (this.TouchpadFar is not null)
             {
                 hashCode = (hashCode * 59) + this.TouchpadFar.GetHashCode();
             }

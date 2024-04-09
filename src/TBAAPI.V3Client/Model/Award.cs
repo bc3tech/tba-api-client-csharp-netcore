@@ -38,7 +38,7 @@ public partial class Award : IEquatable<Award>, IValidatableObject
     /// <param name="eventKey">The event_key of the event the award was won at. (required).</param>
     /// <param name="recipientList">A list of recipients of the award at the event. May have either a team_key or an awardee, both, or neither (in the case the award wasn&#39;t awarded at the event). (required).</param>
     /// <param name="year">The year this award was won. (required).</param>
-    public Award(string name = default, int awardType = default, string eventKey = default, List<AwardRecipient> recipientList = default, int year = default)
+    public Award(string? name = default, int awardType = default, string? eventKey = default, List<AwardRecipient>? recipientList = default, int year = default)
     {
         // to ensure "name" is required (not null)
         this.Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -76,7 +76,7 @@ public partial class Award : IEquatable<Award>, IValidatableObject
     /// </summary>
     /// <value>A list of recipients of the award at the event. May have either a team_key or an awardee, both, or neither (in the case the award wasn&#39;t awarded at the event).</value>
     [DataMember(Name = "recipient_list", EmitDefaultValue = false), JsonPropertyName("recipient_list")]
-    public List<AwardRecipient> RecipientList { get; set; }
+    public IList<AwardRecipient>? RecipientList { get; set; }
 
     /// <summary>
     /// The year this award was won.
@@ -113,19 +113,19 @@ public partial class Award : IEquatable<Award>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as Award);
+    public override bool Equals(object? input) => Equals(input as Award);
 
     /// <summary>
     /// Returns true if Award instances are equal
     /// </summary>
     /// <param name="input">Instance of Award to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(Award input)
+    public bool Equals(Award? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             ) &&
             (
@@ -134,13 +134,13 @@ public partial class Award : IEquatable<Award>, IValidatableObject
             ) &&
             (
                 this.EventKey == input.EventKey ||
-                (this.EventKey != null &&
+                (this.EventKey is not null &&
                 this.EventKey.Equals(input.EventKey))
             ) &&
             (
                 this.RecipientList == input.RecipientList ||
-                (this.RecipientList != null &&
-                input.RecipientList != null &&
+                (this.RecipientList is not null &&
+                input.RecipientList is not null &&
                 this.RecipientList.SequenceEqual(input.RecipientList))
             ) &&
             (
@@ -158,18 +158,18 @@ public partial class Award : IEquatable<Award>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.AwardType.GetHashCode();
-            if (this.EventKey != null)
+            if (this.EventKey is not null)
             {
                 hashCode = (hashCode * 59) + this.EventKey.GetHashCode();
             }
 
-            if (this.RecipientList != null)
+            if (this.RecipientList is not null)
             {
                 hashCode = (hashCode * 59) + this.RecipientList.GetHashCode();
             }

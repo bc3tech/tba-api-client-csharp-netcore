@@ -41,7 +41,7 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
     /// <param name="rank">The team&#39;s rank at the event as provided by FIRST. (required).</param>
     /// <param name="dq">Number of times disqualified. (required).</param>
     /// <param name="teamKey">The team with this rank. (required).</param>
-    public EventRankingRankings(int matchesPlayed = default, int qualAverage = default, List<decimal> extraStats = default, List<decimal> sortOrders = default, WLTRecord record = default, int rank = default, int dq = default, string teamKey = default)
+    public EventRankingRankings(int matchesPlayed = default, int qualAverage = default, List<decimal>? extraStats = default, List<decimal>? sortOrders = default, WLTRecord? record = default, int rank = default, int dq = default, string? teamKey = default)
     {
         this.MatchesPlayed = matchesPlayed;
         // to ensure "record" is required (not null)
@@ -74,14 +74,14 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
     /// </summary>
     /// <value>Additional special data on the team&#39;s performance calculated by TBA.</value>
     [DataMember(Name = "extra_stats", EmitDefaultValue = false), JsonPropertyName("extra_stats")]
-    public List<decimal> ExtraStats { get; set; }
+    public IList<decimal>? ExtraStats { get; set; }
 
     /// <summary>
     /// Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details.
     /// </summary>
     /// <value>Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details.</value>
     [DataMember(Name = "sort_orders", EmitDefaultValue = false), JsonPropertyName("sort_orders")]
-    public List<decimal> SortOrders { get; set; }
+    public IList<decimal>? SortOrders { get; set; }
 
     /// <summary>
     /// Gets or Sets Record
@@ -108,7 +108,7 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
     /// </summary>
     /// <value>The team with this rank.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string TeamKey { get; set; }
+    public string? TeamKey { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -141,16 +141,16 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventRankingRankings);
+    public override bool Equals(object? input) => Equals(input as EventRankingRankings);
 
     /// <summary>
     /// Returns true if EventRankingRankings instances are equal
     /// </summary>
     /// <param name="input">Instance of EventRankingRankings to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventRankingRankings input)
+    public bool Equals(EventRankingRankings? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.MatchesPlayed == input.MatchesPlayed ||
                 this.MatchesPlayed.Equals(input.MatchesPlayed)
@@ -161,19 +161,19 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
             ) &&
             (
                 this.ExtraStats == input.ExtraStats ||
-                (this.ExtraStats != null &&
-                input.ExtraStats != null &&
+                (this.ExtraStats is not null &&
+                input.ExtraStats is not null &&
                 this.ExtraStats.SequenceEqual(input.ExtraStats))
             ) &&
             (
                 this.SortOrders == input.SortOrders ||
-                (this.SortOrders != null &&
-                input.SortOrders != null &&
+                (this.SortOrders is not null &&
+                input.SortOrders is not null &&
                 this.SortOrders.SequenceEqual(input.SortOrders))
             ) &&
             (
                 this.Record == input.Record ||
-                (this.Record != null &&
+                (this.Record is not null &&
                 this.Record.Equals(input.Record))
             ) &&
             (
@@ -186,7 +186,7 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
             ) &&
             (
                 this.TeamKey == input.TeamKey ||
-                (this.TeamKey != null &&
+                (this.TeamKey is not null &&
                 this.TeamKey.Equals(input.TeamKey))
             );
     }
@@ -202,24 +202,24 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.MatchesPlayed.GetHashCode();
             hashCode = (hashCode * 59) + this.QualAverage.GetHashCode();
-            if (this.ExtraStats != null)
+            if (this.ExtraStats is not null)
             {
                 hashCode = (hashCode * 59) + this.ExtraStats.GetHashCode();
             }
 
-            if (this.SortOrders != null)
+            if (this.SortOrders is not null)
             {
                 hashCode = (hashCode * 59) + this.SortOrders.GetHashCode();
             }
 
-            if (this.Record != null)
+            if (this.Record is not null)
             {
                 hashCode = (hashCode * 59) + this.Record.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.Rank.GetHashCode();
             hashCode = (hashCode * 59) + this.Dq.GetHashCode();
-            if (this.TeamKey != null)
+            if (this.TeamKey is not null)
             {
                 hashCode = (hashCode * 59) + this.TeamKey.GetHashCode();
             }

@@ -37,7 +37,7 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
     /// <param name="rookieBonus">Any points added to a team as a result of the rookie bonus..</param>
     /// <param name="pointTotal">Total district points for the team. (required).</param>
     /// <param name="eventPoints">List of events that contributed to the point total for the team..</param>
-    public DistrictRanking(string teamKey = default, int rank = default, int rookieBonus = default, int pointTotal = default, List<DistrictRankingEventPoints> eventPoints = default)
+    public DistrictRanking(string? teamKey = default, int rank = default, int rookieBonus = default, int pointTotal = default, List<DistrictRankingEventPoints>? eventPoints = default)
     {
         // to ensure "teamKey" is required (not null)
         this.TeamKey = teamKey ?? throw new ArgumentNullException(nameof(teamKey));
@@ -52,7 +52,7 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
     /// </summary>
     /// <value>TBA team key for the team.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string TeamKey { get; set; }
+    public string? TeamKey { get; set; }
 
     /// <summary>
     /// Numerical rank of the team, 1 being top rank.
@@ -80,7 +80,7 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
     /// </summary>
     /// <value>List of events that contributed to the point total for the team.</value>
     [DataMember(Name = "event_points", EmitDefaultValue = false), JsonPropertyName("event_points")]
-    public List<DistrictRankingEventPoints> EventPoints { get; set; }
+    public IList<DistrictRankingEventPoints>? EventPoints { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -110,19 +110,19 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as DistrictRanking);
+    public override bool Equals(object? input) => Equals(input as DistrictRanking);
 
     /// <summary>
     /// Returns true if DistrictRanking instances are equal
     /// </summary>
     /// <param name="input">Instance of DistrictRanking to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(DistrictRanking input)
+    public bool Equals(DistrictRanking? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.TeamKey == input.TeamKey ||
-                (this.TeamKey != null &&
+                (this.TeamKey is not null &&
                 this.TeamKey.Equals(input.TeamKey))
             ) &&
             (
@@ -139,8 +139,8 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
             ) &&
             (
                 this.EventPoints == input.EventPoints ||
-                (this.EventPoints != null &&
-                input.EventPoints != null &&
+                (this.EventPoints is not null &&
+                input.EventPoints is not null &&
                 this.EventPoints.SequenceEqual(input.EventPoints))
             );
     }
@@ -154,7 +154,7 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.TeamKey != null)
+            if (this.TeamKey is not null)
             {
                 hashCode = (hashCode * 59) + this.TeamKey.GetHashCode();
             }
@@ -162,7 +162,7 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
             hashCode = (hashCode * 59) + this.Rank.GetHashCode();
             hashCode = (hashCode * 59) + this.RookieBonus.GetHashCode();
             hashCode = (hashCode * 59) + this.PointTotal.GetHashCode();
-            if (this.EventPoints != null)
+            if (this.EventPoints is not null)
             {
                 hashCode = (hashCode * 59) + this.EventPoints.GetHashCode();
             }

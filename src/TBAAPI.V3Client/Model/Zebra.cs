@@ -36,7 +36,7 @@ public partial class Zebra : IEquatable<Zebra>, IValidatableObject
     /// <param name="key">TBA match key with the format &#x60;yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]&#x60;, where &#x60;yyyy&#x60; is the year, and &#x60;EVENT_CODE&#x60; is the event code of the event, &#x60;COMP_LEVEL&#x60; is (qm, ef, qf, sf, f), and &#x60;MATCH_NUMBER&#x60; is the match number in the competition level. A set number may be appended to the competition level if more than one match in required per set. (required).</param>
     /// <param name="times">A list of relative timestamps for each data point. Each timestamp will correspond to the X and Y value at the same index in a team xs and ys arrays. &#x60;times&#x60;, all teams &#x60;xs&#x60; and all teams &#x60;ys&#x60; are guarenteed to be the same length. (required).</param>
     /// <param name="alliances">alliances (required).</param>
-    public Zebra(string key = default, List<double> times = default, ZebraAlliances alliances = default)
+    public Zebra(string? key = default, List<double>? times = default, ZebraAlliances? alliances = default)
     {
         // to ensure "key" is required (not null)
         this.Key = key ?? throw new ArgumentNullException(nameof(key));
@@ -58,7 +58,7 @@ public partial class Zebra : IEquatable<Zebra>, IValidatableObject
     /// </summary>
     /// <value>A list of relative timestamps for each data point. Each timestamp will correspond to the X and Y value at the same index in a team xs and ys arrays. &#x60;times&#x60;, all teams &#x60;xs&#x60; and all teams &#x60;ys&#x60; are guarenteed to be the same length.</value>
     [DataMember(Name = "times", EmitDefaultValue = false), JsonPropertyName("times")]
-    public List<double> Times { get; set; }
+    public IList<double>? Times { get; set; }
 
     /// <summary>
     /// Gets or Sets Alliances
@@ -92,30 +92,30 @@ public partial class Zebra : IEquatable<Zebra>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as Zebra);
+    public override bool Equals(object? input) => Equals(input as Zebra);
 
     /// <summary>
     /// Returns true if Zebra instances are equal
     /// </summary>
     /// <param name="input">Instance of Zebra to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(Zebra input)
+    public bool Equals(Zebra? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
                 this.Times == input.Times ||
-                (this.Times != null &&
-                input.Times != null &&
+                (this.Times is not null &&
+                input.Times is not null &&
                 this.Times.SequenceEqual(input.Times))
             ) &&
             (
                 this.Alliances == input.Alliances ||
-                (this.Alliances != null &&
+                (this.Alliances is not null &&
                 this.Alliances.Equals(input.Alliances))
             );
     }
@@ -129,17 +129,17 @@ public partial class Zebra : IEquatable<Zebra>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Key != null)
+            if (this.Key is not null)
             {
                 hashCode = (hashCode * 59) + this.Key.GetHashCode();
             }
 
-            if (this.Times != null)
+            if (this.Times is not null)
             {
                 hashCode = (hashCode * 59) + this.Times.GetHashCode();
             }
 
-            if (this.Alliances != null)
+            if (this.Alliances is not null)
             {
                 hashCode = (hashCode * 59) + this.Alliances.GetHashCode();
             }

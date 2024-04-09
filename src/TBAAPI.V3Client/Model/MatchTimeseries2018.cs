@@ -55,7 +55,7 @@ using System.Text.Json.Serialization;
 /// <param name="redScore">Current score for the red alliance..</param>
 /// <param name="redSwitchOwned">1 if the red alliance owns their SWITCH, 0 if not..</param>
 [DataContract]
-public partial class MatchTimeseries2018(string eventKey = default, string matchId = default, string mode = default, int play = default, int timeRemaining = default, int blueAutoQuest = default, int blueBoostCount = default, int blueBoostPlayed = default, string blueCurrentPowerup = default, int blueFaceTheBoss = default, int blueForceCount = default, int blueForcePlayed = default, int blueLevitateCount = default, int blueLevitatePlayed = default, string bluePowerupTimeRemaining = default, int blueScaleOwned = default, int blueScore = default, int blueSwitchOwned = default, int redAutoQuest = default, int redBoostCount = default, int redBoostPlayed = default, string redCurrentPowerup = default, int redFaceTheBoss = default, int redForceCount = default, int redForcePlayed = default, int redLevitateCount = default, int redLevitatePlayed = default, string redPowerupTimeRemaining = default, int redScaleOwned = default, int redScore = default, int redSwitchOwned = default) : IEquatable<MatchTimeseries2018>, IValidatableObject
+public partial class MatchTimeseries2018(string? eventKey = default, string? matchId = default, string? mode = default, int play = default, int timeRemaining = default, int blueAutoQuest = default, int blueBoostCount = default, int blueBoostPlayed = default, string? blueCurrentPowerup = default, int blueFaceTheBoss = default, int blueForceCount = default, int blueForcePlayed = default, int blueLevitateCount = default, int blueLevitatePlayed = default, string? bluePowerupTimeRemaining = default, int blueScaleOwned = default, int blueScore = default, int blueSwitchOwned = default, int redAutoQuest = default, int redBoostCount = default, int redBoostPlayed = default, string? redCurrentPowerup = default, int redFaceTheBoss = default, int redForceCount = default, int redForcePlayed = default, int redLevitateCount = default, int redLevitatePlayed = default, string? redPowerupTimeRemaining = default, int redScaleOwned = default, int redScore = default, int redSwitchOwned = default) : IEquatable<MatchTimeseries2018>, IValidatableObject
 {
 
     /// <summary>
@@ -328,29 +328,29 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchTimeseries2018);
+    public override bool Equals(object? input) => Equals(input as MatchTimeseries2018);
 
     /// <summary>
     /// Returns true if MatchTimeseries2018 instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchTimeseries2018 to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchTimeseries2018 input)
+    public bool Equals(MatchTimeseries2018? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.EventKey == input.EventKey ||
-                (this.EventKey != null &&
+                (this.EventKey is not null &&
                 this.EventKey.Equals(input.EventKey))
             ) &&
             (
                 this.MatchId == input.MatchId ||
-                (this.MatchId != null &&
+                (this.MatchId is not null &&
                 this.MatchId.Equals(input.MatchId))
             ) &&
             (
                 this.Mode == input.Mode ||
-                (this.Mode != null &&
+                (this.Mode is not null &&
                 this.Mode.Equals(input.Mode))
             ) &&
             (
@@ -375,7 +375,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             ) &&
             (
                 this.BlueCurrentPowerup == input.BlueCurrentPowerup ||
-                (this.BlueCurrentPowerup != null &&
+                (this.BlueCurrentPowerup is not null &&
                 this.BlueCurrentPowerup.Equals(input.BlueCurrentPowerup))
             ) &&
             (
@@ -400,7 +400,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             ) &&
             (
                 this.BluePowerupTimeRemaining == input.BluePowerupTimeRemaining ||
-                (this.BluePowerupTimeRemaining != null &&
+                (this.BluePowerupTimeRemaining is not null &&
                 this.BluePowerupTimeRemaining.Equals(input.BluePowerupTimeRemaining))
             ) &&
             (
@@ -429,7 +429,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             ) &&
             (
                 this.RedCurrentPowerup == input.RedCurrentPowerup ||
-                (this.RedCurrentPowerup != null &&
+                (this.RedCurrentPowerup is not null &&
                 this.RedCurrentPowerup.Equals(input.RedCurrentPowerup))
             ) &&
             (
@@ -454,7 +454,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             ) &&
             (
                 this.RedPowerupTimeRemaining == input.RedPowerupTimeRemaining ||
-                (this.RedPowerupTimeRemaining != null &&
+                (this.RedPowerupTimeRemaining is not null &&
                 this.RedPowerupTimeRemaining.Equals(input.RedPowerupTimeRemaining))
             ) &&
             (
@@ -480,17 +480,17 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.EventKey != null)
+            if (this.EventKey is not null)
             {
                 hashCode = (hashCode * 59) + this.EventKey.GetHashCode();
             }
 
-            if (this.MatchId != null)
+            if (this.MatchId is not null)
             {
                 hashCode = (hashCode * 59) + this.MatchId.GetHashCode();
             }
 
-            if (this.Mode != null)
+            if (this.Mode is not null)
             {
                 hashCode = (hashCode * 59) + this.Mode.GetHashCode();
             }
@@ -500,7 +500,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             hashCode = (hashCode * 59) + this.BlueAutoQuest.GetHashCode();
             hashCode = (hashCode * 59) + this.BlueBoostCount.GetHashCode();
             hashCode = (hashCode * 59) + this.BlueBoostPlayed.GetHashCode();
-            if (this.BlueCurrentPowerup != null)
+            if (this.BlueCurrentPowerup is not null)
             {
                 hashCode = (hashCode * 59) + this.BlueCurrentPowerup.GetHashCode();
             }
@@ -510,7 +510,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             hashCode = (hashCode * 59) + this.BlueForcePlayed.GetHashCode();
             hashCode = (hashCode * 59) + this.BlueLevitateCount.GetHashCode();
             hashCode = (hashCode * 59) + this.BlueLevitatePlayed.GetHashCode();
-            if (this.BluePowerupTimeRemaining != null)
+            if (this.BluePowerupTimeRemaining is not null)
             {
                 hashCode = (hashCode * 59) + this.BluePowerupTimeRemaining.GetHashCode();
             }
@@ -521,7 +521,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             hashCode = (hashCode * 59) + this.RedAutoQuest.GetHashCode();
             hashCode = (hashCode * 59) + this.RedBoostCount.GetHashCode();
             hashCode = (hashCode * 59) + this.RedBoostPlayed.GetHashCode();
-            if (this.RedCurrentPowerup != null)
+            if (this.RedCurrentPowerup is not null)
             {
                 hashCode = (hashCode * 59) + this.RedCurrentPowerup.GetHashCode();
             }
@@ -531,7 +531,7 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
             hashCode = (hashCode * 59) + this.RedForcePlayed.GetHashCode();
             hashCode = (hashCode * 59) + this.RedLevitateCount.GetHashCode();
             hashCode = (hashCode * 59) + this.RedLevitatePlayed.GetHashCode();
-            if (this.RedPowerupTimeRemaining != null)
+            if (this.RedPowerupTimeRemaining is not null)
             {
                 hashCode = (hashCode * 59) + this.RedPowerupTimeRemaining.GetHashCode();
             }

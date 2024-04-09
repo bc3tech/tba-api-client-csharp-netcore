@@ -56,7 +56,7 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
     /// <param name="averageTowerScore">Average tower score. (required).</param>
     /// <param name="averageFoulScore">Average foul score. (required).</param>
     /// <param name="highScore">An array with three values, high score, match key from the match with the high score, and the name of the match. (required).</param>
-    public EventInsights2016(List<float> lowBar = default, List<float> aChevalDeFrise = default, List<float> aPortcullis = default, List<float> bRamparts = default, List<float> bMoat = default, List<float> cSallyPort = default, List<float> cDrawbridge = default, List<float> dRoughTerrain = default, List<float> dRockWall = default, float averageHighGoals = default, float averageLowGoals = default, List<float> breaches = default, List<float> scales = default, List<float> challenges = default, List<float> captures = default, float averageWinScore = default, float averageWinMargin = default, float averageScore = default, float averageAutoScore = default, float averageCrossingScore = default, float averageBoulderScore = default, float averageTowerScore = default, float averageFoulScore = default, List<string> highScore = default)
+    public EventInsights2016(IList<float>? lowBar = default, IList<float>? aChevalDeFrise = default, IList<float>? aPortcullis = default, IList<float>? bRamparts = default, IList<float>? bMoat = default, IList<float>? cSallyPort = default, IList<float>? cDrawbridge = default, IList<float>? dRoughTerrain = default, IList<float>? dRockWall = default, float averageHighGoals = default, float averageLowGoals = default, IList<float>? breaches = default, IList<float>? scales = default, IList<float>? challenges = default, IList<float>? captures = default, float averageWinScore = default, float averageWinMargin = default, float averageScore = default, float averageAutoScore = default, float averageCrossingScore = default, float averageBoulderScore = default, float averageTowerScore = default, float averageFoulScore = default, IList<string>? highScore = default)
     {
         // to ensure "lowBar" is required (not null)
         this.LowBar = lowBar ?? throw new ArgumentNullException(nameof(lowBar));
@@ -103,63 +103,63 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
     /// </summary>
     /// <value>For the Low Bar - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "LowBar", EmitDefaultValue = false), JsonPropertyName("LowBar")]
-    public List<float> LowBar { get; set; }
+    public IList<float>? LowBar { get; set; }
 
     /// <summary>
     /// For the Cheval De Frise - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Cheval De Frise - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "A_ChevalDeFrise", EmitDefaultValue = false), JsonPropertyName("A_ChevalDeFrise")]
-    public List<float> AChevalDeFrise { get; set; }
+    public IList<float>? AChevalDeFrise { get; set; }
 
     /// <summary>
     /// For the Portcullis - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Portcullis - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "A_Portcullis", EmitDefaultValue = false), JsonPropertyName("A_Portcullis")]
-    public List<float> APortcullis { get; set; }
+    public IList<float>? APortcullis { get; set; }
 
     /// <summary>
     /// For the Ramparts - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Ramparts - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "B_Ramparts", EmitDefaultValue = false), JsonPropertyName("B_Ramparts")]
-    public List<float> BRamparts { get; set; }
+    public IList<float>? BRamparts { get; set; }
 
     /// <summary>
     /// For the Moat - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Moat - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "B_Moat", EmitDefaultValue = false), JsonPropertyName("B_Moat")]
-    public List<float> BMoat { get; set; }
+    public IList<float>? BMoat { get; set; }
 
     /// <summary>
     /// For the Sally Port - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Sally Port - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "C_SallyPort", EmitDefaultValue = false), JsonPropertyName("C_SallyPort")]
-    public List<float> CSallyPort { get; set; }
+    public IList<float>? CSallyPort { get; set; }
 
     /// <summary>
     /// For the Drawbridge - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Drawbridge - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "C_Drawbridge", EmitDefaultValue = false), JsonPropertyName("C_Drawbridge")]
-    public List<float> CDrawbridge { get; set; }
+    public IList<float>? CDrawbridge { get; set; }
 
     /// <summary>
     /// For the Rough Terrain - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Rough Terrain - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "D_RoughTerrain", EmitDefaultValue = false), JsonPropertyName("D_RoughTerrain")]
-    public List<float> DRoughTerrain { get; set; }
+    public IList<float>? DRoughTerrain { get; set; }
 
     /// <summary>
     /// For the Rock Wall - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Rock Wall - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
     [DataMember(Name = "D_RockWall", EmitDefaultValue = false), JsonPropertyName("D_RockWall")]
-    public List<float> DRockWall { get; set; }
+    public IList<float>? DRockWall { get; set; }
 
     /// <summary>
     /// Average number of high goals scored.
@@ -180,28 +180,28 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
     /// </summary>
     /// <value>An array with three values, number of times breached, number of opportunities to breach, and percentage.</value>
     [DataMember(Name = "breaches", EmitDefaultValue = false), JsonPropertyName("breaches")]
-    public List<float> Breaches { get; set; }
+    public IList<float>? Breaches { get; set; }
 
     /// <summary>
     /// An array with three values, number of times scaled, number of opportunities to scale, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times scaled, number of opportunities to scale, and percentage.</value>
     [DataMember(Name = "scales", EmitDefaultValue = false), JsonPropertyName("scales")]
-    public List<float> Scales { get; set; }
+    public IList<float>? Scales { get; set; }
 
     /// <summary>
     /// An array with three values, number of times challenged, number of opportunities to challenge, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times challenged, number of opportunities to challenge, and percentage.</value>
     [DataMember(Name = "challenges", EmitDefaultValue = false), JsonPropertyName("challenges")]
-    public List<float> Challenges { get; set; }
+    public IList<float>? Challenges { get; set; }
 
     /// <summary>
     /// An array with three values, number of times captured, number of opportunities to capture, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times captured, number of opportunities to capture, and percentage.</value>
     [DataMember(Name = "captures", EmitDefaultValue = false), JsonPropertyName("captures")]
-    public List<float> Captures { get; set; }
+    public IList<float>? Captures { get; set; }
 
     /// <summary>
     /// Average winning score.
@@ -264,7 +264,7 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
     /// </summary>
     /// <value>An array with three values, high score, match key from the match with the high score, and the name of the match.</value>
     [DataMember(Name = "high_score", EmitDefaultValue = false), JsonPropertyName("high_score")]
-    public List<string> HighScore { get; set; }
+    public IList<string>? HighScore { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -313,68 +313,68 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventInsights2016);
+    public override bool Equals(object? input) => Equals(input as EventInsights2016);
 
     /// <summary>
     /// Returns true if EventInsights2016 instances are equal
     /// </summary>
     /// <param name="input">Instance of EventInsights2016 to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventInsights2016 input)
+    public bool Equals(EventInsights2016? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.LowBar == input.LowBar ||
-                (this.LowBar != null &&
-                input.LowBar != null &&
+                (this.LowBar is not null &&
+                input.LowBar is not null &&
                 this.LowBar.SequenceEqual(input.LowBar))
             ) &&
             (
                 this.AChevalDeFrise == input.AChevalDeFrise ||
-                (this.AChevalDeFrise != null &&
-                input.AChevalDeFrise != null &&
+                (this.AChevalDeFrise is not null &&
+                input.AChevalDeFrise is not null &&
                 this.AChevalDeFrise.SequenceEqual(input.AChevalDeFrise))
             ) &&
             (
                 this.APortcullis == input.APortcullis ||
-                (this.APortcullis != null &&
-                input.APortcullis != null &&
+                (this.APortcullis is not null &&
+                input.APortcullis is not null &&
                 this.APortcullis.SequenceEqual(input.APortcullis))
             ) &&
             (
                 this.BRamparts == input.BRamparts ||
-                (this.BRamparts != null &&
-                input.BRamparts != null &&
+                (this.BRamparts is not null &&
+                input.BRamparts is not null &&
                 this.BRamparts.SequenceEqual(input.BRamparts))
             ) &&
             (
                 this.BMoat == input.BMoat ||
-                (this.BMoat != null &&
-                input.BMoat != null &&
+                (this.BMoat is not null &&
+                input.BMoat is not null &&
                 this.BMoat.SequenceEqual(input.BMoat))
             ) &&
             (
                 this.CSallyPort == input.CSallyPort ||
-                (this.CSallyPort != null &&
-                input.CSallyPort != null &&
+                (this.CSallyPort is not null &&
+                input.CSallyPort is not null &&
                 this.CSallyPort.SequenceEqual(input.CSallyPort))
             ) &&
             (
                 this.CDrawbridge == input.CDrawbridge ||
-                (this.CDrawbridge != null &&
-                input.CDrawbridge != null &&
+                (this.CDrawbridge is not null &&
+                input.CDrawbridge is not null &&
                 this.CDrawbridge.SequenceEqual(input.CDrawbridge))
             ) &&
             (
                 this.DRoughTerrain == input.DRoughTerrain ||
-                (this.DRoughTerrain != null &&
-                input.DRoughTerrain != null &&
+                (this.DRoughTerrain is not null &&
+                input.DRoughTerrain is not null &&
                 this.DRoughTerrain.SequenceEqual(input.DRoughTerrain))
             ) &&
             (
                 this.DRockWall == input.DRockWall ||
-                (this.DRockWall != null &&
-                input.DRockWall != null &&
+                (this.DRockWall is not null &&
+                input.DRockWall is not null &&
                 this.DRockWall.SequenceEqual(input.DRockWall))
             ) &&
             (
@@ -387,26 +387,26 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
             ) &&
             (
                 this.Breaches == input.Breaches ||
-                (this.Breaches != null &&
-                input.Breaches != null &&
+                (this.Breaches is not null &&
+                input.Breaches is not null &&
                 this.Breaches.SequenceEqual(input.Breaches))
             ) &&
             (
                 this.Scales == input.Scales ||
-                (this.Scales != null &&
-                input.Scales != null &&
+                (this.Scales is not null &&
+                input.Scales is not null &&
                 this.Scales.SequenceEqual(input.Scales))
             ) &&
             (
                 this.Challenges == input.Challenges ||
-                (this.Challenges != null &&
-                input.Challenges != null &&
+                (this.Challenges is not null &&
+                input.Challenges is not null &&
                 this.Challenges.SequenceEqual(input.Challenges))
             ) &&
             (
                 this.Captures == input.Captures ||
-                (this.Captures != null &&
-                input.Captures != null &&
+                (this.Captures is not null &&
+                input.Captures is not null &&
                 this.Captures.SequenceEqual(input.Captures))
             ) &&
             (
@@ -443,8 +443,8 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
             ) &&
             (
                 this.HighScore == input.HighScore ||
-                (this.HighScore != null &&
-                input.HighScore != null &&
+                (this.HighScore is not null &&
+                input.HighScore is not null &&
                 this.HighScore.SequenceEqual(input.HighScore))
             );
     }
@@ -458,69 +458,69 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.LowBar != null)
+            if (this.LowBar is not null)
             {
                 hashCode = (hashCode * 59) + this.LowBar.GetHashCode();
             }
 
-            if (this.AChevalDeFrise != null)
+            if (this.AChevalDeFrise is not null)
             {
                 hashCode = (hashCode * 59) + this.AChevalDeFrise.GetHashCode();
             }
 
-            if (this.APortcullis != null)
+            if (this.APortcullis is not null)
             {
                 hashCode = (hashCode * 59) + this.APortcullis.GetHashCode();
             }
 
-            if (this.BRamparts != null)
+            if (this.BRamparts is not null)
             {
                 hashCode = (hashCode * 59) + this.BRamparts.GetHashCode();
             }
 
-            if (this.BMoat != null)
+            if (this.BMoat is not null)
             {
                 hashCode = (hashCode * 59) + this.BMoat.GetHashCode();
             }
 
-            if (this.CSallyPort != null)
+            if (this.CSallyPort is not null)
             {
                 hashCode = (hashCode * 59) + this.CSallyPort.GetHashCode();
             }
 
-            if (this.CDrawbridge != null)
+            if (this.CDrawbridge is not null)
             {
                 hashCode = (hashCode * 59) + this.CDrawbridge.GetHashCode();
             }
 
-            if (this.DRoughTerrain != null)
+            if (this.DRoughTerrain is not null)
             {
                 hashCode = (hashCode * 59) + this.DRoughTerrain.GetHashCode();
             }
 
-            if (this.DRockWall != null)
+            if (this.DRockWall is not null)
             {
                 hashCode = (hashCode * 59) + this.DRockWall.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.AverageHighGoals.GetHashCode();
             hashCode = (hashCode * 59) + this.AverageLowGoals.GetHashCode();
-            if (this.Breaches != null)
+            if (this.Breaches is not null)
             {
                 hashCode = (hashCode * 59) + this.Breaches.GetHashCode();
             }
 
-            if (this.Scales != null)
+            if (this.Scales is not null)
             {
                 hashCode = (hashCode * 59) + this.Scales.GetHashCode();
             }
 
-            if (this.Challenges != null)
+            if (this.Challenges is not null)
             {
                 hashCode = (hashCode * 59) + this.Challenges.GetHashCode();
             }
 
-            if (this.Captures != null)
+            if (this.Captures is not null)
             {
                 hashCode = (hashCode * 59) + this.Captures.GetHashCode();
             }
@@ -533,7 +533,7 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
             hashCode = (hashCode * 59) + this.AverageBoulderScore.GetHashCode();
             hashCode = (hashCode * 59) + this.AverageTowerScore.GetHashCode();
             hashCode = (hashCode * 59) + this.AverageFoulScore.GetHashCode();
-            if (this.HighScore != null)
+            if (this.HighScore is not null)
             {
                 hashCode = (hashCode * 59) + this.HighScore.GetHashCode();
             }

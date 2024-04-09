@@ -131,7 +131,7 @@ public partial class Media : IEquatable<Media>, IValidatableObject
     /// <param name="preferred">True if the media is of high quality..</param>
     /// <param name="directUrl">Direct URL to the media..</param>
     /// <param name="viewUrl">The URL that leads to the full web page for the media, if one exists..</param>
-    public Media(TypeEnum type = default, string foreignKey = default, object details = default, bool preferred = default, string directUrl = default, string viewUrl = default)
+    public Media(TypeEnum type = default, string? foreignKey = default, object? details = default, bool preferred = default, string? directUrl = default, string? viewUrl = default)
     {
         this.Type = type;
         // to ensure "foreignKey" is required (not null)
@@ -206,28 +206,28 @@ public partial class Media : IEquatable<Media>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as Media);
+    public override bool Equals(object? input) => Equals(input as Media);
 
     /// <summary>
     /// Returns true if Media instances are equal
     /// </summary>
     /// <param name="input">Instance of Media to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(Media input)
+    public bool Equals(Media? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Type == input.Type ||
                 this.Type.Equals(input.Type)
             ) &&
             (
                 this.ForeignKey == input.ForeignKey ||
-                (this.ForeignKey != null &&
+                (this.ForeignKey is not null &&
                 this.ForeignKey.Equals(input.ForeignKey))
             ) &&
             (
                 this.Details == input.Details ||
-                (this.Details != null &&
+                (this.Details is not null &&
                 this.Details.Equals(input.Details))
             ) &&
             (
@@ -236,12 +236,12 @@ public partial class Media : IEquatable<Media>, IValidatableObject
             ) &&
             (
                 this.DirectUrl == input.DirectUrl ||
-                (this.DirectUrl != null &&
+                (this.DirectUrl is not null &&
                 this.DirectUrl.Equals(input.DirectUrl))
             ) &&
             (
                 this.ViewUrl == input.ViewUrl ||
-                (this.ViewUrl != null &&
+                (this.ViewUrl is not null &&
                 this.ViewUrl.Equals(input.ViewUrl))
             );
     }
@@ -256,23 +256,23 @@ public partial class Media : IEquatable<Media>, IValidatableObject
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Type.GetHashCode();
-            if (this.ForeignKey != null)
+            if (this.ForeignKey is not null)
             {
                 hashCode = (hashCode * 59) + this.ForeignKey.GetHashCode();
             }
 
-            if (this.Details != null)
+            if (this.Details is not null)
             {
                 hashCode = (hashCode * 59) + this.Details.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.Preferred.GetHashCode();
-            if (this.DirectUrl != null)
+            if (this.DirectUrl is not null)
             {
                 hashCode = (hashCode * 59) + this.DirectUrl.GetHashCode();
             }
 
-            if (this.ViewUrl != null)
+            if (this.ViewUrl is not null)
             {
                 hashCode = (hashCode * 59) + this.ViewUrl.GetHashCode();
             }

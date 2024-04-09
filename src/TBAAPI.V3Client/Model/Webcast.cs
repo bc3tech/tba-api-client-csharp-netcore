@@ -122,7 +122,7 @@ public partial class Webcast : IEquatable<Webcast>, IValidatableObject
     /// <param name="channel">Type specific channel information. May be the YouTube stream, or Twitch channel name. In the case of iframe types, contains HTML to embed the stream in an HTML iframe. (required).</param>
     /// <param name="date">The date for the webcast in &#x60;yyyy-mm-dd&#x60; format. May be null..</param>
     /// <param name="file">File identification as may be required for some types. May be null..</param>
-    public Webcast(TypeEnum type = default, string channel = default, string date = default, string file = default)
+    public Webcast(TypeEnum type = default, string? channel = default, string? date = default, string? file = default)
     {
         this.Type = type;
         // to ensure "channel" is required (not null)
@@ -179,33 +179,33 @@ public partial class Webcast : IEquatable<Webcast>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as Webcast);
+    public override bool Equals(object? input) => Equals(input as Webcast);
 
     /// <summary>
     /// Returns true if Webcast instances are equal
     /// </summary>
     /// <param name="input">Instance of Webcast to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(Webcast input)
+    public bool Equals(Webcast? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Type == input.Type ||
                 this.Type.Equals(input.Type)
             ) &&
             (
                 this.Channel == input.Channel ||
-                (this.Channel != null &&
+                (this.Channel is not null &&
                 this.Channel.Equals(input.Channel))
             ) &&
             (
                 this.Date == input.Date ||
-                (this.Date != null &&
+                (this.Date is not null &&
                 this.Date.Equals(input.Date))
             ) &&
             (
                 this.File == input.File ||
-                (this.File != null &&
+                (this.File is not null &&
                 this.File.Equals(input.File))
             );
     }
@@ -220,17 +220,17 @@ public partial class Webcast : IEquatable<Webcast>, IValidatableObject
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Type.GetHashCode();
-            if (this.Channel != null)
+            if (this.Channel is not null)
             {
                 hashCode = (hashCode * 59) + this.Channel.GetHashCode();
             }
 
-            if (this.Date != null)
+            if (this.Date is not null)
             {
                 hashCode = (hashCode * 59) + this.Date.GetHashCode();
             }
 
-            if (this.File != null)
+            if (this.File is not null)
             {
                 hashCode = (hashCode * 59) + this.File.GetHashCode();
             }

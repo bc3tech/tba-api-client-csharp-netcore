@@ -28,7 +28,7 @@ using System.Text.Json.Serialization;
 /// <param name="dprs">A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value..</param>
 /// <param name="ccwms">A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value..</param>
 [DataContract]
-public partial class EventOPRs(Dictionary<string, float> oprs = default, Dictionary<string, float> dprs = default, Dictionary<string, float> ccwms = default) : IEquatable<EventOPRs>, IValidatableObject
+public partial class EventOPRs(IDictionary<string, float>? oprs = default, IDictionary<string, float>? dprs = default, IDictionary<string, float>? ccwms = default) : IEquatable<EventOPRs>, IValidatableObject
 {
 
     /// <summary>
@@ -36,21 +36,21 @@ public partial class EventOPRs(Dictionary<string, float> oprs = default, Diction
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value.</value>
     [DataMember(Name = "oprs", EmitDefaultValue = false), JsonPropertyName("oprs")]
-    public Dictionary<string, float> Oprs { get; set; } = oprs;
+    public IDictionary<string, float>? Oprs { get; set; } = oprs;
 
     /// <summary>
     /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.</value>
     [DataMember(Name = "dprs", EmitDefaultValue = false), JsonPropertyName("dprs")]
-    public Dictionary<string, float> Dprs { get; set; } = dprs;
+    public IDictionary<string, float>? Dprs { get; set; } = dprs;
 
     /// <summary>
     /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.</value>
     [DataMember(Name = "ccwms", EmitDefaultValue = false), JsonPropertyName("ccwms")]
-    public Dictionary<string, float> Ccwms { get; set; } = ccwms;
+    public IDictionary<string, float>? Ccwms { get; set; } = ccwms;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -78,32 +78,32 @@ public partial class EventOPRs(Dictionary<string, float> oprs = default, Diction
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventOPRs);
+    public override bool Equals(object? input) => Equals(input as EventOPRs);
 
     /// <summary>
     /// Returns true if EventOPRs instances are equal
     /// </summary>
     /// <param name="input">Instance of EventOPRs to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventOPRs input)
+    public bool Equals(EventOPRs? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Oprs == input.Oprs ||
-                (this.Oprs != null &&
-                input.Oprs != null &&
+                (this.Oprs is not null &&
+                input.Oprs is not null &&
                 this.Oprs.SequenceEqual(input.Oprs))
             ) &&
             (
                 this.Dprs == input.Dprs ||
-                (this.Dprs != null &&
-                input.Dprs != null &&
+                (this.Dprs is not null &&
+                input.Dprs is not null &&
                 this.Dprs.SequenceEqual(input.Dprs))
             ) &&
             (
                 this.Ccwms == input.Ccwms ||
-                (this.Ccwms != null &&
-                input.Ccwms != null &&
+                (this.Ccwms is not null &&
+                input.Ccwms is not null &&
                 this.Ccwms.SequenceEqual(input.Ccwms))
             );
     }
@@ -117,17 +117,17 @@ public partial class EventOPRs(Dictionary<string, float> oprs = default, Diction
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Oprs != null)
+            if (this.Oprs is not null)
             {
                 hashCode = (hashCode * 59) + this.Oprs.GetHashCode();
             }
 
-            if (this.Dprs != null)
+            if (this.Dprs is not null)
             {
                 hashCode = (hashCode * 59) + this.Dprs.GetHashCode();
             }
 
-            if (this.Ccwms != null)
+            if (this.Ccwms is not null)
             {
                 hashCode = (hashCode * 59) + this.Ccwms.GetHashCode();
             }

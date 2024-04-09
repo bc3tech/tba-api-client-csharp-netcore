@@ -51,31 +51,12 @@ public class Configuration : IReadableConfiguration
             ? new ApiException(status,
                 string.Format("Error calling {0}: {1}", methodName, response.RawContent),
                 response.RawContent)
-            : (Exception)null;
+            : (Exception?)null;
     };
 
     #endregion Static Members
 
     #region Private Members
-
-    /// <summary>
-    /// Defines the base path of the target API server.
-    /// Example: http://localhost:3000/v1/
-    /// </summary>
-    private string _basePath;
-
-    /// <summary>
-    /// Gets or sets the API key based on the authentication name.
-    /// This is the key and value comprising the "secret" for accessing an API.
-    /// </summary>
-    /// <value>The API key.</value>
-    private IDictionary<string, string> _apiKey;
-
-    /// <summary>
-    /// Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
-    /// </summary>
-    /// <value>The prefix of the API key.</value>
-    private IDictionary<string, string> _apiKeyPrefix;
 
     private string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
     private string _tempFolderPath = Path.GetTempPath();
@@ -142,21 +123,7 @@ public class Configuration : IReadableConfiguration
     /// <summary>
     /// Gets or sets the base path for API access.
     /// </summary>
-    public virtual string BasePath
-    {
-        get => _basePath;
-        set => _basePath = value;
-    }
-
-    /// <summary>
-    /// Gets or sets the default header.
-    /// </summary>
-    [Obsolete("Use DefaultHeaders instead.")]
-    public virtual IDictionary<string, string> DefaultHeader
-    {
-        get => this.DefaultHeaders;
-        set => this.DefaultHeaders = value;
-    }
+    public virtual string BasePath { get; set; }
 
     /// <summary>
     /// Gets or sets the default headers.
@@ -178,30 +145,30 @@ public class Configuration : IReadableConfiguration
     /// Gets or sets the username (HTTP basic authentication).
     /// </summary>
     /// <value>The username.</value>
-    public virtual string Username { get; set; }
+    public virtual string? Username { get; set; }
 
     /// <summary>
     /// Gets or sets the password (HTTP basic authentication).
     /// </summary>
     /// <value>The password.</value>
-    public virtual string Password { get; set; }
+    public virtual string? Password { get; set; }
 
     /// <summary>
     /// Gets the API key with prefix.
     /// </summary>
     /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
     /// <returns>API key with prefix.</returns>
-    public string GetApiKeyWithPrefix(string apiKeyIdentifier)
+    public string? GetApiKeyWithPrefix(string apiKeyIdentifier)
     {
         this.ApiKey.TryGetValue(apiKeyIdentifier, out var apiKeyValue);
-        return this.ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out var apiKeyPrefix) ? apiKeyPrefix + " " + apiKeyValue : apiKeyValue;
+        return this.ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out var apiKeyPrefix) ? $@"{apiKeyPrefix} {apiKeyValue}" : apiKeyValue;
     }
 
     /// <summary>
     /// Gets or sets certificate collection to be sent with requests.
     /// </summary>
     /// <value>X509 Certificate collection.</value>
-    public X509CertificateCollection ClientCertificates { get; set; }
+    public X509CertificateCollection? ClientCertificates { get; set; }
 
     /// <summary>
     /// Gets or sets the access token for OAuth2 authentication.
@@ -209,7 +176,7 @@ public class Configuration : IReadableConfiguration
     /// This helper property simplifies code generation.
     /// </summary>
     /// <value>The access token.</value>
-    public virtual string AccessToken { get; set; }
+    public virtual string? AccessToken { get; set; }
 
     /// <summary>
     /// Gets or sets the temporary folder path to store the files downloaded from the server.
@@ -280,21 +247,13 @@ public class Configuration : IReadableConfiguration
     /// </remarks>
     /// </summary>
     /// <value>The prefix of the API key.</value>
-    public virtual IDictionary<string, string> ApiKeyPrefix
-    {
-        get => _apiKeyPrefix;
-        set => _apiKeyPrefix = value ?? throw new InvalidOperationException("ApiKeyPrefix collection may not be null.");
-    }
+    public virtual IDictionary<string, string> ApiKeyPrefix { get; set; }
 
     /// <summary>
     /// Gets or sets the API key based on the authentication name.
     /// </summary>
     /// <value>The API key.</value>
-    public virtual IDictionary<string, string> ApiKey
-    {
-        get => _apiKey;
-        set => _apiKey = value ?? throw new InvalidOperationException("ApiKey collection may not be null.");
-    }
+    public virtual IDictionary<string, string> ApiKey { get; set; }
 
     #endregion Properties
 
@@ -339,7 +298,7 @@ public class Configuration : IReadableConfiguration
     /// <return>Merged configuration.</return>
     public static IReadableConfiguration MergeConfigurations(IReadableConfiguration first, IReadableConfiguration second)
     {
-        if (second == null)
+        if (second is null)
         {
             return first ?? GlobalConfiguration.Instance;
         }

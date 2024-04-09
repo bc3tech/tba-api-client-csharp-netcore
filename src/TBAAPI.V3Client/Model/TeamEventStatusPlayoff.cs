@@ -29,7 +29,7 @@ using System.Text.Json.Serialization;
 /// <param name="status">Current competition status for the playoffs..</param>
 /// <param name="playoffAverage">The average match score during playoffs. Year specific. May be null if not relevant for a given year..</param>
 [DataContract]
-public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? level = default, WLTRecord currentLevelRecord = default, WLTRecord record = default, TeamEventStatusPlayoff.StatusEnum? status = default, int playoffAverage = default) : IEquatable<TeamEventStatusPlayoff>, IValidatableObject
+public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? level = default, WLTRecord? currentLevelRecord = default, WLTRecord? record = default, TeamEventStatusPlayoff.StatusEnum? status = default, int playoffAverage = default) : IEquatable<TeamEventStatusPlayoff>, IValidatableObject
 {
     /// <summary>
     /// The highest playoff level the team reached.
@@ -114,13 +114,13 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// Gets or Sets CurrentLevelRecord
     /// </summary>
     [DataMember(Name = "current_level_record", EmitDefaultValue = false), JsonPropertyName("current_level_record")]
-    public WLTRecord CurrentLevelRecord { get; set; } = currentLevelRecord;
+    public WLTRecord? CurrentLevelRecord { get; set; } = currentLevelRecord;
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
     [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
-    public WLTRecord Record { get; set; } = record;
+    public WLTRecord? Record { get; set; } = record;
 
     /// <summary>
     /// The average match score during playoffs. Year specific. May be null if not relevant for a given year.
@@ -157,28 +157,28 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamEventStatusPlayoff);
+    public override bool Equals(object? input) => Equals(input as TeamEventStatusPlayoff);
 
     /// <summary>
     /// Returns true if TeamEventStatusPlayoff instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamEventStatusPlayoff to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusPlayoff input)
+    public bool Equals(TeamEventStatusPlayoff? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Level == input.Level ||
                 this.Level.Equals(input.Level)
             ) &&
             (
                 this.CurrentLevelRecord == input.CurrentLevelRecord ||
-                (this.CurrentLevelRecord != null &&
+                (this.CurrentLevelRecord is not null &&
                 this.CurrentLevelRecord.Equals(input.CurrentLevelRecord))
             ) &&
             (
                 this.Record == input.Record ||
-                (this.Record != null &&
+                (this.Record is not null &&
                 this.Record.Equals(input.Record))
             ) &&
             (
@@ -201,12 +201,12 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
         {
             var hashCode = 41;
             hashCode = (hashCode * 59) + this.Level.GetHashCode();
-            if (this.CurrentLevelRecord != null)
+            if (this.CurrentLevelRecord is not null)
             {
                 hashCode = (hashCode * 59) + this.CurrentLevelRecord.GetHashCode();
             }
 
-            if (this.Record != null)
+            if (this.Record is not null)
             {
                 hashCode = (hashCode * 59) + this.Record.GetHashCode();
             }

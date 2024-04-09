@@ -39,7 +39,7 @@ public partial class APIStatus : IEquatable<APIStatus>, IValidatableObject
     /// <param name="downEvents">An array of strings containing event keys of any active events that are no longer updating. (required).</param>
     /// <param name="ios">ios (required).</param>
     /// <param name="android">android (required).</param>
-    public APIStatus(int currentSeason = default, int maxSeason = default, bool isDatafeedDown = default, List<string> downEvents = default, APIStatusAppVersion ios = default, APIStatusAppVersion android = default)
+    public APIStatus(int currentSeason = default, int maxSeason = default, bool isDatafeedDown = default, List<string>? downEvents = default, APIStatusAppVersion? ios = default, APIStatusAppVersion? android = default)
     {
         this.CurrentSeason = currentSeason;
         this.MaxSeason = maxSeason;
@@ -78,7 +78,7 @@ public partial class APIStatus : IEquatable<APIStatus>, IValidatableObject
     /// </summary>
     /// <value>An array of strings containing event keys of any active events that are no longer updating.</value>
     [DataMember(Name = "down_events", EmitDefaultValue = false), JsonPropertyName("down_events")]
-    public List<string> DownEvents { get; set; }
+    public IList<string>? DownEvents { get; set; }
 
     /// <summary>
     /// Gets or Sets Ios
@@ -121,16 +121,16 @@ public partial class APIStatus : IEquatable<APIStatus>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as APIStatus);
+    public override bool Equals(object? input) => Equals(input as APIStatus);
 
     /// <summary>
     /// Returns true if APIStatus instances are equal
     /// </summary>
     /// <param name="input">Instance of APIStatus to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(APIStatus input)
+    public bool Equals(APIStatus? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.CurrentSeason == input.CurrentSeason ||
                 this.CurrentSeason.Equals(input.CurrentSeason)
@@ -145,18 +145,18 @@ public partial class APIStatus : IEquatable<APIStatus>, IValidatableObject
             ) &&
             (
                 this.DownEvents == input.DownEvents ||
-                (this.DownEvents != null &&
-                input.DownEvents != null &&
+                (this.DownEvents is not null &&
+                input.DownEvents is not null &&
                 this.DownEvents.SequenceEqual(input.DownEvents))
             ) &&
             (
                 this.Ios == input.Ios ||
-                (this.Ios != null &&
+                (this.Ios is not null &&
                 this.Ios.Equals(input.Ios))
             ) &&
             (
                 this.Android == input.Android ||
-                (this.Android != null &&
+                (this.Android is not null &&
                 this.Android.Equals(input.Android))
             );
     }
@@ -173,17 +173,17 @@ public partial class APIStatus : IEquatable<APIStatus>, IValidatableObject
             hashCode = (hashCode * 59) + this.CurrentSeason.GetHashCode();
             hashCode = (hashCode * 59) + this.MaxSeason.GetHashCode();
             hashCode = (hashCode * 59) + this.IsDatafeedDown.GetHashCode();
-            if (this.DownEvents != null)
+            if (this.DownEvents is not null)
             {
                 hashCode = (hashCode * 59) + this.DownEvents.GetHashCode();
             }
 
-            if (this.Ios != null)
+            if (this.Ios is not null)
             {
                 hashCode = (hashCode * 59) + this.Ios.GetHashCode();
             }
 
-            if (this.Android != null)
+            if (this.Android is not null)
             {
                 hashCode = (hashCode * 59) + this.Android.GetHashCode();
             }

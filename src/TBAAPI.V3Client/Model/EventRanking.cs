@@ -35,7 +35,7 @@ public partial class EventRanking : IEquatable<EventRanking>, IValidatableObject
     /// <param name="rankings">List of rankings at the event. (required).</param>
     /// <param name="extraStatsInfo">List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item..</param>
     /// <param name="sortOrderInfo">List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team. (required).</param>
-    public EventRanking(List<EventRankingRankings> rankings = default, List<EventRankingExtraStatsInfo> extraStatsInfo = default, List<EventRankingSortOrderInfo> sortOrderInfo = default)
+    public EventRanking(List<EventRankingRankings>? rankings = default, List<EventRankingExtraStatsInfo>? extraStatsInfo = default, List<EventRankingSortOrderInfo>? sortOrderInfo = default)
     {
         // to ensure "rankings" is required (not null)
         this.Rankings = rankings ?? throw new ArgumentNullException(nameof(rankings));
@@ -49,21 +49,21 @@ public partial class EventRanking : IEquatable<EventRanking>, IValidatableObject
     /// </summary>
     /// <value>List of rankings at the event.</value>
     [DataMember(Name = "rankings", EmitDefaultValue = false), JsonPropertyName("rankings")]
-    public List<EventRankingRankings> Rankings { get; set; }
+    public IList<EventRankingRankings>? Rankings { get; set; }
 
     /// <summary>
     /// List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item.
     /// </summary>
     /// <value>List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item.</value>
     [DataMember(Name = "extra_stats_info", EmitDefaultValue = false), JsonPropertyName("extra_stats_info")]
-    public List<EventRankingExtraStatsInfo> ExtraStatsInfo { get; set; }
+    public IList<EventRankingExtraStatsInfo>? ExtraStatsInfo { get; set; }
 
     /// <summary>
     /// List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team.
     /// </summary>
     /// <value>List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team.</value>
     [DataMember(Name = "sort_order_info", EmitDefaultValue = false), JsonPropertyName("sort_order_info")]
-    public List<EventRankingSortOrderInfo> SortOrderInfo { get; set; }
+    public IList<EventRankingSortOrderInfo>? SortOrderInfo { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -91,32 +91,32 @@ public partial class EventRanking : IEquatable<EventRanking>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventRanking);
+    public override bool Equals(object? input) => Equals(input as EventRanking);
 
     /// <summary>
     /// Returns true if EventRanking instances are equal
     /// </summary>
     /// <param name="input">Instance of EventRanking to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventRanking input)
+    public bool Equals(EventRanking? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Rankings == input.Rankings ||
-                (this.Rankings != null &&
-                input.Rankings != null &&
+                (this.Rankings is not null &&
+                input.Rankings is not null &&
                 this.Rankings.SequenceEqual(input.Rankings))
             ) &&
             (
                 this.ExtraStatsInfo == input.ExtraStatsInfo ||
-                (this.ExtraStatsInfo != null &&
-                input.ExtraStatsInfo != null &&
+                (this.ExtraStatsInfo is not null &&
+                input.ExtraStatsInfo is not null &&
                 this.ExtraStatsInfo.SequenceEqual(input.ExtraStatsInfo))
             ) &&
             (
                 this.SortOrderInfo == input.SortOrderInfo ||
-                (this.SortOrderInfo != null &&
-                input.SortOrderInfo != null &&
+                (this.SortOrderInfo is not null &&
+                input.SortOrderInfo is not null &&
                 this.SortOrderInfo.SequenceEqual(input.SortOrderInfo))
             );
     }
@@ -130,17 +130,17 @@ public partial class EventRanking : IEquatable<EventRanking>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Rankings != null)
+            if (this.Rankings is not null)
             {
                 hashCode = (hashCode * 59) + this.Rankings.GetHashCode();
             }
 
-            if (this.ExtraStatsInfo != null)
+            if (this.ExtraStatsInfo is not null)
             {
                 hashCode = (hashCode * 59) + this.ExtraStatsInfo.GetHashCode();
             }
 
-            if (this.SortOrderInfo != null)
+            if (this.SortOrderInfo is not null)
             {
                 hashCode = (hashCode * 59) + this.SortOrderInfo.GetHashCode();
             }

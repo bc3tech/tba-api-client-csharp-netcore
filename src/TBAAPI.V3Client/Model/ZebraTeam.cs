@@ -36,7 +36,7 @@ public partial class ZebraTeam : IEquatable<ZebraTeam>, IValidatableObject
     /// <param name="teamKey">The TBA team key for the Zebra MotionWorks data. (required).</param>
     /// <param name="xs">A list containing doubles and nulls representing a teams X position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp. (required).</param>
     /// <param name="ys">A list containing doubles and nulls representing a teams Y position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp. (required).</param>
-    public ZebraTeam(string teamKey = default, List<double> xs = default, List<double> ys = default)
+    public ZebraTeam(string? teamKey = default, List<double>? xs = default, List<double>? ys = default)
     {
         // to ensure "teamKey" is required (not null)
         this.TeamKey = teamKey ?? throw new ArgumentNullException(nameof(teamKey));
@@ -51,21 +51,21 @@ public partial class ZebraTeam : IEquatable<ZebraTeam>, IValidatableObject
     /// </summary>
     /// <value>The TBA team key for the Zebra MotionWorks data.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string TeamKey { get; set; }
+    public string? TeamKey { get; set; }
 
     /// <summary>
     /// A list containing doubles and nulls representing a teams X position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.
     /// </summary>
     /// <value>A list containing doubles and nulls representing a teams X position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.</value>
     [DataMember(Name = "xs", EmitDefaultValue = false), JsonPropertyName("xs")]
-    public List<double> Xs { get; set; }
+    public IList<double>? Xs { get; set; }
 
     /// <summary>
     /// A list containing doubles and nulls representing a teams Y position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.
     /// </summary>
     /// <value>A list containing doubles and nulls representing a teams Y position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.</value>
     [DataMember(Name = "ys", EmitDefaultValue = false), JsonPropertyName("ys")]
-    public List<double> Ys { get; set; }
+    public IList<double>? Ys { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -93,31 +93,31 @@ public partial class ZebraTeam : IEquatable<ZebraTeam>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as ZebraTeam);
+    public override bool Equals(object? input) => Equals(input as ZebraTeam);
 
     /// <summary>
     /// Returns true if ZebraTeam instances are equal
     /// </summary>
     /// <param name="input">Instance of ZebraTeam to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(ZebraTeam input)
+    public bool Equals(ZebraTeam? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.TeamKey == input.TeamKey ||
-                (this.TeamKey != null &&
+                (this.TeamKey is not null &&
                 this.TeamKey.Equals(input.TeamKey))
             ) &&
             (
                 this.Xs == input.Xs ||
-                (this.Xs != null &&
-                input.Xs != null &&
+                (this.Xs is not null &&
+                input.Xs is not null &&
                 this.Xs.SequenceEqual(input.Xs))
             ) &&
             (
                 this.Ys == input.Ys ||
-                (this.Ys != null &&
-                input.Ys != null &&
+                (this.Ys is not null &&
+                input.Ys is not null &&
                 this.Ys.SequenceEqual(input.Ys))
             );
     }
@@ -131,17 +131,17 @@ public partial class ZebraTeam : IEquatable<ZebraTeam>, IValidatableObject
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.TeamKey != null)
+            if (this.TeamKey is not null)
             {
                 hashCode = (hashCode * 59) + this.TeamKey.GetHashCode();
             }
 
-            if (this.Xs != null)
+            if (this.Xs is not null)
             {
                 hashCode = (hashCode * 59) + this.Xs.GetHashCode();
             }
 
-            if (this.Ys != null)
+            if (this.Ys is not null)
             {
                 hashCode = (hashCode * 59) + this.Ys.GetHashCode();
             }

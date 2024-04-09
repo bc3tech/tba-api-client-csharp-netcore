@@ -32,61 +32,61 @@ using System.Text.Json.Serialization;
 /// <param name="nextMatchKey">TBA match key for the next match the team is scheduled to play in at this event, or null..</param>
 /// <param name="lastMatchKey">TBA match key for the last match the team played in at this event, or null..</param>
 [DataContract]
-public partial class TeamEventStatus(TeamEventStatusRank qual = default, TeamEventStatusAlliance alliance = default, TeamEventStatusPlayoff playoff = default, string allianceStatusStr = default, string playoffStatusStr = default, string overallStatusStr = default, string nextMatchKey = default, string lastMatchKey = default) : IEquatable<TeamEventStatus>, IValidatableObject
+public partial class TeamEventStatus(TeamEventStatusRank? qual = default, TeamEventStatusAlliance? alliance = default, TeamEventStatusPlayoff? playoff = default, string? allianceStatusStr = default, string? playoffStatusStr = default, string? overallStatusStr = default, string? nextMatchKey = default, string? lastMatchKey = default) : IEquatable<TeamEventStatus>, IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets Qual
     /// </summary>
     [DataMember(Name = "qual", EmitDefaultValue = false), JsonPropertyName("qual")]
-    public TeamEventStatusRank Qual { get; set; } = qual;
+    public TeamEventStatusRank? Qual { get; set; } = qual;
 
     /// <summary>
     /// Gets or Sets Alliance
     /// </summary>
     [DataMember(Name = "alliance", EmitDefaultValue = false), JsonPropertyName("alliance")]
-    public TeamEventStatusAlliance Alliance { get; set; } = alliance;
+    public TeamEventStatusAlliance? Alliance { get; set; } = alliance;
 
     /// <summary>
     /// Gets or Sets Playoff
     /// </summary>
     [DataMember(Name = "playoff", EmitDefaultValue = false), JsonPropertyName("playoff")]
-    public TeamEventStatusPlayoff Playoff { get; set; } = playoff;
+    public TeamEventStatusPlayoff? Playoff { get; set; } = playoff;
 
     /// <summary>
     /// An HTML formatted string suitable for display to the user containing the team&#39;s alliance pick status.
     /// </summary>
     /// <value>An HTML formatted string suitable for display to the user containing the team&#39;s alliance pick status.</value>
     [DataMember(Name = "alliance_status_str", EmitDefaultValue = false), JsonPropertyName("alliance_status_str")]
-    public string AllianceStatusStr { get; set; } = allianceStatusStr;
+    public string? AllianceStatusStr { get; set; } = allianceStatusStr;
 
     /// <summary>
     /// An HTML formatter string suitable for display to the user containing the team&#39;s playoff status.
     /// </summary>
     /// <value>An HTML formatter string suitable for display to the user containing the team&#39;s playoff status.</value>
     [DataMember(Name = "playoff_status_str", EmitDefaultValue = false), JsonPropertyName("playoff_status_str")]
-    public string PlayoffStatusStr { get; set; } = playoffStatusStr;
+    public string? PlayoffStatusStr { get; set; } = playoffStatusStr;
 
     /// <summary>
     /// An HTML formatted string suitable for display to the user containing the team&#39;s overall status summary of the event.
     /// </summary>
     /// <value>An HTML formatted string suitable for display to the user containing the team&#39;s overall status summary of the event.</value>
     [DataMember(Name = "overall_status_str", EmitDefaultValue = false), JsonPropertyName("overall_status_str")]
-    public string OverallStatusStr { get; set; } = overallStatusStr;
+    public string? OverallStatusStr { get; set; } = overallStatusStr;
 
     /// <summary>
     /// TBA match key for the next match the team is scheduled to play in at this event, or null.
     /// </summary>
     /// <value>TBA match key for the next match the team is scheduled to play in at this event, or null.</value>
     [DataMember(Name = "next_match_key", EmitDefaultValue = false), JsonPropertyName("next_match_key")]
-    public string NextMatchKey { get; set; } = nextMatchKey;
+    public string? NextMatchKey { get; set; } = nextMatchKey;
 
     /// <summary>
     /// TBA match key for the last match the team played in at this event, or null.
     /// </summary>
     /// <value>TBA match key for the last match the team played in at this event, or null.</value>
     [DataMember(Name = "last_match_key", EmitDefaultValue = false), JsonPropertyName("last_match_key")]
-    public string LastMatchKey { get; set; } = lastMatchKey;
+    public string? LastMatchKey { get; set; } = lastMatchKey;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -119,54 +119,54 @@ public partial class TeamEventStatus(TeamEventStatusRank qual = default, TeamEve
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamEventStatus);
+    public override bool Equals(object? input) => Equals(input as TeamEventStatus);
 
     /// <summary>
     /// Returns true if TeamEventStatus instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamEventStatus to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatus input)
+    public bool Equals(TeamEventStatus? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Qual == input.Qual ||
-                (this.Qual != null &&
+                (this.Qual is not null &&
                 this.Qual.Equals(input.Qual))
             ) &&
             (
                 this.Alliance == input.Alliance ||
-                (this.Alliance != null &&
+                (this.Alliance is not null &&
                 this.Alliance.Equals(input.Alliance))
             ) &&
             (
                 this.Playoff == input.Playoff ||
-                (this.Playoff != null &&
+                (this.Playoff is not null &&
                 this.Playoff.Equals(input.Playoff))
             ) &&
             (
                 this.AllianceStatusStr == input.AllianceStatusStr ||
-                (this.AllianceStatusStr != null &&
+                (this.AllianceStatusStr is not null &&
                 this.AllianceStatusStr.Equals(input.AllianceStatusStr))
             ) &&
             (
                 this.PlayoffStatusStr == input.PlayoffStatusStr ||
-                (this.PlayoffStatusStr != null &&
+                (this.PlayoffStatusStr is not null &&
                 this.PlayoffStatusStr.Equals(input.PlayoffStatusStr))
             ) &&
             (
                 this.OverallStatusStr == input.OverallStatusStr ||
-                (this.OverallStatusStr != null &&
+                (this.OverallStatusStr is not null &&
                 this.OverallStatusStr.Equals(input.OverallStatusStr))
             ) &&
             (
                 this.NextMatchKey == input.NextMatchKey ||
-                (this.NextMatchKey != null &&
+                (this.NextMatchKey is not null &&
                 this.NextMatchKey.Equals(input.NextMatchKey))
             ) &&
             (
                 this.LastMatchKey == input.LastMatchKey ||
-                (this.LastMatchKey != null &&
+                (this.LastMatchKey is not null &&
                 this.LastMatchKey.Equals(input.LastMatchKey))
             );
     }
@@ -180,42 +180,42 @@ public partial class TeamEventStatus(TeamEventStatusRank qual = default, TeamEve
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Qual != null)
+            if (this.Qual is not null)
             {
                 hashCode = (hashCode * 59) + this.Qual.GetHashCode();
             }
 
-            if (this.Alliance != null)
+            if (this.Alliance is not null)
             {
                 hashCode = (hashCode * 59) + this.Alliance.GetHashCode();
             }
 
-            if (this.Playoff != null)
+            if (this.Playoff is not null)
             {
                 hashCode = (hashCode * 59) + this.Playoff.GetHashCode();
             }
 
-            if (this.AllianceStatusStr != null)
+            if (this.AllianceStatusStr is not null)
             {
                 hashCode = (hashCode * 59) + this.AllianceStatusStr.GetHashCode();
             }
 
-            if (this.PlayoffStatusStr != null)
+            if (this.PlayoffStatusStr is not null)
             {
                 hashCode = (hashCode * 59) + this.PlayoffStatusStr.GetHashCode();
             }
 
-            if (this.OverallStatusStr != null)
+            if (this.OverallStatusStr is not null)
             {
                 hashCode = (hashCode * 59) + this.OverallStatusStr.GetHashCode();
             }
 
-            if (this.NextMatchKey != null)
+            if (this.NextMatchKey is not null)
             {
                 hashCode = (hashCode * 59) + this.NextMatchKey.GetHashCode();
             }
 
-            if (this.LastMatchKey != null)
+            if (this.LastMatchKey is not null)
             {
                 hashCode = (hashCode * 59) + this.LastMatchKey.GetHashCode();
             }

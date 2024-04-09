@@ -35,7 +35,7 @@ public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAllianc
     /// <param name="number">Alliance number. (required).</param>
     /// <param name="backup">backup.</param>
     /// <param name="pick">Order the team was picked in the alliance from 0-2, with 0 being alliance captain. (required).</param>
-    public TeamEventStatusAlliance(string name = default, int number = default, TeamEventStatusAllianceBackup backup = default, int pick = default)
+    public TeamEventStatusAlliance(string? name = default, int number = default, TeamEventStatusAllianceBackup? backup = default, int pick = default)
     {
         this.Number = number;
         this.Pick = pick;
@@ -48,7 +48,7 @@ public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAllianc
     /// </summary>
     /// <value>Alliance name, may be null.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Alliance number.
@@ -61,7 +61,7 @@ public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAllianc
     /// Gets or Sets Backup
     /// </summary>
     [DataMember(Name = "backup", EmitDefaultValue = false), JsonPropertyName("backup")]
-    public TeamEventStatusAllianceBackup Backup { get; set; }
+    public TeamEventStatusAllianceBackup? Backup { get; set; }
 
     /// <summary>
     /// Order the team was picked in the alliance from 0-2, with 0 being alliance captain.
@@ -97,19 +97,19 @@ public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAllianc
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as TeamEventStatusAlliance);
+    public override bool Equals(object? input) => Equals(input as TeamEventStatusAlliance);
 
     /// <summary>
     /// Returns true if TeamEventStatusAlliance instances are equal
     /// </summary>
     /// <param name="input">Instance of TeamEventStatusAlliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusAlliance input)
+    public bool Equals(TeamEventStatusAlliance? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             ) &&
             (
@@ -118,7 +118,7 @@ public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAllianc
             ) &&
             (
                 this.Backup == input.Backup ||
-                (this.Backup != null &&
+                (this.Backup is not null &&
                 this.Backup.Equals(input.Backup))
             ) &&
             (
@@ -136,13 +136,13 @@ public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAllianc
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.Name != null)
+            if (this.Name is not null)
             {
                 hashCode = (hashCode * 59) + this.Name.GetHashCode();
             }
 
             hashCode = (hashCode * 59) + this.Number.GetHashCode();
-            if (this.Backup != null)
+            if (this.Backup is not null)
             {
                 hashCode = (hashCode * 59) + this.Backup.GetHashCode();
             }

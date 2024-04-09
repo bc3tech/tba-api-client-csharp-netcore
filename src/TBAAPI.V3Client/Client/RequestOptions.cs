@@ -23,7 +23,7 @@ public class RequestOptions
     /// <summary>
     /// Parameters to be bound to path parts of the Request's URL
     /// </summary>
-    public Dictionary<string, string> PathParameters { get; set; }
+    public IDictionary<string, string>? PathParameters { get; set; }
 
     /// <summary>
     /// Query parameters to be applied to the request.
@@ -40,33 +40,33 @@ public class RequestOptions
     /// <summary>
     /// Form parameters to be sent along with the request.
     /// </summary>
-    public Dictionary<string, string> FormParameters { get; set; }
+    public IDictionary<string, string>? FormParameters { get; set; }
 
     /// <summary>
     /// File parameters to be sent along with the request.
     /// </summary>
-    public Dictionary<string, Stream> FileParameters { get; set; }
+    public IDictionary<string, Stream>? FileParameters { get; set; }
 
     /// <summary>
     /// Cookies to be sent along with the request.
     /// </summary>
-    public List<Cookie> Cookies { get; set; }
+    public IList<Cookie>? Cookies { get; set; }
 
     /// <summary>
     /// Any data associated with a request body.
     /// </summary>
-    public object Data { get; set; }
+    public object? Data { get; set; }
 
     /// <summary>
     /// Constructs a new instance of <see cref="RequestOptions"/>
     /// </summary>
     public RequestOptions()
     {
-        this.PathParameters = [];
+        this.PathParameters = new Dictionary<string, string>();
         this.QueryParameters = [];
         this.HeaderParameters = [];
-        this.FormParameters = [];
-        this.FileParameters = [];
+        this.FormParameters = new Dictionary<string, string>();
+        this.FileParameters = new Dictionary<string, Stream>();
         this.Cookies = [];
     }
 }

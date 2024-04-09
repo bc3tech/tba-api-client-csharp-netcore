@@ -242,17 +242,17 @@ public partial class MatchScoreBreakdown2015Alliance(int autoPoints = default, i
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as MatchScoreBreakdown2015Alliance);
+    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2015Alliance);
 
     /// <summary>
     /// Returns true if MatchScoreBreakdown2015Alliance instances are equal
     /// </summary>
     /// <param name="input">Instance of MatchScoreBreakdown2015Alliance to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2015Alliance input)
+    public bool Equals(MatchScoreBreakdown2015Alliance? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.AutoPoints == input.AutoPoints ||
                 this.AutoPoints.Equals(input.AutoPoints)
             ) &&

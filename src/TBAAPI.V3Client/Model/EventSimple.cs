@@ -45,7 +45,7 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// <param name="startDate">Event start date in &#x60;yyyy-mm-dd&#x60; format. (required).</param>
     /// <param name="endDate">Event end date in &#x60;yyyy-mm-dd&#x60; format. (required).</param>
     /// <param name="year">Year the event data is for. (required).</param>
-    public EventSimple(string key = default, string name = default, string eventCode = default, int eventType = default, DistrictList district = default, string city = default, string stateProv = default, string country = default, DateTime startDate = default, DateTime endDate = default, int year = default)
+    public EventSimple(string? key = default, string? name = default, string? eventCode = default, int eventType = default, DistrictList? district = default, string? city = default, string? stateProv = default, string? country = default, DateTime startDate = default, DateTime endDate = default, int year = default)
     {
         // to ensure "key" is required (not null)
         this.Key = key ?? throw new ArgumentNullException(nameof(key));
@@ -68,21 +68,21 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// </summary>
     /// <value>TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
-    public string Key { get; set; }
+    public string? Key { get; set; }
 
     /// <summary>
     /// Official name of event on record either provided by FIRST or organizers of offseason event.
     /// </summary>
     /// <value>Official name of event on record either provided by FIRST or organizers of offseason event.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Event short code, as provided by FIRST.
     /// </summary>
     /// <value>Event short code, as provided by FIRST.</value>
     [DataMember(Name = "event_code", EmitDefaultValue = false), JsonPropertyName("event_code")]
-    public string EventCode { get; set; }
+    public string? EventCode { get; set; }
 
     /// <summary>
     /// Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
@@ -95,28 +95,28 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// Gets or Sets District
     /// </summary>
     [DataMember(Name = "district", EmitDefaultValue = false), JsonPropertyName("district")]
-    public DistrictList District { get; set; }
+    public DistrictList? District { get; set; }
 
     /// <summary>
     /// City, town, village, etc. the event is located in.
     /// </summary>
     /// <value>City, town, village, etc. the event is located in.</value>
     [DataMember(Name = "city", EmitDefaultValue = false), JsonPropertyName("city")]
-    public string City { get; set; }
+    public string? City { get; set; }
 
     /// <summary>
     /// State or Province the event is located in.
     /// </summary>
     /// <value>State or Province the event is located in.</value>
     [DataMember(Name = "state_prov", EmitDefaultValue = false), JsonPropertyName("state_prov")]
-    public string StateProv { get; set; }
+    public string? StateProv { get; set; }
 
     /// <summary>
     /// Country the event is located in.
     /// </summary>
     /// <value>Country the event is located in.</value>
     [DataMember(Name = "country", EmitDefaultValue = false), JsonPropertyName("country")]
-    public string Country { get; set; }
+    public string? Country { get; set; }
 
     /// <summary>
     /// Event start date in &#x60;yyyy-mm-dd&#x60; format.
@@ -175,29 +175,29 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventSimple);
+    public override bool Equals(object? input) => Equals(input as EventSimple);
 
     /// <summary>
     /// Returns true if EventSimple instances are equal
     /// </summary>
     /// <param name="input">Instance of EventSimple to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventSimple input)
+    public bool Equals(EventSimple? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             ) &&
             (
                 this.EventCode == input.EventCode ||
-                (this.EventCode != null &&
+                (this.EventCode is not null &&
                 this.EventCode.Equals(input.EventCode))
             ) &&
             (
@@ -206,32 +206,32 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
             ) &&
             (
                 this.District == input.District ||
-                (this.District != null &&
+                (this.District is not null &&
                 this.District.Equals(input.District))
             ) &&
             (
                 this.City == input.City ||
-                (this.City != null &&
+                (this.City is not null &&
                 this.City.Equals(input.City))
             ) &&
             (
                 this.StateProv == input.StateProv ||
-                (this.StateProv != null &&
+                (this.StateProv is not null &&
                 this.StateProv.Equals(input.StateProv))
             ) &&
             (
                 this.Country == input.Country ||
-                (this.Country != null &&
+                (this.Country is not null &&
                 this.Country.Equals(input.Country))
             ) &&
             (
                 this.StartDate == input.StartDate ||
-                (this.StartDate != null &&
+                (this.StartDate is not null &&
                 this.StartDate.Equals(input.StartDate))
             ) &&
             (
                 this.EndDate == input.EndDate ||
-                (this.EndDate != null &&
+                (this.EndDate is not null &&
                 this.EndDate.Equals(input.EndDate))
             ) &&
             (
@@ -246,58 +246,19 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// <returns>Hash code</returns>
     public override int GetHashCode()
     {
-        unchecked // Overflow is fine, just wrap
-        {
-            var hashCode = 41;
-            if (this.Key != null)
-            {
-                hashCode = (hashCode * 59) + this.Key.GetHashCode();
-            }
-
-            if (this.Name != null)
-            {
-                hashCode = (hashCode * 59) + this.Name.GetHashCode();
-            }
-
-            if (this.EventCode != null)
-            {
-                hashCode = (hashCode * 59) + this.EventCode.GetHashCode();
-            }
-
-            hashCode = (hashCode * 59) + this.EventType.GetHashCode();
-            if (this.District != null)
-            {
-                hashCode = (hashCode * 59) + this.District.GetHashCode();
-            }
-
-            if (this.City != null)
-            {
-                hashCode = (hashCode * 59) + this.City.GetHashCode();
-            }
-
-            if (this.StateProv != null)
-            {
-                hashCode = (hashCode * 59) + this.StateProv.GetHashCode();
-            }
-
-            if (this.Country != null)
-            {
-                hashCode = (hashCode * 59) + this.Country.GetHashCode();
-            }
-
-            if (this.StartDate != null)
-            {
-                hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
-            }
-
-            if (this.EndDate != null)
-            {
-                hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
-            }
-
-            hashCode = (hashCode * 59) + this.Year.GetHashCode();
-            return hashCode;
-        }
+        var hashCode = new HashCode();
+        hashCode.Add(this.Key);
+        hashCode.Add(this.Name);
+        hashCode.Add(this.EventCode);
+        hashCode.Add(this.EventType);
+        hashCode.Add(this.District);
+        hashCode.Add(this.City);
+        hashCode.Add(this.StateProv);
+        hashCode.Add(this.Country);
+        hashCode.Add(this.StartDate);
+        hashCode.Add(this.EndDate);
+        hashCode.Add(this.Year);
+        return hashCode.ToHashCode();
     }
 
     /// <summary>
@@ -305,8 +266,5 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

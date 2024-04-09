@@ -29,7 +29,7 @@ using System.Text.Json.Serialization;
 /// <param name="currentLevelRecord">currentLevelRecord.</param>
 /// <param name="status">status.</param>
 [DataContract]
-public partial class EliminationAllianceStatus(double playoffAverage = default, string level = default, WLTRecord record = default, WLTRecord currentLevelRecord = default, string status = default) : IEquatable<EliminationAllianceStatus>, IValidatableObject
+public partial class EliminationAllianceStatus(double playoffAverage = default, string? level = default, WLTRecord? record = default, WLTRecord? currentLevelRecord = default, string? status = default) : IEquatable<EliminationAllianceStatus>, IValidatableObject
 {
 
     /// <summary>
@@ -42,25 +42,25 @@ public partial class EliminationAllianceStatus(double playoffAverage = default, 
     /// Gets or Sets Level
     /// </summary>
     [DataMember(Name = "level", EmitDefaultValue = false), JsonPropertyName("level")]
-    public string Level { get; set; } = level;
+    public string? Level { get; set; } = level;
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
     [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
-    public WLTRecord Record { get; set; } = record;
+    public WLTRecord? Record { get; set; } = record;
 
     /// <summary>
     /// Gets or Sets CurrentLevelRecord
     /// </summary>
     [DataMember(Name = "current_level_record", EmitDefaultValue = false), JsonPropertyName("current_level_record")]
-    public WLTRecord CurrentLevelRecord { get; set; } = currentLevelRecord;
+    public WLTRecord? CurrentLevelRecord { get; set; } = currentLevelRecord;
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
     [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
-    public string Status { get; set; } = status;
+    public string? Status { get; set; } = status;
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -90,38 +90,38 @@ public partial class EliminationAllianceStatus(double playoffAverage = default, 
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EliminationAllianceStatus);
+    public override bool Equals(object? input) => Equals(input as EliminationAllianceStatus);
 
     /// <summary>
     /// Returns true if EliminationAllianceStatus instances are equal
     /// </summary>
     /// <param name="input">Instance of EliminationAllianceStatus to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EliminationAllianceStatus input)
+    public bool Equals(EliminationAllianceStatus? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.PlayoffAverage == input.PlayoffAverage ||
                 this.PlayoffAverage.Equals(input.PlayoffAverage)
             ) &&
             (
                 this.Level == input.Level ||
-                (this.Level != null &&
+                (this.Level is not null &&
                 this.Level.Equals(input.Level))
             ) &&
             (
                 this.Record == input.Record ||
-                (this.Record != null &&
+                (this.Record is not null &&
                 this.Record.Equals(input.Record))
             ) &&
             (
                 this.CurrentLevelRecord == input.CurrentLevelRecord ||
-                (this.CurrentLevelRecord != null &&
+                (this.CurrentLevelRecord is not null &&
                 this.CurrentLevelRecord.Equals(input.CurrentLevelRecord))
             ) &&
             (
                 this.Status == input.Status ||
-                (this.Status != null &&
+                (this.Status is not null &&
                 this.Status.Equals(input.Status))
             );
     }
@@ -130,43 +130,12 @@ public partial class EliminationAllianceStatus(double playoffAverage = default, 
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        unchecked // Overflow is fine, just wrap
-        {
-            var hashCode = 41;
-            hashCode = (hashCode * 59) + this.PlayoffAverage.GetHashCode();
-            if (this.Level != null)
-            {
-                hashCode = (hashCode * 59) + this.Level.GetHashCode();
-            }
-
-            if (this.Record != null)
-            {
-                hashCode = (hashCode * 59) + this.Record.GetHashCode();
-            }
-
-            if (this.CurrentLevelRecord != null)
-            {
-                hashCode = (hashCode * 59) + this.CurrentLevelRecord.GetHashCode();
-            }
-
-            if (this.Status != null)
-            {
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
-            }
-
-            return hashCode;
-        }
-    }
+    public override int GetHashCode() => HashCode.Combine(this.PlayoffAverage, this.Level, this.Record, this.CurrentLevelRecord, this.Status);
 
     /// <summary>
     /// To validate all properties of the instance
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

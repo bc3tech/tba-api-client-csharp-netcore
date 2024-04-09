@@ -65,7 +65,7 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// <param name="parentEventKey">The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;..</param>
     /// <param name="playoffType">Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null..</param>
     /// <param name="playoffTypeString">String representation of the &#x60;playoff_type&#x60;, or null..</param>
-    public Event(string key = default, string name = default, string eventCode = default, int eventType = default, DistrictList district = default, string city = default, string stateProv = default, string country = default, DateTime startDate = default, DateTime endDate = default, int year = default, string shortName = default, string eventTypeString = default, int week = default, string address = default, string postalCode = default, string gmapsPlaceId = default, string gmapsUrl = default, double lat = default, double lng = default, string locationName = default, string timezone = default, string website = default, string firstEventId = default, string firstEventCode = default, List<Webcast> webcasts = default, List<string> divisionKeys = default, string parentEventKey = default, int playoffType = default, string playoffTypeString = default)
+    public Event(string? key = default, string? name = default, string? eventCode = default, int eventType = default, DistrictList? district = default, string? city = default, string? stateProv = default, string? country = default, DateTime startDate = default, DateTime endDate = default, int year = default, string? shortName = default, string? eventTypeString = default, int week = default, string? address = default, string? postalCode = default, string? gmapsPlaceId = default, string? gmapsUrl = default, double lat = default, double lng = default, string? locationName = default, string? timezone = default, string? website = default, string? firstEventId = default, string? firstEventCode = default, List<Webcast>? webcasts = default, List<string>? divisionKeys = default, string? parentEventKey = default, int playoffType = default, string? playoffTypeString = default)
     {
         // to ensure "key" is required (not null)
         this.Key = key ?? throw new ArgumentNullException(nameof(key));
@@ -122,7 +122,7 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// </summary>
     /// <value>Event short code, as provided by FIRST.</value>
     [DataMember(Name = "event_code", EmitDefaultValue = false), JsonPropertyName("event_code")]
-    public string EventCode { get; set; }
+    public string? EventCode { get; set; }
 
     /// <summary>
     /// Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
@@ -135,28 +135,28 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// Gets or Sets District
     /// </summary>
     [DataMember(Name = "district", EmitDefaultValue = false), JsonPropertyName("district")]
-    public DistrictList District { get; set; }
+    public DistrictList? District { get; set; }
 
     /// <summary>
     /// City, town, village, etc. the event is located in.
     /// </summary>
     /// <value>City, town, village, etc. the event is located in.</value>
     [DataMember(Name = "city", EmitDefaultValue = false), JsonPropertyName("city")]
-    public string City { get; set; }
+    public string? City { get; set; }
 
     /// <summary>
     /// State or Province the event is located in.
     /// </summary>
     /// <value>State or Province the event is located in.</value>
     [DataMember(Name = "state_prov", EmitDefaultValue = false), JsonPropertyName("state_prov")]
-    public string StateProv { get; set; }
+    public string? StateProv { get; set; }
 
     /// <summary>
     /// Country the event is located in.
     /// </summary>
     /// <value>Country the event is located in.</value>
     [DataMember(Name = "country", EmitDefaultValue = false), JsonPropertyName("country")]
-    public string Country { get; set; }
+    public string? Country { get; set; }
 
     /// <summary>
     /// Event start date in &#x60;yyyy-mm-dd&#x60; format.
@@ -186,14 +186,14 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// </summary>
     /// <value>Same as &#x60;name&#x60; but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null.</value>
     [DataMember(Name = "short_name", EmitDefaultValue = false), JsonPropertyName("short_name")]
-    public string ShortName { get; set; }
+    public string? ShortName { get; set; }
 
     /// <summary>
     /// Event Type, eg Regional, District, or Offseason.
     /// </summary>
     /// <value>Event Type, eg Regional, District, or Offseason.</value>
     [DataMember(Name = "event_type_string", EmitDefaultValue = false), JsonPropertyName("event_type_string")]
-    public string EventTypeString { get; set; }
+    public string? EventTypeString { get; set; }
 
     /// <summary>
     /// Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 &#39;preseason&#39; event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.)
@@ -207,28 +207,28 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// </summary>
     /// <value>Address of the event&#39;s venue, if available.</value>
     [DataMember(Name = "address", EmitDefaultValue = false), JsonPropertyName("address")]
-    public string Address { get; set; }
+    public string? Address { get; set; }
 
     /// <summary>
     /// Postal code from the event address.
     /// </summary>
     /// <value>Postal code from the event address.</value>
     [DataMember(Name = "postal_code", EmitDefaultValue = false), JsonPropertyName("postal_code")]
-    public string PostalCode { get; set; }
+    public string? PostalCode { get; set; }
 
     /// <summary>
     /// Google Maps Place ID for the event address.
     /// </summary>
     /// <value>Google Maps Place ID for the event address.</value>
     [DataMember(Name = "gmaps_place_id", EmitDefaultValue = false), JsonPropertyName("gmaps_place_id")]
-    public string GmapsPlaceId { get; set; }
+    public string? GmapsPlaceId { get; set; }
 
     /// <summary>
     /// Link to address location on Google Maps.
     /// </summary>
     /// <value>Link to address location on Google Maps.</value>
     [DataMember(Name = "gmaps_url", EmitDefaultValue = false), JsonPropertyName("gmaps_url")]
-    public string GmapsUrl { get; set; }
+    public string? GmapsUrl { get; set; }
 
     /// <summary>
     /// Latitude for the event address.
@@ -249,55 +249,55 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// </summary>
     /// <value>Name of the location at the address for the event, eg. Blue Alliance High School.</value>
     [DataMember(Name = "location_name", EmitDefaultValue = false), JsonPropertyName("location_name")]
-    public string LocationName { get; set; }
+    public string? LocationName { get; set; }
 
     /// <summary>
     /// Timezone name.
     /// </summary>
     /// <value>Timezone name.</value>
     [DataMember(Name = "timezone", EmitDefaultValue = false), JsonPropertyName("timezone")]
-    public string Timezone { get; set; }
+    public string? Timezone { get; set; }
 
     /// <summary>
     /// The event&#39;s website, if any.
     /// </summary>
     /// <value>The event&#39;s website, if any.</value>
     [DataMember(Name = "website", EmitDefaultValue = false), JsonPropertyName("website")]
-    public string Website { get; set; }
+    public string? Website { get; set; }
 
     /// <summary>
     /// The FIRST internal Event ID, used to link to the event on the FRC webpage.
     /// </summary>
     /// <value>The FIRST internal Event ID, used to link to the event on the FRC webpage.</value>
     [DataMember(Name = "first_event_id", EmitDefaultValue = false), JsonPropertyName("first_event_id")]
-    public string FirstEventId { get; set; }
+    public string? FirstEventId { get; set; }
 
     /// <summary>
     /// Public facing event code used by FIRST (on frc-events.firstinspires.org, for example)
     /// </summary>
     /// <value>Public facing event code used by FIRST (on frc-events.firstinspires.org, for example)</value>
     [DataMember(Name = "first_event_code", EmitDefaultValue = false), JsonPropertyName("first_event_code")]
-    public string FirstEventCode { get; set; }
+    public string? FirstEventCode { get; set; }
 
     /// <summary>
     /// Gets or Sets Webcasts
     /// </summary>
     [DataMember(Name = "webcasts", EmitDefaultValue = false), JsonPropertyName("webcasts")]
-    public List<Webcast> Webcasts { get; set; }
+    public IList<Webcast>? Webcasts { get; set; }
 
     /// <summary>
     /// An array of event keys for the divisions at this event.
     /// </summary>
     /// <value>An array of event keys for the divisions at this event.</value>
     [DataMember(Name = "division_keys", EmitDefaultValue = false), JsonPropertyName("division_keys")]
-    public List<string> DivisionKeys { get; set; }
+    public IList<string>? DivisionKeys { get; set; }
 
     /// <summary>
     /// The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;.
     /// </summary>
     /// <value>The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;.</value>
     [DataMember(Name = "parent_event_key", EmitDefaultValue = false), JsonPropertyName("parent_event_key")]
-    public string ParentEventKey { get; set; }
+    public string? ParentEventKey { get; set; }
 
     /// <summary>
     /// Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null.
@@ -366,29 +366,29 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as Event);
+    public override bool Equals(object? input) => Equals(input as Event);
 
     /// <summary>
     /// Returns true if Event instances are equal
     /// </summary>
     /// <param name="input">Instance of Event to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(Event input)
+    public bool Equals(Event? input)
     {
-        return input != null
+        return input is not null
 && (
                 this.Key == input.Key ||
-                (this.Key != null &&
+                (this.Key is not null &&
                 this.Key.Equals(input.Key))
             ) &&
             (
                 this.Name == input.Name ||
-                (this.Name != null &&
+                (this.Name is not null &&
                 this.Name.Equals(input.Name))
             ) &&
             (
                 this.EventCode == input.EventCode ||
-                (this.EventCode != null &&
+                (this.EventCode is not null &&
                 this.EventCode.Equals(input.EventCode))
             ) &&
             (
@@ -397,32 +397,32 @@ public partial class Event : IEquatable<Event>, IValidatableObject
             ) &&
             (
                 this.District == input.District ||
-                (this.District != null &&
+                (this.District is not null &&
                 this.District.Equals(input.District))
             ) &&
             (
                 this.City == input.City ||
-                (this.City != null &&
+                (this.City is not null &&
                 this.City.Equals(input.City))
             ) &&
             (
                 this.StateProv == input.StateProv ||
-                (this.StateProv != null &&
+                (this.StateProv is not null &&
                 this.StateProv.Equals(input.StateProv))
             ) &&
             (
                 this.Country == input.Country ||
-                (this.Country != null &&
+                (this.Country is not null &&
                 this.Country.Equals(input.Country))
             ) &&
             (
                 this.StartDate == input.StartDate ||
-                (this.StartDate != null &&
+                (this.StartDate is not null &&
                 this.StartDate.Equals(input.StartDate))
             ) &&
             (
                 this.EndDate == input.EndDate ||
-                (this.EndDate != null &&
+                (this.EndDate is not null &&
                 this.EndDate.Equals(input.EndDate))
             ) &&
             (
@@ -431,12 +431,12 @@ public partial class Event : IEquatable<Event>, IValidatableObject
             ) &&
             (
                 this.ShortName == input.ShortName ||
-                (this.ShortName != null &&
+                (this.ShortName is not null &&
                 this.ShortName.Equals(input.ShortName))
             ) &&
             (
                 this.EventTypeString == input.EventTypeString ||
-                (this.EventTypeString != null &&
+                (this.EventTypeString is not null &&
                 this.EventTypeString.Equals(input.EventTypeString))
             ) &&
             (
@@ -445,22 +445,22 @@ public partial class Event : IEquatable<Event>, IValidatableObject
             ) &&
             (
                 this.Address == input.Address ||
-                (this.Address != null &&
+                (this.Address is not null &&
                 this.Address.Equals(input.Address))
             ) &&
             (
                 this.PostalCode == input.PostalCode ||
-                (this.PostalCode != null &&
+                (this.PostalCode is not null &&
                 this.PostalCode.Equals(input.PostalCode))
             ) &&
             (
                 this.GmapsPlaceId == input.GmapsPlaceId ||
-                (this.GmapsPlaceId != null &&
+                (this.GmapsPlaceId is not null &&
                 this.GmapsPlaceId.Equals(input.GmapsPlaceId))
             ) &&
             (
                 this.GmapsUrl == input.GmapsUrl ||
-                (this.GmapsUrl != null &&
+                (this.GmapsUrl is not null &&
                 this.GmapsUrl.Equals(input.GmapsUrl))
             ) &&
             (
@@ -473,44 +473,44 @@ public partial class Event : IEquatable<Event>, IValidatableObject
             ) &&
             (
                 this.LocationName == input.LocationName ||
-                (this.LocationName != null &&
+                (this.LocationName is not null &&
                 this.LocationName.Equals(input.LocationName))
             ) &&
             (
                 this.Timezone == input.Timezone ||
-                (this.Timezone != null &&
+                (this.Timezone is not null &&
                 this.Timezone.Equals(input.Timezone))
             ) &&
             (
                 this.Website == input.Website ||
-                (this.Website != null &&
+                (this.Website is not null &&
                 this.Website.Equals(input.Website))
             ) &&
             (
                 this.FirstEventId == input.FirstEventId ||
-                (this.FirstEventId != null &&
+                (this.FirstEventId is not null &&
                 this.FirstEventId.Equals(input.FirstEventId))
             ) &&
             (
                 this.FirstEventCode == input.FirstEventCode ||
-                (this.FirstEventCode != null &&
+                (this.FirstEventCode is not null &&
                 this.FirstEventCode.Equals(input.FirstEventCode))
             ) &&
             (
                 this.Webcasts == input.Webcasts ||
-                (this.Webcasts != null &&
-                input.Webcasts != null &&
+                (this.Webcasts is not null &&
+                input.Webcasts is not null &&
                 this.Webcasts.SequenceEqual(input.Webcasts))
             ) &&
             (
                 this.DivisionKeys == input.DivisionKeys ||
-                (this.DivisionKeys != null &&
-                input.DivisionKeys != null &&
+                (this.DivisionKeys is not null &&
+                input.DivisionKeys is not null &&
                 this.DivisionKeys.SequenceEqual(input.DivisionKeys))
             ) &&
             (
                 this.ParentEventKey == input.ParentEventKey ||
-                (this.ParentEventKey != null &&
+                (this.ParentEventKey is not null &&
                 this.ParentEventKey.Equals(input.ParentEventKey))
             ) &&
             (
@@ -519,7 +519,7 @@ public partial class Event : IEquatable<Event>, IValidatableObject
             ) &&
             (
                 this.PlayoffTypeString == input.PlayoffTypeString ||
-                (this.PlayoffTypeString != null &&
+                (this.PlayoffTypeString is not null &&
                 this.PlayoffTypeString.Equals(input.PlayoffTypeString))
             );
     }
@@ -530,137 +530,38 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// <returns>Hash code</returns>
     public override int GetHashCode()
     {
-        unchecked // Overflow is fine, just wrap
-        {
-            var hashCode = 41;
-            if (this.Key != null)
-            {
-                hashCode = (hashCode * 59) + this.Key.GetHashCode();
-            }
-
-            if (this.Name != null)
-            {
-                hashCode = (hashCode * 59) + this.Name.GetHashCode();
-            }
-
-            if (this.EventCode != null)
-            {
-                hashCode = (hashCode * 59) + this.EventCode.GetHashCode();
-            }
-
-            hashCode = (hashCode * 59) + this.EventType.GetHashCode();
-            if (this.District != null)
-            {
-                hashCode = (hashCode * 59) + this.District.GetHashCode();
-            }
-
-            if (this.City != null)
-            {
-                hashCode = (hashCode * 59) + this.City.GetHashCode();
-            }
-
-            if (this.StateProv != null)
-            {
-                hashCode = (hashCode * 59) + this.StateProv.GetHashCode();
-            }
-
-            if (this.Country != null)
-            {
-                hashCode = (hashCode * 59) + this.Country.GetHashCode();
-            }
-
-            if (this.StartDate != null)
-            {
-                hashCode = (hashCode * 59) + this.StartDate.GetHashCode();
-            }
-
-            if (this.EndDate != null)
-            {
-                hashCode = (hashCode * 59) + this.EndDate.GetHashCode();
-            }
-
-            hashCode = (hashCode * 59) + this.Year.GetHashCode();
-            if (this.ShortName != null)
-            {
-                hashCode = (hashCode * 59) + this.ShortName.GetHashCode();
-            }
-
-            if (this.EventTypeString != null)
-            {
-                hashCode = (hashCode * 59) + this.EventTypeString.GetHashCode();
-            }
-
-            hashCode = (hashCode * 59) + this.Week.GetHashCode();
-            if (this.Address != null)
-            {
-                hashCode = (hashCode * 59) + this.Address.GetHashCode();
-            }
-
-            if (this.PostalCode != null)
-            {
-                hashCode = (hashCode * 59) + this.PostalCode.GetHashCode();
-            }
-
-            if (this.GmapsPlaceId != null)
-            {
-                hashCode = (hashCode * 59) + this.GmapsPlaceId.GetHashCode();
-            }
-
-            if (this.GmapsUrl != null)
-            {
-                hashCode = (hashCode * 59) + this.GmapsUrl.GetHashCode();
-            }
-
-            hashCode = (hashCode * 59) + this.Lat.GetHashCode();
-            hashCode = (hashCode * 59) + this.Lng.GetHashCode();
-            if (this.LocationName != null)
-            {
-                hashCode = (hashCode * 59) + this.LocationName.GetHashCode();
-            }
-
-            if (this.Timezone != null)
-            {
-                hashCode = (hashCode * 59) + this.Timezone.GetHashCode();
-            }
-
-            if (this.Website != null)
-            {
-                hashCode = (hashCode * 59) + this.Website.GetHashCode();
-            }
-
-            if (this.FirstEventId != null)
-            {
-                hashCode = (hashCode * 59) + this.FirstEventId.GetHashCode();
-            }
-
-            if (this.FirstEventCode != null)
-            {
-                hashCode = (hashCode * 59) + this.FirstEventCode.GetHashCode();
-            }
-
-            if (this.Webcasts != null)
-            {
-                hashCode = (hashCode * 59) + this.Webcasts.GetHashCode();
-            }
-
-            if (this.DivisionKeys != null)
-            {
-                hashCode = (hashCode * 59) + this.DivisionKeys.GetHashCode();
-            }
-
-            if (this.ParentEventKey != null)
-            {
-                hashCode = (hashCode * 59) + this.ParentEventKey.GetHashCode();
-            }
-
-            hashCode = (hashCode * 59) + this.PlayoffType.GetHashCode();
-            if (this.PlayoffTypeString != null)
-            {
-                hashCode = (hashCode * 59) + this.PlayoffTypeString.GetHashCode();
-            }
-
-            return hashCode;
-        }
+        var hashCode = new HashCode();
+        hashCode.Add(this.Key);
+        hashCode.Add(this.Name);
+        hashCode.Add(this.EventCode);
+        hashCode.Add(this.EventType);
+        hashCode.Add(this.District);
+        hashCode.Add(this.City);
+        hashCode.Add(this.StateProv);
+        hashCode.Add(this.Country);
+        hashCode.Add(this.StartDate);
+        hashCode.Add(this.EndDate);
+        hashCode.Add(this.Year);
+        hashCode.Add(this.ShortName);
+        hashCode.Add(this.EventTypeString);
+        hashCode.Add(this.Week);
+        hashCode.Add(this.Address);
+        hashCode.Add(this.PostalCode);
+        hashCode.Add(this.GmapsPlaceId);
+        hashCode.Add(this.GmapsUrl);
+        hashCode.Add(this.Lat);
+        hashCode.Add(this.Lng);
+        hashCode.Add(this.LocationName);
+        hashCode.Add(this.Timezone);
+        hashCode.Add(this.Website);
+        hashCode.Add(this.FirstEventId);
+        hashCode.Add(this.FirstEventCode);
+        hashCode.Add(this.Webcasts);
+        hashCode.Add(this.DivisionKeys);
+        hashCode.Add(this.ParentEventKey);
+        hashCode.Add(this.PlayoffType);
+        hashCode.Add(this.PlayoffTypeString);
+        return hashCode.ToHashCode();
     }
 
     /// <summary>

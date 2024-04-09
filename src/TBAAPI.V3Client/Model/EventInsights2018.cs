@@ -29,6 +29,7 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
     /// </summary>
     [JsonConstructor]
     protected EventInsights2018() { }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="EventInsights2018" /> class.
     /// </summary>
@@ -69,7 +70,7 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
     /// <param name="winningScaleOwnershipPercentage">Average scale ownership percentage for the winning alliance. (required).</param>
     /// <param name="winningScaleOwnershipPercentageAuto">Average scale ownership percentage for the winning alliance during auto. (required).</param>
     /// <param name="winningScaleOwnershipPercentageTeleop">Average scale ownership percentage for the winning alliance during teleop. (required).</param>
-    public EventInsights2018(List<float> autoQuestAchieved = default, float averageBoostPlayed = default, float averageEndgamePoints = default, float averageForcePlayed = default, float averageFoulScore = default, float averagePointsAuto = default, float averagePointsTeleop = default, float averageRunPointsAuto = default, float averageScaleOwnershipPoints = default, float averageScaleOwnershipPointsAuto = default, float averageScaleOwnershipPointsTeleop = default, float averageScore = default, float averageSwitchOwnershipPoints = default, float averageSwitchOwnershipPointsAuto = default, float averageSwitchOwnershipPointsTeleop = default, float averageVaultPoints = default, float averageWinMargin = default, float averageWinScore = default, List<float> boostPlayedCounts = default, List<float> climbCounts = default, List<float> faceTheBossAchieved = default, List<float> forcePlayedCounts = default, List<string> highScore = default, List<float> levitatePlayedCounts = default, List<float> runCountsAuto = default, float scaleNeutralPercentage = default, float scaleNeutralPercentageAuto = default, float scaleNeutralPercentageTeleop = default, List<float> switchOwnedCountsAuto = default, List<float> unicornMatches = default, float winningOppSwitchDenialPercentageTeleop = default, float winningOwnSwitchOwnershipPercentage = default, float winningOwnSwitchOwnershipPercentageAuto = default, float winningOwnSwitchOwnershipPercentageTeleop = default, float winningScaleOwnershipPercentage = default, float winningScaleOwnershipPercentageAuto = default, float winningScaleOwnershipPercentageTeleop = default)
+    public EventInsights2018(IList<float>? autoQuestAchieved = default, float averageBoostPlayed = default, float averageEndgamePoints = default, float averageForcePlayed = default, float averageFoulScore = default, float averagePointsAuto = default, float averagePointsTeleop = default, float averageRunPointsAuto = default, float averageScaleOwnershipPoints = default, float averageScaleOwnershipPointsAuto = default, float averageScaleOwnershipPointsTeleop = default, float averageScore = default, float averageSwitchOwnershipPoints = default, float averageSwitchOwnershipPointsAuto = default, float averageSwitchOwnershipPointsTeleop = default, float averageVaultPoints = default, float averageWinMargin = default, float averageWinScore = default, IList<float>? boostPlayedCounts = default, IList<float>? climbCounts = default, IList<float>? faceTheBossAchieved = default, IList<float>? forcePlayedCounts = default, IList<string>? highScore = default, IList<float>? levitatePlayedCounts = default, IList<float>? runCountsAuto = default, float scaleNeutralPercentage = default, float scaleNeutralPercentageAuto = default, float scaleNeutralPercentageTeleop = default, IList<float>? switchOwnedCountsAuto = default, IList<float>? unicornMatches = default, float winningOppSwitchDenialPercentageTeleop = default, float winningOwnSwitchOwnershipPercentage = default, float winningOwnSwitchOwnershipPercentageAuto = default, float winningOwnSwitchOwnershipPercentageTeleop = default, float winningScaleOwnershipPercentage = default, float winningScaleOwnershipPercentageAuto = default, float winningScaleOwnershipPercentageTeleop = default)
     {
         // to ensure "autoQuestAchieved" is required (not null)
         this.AutoQuestAchieved = autoQuestAchieved ?? throw new ArgumentNullException(nameof(autoQuestAchieved));
@@ -125,7 +126,7 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
     /// </summary>
     /// <value>An array with three values, number of times auto quest was completed, number of opportunities to complete the auto quest, and percentage.</value>
     [DataMember(Name = "auto_quest_achieved", EmitDefaultValue = false), JsonPropertyName("auto_quest_achieved")]
-    public List<float> AutoQuestAchieved { get; set; }
+    public IList<float>? AutoQuestAchieved { get; set; }
 
     /// <summary>
     /// Average number of boost power up scored (out of 3).
@@ -251,49 +252,49 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
     /// </summary>
     /// <value>An array with three values, number of times a boost power up was played, number of opportunities to play a boost power up, and percentage.</value>
     [DataMember(Name = "boost_played_counts", EmitDefaultValue = false), JsonPropertyName("boost_played_counts")]
-    public List<float> BoostPlayedCounts { get; set; }
+    public IList<float>? BoostPlayedCounts { get; set; }
 
     /// <summary>
     /// An array with three values, number of times a climb occurred, number of opportunities to climb, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times a climb occurred, number of opportunities to climb, and percentage.</value>
     [DataMember(Name = "climb_counts", EmitDefaultValue = false), JsonPropertyName("climb_counts")]
-    public List<float> ClimbCounts { get; set; }
+    public IList<float>? ClimbCounts { get; set; }
 
     /// <summary>
     /// An array with three values, number of times an alliance faced the boss, number of opportunities to face the boss, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times an alliance faced the boss, number of opportunities to face the boss, and percentage.</value>
     [DataMember(Name = "face_the_boss_achieved", EmitDefaultValue = false), JsonPropertyName("face_the_boss_achieved")]
-    public List<float> FaceTheBossAchieved { get; set; }
+    public IList<float>? FaceTheBossAchieved { get; set; }
 
     /// <summary>
     /// An array with three values, number of times a force power up was played, number of opportunities to play a force power up, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times a force power up was played, number of opportunities to play a force power up, and percentage.</value>
     [DataMember(Name = "force_played_counts", EmitDefaultValue = false), JsonPropertyName("force_played_counts")]
-    public List<float> ForcePlayedCounts { get; set; }
+    public IList<float>? ForcePlayedCounts { get; set; }
 
     /// <summary>
     /// An array with three values, high score, match key from the match with the high score, and the name of the match
     /// </summary>
     /// <value>An array with three values, high score, match key from the match with the high score, and the name of the match</value>
     [DataMember(Name = "high_score", EmitDefaultValue = false), JsonPropertyName("high_score")]
-    public List<string> HighScore { get; set; }
+    public IList<string>? HighScore { get; set; }
 
     /// <summary>
     /// An array with three values, number of times a levitate power up was played, number of opportunities to play a levitate power up, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times a levitate power up was played, number of opportunities to play a levitate power up, and percentage.</value>
     [DataMember(Name = "levitate_played_counts", EmitDefaultValue = false), JsonPropertyName("levitate_played_counts")]
-    public List<float> LevitatePlayedCounts { get; set; }
+    public IList<float>? LevitatePlayedCounts { get; set; }
 
     /// <summary>
     /// An array with three values, number of times a team scored mobility points in auto, number of opportunities to score mobility points in auto, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times a team scored mobility points in auto, number of opportunities to score mobility points in auto, and percentage.</value>
     [DataMember(Name = "run_counts_auto", EmitDefaultValue = false), JsonPropertyName("run_counts_auto")]
-    public List<float> RunCountsAuto { get; set; }
+    public IList<float>? RunCountsAuto { get; set; }
 
     /// <summary>
     /// Average scale neutral percentage.
@@ -321,14 +322,14 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
     /// </summary>
     /// <value>An array with three values, number of times a switch was owned during auto, number of opportunities to own a switch during auto, and percentage.</value>
     [DataMember(Name = "switch_owned_counts_auto", EmitDefaultValue = false), JsonPropertyName("switch_owned_counts_auto")]
-    public List<float> SwitchOwnedCountsAuto { get; set; }
+    public IList<float>? SwitchOwnedCountsAuto { get; set; }
 
     /// <summary>
     /// An array with three values, number of times a unicorn match (Win + Auto Quest + Face the Boss) occurred, number of opportunities to have a unicorn match, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times a unicorn match (Win + Auto Quest + Face the Boss) occurred, number of opportunities to have a unicorn match, and percentage.</value>
     [DataMember(Name = "unicorn_matches", EmitDefaultValue = false), JsonPropertyName("unicorn_matches")]
-    public List<float> UnicornMatches { get; set; }
+    public IList<float>? UnicornMatches { get; set; }
 
     /// <summary>
     /// Average opposing switch denail percentage for the winning alliance during teleop.
@@ -439,20 +440,20 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
     /// </summary>
     /// <param name="input">Object to be compared</param>
     /// <returns>Boolean</returns>
-    public override bool Equals(object input) => Equals(input as EventInsights2018);
+    public override bool Equals(object? input) => Equals(input as EventInsights2018);
 
     /// <summary>
     /// Returns true if EventInsights2018 instances are equal
     /// </summary>
     /// <param name="input">Instance of EventInsights2018 to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(EventInsights2018 input)
+    public bool Equals(EventInsights2018? input)
     {
-        return input != null
-&& (
+        return input is not null &&
+            (
                 this.AutoQuestAchieved == input.AutoQuestAchieved ||
-                (this.AutoQuestAchieved != null &&
-                input.AutoQuestAchieved != null &&
+                (this.AutoQuestAchieved is not null &&
+                input.AutoQuestAchieved is not null &&
                 this.AutoQuestAchieved.SequenceEqual(input.AutoQuestAchieved))
             ) &&
             (
@@ -525,44 +526,44 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
             ) &&
             (
                 this.BoostPlayedCounts == input.BoostPlayedCounts ||
-                (this.BoostPlayedCounts != null &&
-                input.BoostPlayedCounts != null &&
+                (this.BoostPlayedCounts is not null &&
+                input.BoostPlayedCounts is not null &&
                 this.BoostPlayedCounts.SequenceEqual(input.BoostPlayedCounts))
             ) &&
             (
                 this.ClimbCounts == input.ClimbCounts ||
-                (this.ClimbCounts != null &&
-                input.ClimbCounts != null &&
+                (this.ClimbCounts is not null &&
+                input.ClimbCounts is not null &&
                 this.ClimbCounts.SequenceEqual(input.ClimbCounts))
             ) &&
             (
                 this.FaceTheBossAchieved == input.FaceTheBossAchieved ||
-                (this.FaceTheBossAchieved != null &&
-                input.FaceTheBossAchieved != null &&
+                (this.FaceTheBossAchieved is not null &&
+                input.FaceTheBossAchieved is not null &&
                 this.FaceTheBossAchieved.SequenceEqual(input.FaceTheBossAchieved))
             ) &&
             (
                 this.ForcePlayedCounts == input.ForcePlayedCounts ||
-                (this.ForcePlayedCounts != null &&
-                input.ForcePlayedCounts != null &&
+                (this.ForcePlayedCounts is not null &&
+                input.ForcePlayedCounts is not null &&
                 this.ForcePlayedCounts.SequenceEqual(input.ForcePlayedCounts))
             ) &&
             (
                 this.HighScore == input.HighScore ||
-                (this.HighScore != null &&
-                input.HighScore != null &&
+                (this.HighScore is not null &&
+                input.HighScore is not null &&
                 this.HighScore.SequenceEqual(input.HighScore))
             ) &&
             (
                 this.LevitatePlayedCounts == input.LevitatePlayedCounts ||
-                (this.LevitatePlayedCounts != null &&
-                input.LevitatePlayedCounts != null &&
+                (this.LevitatePlayedCounts is not null &&
+                input.LevitatePlayedCounts is not null &&
                 this.LevitatePlayedCounts.SequenceEqual(input.LevitatePlayedCounts))
             ) &&
             (
                 this.RunCountsAuto == input.RunCountsAuto ||
-                (this.RunCountsAuto != null &&
-                input.RunCountsAuto != null &&
+                (this.RunCountsAuto is not null &&
+                input.RunCountsAuto is not null &&
                 this.RunCountsAuto.SequenceEqual(input.RunCountsAuto))
             ) &&
             (
@@ -579,14 +580,14 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
             ) &&
             (
                 this.SwitchOwnedCountsAuto == input.SwitchOwnedCountsAuto ||
-                (this.SwitchOwnedCountsAuto != null &&
-                input.SwitchOwnedCountsAuto != null &&
+                (this.SwitchOwnedCountsAuto is not null &&
+                input.SwitchOwnedCountsAuto is not null &&
                 this.SwitchOwnedCountsAuto.SequenceEqual(input.SwitchOwnedCountsAuto))
             ) &&
             (
                 this.UnicornMatches == input.UnicornMatches ||
-                (this.UnicornMatches != null &&
-                input.UnicornMatches != null &&
+                (this.UnicornMatches is not null &&
+                input.UnicornMatches is not null &&
                 this.UnicornMatches.SequenceEqual(input.UnicornMatches))
             ) &&
             (
@@ -628,7 +629,7 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
         unchecked // Overflow is fine, just wrap
         {
             var hashCode = 41;
-            if (this.AutoQuestAchieved != null)
+            if (this.AutoQuestAchieved is not null)
             {
                 hashCode = (hashCode * 59) + this.AutoQuestAchieved.GetHashCode();
             }
@@ -650,37 +651,37 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
             hashCode = (hashCode * 59) + this.AverageVaultPoints.GetHashCode();
             hashCode = (hashCode * 59) + this.AverageWinMargin.GetHashCode();
             hashCode = (hashCode * 59) + this.AverageWinScore.GetHashCode();
-            if (this.BoostPlayedCounts != null)
+            if (this.BoostPlayedCounts is not null)
             {
                 hashCode = (hashCode * 59) + this.BoostPlayedCounts.GetHashCode();
             }
 
-            if (this.ClimbCounts != null)
+            if (this.ClimbCounts is not null)
             {
                 hashCode = (hashCode * 59) + this.ClimbCounts.GetHashCode();
             }
 
-            if (this.FaceTheBossAchieved != null)
+            if (this.FaceTheBossAchieved is not null)
             {
                 hashCode = (hashCode * 59) + this.FaceTheBossAchieved.GetHashCode();
             }
 
-            if (this.ForcePlayedCounts != null)
+            if (this.ForcePlayedCounts is not null)
             {
                 hashCode = (hashCode * 59) + this.ForcePlayedCounts.GetHashCode();
             }
 
-            if (this.HighScore != null)
+            if (this.HighScore is not null)
             {
                 hashCode = (hashCode * 59) + this.HighScore.GetHashCode();
             }
 
-            if (this.LevitatePlayedCounts != null)
+            if (this.LevitatePlayedCounts is not null)
             {
                 hashCode = (hashCode * 59) + this.LevitatePlayedCounts.GetHashCode();
             }
 
-            if (this.RunCountsAuto != null)
+            if (this.RunCountsAuto is not null)
             {
                 hashCode = (hashCode * 59) + this.RunCountsAuto.GetHashCode();
             }
@@ -688,12 +689,12 @@ public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidat
             hashCode = (hashCode * 59) + this.ScaleNeutralPercentage.GetHashCode();
             hashCode = (hashCode * 59) + this.ScaleNeutralPercentageAuto.GetHashCode();
             hashCode = (hashCode * 59) + this.ScaleNeutralPercentageTeleop.GetHashCode();
-            if (this.SwitchOwnedCountsAuto != null)
+            if (this.SwitchOwnedCountsAuto is not null)
             {
                 hashCode = (hashCode * 59) + this.SwitchOwnedCountsAuto.GetHashCode();
             }
 
-            if (this.UnicornMatches != null)
+            if (this.UnicornMatches is not null)
             {
                 hashCode = (hashCode * 59) + this.UnicornMatches.GetHashCode();
             }
