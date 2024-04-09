@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// MatchScoreBreakdown2020Alliance
 /// </summary>
@@ -64,207 +64,207 @@ public partial class MatchScoreBreakdown2020Alliance(string initLineRobot1 = def
     /// <summary>
     /// Gets or Sets InitLineRobot1
     /// </summary>
-    [DataMember(Name = "initLineRobot1", EmitDefaultValue = false)]
+    [DataMember(Name = "initLineRobot1", EmitDefaultValue = false), JsonPropertyName("initLineRobot1")]
     public string InitLineRobot1 { get; set; } = initLineRobot1;
 
     /// <summary>
     /// Gets or Sets EndgameRobot1
     /// </summary>
-    [DataMember(Name = "endgameRobot1", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot1", EmitDefaultValue = false), JsonPropertyName("endgameRobot1")]
     public string EndgameRobot1 { get; set; } = endgameRobot1;
 
     /// <summary>
     /// Gets or Sets InitLineRobot2
     /// </summary>
-    [DataMember(Name = "initLineRobot2", EmitDefaultValue = false)]
+    [DataMember(Name = "initLineRobot2", EmitDefaultValue = false), JsonPropertyName("initLineRobot2")]
     public string InitLineRobot2 { get; set; } = initLineRobot2;
 
     /// <summary>
     /// Gets or Sets EndgameRobot2
     /// </summary>
-    [DataMember(Name = "endgameRobot2", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot2", EmitDefaultValue = false), JsonPropertyName("endgameRobot2")]
     public string EndgameRobot2 { get; set; } = endgameRobot2;
 
     /// <summary>
     /// Gets or Sets InitLineRobot3
     /// </summary>
-    [DataMember(Name = "initLineRobot3", EmitDefaultValue = false)]
+    [DataMember(Name = "initLineRobot3", EmitDefaultValue = false), JsonPropertyName("initLineRobot3")]
     public string InitLineRobot3 { get; set; } = initLineRobot3;
 
     /// <summary>
     /// Gets or Sets EndgameRobot3
     /// </summary>
-    [DataMember(Name = "endgameRobot3", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot3", EmitDefaultValue = false), JsonPropertyName("endgameRobot3")]
     public string EndgameRobot3 { get; set; } = endgameRobot3;
 
     /// <summary>
     /// Gets or Sets AutoCellsBottom
     /// </summary>
-    [DataMember(Name = "autoCellsBottom", EmitDefaultValue = false)]
+    [DataMember(Name = "autoCellsBottom", EmitDefaultValue = false), JsonPropertyName("autoCellsBottom")]
     public int AutoCellsBottom { get; set; } = autoCellsBottom;
 
     /// <summary>
     /// Gets or Sets AutoCellsOuter
     /// </summary>
-    [DataMember(Name = "autoCellsOuter", EmitDefaultValue = false)]
+    [DataMember(Name = "autoCellsOuter", EmitDefaultValue = false), JsonPropertyName("autoCellsOuter")]
     public int AutoCellsOuter { get; set; } = autoCellsOuter;
 
     /// <summary>
     /// Gets or Sets AutoCellsInner
     /// </summary>
-    [DataMember(Name = "autoCellsInner", EmitDefaultValue = false)]
+    [DataMember(Name = "autoCellsInner", EmitDefaultValue = false), JsonPropertyName("autoCellsInner")]
     public int AutoCellsInner { get; set; } = autoCellsInner;
 
     /// <summary>
     /// Gets or Sets TeleopCellsBottom
     /// </summary>
-    [DataMember(Name = "teleopCellsBottom", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopCellsBottom", EmitDefaultValue = false), JsonPropertyName("teleopCellsBottom")]
     public int TeleopCellsBottom { get; set; } = teleopCellsBottom;
 
     /// <summary>
     /// Gets or Sets TeleopCellsOuter
     /// </summary>
-    [DataMember(Name = "teleopCellsOuter", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopCellsOuter", EmitDefaultValue = false), JsonPropertyName("teleopCellsOuter")]
     public int TeleopCellsOuter { get; set; } = teleopCellsOuter;
 
     /// <summary>
     /// Gets or Sets TeleopCellsInner
     /// </summary>
-    [DataMember(Name = "teleopCellsInner", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopCellsInner", EmitDefaultValue = false), JsonPropertyName("teleopCellsInner")]
     public int TeleopCellsInner { get; set; } = teleopCellsInner;
 
     /// <summary>
     /// Gets or Sets Stage1Activated
     /// </summary>
-    [DataMember(Name = "stage1Activated", EmitDefaultValue = false)]
+    [DataMember(Name = "stage1Activated", EmitDefaultValue = false), JsonPropertyName("stage1Activated")]
     public bool Stage1Activated { get; set; } = stage1Activated;
 
     /// <summary>
     /// Gets or Sets Stage2Activated
     /// </summary>
-    [DataMember(Name = "stage2Activated", EmitDefaultValue = false)]
+    [DataMember(Name = "stage2Activated", EmitDefaultValue = false), JsonPropertyName("stage2Activated")]
     public bool Stage2Activated { get; set; } = stage2Activated;
 
     /// <summary>
     /// Gets or Sets Stage3Activated
     /// </summary>
-    [DataMember(Name = "stage3Activated", EmitDefaultValue = false)]
+    [DataMember(Name = "stage3Activated", EmitDefaultValue = false), JsonPropertyName("stage3Activated")]
     public bool Stage3Activated { get; set; } = stage3Activated;
 
     /// <summary>
     /// Gets or Sets Stage3TargetColor
     /// </summary>
-    [DataMember(Name = "stage3TargetColor", EmitDefaultValue = false)]
+    [DataMember(Name = "stage3TargetColor", EmitDefaultValue = false), JsonPropertyName("stage3TargetColor")]
     public string Stage3TargetColor { get; set; } = stage3TargetColor;
 
     /// <summary>
     /// Gets or Sets EndgameRungIsLevel
     /// </summary>
-    [DataMember(Name = "endgameRungIsLevel", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRungIsLevel", EmitDefaultValue = false), JsonPropertyName("endgameRungIsLevel")]
     public string EndgameRungIsLevel { get; set; } = endgameRungIsLevel;
 
     /// <summary>
     /// Gets or Sets AutoInitLinePoints
     /// </summary>
-    [DataMember(Name = "autoInitLinePoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoInitLinePoints", EmitDefaultValue = false), JsonPropertyName("autoInitLinePoints")]
     public int AutoInitLinePoints { get; set; } = autoInitLinePoints;
 
     /// <summary>
     /// Gets or Sets AutoCellPoints
     /// </summary>
-    [DataMember(Name = "autoCellPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoCellPoints", EmitDefaultValue = false), JsonPropertyName("autoCellPoints")]
     public int AutoCellPoints { get; set; } = autoCellPoints;
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
-    [DataMember(Name = "autoPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
     public int AutoPoints { get; set; } = autoPoints;
 
     /// <summary>
     /// Gets or Sets TeleopCellPoints
     /// </summary>
-    [DataMember(Name = "teleopCellPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopCellPoints", EmitDefaultValue = false), JsonPropertyName("teleopCellPoints")]
     public int TeleopCellPoints { get; set; } = teleopCellPoints;
 
     /// <summary>
     /// Gets or Sets ControlPanelPoints
     /// </summary>
-    [DataMember(Name = "controlPanelPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "controlPanelPoints", EmitDefaultValue = false), JsonPropertyName("controlPanelPoints")]
     public int ControlPanelPoints { get; set; } = controlPanelPoints;
 
     /// <summary>
     /// Gets or Sets EndgamePoints
     /// </summary>
-    [DataMember(Name = "endgamePoints", EmitDefaultValue = false)]
+    [DataMember(Name = "endgamePoints", EmitDefaultValue = false), JsonPropertyName("endgamePoints")]
     public int EndgamePoints { get; set; } = endgamePoints;
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
-    [DataMember(Name = "teleopPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
     public int TeleopPoints { get; set; } = teleopPoints;
 
     /// <summary>
     /// Gets or Sets ShieldOperationalRankingPoint
     /// </summary>
-    [DataMember(Name = "shieldOperationalRankingPoint", EmitDefaultValue = false)]
+    [DataMember(Name = "shieldOperationalRankingPoint", EmitDefaultValue = false), JsonPropertyName("shieldOperationalRankingPoint")]
     public bool ShieldOperationalRankingPoint { get; set; } = shieldOperationalRankingPoint;
 
     /// <summary>
     /// Gets or Sets ShieldEnergizedRankingPoint
     /// </summary>
-    [DataMember(Name = "shieldEnergizedRankingPoint", EmitDefaultValue = false)]
+    [DataMember(Name = "shieldEnergizedRankingPoint", EmitDefaultValue = false), JsonPropertyName("shieldEnergizedRankingPoint")]
     public bool ShieldEnergizedRankingPoint { get; set; } = shieldEnergizedRankingPoint;
 
     /// <summary>
     /// Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul.
     /// </summary>
     /// <value>Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul.</value>
-    [DataMember(Name = "tba_shieldEnergizedRankingPointFromFoul", EmitDefaultValue = false)]
+    [DataMember(Name = "tba_shieldEnergizedRankingPointFromFoul", EmitDefaultValue = false), JsonPropertyName("tba_shieldEnergizedRankingPointFromFoul")]
     public bool TbaShieldEnergizedRankingPointFromFoul { get; set; } = tbaShieldEnergizedRankingPointFromFoul;
 
     /// <summary>
     /// Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match.
     /// </summary>
     /// <value>Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match.</value>
-    [DataMember(Name = "tba_numRobotsHanging", EmitDefaultValue = false)]
+    [DataMember(Name = "tba_numRobotsHanging", EmitDefaultValue = false), JsonPropertyName("tba_numRobotsHanging")]
     public int TbaNumRobotsHanging { get; set; } = tbaNumRobotsHanging;
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
-    [DataMember(Name = "foulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
     public int FoulCount { get; set; } = foulCount;
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
-    [DataMember(Name = "techFoulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
     public int TechFoulCount { get; set; } = techFoulCount;
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
-    [DataMember(Name = "adjustPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
     public int AdjustPoints { get; set; } = adjustPoints;
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
-    [DataMember(Name = "foulPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
     public int FoulPoints { get; set; } = foulPoints;
 
     /// <summary>
     /// Gets or Sets Rp
     /// </summary>
-    [DataMember(Name = "rp", EmitDefaultValue = false)]
+    [DataMember(Name = "rp", EmitDefaultValue = false), JsonPropertyName("rp")]
     public int Rp { get; set; } = rp;
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
-    [DataMember(Name = "totalPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
     public int TotalPoints { get; set; } = totalPoints;
 
     /// <summary>

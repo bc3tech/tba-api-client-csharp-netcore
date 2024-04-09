@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// TeamEventStatusAlliance
 /// </summary>
@@ -48,27 +47,27 @@ public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAllianc
     /// Alliance name, may be null.
     /// </summary>
     /// <value>Alliance name, may be null.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>
     /// Alliance number.
     /// </summary>
     /// <value>Alliance number.</value>
-    [DataMember(Name = "number", EmitDefaultValue = false)]
+    [DataMember(Name = "number", EmitDefaultValue = false), JsonPropertyName("number")]
     public int Number { get; set; }
 
     /// <summary>
     /// Gets or Sets Backup
     /// </summary>
-    [DataMember(Name = "backup", EmitDefaultValue = false)]
+    [DataMember(Name = "backup", EmitDefaultValue = false), JsonPropertyName("backup")]
     public TeamEventStatusAllianceBackup Backup { get; set; }
 
     /// <summary>
     /// Order the team was picked in the alliance from 0-2, with 0 being alliance captain.
     /// </summary>
     /// <value>Order the team was picked in the alliance from 0-2, with 0 being alliance captain.</value>
-    [DataMember(Name = "pick", EmitDefaultValue = false)]
+    [DataMember(Name = "pick", EmitDefaultValue = false), JsonPropertyName("pick")]
     public int Pick { get; set; }
 
     /// <summary>

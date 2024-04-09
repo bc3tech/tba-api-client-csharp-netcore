@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// MatchScoreBreakdown2017Alliance
 /// </summary>
@@ -89,7 +88,7 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// <summary>
     /// Gets or Sets Robot1Auto
     /// </summary>
-    [DataMember(Name = "robot1Auto", EmitDefaultValue = false)]
+    [DataMember(Name = "robot1Auto", EmitDefaultValue = false), JsonPropertyName("robot1Auto")]
     public Robot1AutoEnum? Robot1Auto { get; set; } = robot1Auto;
     /// <summary>
     /// Defines Robot2Auto
@@ -120,7 +119,7 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// <summary>
     /// Gets or Sets Robot2Auto
     /// </summary>
-    [DataMember(Name = "robot2Auto", EmitDefaultValue = false)]
+    [DataMember(Name = "robot2Auto", EmitDefaultValue = false), JsonPropertyName("robot2Auto")]
     public Robot2AutoEnum? Robot2Auto { get; set; } = robot2Auto;
     /// <summary>
     /// Defines Robot3Auto
@@ -151,187 +150,187 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// <summary>
     /// Gets or Sets Robot3Auto
     /// </summary>
-    [DataMember(Name = "robot3Auto", EmitDefaultValue = false)]
+    [DataMember(Name = "robot3Auto", EmitDefaultValue = false), JsonPropertyName("robot3Auto")]
     public Robot3AutoEnum? Robot3Auto { get; set; } = robot3Auto;
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
-    [DataMember(Name = "autoPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
     public int AutoPoints { get; set; } = autoPoints;
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
-    [DataMember(Name = "teleopPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
     public int TeleopPoints { get; set; } = teleopPoints;
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
-    [DataMember(Name = "foulPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
     public int FoulPoints { get; set; } = foulPoints;
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
-    [DataMember(Name = "adjustPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
     public int AdjustPoints { get; set; } = adjustPoints;
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
-    [DataMember(Name = "totalPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
     public int TotalPoints { get; set; } = totalPoints;
 
     /// <summary>
     /// Gets or Sets Rotor1Auto
     /// </summary>
-    [DataMember(Name = "rotor1Auto", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor1Auto", EmitDefaultValue = false), JsonPropertyName("rotor1Auto")]
     public bool Rotor1Auto { get; set; } = rotor1Auto;
 
     /// <summary>
     /// Gets or Sets Rotor2Auto
     /// </summary>
-    [DataMember(Name = "rotor2Auto", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor2Auto", EmitDefaultValue = false), JsonPropertyName("rotor2Auto")]
     public bool Rotor2Auto { get; set; } = rotor2Auto;
 
     /// <summary>
     /// Gets or Sets AutoFuelLow
     /// </summary>
-    [DataMember(Name = "autoFuelLow", EmitDefaultValue = false)]
+    [DataMember(Name = "autoFuelLow", EmitDefaultValue = false), JsonPropertyName("autoFuelLow")]
     public int AutoFuelLow { get; set; } = autoFuelLow;
 
     /// <summary>
     /// Gets or Sets AutoFuelHigh
     /// </summary>
-    [DataMember(Name = "autoFuelHigh", EmitDefaultValue = false)]
+    [DataMember(Name = "autoFuelHigh", EmitDefaultValue = false), JsonPropertyName("autoFuelHigh")]
     public int AutoFuelHigh { get; set; } = autoFuelHigh;
 
     /// <summary>
     /// Gets or Sets AutoMobilityPoints
     /// </summary>
-    [DataMember(Name = "autoMobilityPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoMobilityPoints", EmitDefaultValue = false), JsonPropertyName("autoMobilityPoints")]
     public int AutoMobilityPoints { get; set; } = autoMobilityPoints;
 
     /// <summary>
     /// Gets or Sets AutoRotorPoints
     /// </summary>
-    [DataMember(Name = "autoRotorPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoRotorPoints", EmitDefaultValue = false), JsonPropertyName("autoRotorPoints")]
     public int AutoRotorPoints { get; set; } = autoRotorPoints;
 
     /// <summary>
     /// Gets or Sets AutoFuelPoints
     /// </summary>
-    [DataMember(Name = "autoFuelPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoFuelPoints", EmitDefaultValue = false), JsonPropertyName("autoFuelPoints")]
     public int AutoFuelPoints { get; set; } = autoFuelPoints;
 
     /// <summary>
     /// Gets or Sets TeleopFuelPoints
     /// </summary>
-    [DataMember(Name = "teleopFuelPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopFuelPoints", EmitDefaultValue = false), JsonPropertyName("teleopFuelPoints")]
     public int TeleopFuelPoints { get; set; } = teleopFuelPoints;
 
     /// <summary>
     /// Gets or Sets TeleopFuelLow
     /// </summary>
-    [DataMember(Name = "teleopFuelLow", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopFuelLow", EmitDefaultValue = false), JsonPropertyName("teleopFuelLow")]
     public int TeleopFuelLow { get; set; } = teleopFuelLow;
 
     /// <summary>
     /// Gets or Sets TeleopFuelHigh
     /// </summary>
-    [DataMember(Name = "teleopFuelHigh", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopFuelHigh", EmitDefaultValue = false), JsonPropertyName("teleopFuelHigh")]
     public int TeleopFuelHigh { get; set; } = teleopFuelHigh;
 
     /// <summary>
     /// Gets or Sets TeleopRotorPoints
     /// </summary>
-    [DataMember(Name = "teleopRotorPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopRotorPoints", EmitDefaultValue = false), JsonPropertyName("teleopRotorPoints")]
     public int TeleopRotorPoints { get; set; } = teleopRotorPoints;
 
     /// <summary>
     /// Gets or Sets KPaRankingPointAchieved
     /// </summary>
-    [DataMember(Name = "kPaRankingPointAchieved", EmitDefaultValue = false)]
+    [DataMember(Name = "kPaRankingPointAchieved", EmitDefaultValue = false), JsonPropertyName("kPaRankingPointAchieved")]
     public bool KPaRankingPointAchieved { get; set; } = kPaRankingPointAchieved;
 
     /// <summary>
     /// Gets or Sets TeleopTakeoffPoints
     /// </summary>
-    [DataMember(Name = "teleopTakeoffPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopTakeoffPoints", EmitDefaultValue = false), JsonPropertyName("teleopTakeoffPoints")]
     public int TeleopTakeoffPoints { get; set; } = teleopTakeoffPoints;
 
     /// <summary>
     /// Gets or Sets KPaBonusPoints
     /// </summary>
-    [DataMember(Name = "kPaBonusPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "kPaBonusPoints", EmitDefaultValue = false), JsonPropertyName("kPaBonusPoints")]
     public int KPaBonusPoints { get; set; } = kPaBonusPoints;
 
     /// <summary>
     /// Gets or Sets RotorBonusPoints
     /// </summary>
-    [DataMember(Name = "rotorBonusPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "rotorBonusPoints", EmitDefaultValue = false), JsonPropertyName("rotorBonusPoints")]
     public int RotorBonusPoints { get; set; } = rotorBonusPoints;
 
     /// <summary>
     /// Gets or Sets Rotor1Engaged
     /// </summary>
-    [DataMember(Name = "rotor1Engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor1Engaged", EmitDefaultValue = false), JsonPropertyName("rotor1Engaged")]
     public bool Rotor1Engaged { get; set; } = rotor1Engaged;
 
     /// <summary>
     /// Gets or Sets Rotor2Engaged
     /// </summary>
-    [DataMember(Name = "rotor2Engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor2Engaged", EmitDefaultValue = false), JsonPropertyName("rotor2Engaged")]
     public bool Rotor2Engaged { get; set; } = rotor2Engaged;
 
     /// <summary>
     /// Gets or Sets Rotor3Engaged
     /// </summary>
-    [DataMember(Name = "rotor3Engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor3Engaged", EmitDefaultValue = false), JsonPropertyName("rotor3Engaged")]
     public bool Rotor3Engaged { get; set; } = rotor3Engaged;
 
     /// <summary>
     /// Gets or Sets Rotor4Engaged
     /// </summary>
-    [DataMember(Name = "rotor4Engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor4Engaged", EmitDefaultValue = false), JsonPropertyName("rotor4Engaged")]
     public bool Rotor4Engaged { get; set; } = rotor4Engaged;
 
     /// <summary>
     /// Gets or Sets RotorRankingPointAchieved
     /// </summary>
-    [DataMember(Name = "rotorRankingPointAchieved", EmitDefaultValue = false)]
+    [DataMember(Name = "rotorRankingPointAchieved", EmitDefaultValue = false), JsonPropertyName("rotorRankingPointAchieved")]
     public bool RotorRankingPointAchieved { get; set; } = rotorRankingPointAchieved;
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
-    [DataMember(Name = "techFoulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
     public int TechFoulCount { get; set; } = techFoulCount;
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
-    [DataMember(Name = "foulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
     public int FoulCount { get; set; } = foulCount;
 
     /// <summary>
     /// Gets or Sets TouchpadNear
     /// </summary>
-    [DataMember(Name = "touchpadNear", EmitDefaultValue = false)]
+    [DataMember(Name = "touchpadNear", EmitDefaultValue = false), JsonPropertyName("touchpadNear")]
     public string TouchpadNear { get; set; } = touchpadNear;
 
     /// <summary>
     /// Gets or Sets TouchpadMiddle
     /// </summary>
-    [DataMember(Name = "touchpadMiddle", EmitDefaultValue = false)]
+    [DataMember(Name = "touchpadMiddle", EmitDefaultValue = false), JsonPropertyName("touchpadMiddle")]
     public string TouchpadMiddle { get; set; } = touchpadMiddle;
 
     /// <summary>
     /// Gets or Sets TouchpadFar
     /// </summary>
-    [DataMember(Name = "touchpadFar", EmitDefaultValue = false)]
+    [DataMember(Name = "touchpadFar", EmitDefaultValue = false), JsonPropertyName("touchpadFar")]
     public string TouchpadFar { get; set; } = touchpadFar;
 
     /// <summary>

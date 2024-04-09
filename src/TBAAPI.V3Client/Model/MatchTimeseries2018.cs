@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// Timeseries data for the 2018 game *FIRST* POWER UP. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This model is currently under active development and may change at any time, including in breaking ways.
 /// </summary>
@@ -62,216 +62,216 @@ public partial class MatchTimeseries2018(string eventKey = default, string match
     /// TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
     /// </summary>
     /// <value>TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.</value>
-    [DataMember(Name = "event_key", EmitDefaultValue = false)]
+    [DataMember(Name = "event_key", EmitDefaultValue = false), JsonPropertyName("event_key")]
     public string EventKey { get; set; } = eventKey;
 
     /// <summary>
     /// Match ID consisting of the level, match number, and set number, eg &#x60;qm45&#x60; or &#x60;f1m1&#x60;.
     /// </summary>
     /// <value>Match ID consisting of the level, match number, and set number, eg &#x60;qm45&#x60; or &#x60;f1m1&#x60;.</value>
-    [DataMember(Name = "match_id", EmitDefaultValue = false)]
+    [DataMember(Name = "match_id", EmitDefaultValue = false), JsonPropertyName("match_id")]
     public string MatchId { get; set; } = matchId;
 
     /// <summary>
     /// Current mode of play, can be &#x60;pre_match&#x60;, &#x60;auto&#x60;, &#x60;telop&#x60;, or &#x60;post_match&#x60;.
     /// </summary>
     /// <value>Current mode of play, can be &#x60;pre_match&#x60;, &#x60;auto&#x60;, &#x60;telop&#x60;, or &#x60;post_match&#x60;.</value>
-    [DataMember(Name = "mode", EmitDefaultValue = false)]
+    [DataMember(Name = "mode", EmitDefaultValue = false), JsonPropertyName("mode")]
     public string Mode { get; set; } = mode;
 
     /// <summary>
     /// Gets or Sets Play
     /// </summary>
-    [DataMember(Name = "play", EmitDefaultValue = false)]
+    [DataMember(Name = "play", EmitDefaultValue = false), JsonPropertyName("play")]
     public int Play { get; set; } = play;
 
     /// <summary>
     /// Amount of time remaining in the match, only valid during &#x60;auto&#x60; and &#x60;teleop&#x60; modes.
     /// </summary>
     /// <value>Amount of time remaining in the match, only valid during &#x60;auto&#x60; and &#x60;teleop&#x60; modes.</value>
-    [DataMember(Name = "time_remaining", EmitDefaultValue = false)]
+    [DataMember(Name = "time_remaining", EmitDefaultValue = false), JsonPropertyName("time_remaining")]
     public int TimeRemaining { get; set; } = timeRemaining;
 
     /// <summary>
     /// 1 if the blue alliance is credited with the AUTO QUEST, 0 if not.
     /// </summary>
     /// <value>1 if the blue alliance is credited with the AUTO QUEST, 0 if not.</value>
-    [DataMember(Name = "blue_auto_quest", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_auto_quest", EmitDefaultValue = false), JsonPropertyName("blue_auto_quest")]
     public int BlueAutoQuest { get; set; } = blueAutoQuest;
 
     /// <summary>
     /// Number of POWER CUBES in the BOOST section of the blue alliance VAULT.
     /// </summary>
     /// <value>Number of POWER CUBES in the BOOST section of the blue alliance VAULT.</value>
-    [DataMember(Name = "blue_boost_count", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_boost_count", EmitDefaultValue = false), JsonPropertyName("blue_boost_count")]
     public int BlueBoostCount { get; set; } = blueBoostCount;
 
     /// <summary>
     /// Returns 1 if the blue alliance BOOST was played, or 0 if not played.
     /// </summary>
     /// <value>Returns 1 if the blue alliance BOOST was played, or 0 if not played.</value>
-    [DataMember(Name = "blue_boost_played", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_boost_played", EmitDefaultValue = false), JsonPropertyName("blue_boost_played")]
     public int BlueBoostPlayed { get; set; } = blueBoostPlayed;
 
     /// <summary>
     /// Name of the current blue alliance POWER UP being played, or &#x60;null&#x60;.
     /// </summary>
     /// <value>Name of the current blue alliance POWER UP being played, or &#x60;null&#x60;.</value>
-    [DataMember(Name = "blue_current_powerup", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_current_powerup", EmitDefaultValue = false), JsonPropertyName("blue_current_powerup")]
     public string BlueCurrentPowerup { get; set; } = blueCurrentPowerup;
 
     /// <summary>
     /// 1 if the blue alliance is credited with FACING THE BOSS, 0 if not.
     /// </summary>
     /// <value>1 if the blue alliance is credited with FACING THE BOSS, 0 if not.</value>
-    [DataMember(Name = "blue_face_the_boss", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_face_the_boss", EmitDefaultValue = false), JsonPropertyName("blue_face_the_boss")]
     public int BlueFaceTheBoss { get; set; } = blueFaceTheBoss;
 
     /// <summary>
     /// Number of POWER CUBES in the FORCE section of the blue alliance VAULT.
     /// </summary>
     /// <value>Number of POWER CUBES in the FORCE section of the blue alliance VAULT.</value>
-    [DataMember(Name = "blue_force_count", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_force_count", EmitDefaultValue = false), JsonPropertyName("blue_force_count")]
     public int BlueForceCount { get; set; } = blueForceCount;
 
     /// <summary>
     /// Returns 1 if the blue alliance FORCE was played, or 0 if not played.
     /// </summary>
     /// <value>Returns 1 if the blue alliance FORCE was played, or 0 if not played.</value>
-    [DataMember(Name = "blue_force_played", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_force_played", EmitDefaultValue = false), JsonPropertyName("blue_force_played")]
     public int BlueForcePlayed { get; set; } = blueForcePlayed;
 
     /// <summary>
     /// Number of POWER CUBES in the LEVITATE section of the blue alliance VAULT.
     /// </summary>
     /// <value>Number of POWER CUBES in the LEVITATE section of the blue alliance VAULT.</value>
-    [DataMember(Name = "blue_levitate_count", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_levitate_count", EmitDefaultValue = false), JsonPropertyName("blue_levitate_count")]
     public int BlueLevitateCount { get; set; } = blueLevitateCount;
 
     /// <summary>
     /// Returns 1 if the blue alliance LEVITATE was played, or 0 if not played.
     /// </summary>
     /// <value>Returns 1 if the blue alliance LEVITATE was played, or 0 if not played.</value>
-    [DataMember(Name = "blue_levitate_played", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_levitate_played", EmitDefaultValue = false), JsonPropertyName("blue_levitate_played")]
     public int BlueLevitatePlayed { get; set; } = blueLevitatePlayed;
 
     /// <summary>
     /// Number of seconds remaining in the blue alliance POWER UP time, or 0 if none is active.
     /// </summary>
     /// <value>Number of seconds remaining in the blue alliance POWER UP time, or 0 if none is active.</value>
-    [DataMember(Name = "blue_powerup_time_remaining", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_powerup_time_remaining", EmitDefaultValue = false), JsonPropertyName("blue_powerup_time_remaining")]
     public string BluePowerupTimeRemaining { get; set; } = bluePowerupTimeRemaining;
 
     /// <summary>
     /// 1 if the blue alliance owns the SCALE, 0 if not.
     /// </summary>
     /// <value>1 if the blue alliance owns the SCALE, 0 if not.</value>
-    [DataMember(Name = "blue_scale_owned", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_scale_owned", EmitDefaultValue = false), JsonPropertyName("blue_scale_owned")]
     public int BlueScaleOwned { get; set; } = blueScaleOwned;
 
     /// <summary>
     /// Current score for the blue alliance.
     /// </summary>
     /// <value>Current score for the blue alliance.</value>
-    [DataMember(Name = "blue_score", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_score", EmitDefaultValue = false), JsonPropertyName("blue_score")]
     public int BlueScore { get; set; } = blueScore;
 
     /// <summary>
     /// 1 if the blue alliance owns their SWITCH, 0 if not.
     /// </summary>
     /// <value>1 if the blue alliance owns their SWITCH, 0 if not.</value>
-    [DataMember(Name = "blue_switch_owned", EmitDefaultValue = false)]
+    [DataMember(Name = "blue_switch_owned", EmitDefaultValue = false), JsonPropertyName("blue_switch_owned")]
     public int BlueSwitchOwned { get; set; } = blueSwitchOwned;
 
     /// <summary>
     /// 1 if the red alliance is credited with the AUTO QUEST, 0 if not.
     /// </summary>
     /// <value>1 if the red alliance is credited with the AUTO QUEST, 0 if not.</value>
-    [DataMember(Name = "red_auto_quest", EmitDefaultValue = false)]
+    [DataMember(Name = "red_auto_quest", EmitDefaultValue = false), JsonPropertyName("red_auto_quest")]
     public int RedAutoQuest { get; set; } = redAutoQuest;
 
     /// <summary>
     /// Number of POWER CUBES in the BOOST section of the red alliance VAULT.
     /// </summary>
     /// <value>Number of POWER CUBES in the BOOST section of the red alliance VAULT.</value>
-    [DataMember(Name = "red_boost_count", EmitDefaultValue = false)]
+    [DataMember(Name = "red_boost_count", EmitDefaultValue = false), JsonPropertyName("red_boost_count")]
     public int RedBoostCount { get; set; } = redBoostCount;
 
     /// <summary>
     /// Returns 1 if the red alliance BOOST was played, or 0 if not played.
     /// </summary>
     /// <value>Returns 1 if the red alliance BOOST was played, or 0 if not played.</value>
-    [DataMember(Name = "red_boost_played", EmitDefaultValue = false)]
+    [DataMember(Name = "red_boost_played", EmitDefaultValue = false), JsonPropertyName("red_boost_played")]
     public int RedBoostPlayed { get; set; } = redBoostPlayed;
 
     /// <summary>
     /// Name of the current red alliance POWER UP being played, or &#x60;null&#x60;.
     /// </summary>
     /// <value>Name of the current red alliance POWER UP being played, or &#x60;null&#x60;.</value>
-    [DataMember(Name = "red_current_powerup", EmitDefaultValue = false)]
+    [DataMember(Name = "red_current_powerup", EmitDefaultValue = false), JsonPropertyName("red_current_powerup")]
     public string RedCurrentPowerup { get; set; } = redCurrentPowerup;
 
     /// <summary>
     /// 1 if the red alliance is credited with FACING THE BOSS, 0 if not.
     /// </summary>
     /// <value>1 if the red alliance is credited with FACING THE BOSS, 0 if not.</value>
-    [DataMember(Name = "red_face_the_boss", EmitDefaultValue = false)]
+    [DataMember(Name = "red_face_the_boss", EmitDefaultValue = false), JsonPropertyName("red_face_the_boss")]
     public int RedFaceTheBoss { get; set; } = redFaceTheBoss;
 
     /// <summary>
     /// Number of POWER CUBES in the FORCE section of the red alliance VAULT.
     /// </summary>
     /// <value>Number of POWER CUBES in the FORCE section of the red alliance VAULT.</value>
-    [DataMember(Name = "red_force_count", EmitDefaultValue = false)]
+    [DataMember(Name = "red_force_count", EmitDefaultValue = false), JsonPropertyName("red_force_count")]
     public int RedForceCount { get; set; } = redForceCount;
 
     /// <summary>
     /// Returns 1 if the red alliance FORCE was played, or 0 if not played.
     /// </summary>
     /// <value>Returns 1 if the red alliance FORCE was played, or 0 if not played.</value>
-    [DataMember(Name = "red_force_played", EmitDefaultValue = false)]
+    [DataMember(Name = "red_force_played", EmitDefaultValue = false), JsonPropertyName("red_force_played")]
     public int RedForcePlayed { get; set; } = redForcePlayed;
 
     /// <summary>
     /// Number of POWER CUBES in the LEVITATE section of the red alliance VAULT.
     /// </summary>
     /// <value>Number of POWER CUBES in the LEVITATE section of the red alliance VAULT.</value>
-    [DataMember(Name = "red_levitate_count", EmitDefaultValue = false)]
+    [DataMember(Name = "red_levitate_count", EmitDefaultValue = false), JsonPropertyName("red_levitate_count")]
     public int RedLevitateCount { get; set; } = redLevitateCount;
 
     /// <summary>
     /// Returns 1 if the red alliance LEVITATE was played, or 0 if not played.
     /// </summary>
     /// <value>Returns 1 if the red alliance LEVITATE was played, or 0 if not played.</value>
-    [DataMember(Name = "red_levitate_played", EmitDefaultValue = false)]
+    [DataMember(Name = "red_levitate_played", EmitDefaultValue = false), JsonPropertyName("red_levitate_played")]
     public int RedLevitatePlayed { get; set; } = redLevitatePlayed;
 
     /// <summary>
     /// Number of seconds remaining in the red alliance POWER UP time, or 0 if none is active.
     /// </summary>
     /// <value>Number of seconds remaining in the red alliance POWER UP time, or 0 if none is active.</value>
-    [DataMember(Name = "red_powerup_time_remaining", EmitDefaultValue = false)]
+    [DataMember(Name = "red_powerup_time_remaining", EmitDefaultValue = false), JsonPropertyName("red_powerup_time_remaining")]
     public string RedPowerupTimeRemaining { get; set; } = redPowerupTimeRemaining;
 
     /// <summary>
     /// 1 if the red alliance owns the SCALE, 0 if not.
     /// </summary>
     /// <value>1 if the red alliance owns the SCALE, 0 if not.</value>
-    [DataMember(Name = "red_scale_owned", EmitDefaultValue = false)]
+    [DataMember(Name = "red_scale_owned", EmitDefaultValue = false), JsonPropertyName("red_scale_owned")]
     public int RedScaleOwned { get; set; } = redScaleOwned;
 
     /// <summary>
     /// Current score for the red alliance.
     /// </summary>
     /// <value>Current score for the red alliance.</value>
-    [DataMember(Name = "red_score", EmitDefaultValue = false)]
+    [DataMember(Name = "red_score", EmitDefaultValue = false), JsonPropertyName("red_score")]
     public int RedScore { get; set; } = redScore;
 
     /// <summary>
     /// 1 if the red alliance owns their SWITCH, 0 if not.
     /// </summary>
     /// <value>1 if the red alliance owns their SWITCH, 0 if not.</value>
-    [DataMember(Name = "red_switch_owned", EmitDefaultValue = false)]
+    [DataMember(Name = "red_switch_owned", EmitDefaultValue = false), JsonPropertyName("red_switch_owned")]
     public int RedSwitchOwned { get; set; } = redSwitchOwned;
 
     /// <summary>

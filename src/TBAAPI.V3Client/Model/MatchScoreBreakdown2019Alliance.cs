@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// MatchScoreBreakdown2019Alliance
 /// </summary>
@@ -81,307 +81,307 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
-    [DataMember(Name = "adjustPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
     public int AdjustPoints { get; set; } = adjustPoints;
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
-    [DataMember(Name = "autoPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
     public int AutoPoints { get; set; } = autoPoints;
 
     /// <summary>
     /// Gets or Sets Bay1
     /// </summary>
-    [DataMember(Name = "bay1", EmitDefaultValue = false)]
+    [DataMember(Name = "bay1", EmitDefaultValue = false), JsonPropertyName("bay1")]
     public string Bay1 { get; set; } = bay1;
 
     /// <summary>
     /// Gets or Sets Bay2
     /// </summary>
-    [DataMember(Name = "bay2", EmitDefaultValue = false)]
+    [DataMember(Name = "bay2", EmitDefaultValue = false), JsonPropertyName("bay2")]
     public string Bay2 { get; set; } = bay2;
 
     /// <summary>
     /// Gets or Sets Bay3
     /// </summary>
-    [DataMember(Name = "bay3", EmitDefaultValue = false)]
+    [DataMember(Name = "bay3", EmitDefaultValue = false), JsonPropertyName("bay3")]
     public string Bay3 { get; set; } = bay3;
 
     /// <summary>
     /// Gets or Sets Bay4
     /// </summary>
-    [DataMember(Name = "bay4", EmitDefaultValue = false)]
+    [DataMember(Name = "bay4", EmitDefaultValue = false), JsonPropertyName("bay4")]
     public string Bay4 { get; set; } = bay4;
 
     /// <summary>
     /// Gets or Sets Bay5
     /// </summary>
-    [DataMember(Name = "bay5", EmitDefaultValue = false)]
+    [DataMember(Name = "bay5", EmitDefaultValue = false), JsonPropertyName("bay5")]
     public string Bay5 { get; set; } = bay5;
 
     /// <summary>
     /// Gets or Sets Bay6
     /// </summary>
-    [DataMember(Name = "bay6", EmitDefaultValue = false)]
+    [DataMember(Name = "bay6", EmitDefaultValue = false), JsonPropertyName("bay6")]
     public string Bay6 { get; set; } = bay6;
 
     /// <summary>
     /// Gets or Sets Bay7
     /// </summary>
-    [DataMember(Name = "bay7", EmitDefaultValue = false)]
+    [DataMember(Name = "bay7", EmitDefaultValue = false), JsonPropertyName("bay7")]
     public string Bay7 { get; set; } = bay7;
 
     /// <summary>
     /// Gets or Sets Bay8
     /// </summary>
-    [DataMember(Name = "bay8", EmitDefaultValue = false)]
+    [DataMember(Name = "bay8", EmitDefaultValue = false), JsonPropertyName("bay8")]
     public string Bay8 { get; set; } = bay8;
 
     /// <summary>
     /// Gets or Sets CargoPoints
     /// </summary>
-    [DataMember(Name = "cargoPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "cargoPoints", EmitDefaultValue = false), JsonPropertyName("cargoPoints")]
     public int CargoPoints { get; set; } = cargoPoints;
 
     /// <summary>
     /// Gets or Sets CompleteRocketRankingPoint
     /// </summary>
-    [DataMember(Name = "completeRocketRankingPoint", EmitDefaultValue = false)]
+    [DataMember(Name = "completeRocketRankingPoint", EmitDefaultValue = false), JsonPropertyName("completeRocketRankingPoint")]
     public bool CompleteRocketRankingPoint { get; set; } = completeRocketRankingPoint;
 
     /// <summary>
     /// Gets or Sets CompletedRocketFar
     /// </summary>
-    [DataMember(Name = "completedRocketFar", EmitDefaultValue = false)]
+    [DataMember(Name = "completedRocketFar", EmitDefaultValue = false), JsonPropertyName("completedRocketFar")]
     public bool CompletedRocketFar { get; set; } = completedRocketFar;
 
     /// <summary>
     /// Gets or Sets CompletedRocketNear
     /// </summary>
-    [DataMember(Name = "completedRocketNear", EmitDefaultValue = false)]
+    [DataMember(Name = "completedRocketNear", EmitDefaultValue = false), JsonPropertyName("completedRocketNear")]
     public bool CompletedRocketNear { get; set; } = completedRocketNear;
 
     /// <summary>
     /// Gets or Sets EndgameRobot1
     /// </summary>
-    [DataMember(Name = "endgameRobot1", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot1", EmitDefaultValue = false), JsonPropertyName("endgameRobot1")]
     public string EndgameRobot1 { get; set; } = endgameRobot1;
 
     /// <summary>
     /// Gets or Sets EndgameRobot2
     /// </summary>
-    [DataMember(Name = "endgameRobot2", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot2", EmitDefaultValue = false), JsonPropertyName("endgameRobot2")]
     public string EndgameRobot2 { get; set; } = endgameRobot2;
 
     /// <summary>
     /// Gets or Sets EndgameRobot3
     /// </summary>
-    [DataMember(Name = "endgameRobot3", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot3", EmitDefaultValue = false), JsonPropertyName("endgameRobot3")]
     public string EndgameRobot3 { get; set; } = endgameRobot3;
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
-    [DataMember(Name = "foulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
     public int FoulCount { get; set; } = foulCount;
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
-    [DataMember(Name = "foulPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
     public int FoulPoints { get; set; } = foulPoints;
 
     /// <summary>
     /// Gets or Sets HabClimbPoints
     /// </summary>
-    [DataMember(Name = "habClimbPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "habClimbPoints", EmitDefaultValue = false), JsonPropertyName("habClimbPoints")]
     public int HabClimbPoints { get; set; } = habClimbPoints;
 
     /// <summary>
     /// Gets or Sets HabDockingRankingPoint
     /// </summary>
-    [DataMember(Name = "habDockingRankingPoint", EmitDefaultValue = false)]
+    [DataMember(Name = "habDockingRankingPoint", EmitDefaultValue = false), JsonPropertyName("habDockingRankingPoint")]
     public bool HabDockingRankingPoint { get; set; } = habDockingRankingPoint;
 
     /// <summary>
     /// Gets or Sets HabLineRobot1
     /// </summary>
-    [DataMember(Name = "habLineRobot1", EmitDefaultValue = false)]
+    [DataMember(Name = "habLineRobot1", EmitDefaultValue = false), JsonPropertyName("habLineRobot1")]
     public string HabLineRobot1 { get; set; } = habLineRobot1;
 
     /// <summary>
     /// Gets or Sets HabLineRobot2
     /// </summary>
-    [DataMember(Name = "habLineRobot2", EmitDefaultValue = false)]
+    [DataMember(Name = "habLineRobot2", EmitDefaultValue = false), JsonPropertyName("habLineRobot2")]
     public string HabLineRobot2 { get; set; } = habLineRobot2;
 
     /// <summary>
     /// Gets or Sets HabLineRobot3
     /// </summary>
-    [DataMember(Name = "habLineRobot3", EmitDefaultValue = false)]
+    [DataMember(Name = "habLineRobot3", EmitDefaultValue = false), JsonPropertyName("habLineRobot3")]
     public string HabLineRobot3 { get; set; } = habLineRobot3;
 
     /// <summary>
     /// Gets or Sets HatchPanelPoints
     /// </summary>
-    [DataMember(Name = "hatchPanelPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "hatchPanelPoints", EmitDefaultValue = false), JsonPropertyName("hatchPanelPoints")]
     public int HatchPanelPoints { get; set; } = hatchPanelPoints;
 
     /// <summary>
     /// Gets or Sets LowLeftRocketFar
     /// </summary>
-    [DataMember(Name = "lowLeftRocketFar", EmitDefaultValue = false)]
+    [DataMember(Name = "lowLeftRocketFar", EmitDefaultValue = false), JsonPropertyName("lowLeftRocketFar")]
     public string LowLeftRocketFar { get; set; } = lowLeftRocketFar;
 
     /// <summary>
     /// Gets or Sets LowLeftRocketNear
     /// </summary>
-    [DataMember(Name = "lowLeftRocketNear", EmitDefaultValue = false)]
+    [DataMember(Name = "lowLeftRocketNear", EmitDefaultValue = false), JsonPropertyName("lowLeftRocketNear")]
     public string LowLeftRocketNear { get; set; } = lowLeftRocketNear;
 
     /// <summary>
     /// Gets or Sets LowRightRocketFar
     /// </summary>
-    [DataMember(Name = "lowRightRocketFar", EmitDefaultValue = false)]
+    [DataMember(Name = "lowRightRocketFar", EmitDefaultValue = false), JsonPropertyName("lowRightRocketFar")]
     public string LowRightRocketFar { get; set; } = lowRightRocketFar;
 
     /// <summary>
     /// Gets or Sets LowRightRocketNear
     /// </summary>
-    [DataMember(Name = "lowRightRocketNear", EmitDefaultValue = false)]
+    [DataMember(Name = "lowRightRocketNear", EmitDefaultValue = false), JsonPropertyName("lowRightRocketNear")]
     public string LowRightRocketNear { get; set; } = lowRightRocketNear;
 
     /// <summary>
     /// Gets or Sets MidLeftRocketFar
     /// </summary>
-    [DataMember(Name = "midLeftRocketFar", EmitDefaultValue = false)]
+    [DataMember(Name = "midLeftRocketFar", EmitDefaultValue = false), JsonPropertyName("midLeftRocketFar")]
     public string MidLeftRocketFar { get; set; } = midLeftRocketFar;
 
     /// <summary>
     /// Gets or Sets MidLeftRocketNear
     /// </summary>
-    [DataMember(Name = "midLeftRocketNear", EmitDefaultValue = false)]
+    [DataMember(Name = "midLeftRocketNear", EmitDefaultValue = false), JsonPropertyName("midLeftRocketNear")]
     public string MidLeftRocketNear { get; set; } = midLeftRocketNear;
 
     /// <summary>
     /// Gets or Sets MidRightRocketFar
     /// </summary>
-    [DataMember(Name = "midRightRocketFar", EmitDefaultValue = false)]
+    [DataMember(Name = "midRightRocketFar", EmitDefaultValue = false), JsonPropertyName("midRightRocketFar")]
     public string MidRightRocketFar { get; set; } = midRightRocketFar;
 
     /// <summary>
     /// Gets or Sets MidRightRocketNear
     /// </summary>
-    [DataMember(Name = "midRightRocketNear", EmitDefaultValue = false)]
+    [DataMember(Name = "midRightRocketNear", EmitDefaultValue = false), JsonPropertyName("midRightRocketNear")]
     public string MidRightRocketNear { get; set; } = midRightRocketNear;
 
     /// <summary>
     /// Gets or Sets PreMatchBay1
     /// </summary>
-    [DataMember(Name = "preMatchBay1", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchBay1", EmitDefaultValue = false), JsonPropertyName("preMatchBay1")]
     public string PreMatchBay1 { get; set; } = preMatchBay1;
 
     /// <summary>
     /// Gets or Sets PreMatchBay2
     /// </summary>
-    [DataMember(Name = "preMatchBay2", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchBay2", EmitDefaultValue = false), JsonPropertyName("preMatchBay2")]
     public string PreMatchBay2 { get; set; } = preMatchBay2;
 
     /// <summary>
     /// Gets or Sets PreMatchBay3
     /// </summary>
-    [DataMember(Name = "preMatchBay3", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchBay3", EmitDefaultValue = false), JsonPropertyName("preMatchBay3")]
     public string PreMatchBay3 { get; set; } = preMatchBay3;
 
     /// <summary>
     /// Gets or Sets PreMatchBay6
     /// </summary>
-    [DataMember(Name = "preMatchBay6", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchBay6", EmitDefaultValue = false), JsonPropertyName("preMatchBay6")]
     public string PreMatchBay6 { get; set; } = preMatchBay6;
 
     /// <summary>
     /// Gets or Sets PreMatchBay7
     /// </summary>
-    [DataMember(Name = "preMatchBay7", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchBay7", EmitDefaultValue = false), JsonPropertyName("preMatchBay7")]
     public string PreMatchBay7 { get; set; } = preMatchBay7;
 
     /// <summary>
     /// Gets or Sets PreMatchBay8
     /// </summary>
-    [DataMember(Name = "preMatchBay8", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchBay8", EmitDefaultValue = false), JsonPropertyName("preMatchBay8")]
     public string PreMatchBay8 { get; set; } = preMatchBay8;
 
     /// <summary>
     /// Gets or Sets PreMatchLevelRobot1
     /// </summary>
-    [DataMember(Name = "preMatchLevelRobot1", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchLevelRobot1", EmitDefaultValue = false), JsonPropertyName("preMatchLevelRobot1")]
     public string PreMatchLevelRobot1 { get; set; } = preMatchLevelRobot1;
 
     /// <summary>
     /// Gets or Sets PreMatchLevelRobot2
     /// </summary>
-    [DataMember(Name = "preMatchLevelRobot2", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchLevelRobot2", EmitDefaultValue = false), JsonPropertyName("preMatchLevelRobot2")]
     public string PreMatchLevelRobot2 { get; set; } = preMatchLevelRobot2;
 
     /// <summary>
     /// Gets or Sets PreMatchLevelRobot3
     /// </summary>
-    [DataMember(Name = "preMatchLevelRobot3", EmitDefaultValue = false)]
+    [DataMember(Name = "preMatchLevelRobot3", EmitDefaultValue = false), JsonPropertyName("preMatchLevelRobot3")]
     public string PreMatchLevelRobot3 { get; set; } = preMatchLevelRobot3;
 
     /// <summary>
     /// Gets or Sets Rp
     /// </summary>
-    [DataMember(Name = "rp", EmitDefaultValue = false)]
+    [DataMember(Name = "rp", EmitDefaultValue = false), JsonPropertyName("rp")]
     public int Rp { get; set; } = rp;
 
     /// <summary>
     /// Gets or Sets SandStormBonusPoints
     /// </summary>
-    [DataMember(Name = "sandStormBonusPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "sandStormBonusPoints", EmitDefaultValue = false), JsonPropertyName("sandStormBonusPoints")]
     public int SandStormBonusPoints { get; set; } = sandStormBonusPoints;
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
-    [DataMember(Name = "techFoulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
     public int TechFoulCount { get; set; } = techFoulCount;
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
-    [DataMember(Name = "teleopPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
     public int TeleopPoints { get; set; } = teleopPoints;
 
     /// <summary>
     /// Gets or Sets TopLeftRocketFar
     /// </summary>
-    [DataMember(Name = "topLeftRocketFar", EmitDefaultValue = false)]
+    [DataMember(Name = "topLeftRocketFar", EmitDefaultValue = false), JsonPropertyName("topLeftRocketFar")]
     public string TopLeftRocketFar { get; set; } = topLeftRocketFar;
 
     /// <summary>
     /// Gets or Sets TopLeftRocketNear
     /// </summary>
-    [DataMember(Name = "topLeftRocketNear", EmitDefaultValue = false)]
+    [DataMember(Name = "topLeftRocketNear", EmitDefaultValue = false), JsonPropertyName("topLeftRocketNear")]
     public string TopLeftRocketNear { get; set; } = topLeftRocketNear;
 
     /// <summary>
     /// Gets or Sets TopRightRocketFar
     /// </summary>
-    [DataMember(Name = "topRightRocketFar", EmitDefaultValue = false)]
+    [DataMember(Name = "topRightRocketFar", EmitDefaultValue = false), JsonPropertyName("topRightRocketFar")]
     public string TopRightRocketFar { get; set; } = topRightRocketFar;
 
     /// <summary>
     /// Gets or Sets TopRightRocketNear
     /// </summary>
-    [DataMember(Name = "topRightRocketNear", EmitDefaultValue = false)]
+    [DataMember(Name = "topRightRocketNear", EmitDefaultValue = false), JsonPropertyName("topRightRocketNear")]
     public string TopRightRocketNear { get; set; } = topRightRocketNear;
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
-    [DataMember(Name = "totalPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
     public int TotalPoints { get; set; } = totalPoints;
 
     /// <summary>

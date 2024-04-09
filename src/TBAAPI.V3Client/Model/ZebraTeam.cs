@@ -50,21 +50,21 @@ public partial class ZebraTeam : IEquatable<ZebraTeam>, IValidatableObject
     /// The TBA team key for the Zebra MotionWorks data.
     /// </summary>
     /// <value>The TBA team key for the Zebra MotionWorks data.</value>
-    [DataMember(Name = "team_key", EmitDefaultValue = false)]
+    [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
     public string TeamKey { get; set; }
 
     /// <summary>
     /// A list containing doubles and nulls representing a teams X position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.
     /// </summary>
     /// <value>A list containing doubles and nulls representing a teams X position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.</value>
-    [DataMember(Name = "xs", EmitDefaultValue = false)]
+    [DataMember(Name = "xs", EmitDefaultValue = false), JsonPropertyName("xs")]
     public List<double> Xs { get; set; }
 
     /// <summary>
     /// A list containing doubles and nulls representing a teams Y position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.
     /// </summary>
     /// <value>A list containing doubles and nulls representing a teams Y position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp.</value>
-    [DataMember(Name = "ys", EmitDefaultValue = false)]
+    [DataMember(Name = "ys", EmitDefaultValue = false), JsonPropertyName("ys")]
     public List<double> Ys { get; set; }
 
     /// <summary>

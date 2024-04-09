@@ -59,55 +59,55 @@ public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IV
     /// Number of matches played by this team.
     /// </summary>
     /// <value>Number of matches played by this team.</value>
-    [DataMember(Name = "matches_played", EmitDefaultValue = false)]
+    [DataMember(Name = "matches_played", EmitDefaultValue = false), JsonPropertyName("matches_played")]
     public int MatchesPlayed { get; set; }
 
     /// <summary>
     /// The average match score during qualifications. Year specific. May be null if not relevant for a given year.
     /// </summary>
     /// <value>The average match score during qualifications. Year specific. May be null if not relevant for a given year.</value>
-    [DataMember(Name = "qual_average", EmitDefaultValue = false)]
+    [DataMember(Name = "qual_average", EmitDefaultValue = false), JsonPropertyName("qual_average")]
     public int QualAverage { get; set; }
 
     /// <summary>
     /// Additional special data on the team&#39;s performance calculated by TBA.
     /// </summary>
     /// <value>Additional special data on the team&#39;s performance calculated by TBA.</value>
-    [DataMember(Name = "extra_stats", EmitDefaultValue = false)]
+    [DataMember(Name = "extra_stats", EmitDefaultValue = false), JsonPropertyName("extra_stats")]
     public List<decimal> ExtraStats { get; set; }
 
     /// <summary>
     /// Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details.
     /// </summary>
     /// <value>Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details.</value>
-    [DataMember(Name = "sort_orders", EmitDefaultValue = false)]
+    [DataMember(Name = "sort_orders", EmitDefaultValue = false), JsonPropertyName("sort_orders")]
     public List<decimal> SortOrders { get; set; }
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
-    [DataMember(Name = "record", EmitDefaultValue = false)]
+    [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
     public WLTRecord Record { get; set; }
 
     /// <summary>
     /// The team&#39;s rank at the event as provided by FIRST.
     /// </summary>
     /// <value>The team&#39;s rank at the event as provided by FIRST.</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [DataMember(Name = "rank", EmitDefaultValue = false), JsonPropertyName("rank")]
     public int Rank { get; set; }
 
     /// <summary>
     /// Number of times disqualified.
     /// </summary>
     /// <value>Number of times disqualified.</value>
-    [DataMember(Name = "dq", EmitDefaultValue = false)]
+    [DataMember(Name = "dq", EmitDefaultValue = false), JsonPropertyName("dq")]
     public int Dq { get; set; }
 
     /// <summary>
     /// The team with this rank.
     /// </summary>
     /// <value>The team with this rank.</value>
-    [DataMember(Name = "team_key", EmitDefaultValue = false)]
+    [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
     public string TeamKey { get; set; }
 
     /// <summary>

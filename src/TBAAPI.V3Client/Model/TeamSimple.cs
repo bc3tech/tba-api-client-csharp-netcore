@@ -56,49 +56,49 @@ public partial class TeamSimple : IEquatable<TeamSimple>, IValidatableObject
     /// TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.
     /// </summary>
     /// <value>TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; }
 
     /// <summary>
     /// Official team number issued by FIRST.
     /// </summary>
     /// <value>Official team number issued by FIRST.</value>
-    [DataMember(Name = "team_number", EmitDefaultValue = false)]
+    [DataMember(Name = "team_number", EmitDefaultValue = false), JsonPropertyName("team_number")]
     public int TeamNumber { get; set; }
 
     /// <summary>
     /// Team nickname provided by FIRST.
     /// </summary>
     /// <value>Team nickname provided by FIRST.</value>
-    [DataMember(Name = "nickname", EmitDefaultValue = false)]
+    [DataMember(Name = "nickname", EmitDefaultValue = false), JsonPropertyName("nickname")]
     public string Nickname { get; set; }
 
     /// <summary>
     /// Official long name registered with FIRST.
     /// </summary>
     /// <value>Official long name registered with FIRST.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>
     /// City of team derived from parsing the address registered with FIRST.
     /// </summary>
     /// <value>City of team derived from parsing the address registered with FIRST.</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [DataMember(Name = "city", EmitDefaultValue = false), JsonPropertyName("city")]
     public string City { get; set; }
 
     /// <summary>
     /// State of team derived from parsing the address registered with FIRST.
     /// </summary>
     /// <value>State of team derived from parsing the address registered with FIRST.</value>
-    [DataMember(Name = "state_prov", EmitDefaultValue = false)]
+    [DataMember(Name = "state_prov", EmitDefaultValue = false), JsonPropertyName("state_prov")]
     public string StateProv { get; set; }
 
     /// <summary>
     /// Country of team derived from parsing the address registered with FIRST.
     /// </summary>
     /// <value>Country of team derived from parsing the address registered with FIRST.</value>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [DataMember(Name = "country", EmitDefaultValue = false), JsonPropertyName("country")]
     public string Country { get; set; }
 
     /// <summary>

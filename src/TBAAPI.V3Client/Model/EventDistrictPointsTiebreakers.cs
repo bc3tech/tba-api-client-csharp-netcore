@@ -17,6 +17,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// EventDistrictPointsTiebreakers
@@ -33,13 +34,13 @@ public partial class EventDistrictPointsTiebreakers(List<int> highestQualScores 
     /// <summary>
     /// Gets or Sets HighestQualScores
     /// </summary>
-    [DataMember(Name = "highest_qual_scores", EmitDefaultValue = false)]
+    [DataMember(Name = "highest_qual_scores", EmitDefaultValue = false), JsonPropertyName("highest_qual_scores")]
     public List<int> HighestQualScores { get; set; } = highestQualScores;
 
     /// <summary>
     /// Gets or Sets QualWins
     /// </summary>
-    [DataMember(Name = "qual_wins", EmitDefaultValue = false)]
+    [DataMember(Name = "qual_wins", EmitDefaultValue = false), JsonPropertyName("qual_wins")]
     public int QualWins { get; set; } = qualWins;
 
     /// <summary>

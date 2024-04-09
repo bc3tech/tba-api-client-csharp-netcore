@@ -115,7 +115,7 @@ public partial class Media : IEquatable<Media>, IValidatableObject
     /// String type of the media element.
     /// </summary>
     /// <value>String type of the media element.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [DataMember(Name = "type", EmitDefaultValue = false), JsonPropertyName("type")]
     public TypeEnum Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Media" /> class.
@@ -146,35 +146,35 @@ public partial class Media : IEquatable<Media>, IValidatableObject
     /// The key used to identify this media on the media site.
     /// </summary>
     /// <value>The key used to identify this media on the media site.</value>
-    [DataMember(Name = "foreign_key", EmitDefaultValue = false)]
+    [DataMember(Name = "foreign_key", EmitDefaultValue = false), JsonPropertyName("foreign_key")]
     public string ForeignKey { get; set; }
 
     /// <summary>
     /// If required, a JSON dict of additional media information.
     /// </summary>
     /// <value>If required, a JSON dict of additional media information.</value>
-    [DataMember(Name = "details", EmitDefaultValue = false)]
+    [DataMember(Name = "details", EmitDefaultValue = false), JsonPropertyName("details")]
     public object Details { get; set; }
 
     /// <summary>
     /// True if the media is of high quality.
     /// </summary>
     /// <value>True if the media is of high quality.</value>
-    [DataMember(Name = "preferred", EmitDefaultValue = false)]
+    [DataMember(Name = "preferred", EmitDefaultValue = false), JsonPropertyName("preferred")]
     public bool Preferred { get; set; }
 
     /// <summary>
     /// Direct URL to the media.
     /// </summary>
     /// <value>Direct URL to the media.</value>
-    [DataMember(Name = "direct_url", EmitDefaultValue = false)]
+    [DataMember(Name = "direct_url", EmitDefaultValue = false), JsonPropertyName("direct_url")]
     public string DirectUrl { get; set; }
 
     /// <summary>
     /// The URL that leads to the full web page for the media, if one exists.
     /// </summary>
     /// <value>The URL that leads to the full web page for the media, if one exists.</value>
-    [DataMember(Name = "view_url", EmitDefaultValue = false)]
+    [DataMember(Name = "view_url", EmitDefaultValue = false), JsonPropertyName("view_url")]
     public string ViewUrl { get; set; }
 
     /// <summary>

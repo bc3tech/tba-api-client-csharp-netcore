@@ -14,11 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// EliminationAlliance
 /// </summary>
@@ -52,33 +51,33 @@ public partial class EliminationAlliance : IEquatable<EliminationAlliance>, IVal
     /// Alliance name, may be null.
     /// </summary>
     /// <value>Alliance name, may be null.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>
     /// Gets or Sets Backup
     /// </summary>
-    [DataMember(Name = "backup", EmitDefaultValue = false)]
+    [DataMember(Name = "backup", EmitDefaultValue = false), JsonPropertyName("backup")]
     public EliminationAllianceBackup Backup { get; set; }
 
     /// <summary>
     /// List of teams that declined the alliance.
     /// </summary>
     /// <value>List of teams that declined the alliance.</value>
-    [DataMember(Name = "declines", EmitDefaultValue = false)]
+    [DataMember(Name = "declines", EmitDefaultValue = false), JsonPropertyName("declines")]
     public List<string> Declines { get; set; }
 
     /// <summary>
     /// List of team keys picked for the alliance. First pick is captain.
     /// </summary>
     /// <value>List of team keys picked for the alliance. First pick is captain.</value>
-    [DataMember(Name = "picks", EmitDefaultValue = false)]
+    [DataMember(Name = "picks", EmitDefaultValue = false), JsonPropertyName("picks")]
     public List<string> Picks { get; set; }
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
     public EliminationAllianceStatus Status { get; set; }
 
     /// <summary>

@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// Playoff status for this team, may be null if the team did not make playoffs, or playoffs have not begun.
 /// </summary>
@@ -75,7 +74,7 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// The highest playoff level the team reached.
     /// </summary>
     /// <value>The highest playoff level the team reached.</value>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [DataMember(Name = "level", EmitDefaultValue = false), JsonPropertyName("level")]
     public LevelEnum? Level { get; set; } = level;
     /// <summary>
     /// Current competition status for the playoffs.
@@ -108,26 +107,26 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// Current competition status for the playoffs.
     /// </summary>
     /// <value>Current competition status for the playoffs.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
     public StatusEnum? Status { get; set; } = status;
 
     /// <summary>
     /// Gets or Sets CurrentLevelRecord
     /// </summary>
-    [DataMember(Name = "current_level_record", EmitDefaultValue = false)]
+    [DataMember(Name = "current_level_record", EmitDefaultValue = false), JsonPropertyName("current_level_record")]
     public WLTRecord CurrentLevelRecord { get; set; } = currentLevelRecord;
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
-    [DataMember(Name = "record", EmitDefaultValue = false)]
+    [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
     public WLTRecord Record { get; set; } = record;
 
     /// <summary>
     /// The average match score during playoffs. Year specific. May be null if not relevant for a given year.
     /// </summary>
     /// <value>The average match score during playoffs. Year specific. May be null if not relevant for a given year.</value>
-    [DataMember(Name = "playoff_average", EmitDefaultValue = false)]
+    [DataMember(Name = "playoff_average", EmitDefaultValue = false), JsonPropertyName("playoff_average")]
     public int PlayoffAverage { get; set; } = playoffAverage;
 
     /// <summary>

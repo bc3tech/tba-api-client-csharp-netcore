@@ -14,10 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// OPR, DPR, and CCWM for teams at the event.
 /// </summary>
@@ -35,21 +35,21 @@ public partial class EventOPRs(Dictionary<string, float> oprs = default, Diction
     /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value.
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value.</value>
-    [DataMember(Name = "oprs", EmitDefaultValue = false)]
+    [DataMember(Name = "oprs", EmitDefaultValue = false), JsonPropertyName("oprs")]
     public Dictionary<string, float> Oprs { get; set; } = oprs;
 
     /// <summary>
     /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.</value>
-    [DataMember(Name = "dprs", EmitDefaultValue = false)]
+    [DataMember(Name = "dprs", EmitDefaultValue = false), JsonPropertyName("dprs")]
     public Dictionary<string, float> Dprs { get; set; } = dprs;
 
     /// <summary>
     /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.</value>
-    [DataMember(Name = "ccwms", EmitDefaultValue = false)]
+    [DataMember(Name = "ccwms", EmitDefaultValue = false), JsonPropertyName("ccwms")]
     public Dictionary<string, float> Ccwms { get; set; } = ccwms;
 
     /// <summary>

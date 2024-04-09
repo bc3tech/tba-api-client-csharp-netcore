@@ -14,10 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// ZebraAlliances
 /// </summary>
@@ -34,14 +34,14 @@ public partial class ZebraAlliances(List<ZebraTeam> red = default, List<ZebraTea
     /// Zebra MotionWorks data for teams on the red alliance
     /// </summary>
     /// <value>Zebra MotionWorks data for teams on the red alliance</value>
-    [DataMember(Name = "red", EmitDefaultValue = false)]
+    [DataMember(Name = "red", EmitDefaultValue = false), JsonPropertyName("red")]
     public List<ZebraTeam> Red { get; set; } = red;
 
     /// <summary>
     /// Zebra data for teams on the blue alliance
     /// </summary>
     /// <value>Zebra data for teams on the blue alliance</value>
-    [DataMember(Name = "blue", EmitDefaultValue = false)]
+    [DataMember(Name = "blue", EmitDefaultValue = false), JsonPropertyName("blue")]
     public List<ZebraTeam> Blue { get; set; } = blue;
 
     /// <summary>

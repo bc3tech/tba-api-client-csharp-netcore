@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// MatchVideos
 /// </summary>
@@ -33,14 +33,14 @@ public partial class MatchVideos(string type = default, string key = default) : 
     /// Can be one of &#39;youtube&#39; or &#39;tba&#39;
     /// </summary>
     /// <value>Can be one of &#39;youtube&#39; or &#39;tba&#39;</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [DataMember(Name = "type", EmitDefaultValue = false), JsonPropertyName("type")]
     public string Type { get; set; } = type;
 
     /// <summary>
     /// Unique key representing this video
     /// </summary>
     /// <value>Unique key representing this video</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; } = key;
 
     /// <summary>

@@ -44,14 +44,14 @@ public partial class APIStatusAppVersion : IEquatable<APIStatusAppVersion>, IVal
     /// Internal use - Minimum application version required to correctly connect and process data.
     /// </summary>
     /// <value>Internal use - Minimum application version required to correctly connect and process data.</value>
-    [DataMember(Name = "min_app_version", EmitDefaultValue = false)]
+    [DataMember(Name = "min_app_version", EmitDefaultValue = false), JsonPropertyName("min_app_version")]
     public int MinAppVersion { get; set; }
 
     /// <summary>
     /// Internal use - Latest application version available.
     /// </summary>
     /// <value>Internal use - Latest application version available.</value>
-    [DataMember(Name = "latest_app_version", EmitDefaultValue = false)]
+    [DataMember(Name = "latest_app_version", EmitDefaultValue = false), JsonPropertyName("latest_app_version")]
     public int LatestAppVersion { get; set; }
 
     /// <summary>

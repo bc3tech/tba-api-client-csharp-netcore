@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// DistrictRankingEventPoints
 /// </summary>
@@ -55,49 +54,49 @@ public partial class DistrictRankingEventPoints : IEquatable<DistrictRankingEven
     /// &#x60;true&#x60; if this event is a District Championship event.
     /// </summary>
     /// <value>&#x60;true&#x60; if this event is a District Championship event.</value>
-    [DataMember(Name = "district_cmp", EmitDefaultValue = false)]
+    [DataMember(Name = "district_cmp", EmitDefaultValue = false), JsonPropertyName("district_cmp")]
     public bool DistrictCmp { get; set; }
 
     /// <summary>
     /// Total points awarded at this event.
     /// </summary>
     /// <value>Total points awarded at this event.</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [DataMember(Name = "total", EmitDefaultValue = false), JsonPropertyName("total")]
     public int Total { get; set; }
 
     /// <summary>
     /// Points awarded for alliance selection.
     /// </summary>
     /// <value>Points awarded for alliance selection.</value>
-    [DataMember(Name = "alliance_points", EmitDefaultValue = false)]
+    [DataMember(Name = "alliance_points", EmitDefaultValue = false), JsonPropertyName("alliance_points")]
     public int AlliancePoints { get; set; }
 
     /// <summary>
     /// Points awarded for elimination match performance.
     /// </summary>
     /// <value>Points awarded for elimination match performance.</value>
-    [DataMember(Name = "elim_points", EmitDefaultValue = false)]
+    [DataMember(Name = "elim_points", EmitDefaultValue = false), JsonPropertyName("elim_points")]
     public int ElimPoints { get; set; }
 
     /// <summary>
     /// Points awarded for event awards.
     /// </summary>
     /// <value>Points awarded for event awards.</value>
-    [DataMember(Name = "award_points", EmitDefaultValue = false)]
+    [DataMember(Name = "award_points", EmitDefaultValue = false), JsonPropertyName("award_points")]
     public int AwardPoints { get; set; }
 
     /// <summary>
     /// TBA Event key for this event.
     /// </summary>
     /// <value>TBA Event key for this event.</value>
-    [DataMember(Name = "event_key", EmitDefaultValue = false)]
+    [DataMember(Name = "event_key", EmitDefaultValue = false), JsonPropertyName("event_key")]
     public string EventKey { get; set; }
 
     /// <summary>
     /// Points awarded for qualification match performance.
     /// </summary>
     /// <value>Points awarded for qualification match performance.</value>
-    [DataMember(Name = "qual_points", EmitDefaultValue = false)]
+    [DataMember(Name = "qual_points", EmitDefaultValue = false), JsonPropertyName("qual_points")]
     public int QualPoints { get; set; }
 
     /// <summary>

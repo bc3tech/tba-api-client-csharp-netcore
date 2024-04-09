@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// A list of alliances, the teams on the alliances, and their score.
 /// </summary>
@@ -32,13 +32,13 @@ public partial class MatchSimpleAlliances(MatchAlliance red = default, MatchAlli
     /// <summary>
     /// Gets or Sets Red
     /// </summary>
-    [DataMember(Name = "red", EmitDefaultValue = false)]
+    [DataMember(Name = "red", EmitDefaultValue = false), JsonPropertyName("red")]
     public MatchAlliance Red { get; set; } = red;
 
     /// <summary>
     /// Gets or Sets Blue
     /// </summary>
-    [DataMember(Name = "blue", EmitDefaultValue = false)]
+    [DataMember(Name = "blue", EmitDefaultValue = false), JsonPropertyName("blue")]
     public MatchAlliance Blue { get; set; } = blue;
 
     /// <summary>

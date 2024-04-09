@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// See the 2020 FMS API documentation for a description of each value. https://frcevents2.docs.apiary.io/#/reference/match-results/score-details
 /// </summary>
@@ -32,13 +32,13 @@ public partial class MatchScoreBreakdown2020(MatchScoreBreakdown2020Alliance blu
     /// <summary>
     /// Gets or Sets Blue
     /// </summary>
-    [DataMember(Name = "blue", EmitDefaultValue = false)]
+    [DataMember(Name = "blue", EmitDefaultValue = false), JsonPropertyName("blue")]
     public MatchScoreBreakdown2020Alliance Blue { get; set; } = blue;
 
     /// <summary>
     /// Gets or Sets Red
     /// </summary>
-    [DataMember(Name = "red", EmitDefaultValue = false)]
+    [DataMember(Name = "red", EmitDefaultValue = false), JsonPropertyName("red")]
     public MatchScoreBreakdown2020Alliance Red { get; set; } = red;
 
     /// <summary>

@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// MatchScoreBreakdown2018Alliance
 /// </summary>
@@ -67,224 +67,224 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
-    [DataMember(Name = "adjustPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
     public int AdjustPoints { get; set; } = adjustPoints;
 
     /// <summary>
     /// Gets or Sets AutoOwnershipPoints
     /// </summary>
-    [DataMember(Name = "autoOwnershipPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoOwnershipPoints", EmitDefaultValue = false), JsonPropertyName("autoOwnershipPoints")]
     public int AutoOwnershipPoints { get; set; } = autoOwnershipPoints;
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
-    [DataMember(Name = "autoPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
     public int AutoPoints { get; set; } = autoPoints;
 
     /// <summary>
     /// Gets or Sets AutoQuestRankingPoint
     /// </summary>
-    [DataMember(Name = "autoQuestRankingPoint", EmitDefaultValue = false)]
+    [DataMember(Name = "autoQuestRankingPoint", EmitDefaultValue = false), JsonPropertyName("autoQuestRankingPoint")]
     public bool AutoQuestRankingPoint { get; set; } = autoQuestRankingPoint;
 
     /// <summary>
     /// Gets or Sets AutoRobot1
     /// </summary>
-    [DataMember(Name = "autoRobot1", EmitDefaultValue = false)]
+    [DataMember(Name = "autoRobot1", EmitDefaultValue = false), JsonPropertyName("autoRobot1")]
     public string AutoRobot1 { get; set; } = autoRobot1;
 
     /// <summary>
     /// Gets or Sets AutoRobot2
     /// </summary>
-    [DataMember(Name = "autoRobot2", EmitDefaultValue = false)]
+    [DataMember(Name = "autoRobot2", EmitDefaultValue = false), JsonPropertyName("autoRobot2")]
     public string AutoRobot2 { get; set; } = autoRobot2;
 
     /// <summary>
     /// Gets or Sets AutoRobot3
     /// </summary>
-    [DataMember(Name = "autoRobot3", EmitDefaultValue = false)]
+    [DataMember(Name = "autoRobot3", EmitDefaultValue = false), JsonPropertyName("autoRobot3")]
     public string AutoRobot3 { get; set; } = autoRobot3;
 
     /// <summary>
     /// Gets or Sets AutoRunPoints
     /// </summary>
-    [DataMember(Name = "autoRunPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "autoRunPoints", EmitDefaultValue = false), JsonPropertyName("autoRunPoints")]
     public int AutoRunPoints { get; set; } = autoRunPoints;
 
     /// <summary>
     /// Gets or Sets AutoScaleOwnershipSec
     /// </summary>
-    [DataMember(Name = "autoScaleOwnershipSec", EmitDefaultValue = false)]
+    [DataMember(Name = "autoScaleOwnershipSec", EmitDefaultValue = false), JsonPropertyName("autoScaleOwnershipSec")]
     public int AutoScaleOwnershipSec { get; set; } = autoScaleOwnershipSec;
 
     /// <summary>
     /// Gets or Sets AutoSwitchAtZero
     /// </summary>
-    [DataMember(Name = "autoSwitchAtZero", EmitDefaultValue = false)]
+    [DataMember(Name = "autoSwitchAtZero", EmitDefaultValue = false), JsonPropertyName("autoSwitchAtZero")]
     public bool AutoSwitchAtZero { get; set; } = autoSwitchAtZero;
 
     /// <summary>
     /// Gets or Sets AutoSwitchOwnershipSec
     /// </summary>
-    [DataMember(Name = "autoSwitchOwnershipSec", EmitDefaultValue = false)]
+    [DataMember(Name = "autoSwitchOwnershipSec", EmitDefaultValue = false), JsonPropertyName("autoSwitchOwnershipSec")]
     public int AutoSwitchOwnershipSec { get; set; } = autoSwitchOwnershipSec;
 
     /// <summary>
     /// Gets or Sets EndgamePoints
     /// </summary>
-    [DataMember(Name = "endgamePoints", EmitDefaultValue = false)]
+    [DataMember(Name = "endgamePoints", EmitDefaultValue = false), JsonPropertyName("endgamePoints")]
     public int EndgamePoints { get; set; } = endgamePoints;
 
     /// <summary>
     /// Gets or Sets EndgameRobot1
     /// </summary>
-    [DataMember(Name = "endgameRobot1", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot1", EmitDefaultValue = false), JsonPropertyName("endgameRobot1")]
     public string EndgameRobot1 { get; set; } = endgameRobot1;
 
     /// <summary>
     /// Gets or Sets EndgameRobot2
     /// </summary>
-    [DataMember(Name = "endgameRobot2", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot2", EmitDefaultValue = false), JsonPropertyName("endgameRobot2")]
     public string EndgameRobot2 { get; set; } = endgameRobot2;
 
     /// <summary>
     /// Gets or Sets EndgameRobot3
     /// </summary>
-    [DataMember(Name = "endgameRobot3", EmitDefaultValue = false)]
+    [DataMember(Name = "endgameRobot3", EmitDefaultValue = false), JsonPropertyName("endgameRobot3")]
     public string EndgameRobot3 { get; set; } = endgameRobot3;
 
     /// <summary>
     /// Gets or Sets FaceTheBossRankingPoint
     /// </summary>
-    [DataMember(Name = "faceTheBossRankingPoint", EmitDefaultValue = false)]
+    [DataMember(Name = "faceTheBossRankingPoint", EmitDefaultValue = false), JsonPropertyName("faceTheBossRankingPoint")]
     public bool FaceTheBossRankingPoint { get; set; } = faceTheBossRankingPoint;
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
-    [DataMember(Name = "foulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
     public int FoulCount { get; set; } = foulCount;
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
-    [DataMember(Name = "foulPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
     public int FoulPoints { get; set; } = foulPoints;
 
     /// <summary>
     /// Gets or Sets Rp
     /// </summary>
-    [DataMember(Name = "rp", EmitDefaultValue = false)]
+    [DataMember(Name = "rp", EmitDefaultValue = false), JsonPropertyName("rp")]
     public int Rp { get; set; } = rp;
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
-    [DataMember(Name = "techFoulCount", EmitDefaultValue = false)]
+    [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
     public int TechFoulCount { get; set; } = techFoulCount;
 
     /// <summary>
     /// Gets or Sets TeleopOwnershipPoints
     /// </summary>
-    [DataMember(Name = "teleopOwnershipPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopOwnershipPoints", EmitDefaultValue = false), JsonPropertyName("teleopOwnershipPoints")]
     public int TeleopOwnershipPoints { get; set; } = teleopOwnershipPoints;
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
-    [DataMember(Name = "teleopPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
     public int TeleopPoints { get; set; } = teleopPoints;
 
     /// <summary>
     /// Gets or Sets TeleopScaleBoostSec
     /// </summary>
-    [DataMember(Name = "teleopScaleBoostSec", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopScaleBoostSec", EmitDefaultValue = false), JsonPropertyName("teleopScaleBoostSec")]
     public int TeleopScaleBoostSec { get; set; } = teleopScaleBoostSec;
 
     /// <summary>
     /// Gets or Sets TeleopScaleForceSec
     /// </summary>
-    [DataMember(Name = "teleopScaleForceSec", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopScaleForceSec", EmitDefaultValue = false), JsonPropertyName("teleopScaleForceSec")]
     public int TeleopScaleForceSec { get; set; } = teleopScaleForceSec;
 
     /// <summary>
     /// Gets or Sets TeleopScaleOwnershipSec
     /// </summary>
-    [DataMember(Name = "teleopScaleOwnershipSec", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopScaleOwnershipSec", EmitDefaultValue = false), JsonPropertyName("teleopScaleOwnershipSec")]
     public int TeleopScaleOwnershipSec { get; set; } = teleopScaleOwnershipSec;
 
     /// <summary>
     /// Gets or Sets TeleopSwitchBoostSec
     /// </summary>
-    [DataMember(Name = "teleopSwitchBoostSec", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopSwitchBoostSec", EmitDefaultValue = false), JsonPropertyName("teleopSwitchBoostSec")]
     public int TeleopSwitchBoostSec { get; set; } = teleopSwitchBoostSec;
 
     /// <summary>
     /// Gets or Sets TeleopSwitchForceSec
     /// </summary>
-    [DataMember(Name = "teleopSwitchForceSec", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopSwitchForceSec", EmitDefaultValue = false), JsonPropertyName("teleopSwitchForceSec")]
     public int TeleopSwitchForceSec { get; set; } = teleopSwitchForceSec;
 
     /// <summary>
     /// Gets or Sets TeleopSwitchOwnershipSec
     /// </summary>
-    [DataMember(Name = "teleopSwitchOwnershipSec", EmitDefaultValue = false)]
+    [DataMember(Name = "teleopSwitchOwnershipSec", EmitDefaultValue = false), JsonPropertyName("teleopSwitchOwnershipSec")]
     public int TeleopSwitchOwnershipSec { get; set; } = teleopSwitchOwnershipSec;
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
-    [DataMember(Name = "totalPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
     public int TotalPoints { get; set; } = totalPoints;
 
     /// <summary>
     /// Gets or Sets VaultBoostPlayed
     /// </summary>
-    [DataMember(Name = "vaultBoostPlayed", EmitDefaultValue = false)]
+    [DataMember(Name = "vaultBoostPlayed", EmitDefaultValue = false), JsonPropertyName("vaultBoostPlayed")]
     public int VaultBoostPlayed { get; set; } = vaultBoostPlayed;
 
     /// <summary>
     /// Gets or Sets VaultBoostTotal
     /// </summary>
-    [DataMember(Name = "vaultBoostTotal", EmitDefaultValue = false)]
+    [DataMember(Name = "vaultBoostTotal", EmitDefaultValue = false), JsonPropertyName("vaultBoostTotal")]
     public int VaultBoostTotal { get; set; } = vaultBoostTotal;
 
     /// <summary>
     /// Gets or Sets VaultForcePlayed
     /// </summary>
-    [DataMember(Name = "vaultForcePlayed", EmitDefaultValue = false)]
+    [DataMember(Name = "vaultForcePlayed", EmitDefaultValue = false), JsonPropertyName("vaultForcePlayed")]
     public int VaultForcePlayed { get; set; } = vaultForcePlayed;
 
     /// <summary>
     /// Gets or Sets VaultForceTotal
     /// </summary>
-    [DataMember(Name = "vaultForceTotal", EmitDefaultValue = false)]
+    [DataMember(Name = "vaultForceTotal", EmitDefaultValue = false), JsonPropertyName("vaultForceTotal")]
     public int VaultForceTotal { get; set; } = vaultForceTotal;
 
     /// <summary>
     /// Gets or Sets VaultLevitatePlayed
     /// </summary>
-    [DataMember(Name = "vaultLevitatePlayed", EmitDefaultValue = false)]
+    [DataMember(Name = "vaultLevitatePlayed", EmitDefaultValue = false), JsonPropertyName("vaultLevitatePlayed")]
     public int VaultLevitatePlayed { get; set; } = vaultLevitatePlayed;
 
     /// <summary>
     /// Gets or Sets VaultLevitateTotal
     /// </summary>
-    [DataMember(Name = "vaultLevitateTotal", EmitDefaultValue = false)]
+    [DataMember(Name = "vaultLevitateTotal", EmitDefaultValue = false), JsonPropertyName("vaultLevitateTotal")]
     public int VaultLevitateTotal { get; set; } = vaultLevitateTotal;
 
     /// <summary>
     /// Gets or Sets VaultPoints
     /// </summary>
-    [DataMember(Name = "vaultPoints", EmitDefaultValue = false)]
+    [DataMember(Name = "vaultPoints", EmitDefaultValue = false), JsonPropertyName("vaultPoints")]
     public int VaultPoints { get; set; } = vaultPoints;
 
     /// <summary>
     /// Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing &#x60;L&#x60; and &#x60;R&#x60; only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance&#39;s perspective. An &#x60;L&#x60; in a position indicates the platform on the left will be lit for the alliance while an &#x60;R&#x60; will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details).
     /// </summary>
     /// <value>Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing &#x60;L&#x60; and &#x60;R&#x60; only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance&#39;s perspective. An &#x60;L&#x60; in a position indicates the platform on the left will be lit for the alliance while an &#x60;R&#x60; will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details).</value>
-    [DataMember(Name = "tba_gameData", EmitDefaultValue = false)]
+    [DataMember(Name = "tba_gameData", EmitDefaultValue = false), JsonPropertyName("tba_gameData")]
     public string TbaGameData { get; set; } = tbaGameData;
 
     /// <summary>

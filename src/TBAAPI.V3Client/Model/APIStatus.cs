@@ -56,40 +56,40 @@ public partial class APIStatus : IEquatable<APIStatus>, IValidatableObject
     /// Year of the current FRC season.
     /// </summary>
     /// <value>Year of the current FRC season.</value>
-    [DataMember(Name = "current_season", EmitDefaultValue = false)]
+    [DataMember(Name = "current_season", EmitDefaultValue = false), JsonPropertyName("current_season")]
     public int CurrentSeason { get; set; }
 
     /// <summary>
     /// Maximum FRC season year for valid queries.
     /// </summary>
     /// <value>Maximum FRC season year for valid queries.</value>
-    [DataMember(Name = "max_season", EmitDefaultValue = false)]
+    [DataMember(Name = "max_season", EmitDefaultValue = false), JsonPropertyName("max_season")]
     public int MaxSeason { get; set; }
 
     /// <summary>
     /// True if the entire FMS API provided by FIRST is down.
     /// </summary>
     /// <value>True if the entire FMS API provided by FIRST is down.</value>
-    [DataMember(Name = "is_datafeed_down", EmitDefaultValue = false)]
+    [DataMember(Name = "is_datafeed_down", EmitDefaultValue = false), JsonPropertyName("is_datafeed_down")]
     public bool IsDatafeedDown { get; set; }
 
     /// <summary>
     /// An array of strings containing event keys of any active events that are no longer updating.
     /// </summary>
     /// <value>An array of strings containing event keys of any active events that are no longer updating.</value>
-    [DataMember(Name = "down_events", EmitDefaultValue = false)]
+    [DataMember(Name = "down_events", EmitDefaultValue = false), JsonPropertyName("down_events")]
     public List<string> DownEvents { get; set; }
 
     /// <summary>
     /// Gets or Sets Ios
     /// </summary>
-    [DataMember(Name = "ios", EmitDefaultValue = false)]
+    [DataMember(Name = "ios", EmitDefaultValue = false), JsonPropertyName("ios")]
     public APIStatusAppVersion Ios { get; set; }
 
     /// <summary>
     /// Gets or Sets Android
     /// </summary>
-    [DataMember(Name = "android", EmitDefaultValue = false)]
+    [DataMember(Name = "android", EmitDefaultValue = false), JsonPropertyName("android")]
     public APIStatusAppVersion Android { get; set; }
 
     /// <summary>

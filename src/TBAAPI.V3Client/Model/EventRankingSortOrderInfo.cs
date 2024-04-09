@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// EventRankingSortOrderInfo
 /// </summary>
@@ -45,14 +44,14 @@ public partial class EventRankingSortOrderInfo : IEquatable<EventRankingSortOrde
     /// Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;.
     /// </summary>
     /// <value>Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;.</value>
-    [DataMember(Name = "precision", EmitDefaultValue = false)]
+    [DataMember(Name = "precision", EmitDefaultValue = false), JsonPropertyName("precision")]
     public int Precision { get; set; }
 
     /// <summary>
     /// Name of the field used in the &#x60;sort_order&#x60; array.
     /// </summary>
     /// <value>Name of the field used in the &#x60;sort_order&#x60; array.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>

@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// Webcast
 /// </summary>
@@ -109,7 +108,7 @@ public partial class Webcast : IEquatable<Webcast>, IValidatableObject
     /// Type of webcast, typically descriptive of the streaming provider.
     /// </summary>
     /// <value>Type of webcast, typically descriptive of the streaming provider.</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+    [DataMember(Name = "type", EmitDefaultValue = false), JsonPropertyName("type")]
     public TypeEnum Type { get; set; }
     /// <summary>
     /// Initializes a new instance of the <see cref="Webcast" /> class.
@@ -136,21 +135,21 @@ public partial class Webcast : IEquatable<Webcast>, IValidatableObject
     /// Type specific channel information. May be the YouTube stream, or Twitch channel name. In the case of iframe types, contains HTML to embed the stream in an HTML iframe.
     /// </summary>
     /// <value>Type specific channel information. May be the YouTube stream, or Twitch channel name. In the case of iframe types, contains HTML to embed the stream in an HTML iframe.</value>
-    [DataMember(Name = "channel", EmitDefaultValue = false)]
+    [DataMember(Name = "channel", EmitDefaultValue = false), JsonPropertyName("channel")]
     public string Channel { get; set; }
 
     /// <summary>
     /// The date for the webcast in &#x60;yyyy-mm-dd&#x60; format. May be null.
     /// </summary>
     /// <value>The date for the webcast in &#x60;yyyy-mm-dd&#x60; format. May be null.</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+    [DataMember(Name = "date", EmitDefaultValue = false), JsonPropertyName("date")]
     public string Date { get; set; }
 
     /// <summary>
     /// File identification as may be required for some types. May be null.
     /// </summary>
     /// <value>File identification as may be required for some types. May be null.</value>
-    [DataMember(Name = "file", EmitDefaultValue = false)]
+    [DataMember(Name = "file", EmitDefaultValue = false), JsonPropertyName("file")]
     public string File { get; set; }
 
     /// <summary>

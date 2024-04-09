@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// A Win-Loss-Tie record for a team, or an alliance.
 /// </summary>
@@ -46,21 +45,21 @@ public partial class WLTRecord : IEquatable<WLTRecord>, IValidatableObject
     /// Number of losses.
     /// </summary>
     /// <value>Number of losses.</value>
-    [DataMember(Name = "losses", EmitDefaultValue = false)]
+    [DataMember(Name = "losses", EmitDefaultValue = false), JsonPropertyName("losses")]
     public int Losses { get; set; }
 
     /// <summary>
     /// Number of wins.
     /// </summary>
     /// <value>Number of wins.</value>
-    [DataMember(Name = "wins", EmitDefaultValue = false)]
+    [DataMember(Name = "wins", EmitDefaultValue = false), JsonPropertyName("wins")]
     public int Wins { get; set; }
 
     /// <summary>
     /// Number of ties.
     /// </summary>
     /// <value>Number of ties.</value>
-    [DataMember(Name = "ties", EmitDefaultValue = false)]
+    [DataMember(Name = "ties", EmitDefaultValue = false), JsonPropertyName("ties")]
     public int Ties { get; set; }
 
     /// <summary>

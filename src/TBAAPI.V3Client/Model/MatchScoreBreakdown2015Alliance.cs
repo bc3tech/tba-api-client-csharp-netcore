@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// MatchScoreBreakdown2015Alliance
 /// </summary>
@@ -54,145 +54,145 @@ public partial class MatchScoreBreakdown2015Alliance(int autoPoints = default, i
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
-    [DataMember(Name = "auto_points", EmitDefaultValue = false)]
+    [DataMember(Name = "auto_points", EmitDefaultValue = false), JsonPropertyName("auto_points")]
     public int AutoPoints { get; set; } = autoPoints;
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
-    [DataMember(Name = "teleop_points", EmitDefaultValue = false)]
+    [DataMember(Name = "teleop_points", EmitDefaultValue = false), JsonPropertyName("teleop_points")]
     public int TeleopPoints { get; set; } = teleopPoints;
 
     /// <summary>
     /// Gets or Sets ContainerPoints
     /// </summary>
-    [DataMember(Name = "container_points", EmitDefaultValue = false)]
+    [DataMember(Name = "container_points", EmitDefaultValue = false), JsonPropertyName("container_points")]
     public int ContainerPoints { get; set; } = containerPoints;
 
     /// <summary>
     /// Gets or Sets TotePoints
     /// </summary>
-    [DataMember(Name = "tote_points", EmitDefaultValue = false)]
+    [DataMember(Name = "tote_points", EmitDefaultValue = false), JsonPropertyName("tote_points")]
     public int TotePoints { get; set; } = totePoints;
 
     /// <summary>
     /// Gets or Sets LitterPoints
     /// </summary>
-    [DataMember(Name = "litter_points", EmitDefaultValue = false)]
+    [DataMember(Name = "litter_points", EmitDefaultValue = false), JsonPropertyName("litter_points")]
     public int LitterPoints { get; set; } = litterPoints;
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
-    [DataMember(Name = "foul_points", EmitDefaultValue = false)]
+    [DataMember(Name = "foul_points", EmitDefaultValue = false), JsonPropertyName("foul_points")]
     public int FoulPoints { get; set; } = foulPoints;
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
-    [DataMember(Name = "adjust_points", EmitDefaultValue = false)]
+    [DataMember(Name = "adjust_points", EmitDefaultValue = false), JsonPropertyName("adjust_points")]
     public int AdjustPoints { get; set; } = adjustPoints;
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
-    [DataMember(Name = "total_points", EmitDefaultValue = false)]
+    [DataMember(Name = "total_points", EmitDefaultValue = false), JsonPropertyName("total_points")]
     public int TotalPoints { get; set; } = totalPoints;
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
-    [DataMember(Name = "foul_count", EmitDefaultValue = false)]
+    [DataMember(Name = "foul_count", EmitDefaultValue = false), JsonPropertyName("foul_count")]
     public int FoulCount { get; set; } = foulCount;
 
     /// <summary>
     /// Gets or Sets ToteCountFar
     /// </summary>
-    [DataMember(Name = "tote_count_far", EmitDefaultValue = false)]
+    [DataMember(Name = "tote_count_far", EmitDefaultValue = false), JsonPropertyName("tote_count_far")]
     public int ToteCountFar { get; set; } = toteCountFar;
 
     /// <summary>
     /// Gets or Sets ToteCountNear
     /// </summary>
-    [DataMember(Name = "tote_count_near", EmitDefaultValue = false)]
+    [DataMember(Name = "tote_count_near", EmitDefaultValue = false), JsonPropertyName("tote_count_near")]
     public int ToteCountNear { get; set; } = toteCountNear;
 
     /// <summary>
     /// Gets or Sets ToteSet
     /// </summary>
-    [DataMember(Name = "tote_set", EmitDefaultValue = false)]
+    [DataMember(Name = "tote_set", EmitDefaultValue = false), JsonPropertyName("tote_set")]
     public bool ToteSet { get; set; } = toteSet;
 
     /// <summary>
     /// Gets or Sets ToteStack
     /// </summary>
-    [DataMember(Name = "tote_stack", EmitDefaultValue = false)]
+    [DataMember(Name = "tote_stack", EmitDefaultValue = false), JsonPropertyName("tote_stack")]
     public bool ToteStack { get; set; } = toteStack;
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel1
     /// </summary>
-    [DataMember(Name = "container_count_level1", EmitDefaultValue = false)]
+    [DataMember(Name = "container_count_level1", EmitDefaultValue = false), JsonPropertyName("container_count_level1")]
     public int ContainerCountLevel1 { get; set; } = containerCountLevel1;
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel2
     /// </summary>
-    [DataMember(Name = "container_count_level2", EmitDefaultValue = false)]
+    [DataMember(Name = "container_count_level2", EmitDefaultValue = false), JsonPropertyName("container_count_level2")]
     public int ContainerCountLevel2 { get; set; } = containerCountLevel2;
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel3
     /// </summary>
-    [DataMember(Name = "container_count_level3", EmitDefaultValue = false)]
+    [DataMember(Name = "container_count_level3", EmitDefaultValue = false), JsonPropertyName("container_count_level3")]
     public int ContainerCountLevel3 { get; set; } = containerCountLevel3;
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel4
     /// </summary>
-    [DataMember(Name = "container_count_level4", EmitDefaultValue = false)]
+    [DataMember(Name = "container_count_level4", EmitDefaultValue = false), JsonPropertyName("container_count_level4")]
     public int ContainerCountLevel4 { get; set; } = containerCountLevel4;
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel5
     /// </summary>
-    [DataMember(Name = "container_count_level5", EmitDefaultValue = false)]
+    [DataMember(Name = "container_count_level5", EmitDefaultValue = false), JsonPropertyName("container_count_level5")]
     public int ContainerCountLevel5 { get; set; } = containerCountLevel5;
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel6
     /// </summary>
-    [DataMember(Name = "container_count_level6", EmitDefaultValue = false)]
+    [DataMember(Name = "container_count_level6", EmitDefaultValue = false), JsonPropertyName("container_count_level6")]
     public int ContainerCountLevel6 { get; set; } = containerCountLevel6;
 
     /// <summary>
     /// Gets or Sets ContainerSet
     /// </summary>
-    [DataMember(Name = "container_set", EmitDefaultValue = false)]
+    [DataMember(Name = "container_set", EmitDefaultValue = false), JsonPropertyName("container_set")]
     public bool ContainerSet { get; set; } = containerSet;
 
     /// <summary>
     /// Gets or Sets LitterCountContainer
     /// </summary>
-    [DataMember(Name = "litter_count_container", EmitDefaultValue = false)]
+    [DataMember(Name = "litter_count_container", EmitDefaultValue = false), JsonPropertyName("litter_count_container")]
     public int LitterCountContainer { get; set; } = litterCountContainer;
 
     /// <summary>
     /// Gets or Sets LitterCountLandfill
     /// </summary>
-    [DataMember(Name = "litter_count_landfill", EmitDefaultValue = false)]
+    [DataMember(Name = "litter_count_landfill", EmitDefaultValue = false), JsonPropertyName("litter_count_landfill")]
     public int LitterCountLandfill { get; set; } = litterCountLandfill;
 
     /// <summary>
     /// Gets or Sets LitterCountUnprocessed
     /// </summary>
-    [DataMember(Name = "litter_count_unprocessed", EmitDefaultValue = false)]
+    [DataMember(Name = "litter_count_unprocessed", EmitDefaultValue = false), JsonPropertyName("litter_count_unprocessed")]
     public int LitterCountUnprocessed { get; set; } = litterCountUnprocessed;
 
     /// <summary>
     /// Gets or Sets RobotSet
     /// </summary>
-    [DataMember(Name = "robot_set", EmitDefaultValue = false)]
+    [DataMember(Name = "robot_set", EmitDefaultValue = false), JsonPropertyName("robot_set")]
     public bool RobotSet { get; set; } = robotSet;
 
     /// <summary>

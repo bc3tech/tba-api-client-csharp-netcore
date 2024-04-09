@@ -54,35 +54,35 @@ public partial class Award : IEquatable<Award>, IValidatableObject
     /// The name of the award as provided by FIRST. May vary for the same award type.
     /// </summary>
     /// <value>The name of the award as provided by FIRST. May vary for the same award type.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>
     /// Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6
     /// </summary>
     /// <value>Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6</value>
-    [DataMember(Name = "award_type", EmitDefaultValue = false)]
+    [DataMember(Name = "award_type", EmitDefaultValue = false), JsonPropertyName("award_type")]
     public int AwardType { get; set; }
 
     /// <summary>
     /// The event_key of the event the award was won at.
     /// </summary>
     /// <value>The event_key of the event the award was won at.</value>
-    [DataMember(Name = "event_key", EmitDefaultValue = false)]
+    [DataMember(Name = "event_key", EmitDefaultValue = false), JsonPropertyName("event_key")]
     public string EventKey { get; set; }
 
     /// <summary>
     /// A list of recipients of the award at the event. May have either a team_key or an awardee, both, or neither (in the case the award wasn&#39;t awarded at the event).
     /// </summary>
     /// <value>A list of recipients of the award at the event. May have either a team_key or an awardee, both, or neither (in the case the award wasn&#39;t awarded at the event).</value>
-    [DataMember(Name = "recipient_list", EmitDefaultValue = false)]
+    [DataMember(Name = "recipient_list", EmitDefaultValue = false), JsonPropertyName("recipient_list")]
     public List<AwardRecipient> RecipientList { get; set; }
 
     /// <summary>
     /// The year this award was won.
     /// </summary>
     /// <value>The year this award was won.</value>
-    [DataMember(Name = "year", EmitDefaultValue = false)]
+    [DataMember(Name = "year", EmitDefaultValue = false), JsonPropertyName("year")]
     public int Year { get; set; }
 
     /// <summary>

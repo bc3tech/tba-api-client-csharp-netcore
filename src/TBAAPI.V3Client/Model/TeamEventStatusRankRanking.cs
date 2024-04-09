@@ -17,6 +17,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// TeamEventStatusRankRanking
@@ -39,48 +40,48 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
     /// Number of matches played.
     /// </summary>
     /// <value>Number of matches played.</value>
-    [DataMember(Name = "matches_played", EmitDefaultValue = false)]
+    [DataMember(Name = "matches_played", EmitDefaultValue = false), JsonPropertyName("matches_played")]
     public int MatchesPlayed { get; set; } = matchesPlayed;
 
     /// <summary>
     /// For some years, average qualification score. Can be null.
     /// </summary>
     /// <value>For some years, average qualification score. Can be null.</value>
-    [DataMember(Name = "qual_average", EmitDefaultValue = false)]
+    [DataMember(Name = "qual_average", EmitDefaultValue = false), JsonPropertyName("qual_average")]
     public double QualAverage { get; set; } = qualAverage;
 
     /// <summary>
     /// Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value.
     /// </summary>
     /// <value>Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value.</value>
-    [DataMember(Name = "sort_orders", EmitDefaultValue = false)]
+    [DataMember(Name = "sort_orders", EmitDefaultValue = false), JsonPropertyName("sort_orders")]
     public List<decimal> SortOrders { get; set; } = sortOrders;
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
-    [DataMember(Name = "record", EmitDefaultValue = false)]
+    [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
     public WLTRecord Record { get; set; } = record;
 
     /// <summary>
     /// Relative rank of this team.
     /// </summary>
     /// <value>Relative rank of this team.</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [DataMember(Name = "rank", EmitDefaultValue = false), JsonPropertyName("rank")]
     public int Rank { get; set; } = rank;
 
     /// <summary>
     /// Number of matches the team was disqualified for.
     /// </summary>
     /// <value>Number of matches the team was disqualified for.</value>
-    [DataMember(Name = "dq", EmitDefaultValue = false)]
+    [DataMember(Name = "dq", EmitDefaultValue = false), JsonPropertyName("dq")]
     public int Dq { get; set; } = dq;
 
     /// <summary>
     /// TBA team key for this rank.
     /// </summary>
     /// <value>TBA team key for this rank.</value>
-    [DataMember(Name = "team_key", EmitDefaultValue = false)]
+    [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
     public string TeamKey { get; set; } = teamKey;
 
     /// <summary>

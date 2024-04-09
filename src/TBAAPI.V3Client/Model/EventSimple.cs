@@ -67,62 +67,62 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
     /// </summary>
     /// <value>TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; }
 
     /// <summary>
     /// Official name of event on record either provided by FIRST or organizers of offseason event.
     /// </summary>
     /// <value>Official name of event on record either provided by FIRST or organizers of offseason event.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>
     /// Event short code, as provided by FIRST.
     /// </summary>
     /// <value>Event short code, as provided by FIRST.</value>
-    [DataMember(Name = "event_code", EmitDefaultValue = false)]
+    [DataMember(Name = "event_code", EmitDefaultValue = false), JsonPropertyName("event_code")]
     public string EventCode { get; set; }
 
     /// <summary>
     /// Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
     /// </summary>
     /// <value>Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2</value>
-    [DataMember(Name = "event_type", EmitDefaultValue = false)]
+    [DataMember(Name = "event_type", EmitDefaultValue = false), JsonPropertyName("event_type")]
     public int EventType { get; set; }
 
     /// <summary>
     /// Gets or Sets District
     /// </summary>
-    [DataMember(Name = "district", EmitDefaultValue = false)]
+    [DataMember(Name = "district", EmitDefaultValue = false), JsonPropertyName("district")]
     public DistrictList District { get; set; }
 
     /// <summary>
     /// City, town, village, etc. the event is located in.
     /// </summary>
     /// <value>City, town, village, etc. the event is located in.</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [DataMember(Name = "city", EmitDefaultValue = false), JsonPropertyName("city")]
     public string City { get; set; }
 
     /// <summary>
     /// State or Province the event is located in.
     /// </summary>
     /// <value>State or Province the event is located in.</value>
-    [DataMember(Name = "state_prov", EmitDefaultValue = false)]
+    [DataMember(Name = "state_prov", EmitDefaultValue = false), JsonPropertyName("state_prov")]
     public string StateProv { get; set; }
 
     /// <summary>
     /// Country the event is located in.
     /// </summary>
     /// <value>Country the event is located in.</value>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [DataMember(Name = "country", EmitDefaultValue = false), JsonPropertyName("country")]
     public string Country { get; set; }
 
     /// <summary>
     /// Event start date in &#x60;yyyy-mm-dd&#x60; format.
     /// </summary>
     /// <value>Event start date in &#x60;yyyy-mm-dd&#x60; format.</value>
-    [DataMember(Name = "start_date", EmitDefaultValue = false)]
+    [DataMember(Name = "start_date", EmitDefaultValue = false), JsonPropertyName("start_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? StartDate { get; set; }
 
@@ -130,7 +130,7 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// Event end date in &#x60;yyyy-mm-dd&#x60; format.
     /// </summary>
     /// <value>Event end date in &#x60;yyyy-mm-dd&#x60; format.</value>
-    [DataMember(Name = "end_date", EmitDefaultValue = false)]
+    [DataMember(Name = "end_date", EmitDefaultValue = false), JsonPropertyName("end_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? EndDate { get; set; }
 
@@ -138,7 +138,7 @@ public partial class EventSimple : IEquatable<EventSimple>, IValidatableObject
     /// Year the event data is for.
     /// </summary>
     /// <value>Year the event data is for.</value>
-    [DataMember(Name = "year", EmitDefaultValue = false)]
+    [DataMember(Name = "year", EmitDefaultValue = false), JsonPropertyName("year")]
     public int Year { get; set; }
 
     /// <summary>

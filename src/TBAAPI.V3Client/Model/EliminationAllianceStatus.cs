@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// EliminationAllianceStatus
 /// </summary>
@@ -35,31 +35,31 @@ public partial class EliminationAllianceStatus(double playoffAverage = default, 
     /// <summary>
     /// Gets or Sets PlayoffAverage
     /// </summary>
-    [DataMember(Name = "playoff_average", EmitDefaultValue = false)]
+    [DataMember(Name = "playoff_average", EmitDefaultValue = false), JsonPropertyName("playoff_average")]
     public double PlayoffAverage { get; set; } = playoffAverage;
 
     /// <summary>
     /// Gets or Sets Level
     /// </summary>
-    [DataMember(Name = "level", EmitDefaultValue = false)]
+    [DataMember(Name = "level", EmitDefaultValue = false), JsonPropertyName("level")]
     public string Level { get; set; } = level;
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
-    [DataMember(Name = "record", EmitDefaultValue = false)]
+    [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
     public WLTRecord Record { get; set; } = record;
 
     /// <summary>
     /// Gets or Sets CurrentLevelRecord
     /// </summary>
-    [DataMember(Name = "current_level_record", EmitDefaultValue = false)]
+    [DataMember(Name = "current_level_record", EmitDefaultValue = false), JsonPropertyName("current_level_record")]
     public WLTRecord CurrentLevelRecord { get; set; } = currentLevelRecord;
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
     public string Status { get; set; } = status;
 
     /// <summary>

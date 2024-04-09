@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// DistrictList
 /// </summary>
@@ -51,28 +50,28 @@ public partial class DistrictList : IEquatable<DistrictList>, IValidatableObject
     /// The short identifier for the district.
     /// </summary>
     /// <value>The short identifier for the district.</value>
-    [DataMember(Name = "abbreviation", EmitDefaultValue = false)]
+    [DataMember(Name = "abbreviation", EmitDefaultValue = false), JsonPropertyName("abbreviation")]
     public string Abbreviation { get; set; }
 
     /// <summary>
     /// The long name for the district.
     /// </summary>
     /// <value>The long name for the district.</value>
-    [DataMember(Name = "display_name", EmitDefaultValue = false)]
+    [DataMember(Name = "display_name", EmitDefaultValue = false), JsonPropertyName("display_name")]
     public string DisplayName { get; set; }
 
     /// <summary>
     /// Key for this district, e.g. &#x60;2016ne&#x60;.
     /// </summary>
     /// <value>Key for this district, e.g. &#x60;2016ne&#x60;.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; }
 
     /// <summary>
     /// Year this district participated.
     /// </summary>
     /// <value>Year this district participated.</value>
-    [DataMember(Name = "year", EmitDefaultValue = false)]
+    [DataMember(Name = "year", EmitDefaultValue = false), JsonPropertyName("year")]
     public int Year { get; set; }
 
     /// <summary>

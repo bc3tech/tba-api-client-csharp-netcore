@@ -13,10 +13,12 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+using TBAAPI.V3Client.Client;
 
 /// <summary>
 /// MatchSimple
@@ -67,7 +69,7 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
     /// The competition level the match was played at.
     /// </summary>
     /// <value>The competition level the match was played at.</value>
-    [DataMember(Name = "comp_level", EmitDefaultValue = false)]
+    [DataMember(Name = "comp_level", EmitDefaultValue = false), JsonPropertyName("comp_level")]
     public CompLevelEnum CompLevel { get; set; }
     /// <summary>
     /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
@@ -100,8 +102,9 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
     /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
     /// </summary>
     /// <value>The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.</value>
-    [DataMember(Name = "winning_alliance", EmitDefaultValue = false)]
+    [DataMember(Name = "winning_alliance", EmitDefaultValue = false), JsonPropertyName("winning_alliance"), JsonConverter(typeof(OpenAPIEnumConverter<WinningAllianceEnum>))]
     public WinningAllianceEnum? WinningAlliance { get; set; }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MatchSimple" /> class.
     /// </summary>
@@ -140,55 +143,55 @@ public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
     /// TBA match key with the format &#x60;yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]&#x60;, where &#x60;yyyy&#x60; is the year, and &#x60;EVENT_CODE&#x60; is the event code of the event, &#x60;COMP_LEVEL&#x60; is (qm, ef, qf, sf, f), and &#x60;MATCH_NUMBER&#x60; is the match number in the competition level. A set number may append the competition level if more than one match in required per set.
     /// </summary>
     /// <value>TBA match key with the format &#x60;yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]&#x60;, where &#x60;yyyy&#x60; is the year, and &#x60;EVENT_CODE&#x60; is the event code of the event, &#x60;COMP_LEVEL&#x60; is (qm, ef, qf, sf, f), and &#x60;MATCH_NUMBER&#x60; is the match number in the competition level. A set number may append the competition level if more than one match in required per set.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; }
 
     /// <summary>
     /// The set number in a series of matches where more than one match is required in the match series.
     /// </summary>
     /// <value>The set number in a series of matches where more than one match is required in the match series.</value>
-    [DataMember(Name = "set_number", EmitDefaultValue = false)]
+    [DataMember(Name = "set_number", EmitDefaultValue = false), JsonPropertyName("set_number")]
     public int SetNumber { get; set; }
 
     /// <summary>
     /// The match number of the match in the competition level.
     /// </summary>
     /// <value>The match number of the match in the competition level.</value>
-    [DataMember(Name = "match_number", EmitDefaultValue = false)]
+    [DataMember(Name = "match_number", EmitDefaultValue = false), JsonPropertyName("match_number")]
     public int MatchNumber { get; set; }
 
     /// <summary>
     /// Gets or Sets Alliances
     /// </summary>
-    [DataMember(Name = "alliances", EmitDefaultValue = false)]
+    [DataMember(Name = "alliances", EmitDefaultValue = false), JsonPropertyName("alliances")]
     public MatchSimpleAlliances Alliances { get; set; }
 
     /// <summary>
     /// Event key of the event the match was played at.
     /// </summary>
     /// <value>Event key of the event the match was played at.</value>
-    [DataMember(Name = "event_key", EmitDefaultValue = false)]
+    [DataMember(Name = "event_key", EmitDefaultValue = false), JsonPropertyName("event_key")]
     public string EventKey { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.</value>
-    [DataMember(Name = "time", EmitDefaultValue = false)]
+    [DataMember(Name = "time", EmitDefaultValue = false), JsonPropertyName("time")]
     public long Time { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.</value>
-    [DataMember(Name = "predicted_time", EmitDefaultValue = false)]
+    [DataMember(Name = "predicted_time", EmitDefaultValue = false), JsonPropertyName("predicted_time")]
     public long PredictedTime { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.</value>
-    [DataMember(Name = "actual_time", EmitDefaultValue = false)]
+    [DataMember(Name = "actual_time", EmitDefaultValue = false), JsonPropertyName("actual_time")]
     public long ActualTime { get; set; }
 
     /// <summary>

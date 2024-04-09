@@ -14,11 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// MatchAlliance
 /// </summary>
@@ -50,27 +49,27 @@ public partial class MatchAlliance : IEquatable<MatchAlliance>, IValidatableObje
     /// Score for this alliance. Will be null or -1 for an unplayed match.
     /// </summary>
     /// <value>Score for this alliance. Will be null or -1 for an unplayed match.</value>
-    [DataMember(Name = "score", EmitDefaultValue = false)]
+    [DataMember(Name = "score", EmitDefaultValue = false), JsonPropertyName("score")]
     public int Score { get; set; }
 
     /// <summary>
     /// Gets or Sets TeamKeys
     /// </summary>
-    [DataMember(Name = "team_keys", EmitDefaultValue = false)]
+    [DataMember(Name = "team_keys", EmitDefaultValue = false), JsonPropertyName("team_keys")]
     public List<string> TeamKeys { get; set; }
 
     /// <summary>
     /// TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate.
     /// </summary>
     /// <value>TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate.</value>
-    [DataMember(Name = "surrogate_team_keys", EmitDefaultValue = false)]
+    [DataMember(Name = "surrogate_team_keys", EmitDefaultValue = false), JsonPropertyName("surrogate_team_keys")]
     public List<string> SurrogateTeamKeys { get; set; }
 
     /// <summary>
     /// TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams.
     /// </summary>
     /// <value>TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams.</value>
-    [DataMember(Name = "dq_team_keys", EmitDefaultValue = false)]
+    [DataMember(Name = "dq_team_keys", EmitDefaultValue = false), JsonPropertyName("dq_team_keys")]
     public List<string> DqTeamKeys { get; set; }
 
     /// <summary>

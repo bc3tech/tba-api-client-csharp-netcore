@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// TeamEventStatusRankSortOrderInfo
 /// </summary>
@@ -33,14 +33,14 @@ public partial class TeamEventStatusRankSortOrderInfo(int precision = default, s
     /// The number of digits of precision used for this value, eg &#x60;2&#x60; would correspond to a value of &#x60;101.11&#x60; while &#x60;0&#x60; would correspond to &#x60;101&#x60;.
     /// </summary>
     /// <value>The number of digits of precision used for this value, eg &#x60;2&#x60; would correspond to a value of &#x60;101.11&#x60; while &#x60;0&#x60; would correspond to &#x60;101&#x60;.</value>
-    [DataMember(Name = "precision", EmitDefaultValue = false)]
+    [DataMember(Name = "precision", EmitDefaultValue = false), JsonPropertyName("precision")]
     public int Precision { get; set; } = precision;
 
     /// <summary>
     /// The descriptive name of the value used to sort the ranking.
     /// </summary>
     /// <value>The descriptive name of the value used to sort the ranking.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; } = name;
 
     /// <summary>

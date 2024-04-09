@@ -51,28 +51,28 @@ public partial class TeamRobot : IEquatable<TeamRobot>, IValidatableObject
     /// Year this robot competed in.
     /// </summary>
     /// <value>Year this robot competed in.</value>
-    [DataMember(Name = "year", EmitDefaultValue = false)]
+    [DataMember(Name = "year", EmitDefaultValue = false), JsonPropertyName("year")]
     public int Year { get; set; }
 
     /// <summary>
     /// Name of the robot as provided by the team.
     /// </summary>
     /// <value>Name of the robot as provided by the team.</value>
-    [DataMember(Name = "robot_name", EmitDefaultValue = false)]
+    [DataMember(Name = "robot_name", EmitDefaultValue = false), JsonPropertyName("robot_name")]
     public string RobotName { get; set; }
 
     /// <summary>
     /// Internal TBA identifier for this robot.
     /// </summary>
     /// <value>Internal TBA identifier for this robot.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; }
 
     /// <summary>
     /// TBA team key for this robot.
     /// </summary>
     /// <value>TBA team key for this robot.</value>
-    [DataMember(Name = "team_key", EmitDefaultValue = false)]
+    [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
     public string TeamKey { get; set; }
 
     /// <summary>

@@ -18,16 +18,35 @@ using System.Text.Json.Serialization;
 /// Formatter for 'date' openapi formats ss defined by full-date - RFC3339
 /// see https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#data-types
 /// </summary>
-public class OpenAPIDateConverter : JsonConverter<DateTime>
+public class OpenAPIDateConverter : JsonConverter<DateTime?>
 {
     private const string DateTimeFormat = "yyyy-MM-dd";
 
     /// <inheritdoc/>
-    public override bool CanConvert(Type typeToConvert) => typeToConvert == typeof(string) || typeToConvert == typeof(DateTime);
+    public override bool CanConvert(Type typeToConvert) => typeToConvert == typeof(DateTime?) || typeToConvert == typeof(DateTime);
 
     /// <inheritdoc/>
-    public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => DateTime.ParseExact(reader.GetString(), DateTimeFormat, null);
+    public override DateTime? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        var jsonVal = reader.GetString();
+        if (!string.IsNullOrWhiteSpace(jsonVal))
+        {
+            return DateTime.ParseExact(jsonVal, DateTimeFormat, null);
+        }
+
+        return null;
+    }
 
     /// <inheritdoc/>
-    public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options) => writer.WriteStringValue(value.ToString(DateTimeFormat));
+    public override void Write(Utf8JsonWriter writer, DateTime? value, JsonSerializerOptions options)
+    {
+        if (value is null)
+        {
+            writer.WriteNullValue();
+        }
+        else
+        {
+            writer.WriteStringValue(value.Value.ToString(DateTimeFormat));
+        }
+    }
 }

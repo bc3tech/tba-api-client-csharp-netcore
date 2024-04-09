@@ -16,6 +16,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// Backup status, may be null.
@@ -33,14 +34,14 @@ public partial class TeamEventStatusAllianceBackup(string _out = default, string
     /// TBA key for the team replaced by the backup.
     /// </summary>
     /// <value>TBA key for the team replaced by the backup.</value>
-    [DataMember(Name = "out", EmitDefaultValue = false)]
+    [DataMember(Name = "out", EmitDefaultValue = false), JsonPropertyName("out")]
     public string Out { get; set; } = _out;
 
     /// <summary>
     /// TBA key for the backup team called in.
     /// </summary>
     /// <value>TBA key for the backup team called in.</value>
-    [DataMember(Name = "in", EmitDefaultValue = false)]
+    [DataMember(Name = "in", EmitDefaultValue = false), JsonPropertyName("in")]
     public string In { get; set; } = _in;
 
     /// <summary>

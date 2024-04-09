@@ -107,62 +107,62 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
     /// </summary>
     /// <value>TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; }
 
     /// <summary>
     /// Official name of event on record either provided by FIRST or organizers of offseason event.
     /// </summary>
     /// <value>Official name of event on record either provided by FIRST or organizers of offseason event.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>
     /// Event short code, as provided by FIRST.
     /// </summary>
     /// <value>Event short code, as provided by FIRST.</value>
-    [DataMember(Name = "event_code", EmitDefaultValue = false)]
+    [DataMember(Name = "event_code", EmitDefaultValue = false), JsonPropertyName("event_code")]
     public string EventCode { get; set; }
 
     /// <summary>
     /// Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
     /// </summary>
     /// <value>Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2</value>
-    [DataMember(Name = "event_type", EmitDefaultValue = false)]
+    [DataMember(Name = "event_type", EmitDefaultValue = false), JsonPropertyName("event_type")]
     public int EventType { get; set; }
 
     /// <summary>
     /// Gets or Sets District
     /// </summary>
-    [DataMember(Name = "district", EmitDefaultValue = false)]
+    [DataMember(Name = "district", EmitDefaultValue = false), JsonPropertyName("district")]
     public DistrictList District { get; set; }
 
     /// <summary>
     /// City, town, village, etc. the event is located in.
     /// </summary>
     /// <value>City, town, village, etc. the event is located in.</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [DataMember(Name = "city", EmitDefaultValue = false), JsonPropertyName("city")]
     public string City { get; set; }
 
     /// <summary>
     /// State or Province the event is located in.
     /// </summary>
     /// <value>State or Province the event is located in.</value>
-    [DataMember(Name = "state_prov", EmitDefaultValue = false)]
+    [DataMember(Name = "state_prov", EmitDefaultValue = false), JsonPropertyName("state_prov")]
     public string StateProv { get; set; }
 
     /// <summary>
     /// Country the event is located in.
     /// </summary>
     /// <value>Country the event is located in.</value>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [DataMember(Name = "country", EmitDefaultValue = false), JsonPropertyName("country")]
     public string Country { get; set; }
 
     /// <summary>
     /// Event start date in &#x60;yyyy-mm-dd&#x60; format.
     /// </summary>
     /// <value>Event start date in &#x60;yyyy-mm-dd&#x60; format.</value>
-    [DataMember(Name = "start_date", EmitDefaultValue = false)]
+    [DataMember(Name = "start_date", EmitDefaultValue = false), JsonPropertyName("start_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? StartDate { get; set; }
 
@@ -170,7 +170,7 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// Event end date in &#x60;yyyy-mm-dd&#x60; format.
     /// </summary>
     /// <value>Event end date in &#x60;yyyy-mm-dd&#x60; format.</value>
-    [DataMember(Name = "end_date", EmitDefaultValue = false)]
+    [DataMember(Name = "end_date", EmitDefaultValue = false), JsonPropertyName("end_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? EndDate { get; set; }
 
@@ -178,140 +178,140 @@ public partial class Event : IEquatable<Event>, IValidatableObject
     /// Year the event data is for.
     /// </summary>
     /// <value>Year the event data is for.</value>
-    [DataMember(Name = "year", EmitDefaultValue = false)]
+    [DataMember(Name = "year", EmitDefaultValue = false), JsonPropertyName("year")]
     public int Year { get; set; }
 
     /// <summary>
     /// Same as &#x60;name&#x60; but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null.
     /// </summary>
     /// <value>Same as &#x60;name&#x60; but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null.</value>
-    [DataMember(Name = "short_name", EmitDefaultValue = false)]
+    [DataMember(Name = "short_name", EmitDefaultValue = false), JsonPropertyName("short_name")]
     public string ShortName { get; set; }
 
     /// <summary>
     /// Event Type, eg Regional, District, or Offseason.
     /// </summary>
     /// <value>Event Type, eg Regional, District, or Offseason.</value>
-    [DataMember(Name = "event_type_string", EmitDefaultValue = false)]
+    [DataMember(Name = "event_type_string", EmitDefaultValue = false), JsonPropertyName("event_type_string")]
     public string EventTypeString { get; set; }
 
     /// <summary>
     /// Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 &#39;preseason&#39; event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.)
     /// </summary>
     /// <value>Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 &#39;preseason&#39; event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.)</value>
-    [DataMember(Name = "week", EmitDefaultValue = false)]
+    [DataMember(Name = "week", EmitDefaultValue = false), JsonPropertyName("week")]
     public int? Week { get; set; }
 
     /// <summary>
     /// Address of the event&#39;s venue, if available.
     /// </summary>
     /// <value>Address of the event&#39;s venue, if available.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [DataMember(Name = "address", EmitDefaultValue = false), JsonPropertyName("address")]
     public string Address { get; set; }
 
     /// <summary>
     /// Postal code from the event address.
     /// </summary>
     /// <value>Postal code from the event address.</value>
-    [DataMember(Name = "postal_code", EmitDefaultValue = false)]
+    [DataMember(Name = "postal_code", EmitDefaultValue = false), JsonPropertyName("postal_code")]
     public string PostalCode { get; set; }
 
     /// <summary>
     /// Google Maps Place ID for the event address.
     /// </summary>
     /// <value>Google Maps Place ID for the event address.</value>
-    [DataMember(Name = "gmaps_place_id", EmitDefaultValue = false)]
+    [DataMember(Name = "gmaps_place_id", EmitDefaultValue = false), JsonPropertyName("gmaps_place_id")]
     public string GmapsPlaceId { get; set; }
 
     /// <summary>
     /// Link to address location on Google Maps.
     /// </summary>
     /// <value>Link to address location on Google Maps.</value>
-    [DataMember(Name = "gmaps_url", EmitDefaultValue = false)]
+    [DataMember(Name = "gmaps_url", EmitDefaultValue = false), JsonPropertyName("gmaps_url")]
     public string GmapsUrl { get; set; }
 
     /// <summary>
     /// Latitude for the event address.
     /// </summary>
     /// <value>Latitude for the event address.</value>
-    [DataMember(Name = "lat", EmitDefaultValue = false)]
+    [DataMember(Name = "lat", EmitDefaultValue = false), JsonPropertyName("lat")]
     public double? Lat { get; set; }
 
     /// <summary>
     /// Longitude for the event address.
     /// </summary>
     /// <value>Longitude for the event address.</value>
-    [DataMember(Name = "lng", EmitDefaultValue = false)]
+    [DataMember(Name = "lng", EmitDefaultValue = false), JsonPropertyName("lng")]
     public double? Lng { get; set; }
 
     /// <summary>
     /// Name of the location at the address for the event, eg. Blue Alliance High School.
     /// </summary>
     /// <value>Name of the location at the address for the event, eg. Blue Alliance High School.</value>
-    [DataMember(Name = "location_name", EmitDefaultValue = false)]
+    [DataMember(Name = "location_name", EmitDefaultValue = false), JsonPropertyName("location_name")]
     public string LocationName { get; set; }
 
     /// <summary>
     /// Timezone name.
     /// </summary>
     /// <value>Timezone name.</value>
-    [DataMember(Name = "timezone", EmitDefaultValue = false)]
+    [DataMember(Name = "timezone", EmitDefaultValue = false), JsonPropertyName("timezone")]
     public string Timezone { get; set; }
 
     /// <summary>
     /// The event&#39;s website, if any.
     /// </summary>
     /// <value>The event&#39;s website, if any.</value>
-    [DataMember(Name = "website", EmitDefaultValue = false)]
+    [DataMember(Name = "website", EmitDefaultValue = false), JsonPropertyName("website")]
     public string Website { get; set; }
 
     /// <summary>
     /// The FIRST internal Event ID, used to link to the event on the FRC webpage.
     /// </summary>
     /// <value>The FIRST internal Event ID, used to link to the event on the FRC webpage.</value>
-    [DataMember(Name = "first_event_id", EmitDefaultValue = false)]
+    [DataMember(Name = "first_event_id", EmitDefaultValue = false), JsonPropertyName("first_event_id")]
     public string FirstEventId { get; set; }
 
     /// <summary>
     /// Public facing event code used by FIRST (on frc-events.firstinspires.org, for example)
     /// </summary>
     /// <value>Public facing event code used by FIRST (on frc-events.firstinspires.org, for example)</value>
-    [DataMember(Name = "first_event_code", EmitDefaultValue = false)]
+    [DataMember(Name = "first_event_code", EmitDefaultValue = false), JsonPropertyName("first_event_code")]
     public string FirstEventCode { get; set; }
 
     /// <summary>
     /// Gets or Sets Webcasts
     /// </summary>
-    [DataMember(Name = "webcasts", EmitDefaultValue = false)]
+    [DataMember(Name = "webcasts", EmitDefaultValue = false), JsonPropertyName("webcasts")]
     public List<Webcast> Webcasts { get; set; }
 
     /// <summary>
     /// An array of event keys for the divisions at this event.
     /// </summary>
     /// <value>An array of event keys for the divisions at this event.</value>
-    [DataMember(Name = "division_keys", EmitDefaultValue = false)]
+    [DataMember(Name = "division_keys", EmitDefaultValue = false), JsonPropertyName("division_keys")]
     public List<string> DivisionKeys { get; set; }
 
     /// <summary>
     /// The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;.
     /// </summary>
     /// <value>The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;.</value>
-    [DataMember(Name = "parent_event_key", EmitDefaultValue = false)]
+    [DataMember(Name = "parent_event_key", EmitDefaultValue = false), JsonPropertyName("parent_event_key")]
     public string ParentEventKey { get; set; }
 
     /// <summary>
     /// Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null.
     /// </summary>
     /// <value>Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null.</value>
-    [DataMember(Name = "playoff_type", EmitDefaultValue = false)]
-    public int PlayoffType { get; set; }
+    [DataMember(Name = "playoff_type", EmitDefaultValue = false), JsonPropertyName("playoff_type")]
+    public int? PlayoffType { get; set; }
 
     /// <summary>
     /// String representation of the &#x60;playoff_type&#x60;, or null.
     /// </summary>
     /// <value>String representation of the &#x60;playoff_type&#x60;, or null.</value>
-    [DataMember(Name = "playoff_type_string", EmitDefaultValue = false)]
-    public string PlayoffTypeString { get; set; }
+    [DataMember(Name = "playoff_type_string", EmitDefaultValue = false), JsonPropertyName("playoff_type_string")]
+    public string? PlayoffTypeString { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object

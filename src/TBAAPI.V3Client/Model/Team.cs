@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// Team
 /// </summary>
@@ -80,133 +79,133 @@ public partial class Team : IEquatable<Team>, IValidatableObject
     /// TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.
     /// </summary>
     /// <value>TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+    [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string Key { get; set; }
 
     /// <summary>
     /// Official team number issued by FIRST.
     /// </summary>
     /// <value>Official team number issued by FIRST.</value>
-    [DataMember(Name = "team_number", EmitDefaultValue = false)]
+    [DataMember(Name = "team_number", EmitDefaultValue = false), JsonPropertyName("team_number")]
     public int TeamNumber { get; set; }
 
     /// <summary>
     /// Team nickname provided by FIRST.
     /// </summary>
     /// <value>Team nickname provided by FIRST.</value>
-    [DataMember(Name = "nickname", EmitDefaultValue = false)]
+    [DataMember(Name = "nickname", EmitDefaultValue = false), JsonPropertyName("nickname")]
     public string Nickname { get; set; }
 
     /// <summary>
     /// Official long name registered with FIRST.
     /// </summary>
     /// <value>Official long name registered with FIRST.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+    [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string Name { get; set; }
 
     /// <summary>
     /// Name of team school or affilited group registered with FIRST.
     /// </summary>
     /// <value>Name of team school or affilited group registered with FIRST.</value>
-    [DataMember(Name = "school_name", EmitDefaultValue = false)]
+    [DataMember(Name = "school_name", EmitDefaultValue = false), JsonPropertyName("school_name")]
     public string SchoolName { get; set; }
 
     /// <summary>
     /// City of team derived from parsing the address registered with FIRST.
     /// </summary>
     /// <value>City of team derived from parsing the address registered with FIRST.</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+    [DataMember(Name = "city", EmitDefaultValue = false), JsonPropertyName("city")]
     public string City { get; set; }
 
     /// <summary>
     /// State of team derived from parsing the address registered with FIRST.
     /// </summary>
     /// <value>State of team derived from parsing the address registered with FIRST.</value>
-    [DataMember(Name = "state_prov", EmitDefaultValue = false)]
+    [DataMember(Name = "state_prov", EmitDefaultValue = false), JsonPropertyName("state_prov")]
     public string StateProv { get; set; }
 
     /// <summary>
     /// Country of team derived from parsing the address registered with FIRST.
     /// </summary>
     /// <value>Country of team derived from parsing the address registered with FIRST.</value>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+    [DataMember(Name = "country", EmitDefaultValue = false), JsonPropertyName("country")]
     public string Country { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+    [DataMember(Name = "address", EmitDefaultValue = false), JsonPropertyName("address")]
     public string Address { get; set; }
 
     /// <summary>
     /// Postal code from the team address.
     /// </summary>
     /// <value>Postal code from the team address.</value>
-    [DataMember(Name = "postal_code", EmitDefaultValue = false)]
+    [DataMember(Name = "postal_code", EmitDefaultValue = false), JsonPropertyName("postal_code")]
     public string PostalCode { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
-    [DataMember(Name = "gmaps_place_id", EmitDefaultValue = false)]
+    [DataMember(Name = "gmaps_place_id", EmitDefaultValue = false), JsonPropertyName("gmaps_place_id")]
     public string GmapsPlaceId { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
-    [DataMember(Name = "gmaps_url", EmitDefaultValue = false)]
+    [DataMember(Name = "gmaps_url", EmitDefaultValue = false), JsonPropertyName("gmaps_url")]
     public string GmapsUrl { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
-    [DataMember(Name = "lat", EmitDefaultValue = false)]
+    [DataMember(Name = "lat", EmitDefaultValue = false), JsonPropertyName("lat")]
     public double Lat { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
-    [DataMember(Name = "lng", EmitDefaultValue = false)]
+    [DataMember(Name = "lng", EmitDefaultValue = false), JsonPropertyName("lng")]
     public double Lng { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
-    [DataMember(Name = "location_name", EmitDefaultValue = false)]
+    [DataMember(Name = "location_name", EmitDefaultValue = false), JsonPropertyName("location_name")]
     public string LocationName { get; set; }
 
     /// <summary>
     /// Official website associated with the team.
     /// </summary>
     /// <value>Official website associated with the team.</value>
-    [DataMember(Name = "website", EmitDefaultValue = false)]
+    [DataMember(Name = "website", EmitDefaultValue = false), JsonPropertyName("website")]
     public string Website { get; set; }
 
     /// <summary>
     /// First year the team officially competed.
     /// </summary>
     /// <value>First year the team officially competed.</value>
-    [DataMember(Name = "rookie_year", EmitDefaultValue = false)]
+    [DataMember(Name = "rookie_year", EmitDefaultValue = false), JsonPropertyName("rookie_year")]
     public int RookieYear { get; set; }
 
     /// <summary>
     /// Team&#39;s motto as provided by FIRST. This field is deprecated and will return null - will be removed at end-of-season in 2019.
     /// </summary>
     /// <value>Team&#39;s motto as provided by FIRST. This field is deprecated and will return null - will be removed at end-of-season in 2019.</value>
-    [DataMember(Name = "motto", EmitDefaultValue = false)]
+    [DataMember(Name = "motto", EmitDefaultValue = false), JsonPropertyName("motto")]
     public string Motto { get; set; }
 
     /// <summary>
     /// Location of the team&#39;s home championship each year as a key-value pair. The year (as a string) is the key, and the city is the value.
     /// </summary>
     /// <value>Location of the team&#39;s home championship each year as a key-value pair. The year (as a string) is the key, and the city is the value.</value>
-    [DataMember(Name = "home_championship", EmitDefaultValue = false)]
+    [DataMember(Name = "home_championship", EmitDefaultValue = false), JsonPropertyName("home_championship")]
     public object HomeChampionship { get; set; }
 
     /// <summary>

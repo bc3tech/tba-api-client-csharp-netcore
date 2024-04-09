@@ -13,9 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// An &#x60;Award_Recipient&#x60; object represents the team and/or person who received an award at an event.
@@ -33,14 +34,14 @@ public partial class AwardRecipient(string teamKey = default, string awardee = d
     /// The TBA team key for the team that was given the award. May be null.
     /// </summary>
     /// <value>The TBA team key for the team that was given the award. May be null.</value>
-    [DataMember(Name = "team_key", EmitDefaultValue = false)]
+    [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
     public string TeamKey { get; set; } = teamKey;
 
     /// <summary>
     /// The name of the individual given the award. May be null.
     /// </summary>
     /// <value>The name of the individual given the award. May be null.</value>
-    [DataMember(Name = "awardee", EmitDefaultValue = false)]
+    [DataMember(Name = "awardee", EmitDefaultValue = false), JsonPropertyName("awardee")]
     public string Awardee { get; set; } = awardee;
 
     /// <summary>

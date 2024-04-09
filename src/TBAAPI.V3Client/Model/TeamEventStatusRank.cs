@@ -17,6 +17,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// TeamEventStatusRank
@@ -36,26 +37,26 @@ public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatus
     /// Number of teams ranked.
     /// </summary>
     /// <value>Number of teams ranked.</value>
-    [DataMember(Name = "num_teams", EmitDefaultValue = false)]
+    [DataMember(Name = "num_teams", EmitDefaultValue = false), JsonPropertyName("num_teams")]
     public int NumTeams { get; set; } = numTeams;
 
     /// <summary>
     /// Gets or Sets Ranking
     /// </summary>
-    [DataMember(Name = "ranking", EmitDefaultValue = false)]
+    [DataMember(Name = "ranking", EmitDefaultValue = false), JsonPropertyName("ranking")]
     public TeamEventStatusRankRanking Ranking { get; set; } = ranking;
 
     /// <summary>
     /// Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.
     /// </summary>
     /// <value>Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.</value>
-    [DataMember(Name = "sort_order_info", EmitDefaultValue = false)]
+    [DataMember(Name = "sort_order_info", EmitDefaultValue = false), JsonPropertyName("sort_order_info")]
     public List<TeamEventStatusRankSortOrderInfo> SortOrderInfo { get; set; } = sortOrderInfo;
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+    [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
     public string Status { get; set; } = status;
 
     /// <summary>

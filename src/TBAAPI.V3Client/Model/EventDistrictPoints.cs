@@ -14,11 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// EventDistrictPoints
 /// </summary>
@@ -46,14 +45,14 @@ public partial class EventDistrictPoints : IEquatable<EventDistrictPoints>, IVal
     /// Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value.
     /// </summary>
     /// <value>Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value.</value>
-    [DataMember(Name = "points", EmitDefaultValue = false)]
+    [DataMember(Name = "points", EmitDefaultValue = false), JsonPropertyName("points")]
     public Dictionary<string, EventDistrictPointsPoints> Points { get; set; }
 
     /// <summary>
     /// Tiebreaker values for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the tiebreaker elements as its value.
     /// </summary>
     /// <value>Tiebreaker values for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the tiebreaker elements as its value.</value>
-    [DataMember(Name = "tiebreakers", EmitDefaultValue = false)]
+    [DataMember(Name = "tiebreakers", EmitDefaultValue = false), JsonPropertyName("tiebreakers")]
     public Dictionary<string, EventDistrictPointsTiebreakers> Tiebreakers { get; set; }
 
     /// <summary>

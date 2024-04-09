@@ -13,9 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// Backup team called in, may be null.
@@ -33,14 +34,14 @@ public partial class EliminationAllianceBackup(string _in = default, string _out
     /// Team key that was called in as the backup.
     /// </summary>
     /// <value>Team key that was called in as the backup.</value>
-    [DataMember(Name = "in", EmitDefaultValue = false)]
+    [DataMember(Name = "in", EmitDefaultValue = false), JsonPropertyName("in")]
     public string In { get; set; } = _in;
 
     /// <summary>
     /// Team key that was replaced by the backup team.
     /// </summary>
     /// <value>Team key that was replaced by the backup team.</value>
-    [DataMember(Name = "out", EmitDefaultValue = false)]
+    [DataMember(Name = "out", EmitDefaultValue = false), JsonPropertyName("out")]
     public string Out { get; set; } = _out;
 
     /// <summary>

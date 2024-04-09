@@ -14,11 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// Insights for FIRST STEAMWORKS qualification and elimination matches.
 /// </summary>
@@ -117,224 +116,224 @@ public partial class EventInsights2017 : IEquatable<EventInsights2017>, IValidat
     /// Average foul score.
     /// </summary>
     /// <value>Average foul score.</value>
-    [DataMember(Name = "average_foul_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_foul_score", EmitDefaultValue = false), JsonPropertyName("average_foul_score")]
     public float AverageFoulScore { get; set; }
 
     /// <summary>
     /// Average fuel points scored.
     /// </summary>
     /// <value>Average fuel points scored.</value>
-    [DataMember(Name = "average_fuel_points", EmitDefaultValue = false)]
+    [DataMember(Name = "average_fuel_points", EmitDefaultValue = false), JsonPropertyName("average_fuel_points")]
     public float AverageFuelPoints { get; set; }
 
     /// <summary>
     /// Average fuel points scored during auto.
     /// </summary>
     /// <value>Average fuel points scored during auto.</value>
-    [DataMember(Name = "average_fuel_points_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "average_fuel_points_auto", EmitDefaultValue = false), JsonPropertyName("average_fuel_points_auto")]
     public float AverageFuelPointsAuto { get; set; }
 
     /// <summary>
     /// Average fuel points scored during teleop.
     /// </summary>
     /// <value>Average fuel points scored during teleop.</value>
-    [DataMember(Name = "average_fuel_points_teleop", EmitDefaultValue = false)]
+    [DataMember(Name = "average_fuel_points_teleop", EmitDefaultValue = false), JsonPropertyName("average_fuel_points_teleop")]
     public float AverageFuelPointsTeleop { get; set; }
 
     /// <summary>
     /// Average points scored in the high goal.
     /// </summary>
     /// <value>Average points scored in the high goal.</value>
-    [DataMember(Name = "average_high_goals", EmitDefaultValue = false)]
+    [DataMember(Name = "average_high_goals", EmitDefaultValue = false), JsonPropertyName("average_high_goals")]
     public float AverageHighGoals { get; set; }
 
     /// <summary>
     /// Average points scored in the high goal during auto.
     /// </summary>
     /// <value>Average points scored in the high goal during auto.</value>
-    [DataMember(Name = "average_high_goals_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "average_high_goals_auto", EmitDefaultValue = false), JsonPropertyName("average_high_goals_auto")]
     public float AverageHighGoalsAuto { get; set; }
 
     /// <summary>
     /// Average points scored in the high goal during teleop.
     /// </summary>
     /// <value>Average points scored in the high goal during teleop.</value>
-    [DataMember(Name = "average_high_goals_teleop", EmitDefaultValue = false)]
+    [DataMember(Name = "average_high_goals_teleop", EmitDefaultValue = false), JsonPropertyName("average_high_goals_teleop")]
     public float AverageHighGoalsTeleop { get; set; }
 
     /// <summary>
     /// Average points scored in the low goal.
     /// </summary>
     /// <value>Average points scored in the low goal.</value>
-    [DataMember(Name = "average_low_goals", EmitDefaultValue = false)]
+    [DataMember(Name = "average_low_goals", EmitDefaultValue = false), JsonPropertyName("average_low_goals")]
     public float AverageLowGoals { get; set; }
 
     /// <summary>
     /// Average points scored in the low goal during auto.
     /// </summary>
     /// <value>Average points scored in the low goal during auto.</value>
-    [DataMember(Name = "average_low_goals_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "average_low_goals_auto", EmitDefaultValue = false), JsonPropertyName("average_low_goals_auto")]
     public float AverageLowGoalsAuto { get; set; }
 
     /// <summary>
     /// Average points scored in the low goal during teleop.
     /// </summary>
     /// <value>Average points scored in the low goal during teleop.</value>
-    [DataMember(Name = "average_low_goals_teleop", EmitDefaultValue = false)]
+    [DataMember(Name = "average_low_goals_teleop", EmitDefaultValue = false), JsonPropertyName("average_low_goals_teleop")]
     public float AverageLowGoalsTeleop { get; set; }
 
     /// <summary>
     /// Average mobility points scored during auto.
     /// </summary>
     /// <value>Average mobility points scored during auto.</value>
-    [DataMember(Name = "average_mobility_points_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "average_mobility_points_auto", EmitDefaultValue = false), JsonPropertyName("average_mobility_points_auto")]
     public float AverageMobilityPointsAuto { get; set; }
 
     /// <summary>
     /// Average points scored during auto.
     /// </summary>
     /// <value>Average points scored during auto.</value>
-    [DataMember(Name = "average_points_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "average_points_auto", EmitDefaultValue = false), JsonPropertyName("average_points_auto")]
     public float AveragePointsAuto { get; set; }
 
     /// <summary>
     /// Average points scored during teleop.
     /// </summary>
     /// <value>Average points scored during teleop.</value>
-    [DataMember(Name = "average_points_teleop", EmitDefaultValue = false)]
+    [DataMember(Name = "average_points_teleop", EmitDefaultValue = false), JsonPropertyName("average_points_teleop")]
     public float AveragePointsTeleop { get; set; }
 
     /// <summary>
     /// Average rotor points scored.
     /// </summary>
     /// <value>Average rotor points scored.</value>
-    [DataMember(Name = "average_rotor_points", EmitDefaultValue = false)]
+    [DataMember(Name = "average_rotor_points", EmitDefaultValue = false), JsonPropertyName("average_rotor_points")]
     public float AverageRotorPoints { get; set; }
 
     /// <summary>
     /// Average rotor points scored during auto.
     /// </summary>
     /// <value>Average rotor points scored during auto.</value>
-    [DataMember(Name = "average_rotor_points_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "average_rotor_points_auto", EmitDefaultValue = false), JsonPropertyName("average_rotor_points_auto")]
     public float AverageRotorPointsAuto { get; set; }
 
     /// <summary>
     /// Average rotor points scored during teleop.
     /// </summary>
     /// <value>Average rotor points scored during teleop.</value>
-    [DataMember(Name = "average_rotor_points_teleop", EmitDefaultValue = false)]
+    [DataMember(Name = "average_rotor_points_teleop", EmitDefaultValue = false), JsonPropertyName("average_rotor_points_teleop")]
     public float AverageRotorPointsTeleop { get; set; }
 
     /// <summary>
     /// Average score.
     /// </summary>
     /// <value>Average score.</value>
-    [DataMember(Name = "average_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_score", EmitDefaultValue = false), JsonPropertyName("average_score")]
     public float AverageScore { get; set; }
 
     /// <summary>
     /// Average takeoff points scored during teleop.
     /// </summary>
     /// <value>Average takeoff points scored during teleop.</value>
-    [DataMember(Name = "average_takeoff_points_teleop", EmitDefaultValue = false)]
+    [DataMember(Name = "average_takeoff_points_teleop", EmitDefaultValue = false), JsonPropertyName("average_takeoff_points_teleop")]
     public float AverageTakeoffPointsTeleop { get; set; }
 
     /// <summary>
     /// Average margin of victory.
     /// </summary>
     /// <value>Average margin of victory.</value>
-    [DataMember(Name = "average_win_margin", EmitDefaultValue = false)]
+    [DataMember(Name = "average_win_margin", EmitDefaultValue = false), JsonPropertyName("average_win_margin")]
     public float AverageWinMargin { get; set; }
 
     /// <summary>
     /// Average winning score.
     /// </summary>
     /// <value>Average winning score.</value>
-    [DataMember(Name = "average_win_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_win_score", EmitDefaultValue = false), JsonPropertyName("average_win_score")]
     public float AverageWinScore { get; set; }
 
     /// <summary>
     /// An array with three values, kPa scored, match key from the match with the high kPa, and the name of the match
     /// </summary>
     /// <value>An array with three values, kPa scored, match key from the match with the high kPa, and the name of the match</value>
-    [DataMember(Name = "high_kpa", EmitDefaultValue = false)]
+    [DataMember(Name = "high_kpa", EmitDefaultValue = false), JsonPropertyName("high_kpa")]
     public List<string> HighKpa { get; set; }
 
     /// <summary>
     /// An array with three values, high score, match key from the match with the high score, and the name of the match
     /// </summary>
     /// <value>An array with three values, high score, match key from the match with the high score, and the name of the match</value>
-    [DataMember(Name = "high_score", EmitDefaultValue = false)]
+    [DataMember(Name = "high_score", EmitDefaultValue = false), JsonPropertyName("high_score")]
     public List<string> HighScore { get; set; }
 
     /// <summary>
     /// An array with three values, number of times kPa bonus achieved, number of opportunities to bonus, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times kPa bonus achieved, number of opportunities to bonus, and percentage.</value>
-    [DataMember(Name = "kpa_achieved", EmitDefaultValue = false)]
+    [DataMember(Name = "kpa_achieved", EmitDefaultValue = false), JsonPropertyName("kpa_achieved")]
     public List<float> KpaAchieved { get; set; }
 
     /// <summary>
     /// An array with three values, number of times mobility bonus achieved, number of opportunities to bonus, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times mobility bonus achieved, number of opportunities to bonus, and percentage.</value>
-    [DataMember(Name = "mobility_counts", EmitDefaultValue = false)]
+    [DataMember(Name = "mobility_counts", EmitDefaultValue = false), JsonPropertyName("mobility_counts")]
     public List<float> MobilityCounts { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 1 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 1 engaged, number of opportunities to engage, and percentage.</value>
-    [DataMember(Name = "rotor_1_engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor_1_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_1_engaged")]
     public List<float> Rotor1Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 1 engaged in auto, number of opportunities to engage in auto, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 1 engaged in auto, number of opportunities to engage in auto, and percentage.</value>
-    [DataMember(Name = "rotor_1_engaged_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor_1_engaged_auto", EmitDefaultValue = false), JsonPropertyName("rotor_1_engaged_auto")]
     public List<float> Rotor1EngagedAuto { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 2 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 2 engaged, number of opportunities to engage, and percentage.</value>
-    [DataMember(Name = "rotor_2_engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor_2_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_2_engaged")]
     public List<float> Rotor2Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 2 engaged in auto, number of opportunities to engage in auto, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 2 engaged in auto, number of opportunities to engage in auto, and percentage.</value>
-    [DataMember(Name = "rotor_2_engaged_auto", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor_2_engaged_auto", EmitDefaultValue = false), JsonPropertyName("rotor_2_engaged_auto")]
     public List<float> Rotor2EngagedAuto { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 3 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 3 engaged, number of opportunities to engage, and percentage.</value>
-    [DataMember(Name = "rotor_3_engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor_3_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_3_engaged")]
     public List<float> Rotor3Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times rotor 4 engaged, number of opportunities to engage, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times rotor 4 engaged, number of opportunities to engage, and percentage.</value>
-    [DataMember(Name = "rotor_4_engaged", EmitDefaultValue = false)]
+    [DataMember(Name = "rotor_4_engaged", EmitDefaultValue = false), JsonPropertyName("rotor_4_engaged")]
     public List<float> Rotor4Engaged { get; set; }
 
     /// <summary>
     /// An array with three values, number of times takeoff was counted, number of opportunities to takeoff, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times takeoff was counted, number of opportunities to takeoff, and percentage.</value>
-    [DataMember(Name = "takeoff_counts", EmitDefaultValue = false)]
+    [DataMember(Name = "takeoff_counts", EmitDefaultValue = false), JsonPropertyName("takeoff_counts")]
     public List<float> TakeoffCounts { get; set; }
 
     /// <summary>
     /// An array with three values, number of times a unicorn match (Win + kPa &amp; Rotor Bonuses) occured, number of opportunities to have a unicorn match, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times a unicorn match (Win + kPa &amp; Rotor Bonuses) occured, number of opportunities to have a unicorn match, and percentage.</value>
-    [DataMember(Name = "unicorn_matches", EmitDefaultValue = false)]
+    [DataMember(Name = "unicorn_matches", EmitDefaultValue = false), JsonPropertyName("unicorn_matches")]
     public List<float> UnicornMatches { get; set; }
 
     /// <summary>

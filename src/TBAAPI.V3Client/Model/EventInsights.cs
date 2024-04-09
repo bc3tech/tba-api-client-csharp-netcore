@@ -13,10 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// A year-specific event insight object expressed as a JSON string, separated in to &#x60;qual&#x60; and &#x60;playoff&#x60; fields. See also Event_Insights_2016, Event_Insights_2017, etc.
 /// </summary>
@@ -33,14 +33,14 @@ public partial class EventInsights(object qual = default, object playoff = defau
     /// Inights for the qualification round of an event
     /// </summary>
     /// <value>Inights for the qualification round of an event</value>
-    [DataMember(Name = "qual", EmitDefaultValue = false)]
+    [DataMember(Name = "qual", EmitDefaultValue = false), JsonPropertyName("qual")]
     public object Qual { get; set; } = qual;
 
     /// <summary>
     /// Insights for the playoff round of an event
     /// </summary>
     /// <value>Insights for the playoff round of an event</value>
-    [DataMember(Name = "playoff", EmitDefaultValue = false)]
+    [DataMember(Name = "playoff", EmitDefaultValue = false), JsonPropertyName("playoff")]
     public object Playoff { get; set; } = playoff;
 
     /// <summary>

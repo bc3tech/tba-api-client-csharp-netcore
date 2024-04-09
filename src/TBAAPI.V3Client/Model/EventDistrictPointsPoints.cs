@@ -13,11 +13,10 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// EventDistrictPointsPoints
 /// </summary>
@@ -50,35 +49,35 @@ public partial class EventDistrictPointsPoints : IEquatable<EventDistrictPointsP
     /// Total points awarded at this event.
     /// </summary>
     /// <value>Total points awarded at this event.</value>
-    [DataMember(Name = "total", EmitDefaultValue = false)]
+    [DataMember(Name = "total", EmitDefaultValue = false), JsonPropertyName("total")]
     public int Total { get; set; }
 
     /// <summary>
     /// Points awarded for alliance selection
     /// </summary>
     /// <value>Points awarded for alliance selection</value>
-    [DataMember(Name = "alliance_points", EmitDefaultValue = false)]
+    [DataMember(Name = "alliance_points", EmitDefaultValue = false), JsonPropertyName("alliance_points")]
     public int AlliancePoints { get; set; }
 
     /// <summary>
     /// Points awarded for elimination match performance.
     /// </summary>
     /// <value>Points awarded for elimination match performance.</value>
-    [DataMember(Name = "elim_points", EmitDefaultValue = false)]
+    [DataMember(Name = "elim_points", EmitDefaultValue = false), JsonPropertyName("elim_points")]
     public int ElimPoints { get; set; }
 
     /// <summary>
     /// Points awarded for event awards.
     /// </summary>
     /// <value>Points awarded for event awards.</value>
-    [DataMember(Name = "award_points", EmitDefaultValue = false)]
+    [DataMember(Name = "award_points", EmitDefaultValue = false), JsonPropertyName("award_points")]
     public int AwardPoints { get; set; }
 
     /// <summary>
     /// Points awarded for qualification match performance.
     /// </summary>
     /// <value>Points awarded for qualification match performance.</value>
-    [DataMember(Name = "qual_points", EmitDefaultValue = false)]
+    [DataMember(Name = "qual_points", EmitDefaultValue = false), JsonPropertyName("qual_points")]
     public int QualPoints { get; set; }
 
     /// <summary>

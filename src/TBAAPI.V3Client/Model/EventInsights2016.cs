@@ -14,11 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// Insights for FIRST Stronghold qualification and elimination matches.
 /// </summary>
@@ -103,168 +102,168 @@ public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidat
     /// For the Low Bar - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Low Bar - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "LowBar", EmitDefaultValue = false)]
+    [DataMember(Name = "LowBar", EmitDefaultValue = false), JsonPropertyName("LowBar")]
     public List<float> LowBar { get; set; }
 
     /// <summary>
     /// For the Cheval De Frise - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Cheval De Frise - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "A_ChevalDeFrise", EmitDefaultValue = false)]
+    [DataMember(Name = "A_ChevalDeFrise", EmitDefaultValue = false), JsonPropertyName("A_ChevalDeFrise")]
     public List<float> AChevalDeFrise { get; set; }
 
     /// <summary>
     /// For the Portcullis - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Portcullis - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "A_Portcullis", EmitDefaultValue = false)]
+    [DataMember(Name = "A_Portcullis", EmitDefaultValue = false), JsonPropertyName("A_Portcullis")]
     public List<float> APortcullis { get; set; }
 
     /// <summary>
     /// For the Ramparts - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Ramparts - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "B_Ramparts", EmitDefaultValue = false)]
+    [DataMember(Name = "B_Ramparts", EmitDefaultValue = false), JsonPropertyName("B_Ramparts")]
     public List<float> BRamparts { get; set; }
 
     /// <summary>
     /// For the Moat - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Moat - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "B_Moat", EmitDefaultValue = false)]
+    [DataMember(Name = "B_Moat", EmitDefaultValue = false), JsonPropertyName("B_Moat")]
     public List<float> BMoat { get; set; }
 
     /// <summary>
     /// For the Sally Port - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Sally Port - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "C_SallyPort", EmitDefaultValue = false)]
+    [DataMember(Name = "C_SallyPort", EmitDefaultValue = false), JsonPropertyName("C_SallyPort")]
     public List<float> CSallyPort { get; set; }
 
     /// <summary>
     /// For the Drawbridge - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Drawbridge - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "C_Drawbridge", EmitDefaultValue = false)]
+    [DataMember(Name = "C_Drawbridge", EmitDefaultValue = false), JsonPropertyName("C_Drawbridge")]
     public List<float> CDrawbridge { get; set; }
 
     /// <summary>
     /// For the Rough Terrain - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Rough Terrain - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "D_RoughTerrain", EmitDefaultValue = false)]
+    [DataMember(Name = "D_RoughTerrain", EmitDefaultValue = false), JsonPropertyName("D_RoughTerrain")]
     public List<float> DRoughTerrain { get; set; }
 
     /// <summary>
     /// For the Rock Wall - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
     /// <value>For the Rock Wall - An array with three values, number of times damaged, number of opportunities to damage, and percentage.</value>
-    [DataMember(Name = "D_RockWall", EmitDefaultValue = false)]
+    [DataMember(Name = "D_RockWall", EmitDefaultValue = false), JsonPropertyName("D_RockWall")]
     public List<float> DRockWall { get; set; }
 
     /// <summary>
     /// Average number of high goals scored.
     /// </summary>
     /// <value>Average number of high goals scored.</value>
-    [DataMember(Name = "average_high_goals", EmitDefaultValue = false)]
+    [DataMember(Name = "average_high_goals", EmitDefaultValue = false), JsonPropertyName("average_high_goals")]
     public float AverageHighGoals { get; set; }
 
     /// <summary>
     /// Average number of low goals scored.
     /// </summary>
     /// <value>Average number of low goals scored.</value>
-    [DataMember(Name = "average_low_goals", EmitDefaultValue = false)]
+    [DataMember(Name = "average_low_goals", EmitDefaultValue = false), JsonPropertyName("average_low_goals")]
     public float AverageLowGoals { get; set; }
 
     /// <summary>
     /// An array with three values, number of times breached, number of opportunities to breach, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times breached, number of opportunities to breach, and percentage.</value>
-    [DataMember(Name = "breaches", EmitDefaultValue = false)]
+    [DataMember(Name = "breaches", EmitDefaultValue = false), JsonPropertyName("breaches")]
     public List<float> Breaches { get; set; }
 
     /// <summary>
     /// An array with three values, number of times scaled, number of opportunities to scale, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times scaled, number of opportunities to scale, and percentage.</value>
-    [DataMember(Name = "scales", EmitDefaultValue = false)]
+    [DataMember(Name = "scales", EmitDefaultValue = false), JsonPropertyName("scales")]
     public List<float> Scales { get; set; }
 
     /// <summary>
     /// An array with three values, number of times challenged, number of opportunities to challenge, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times challenged, number of opportunities to challenge, and percentage.</value>
-    [DataMember(Name = "challenges", EmitDefaultValue = false)]
+    [DataMember(Name = "challenges", EmitDefaultValue = false), JsonPropertyName("challenges")]
     public List<float> Challenges { get; set; }
 
     /// <summary>
     /// An array with three values, number of times captured, number of opportunities to capture, and percentage.
     /// </summary>
     /// <value>An array with three values, number of times captured, number of opportunities to capture, and percentage.</value>
-    [DataMember(Name = "captures", EmitDefaultValue = false)]
+    [DataMember(Name = "captures", EmitDefaultValue = false), JsonPropertyName("captures")]
     public List<float> Captures { get; set; }
 
     /// <summary>
     /// Average winning score.
     /// </summary>
     /// <value>Average winning score.</value>
-    [DataMember(Name = "average_win_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_win_score", EmitDefaultValue = false), JsonPropertyName("average_win_score")]
     public float AverageWinScore { get; set; }
 
     /// <summary>
     /// Average margin of victory.
     /// </summary>
     /// <value>Average margin of victory.</value>
-    [DataMember(Name = "average_win_margin", EmitDefaultValue = false)]
+    [DataMember(Name = "average_win_margin", EmitDefaultValue = false), JsonPropertyName("average_win_margin")]
     public float AverageWinMargin { get; set; }
 
     /// <summary>
     /// Average total score.
     /// </summary>
     /// <value>Average total score.</value>
-    [DataMember(Name = "average_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_score", EmitDefaultValue = false), JsonPropertyName("average_score")]
     public float AverageScore { get; set; }
 
     /// <summary>
     /// Average autonomous score.
     /// </summary>
     /// <value>Average autonomous score.</value>
-    [DataMember(Name = "average_auto_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_auto_score", EmitDefaultValue = false), JsonPropertyName("average_auto_score")]
     public float AverageAutoScore { get; set; }
 
     /// <summary>
     /// Average crossing score.
     /// </summary>
     /// <value>Average crossing score.</value>
-    [DataMember(Name = "average_crossing_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_crossing_score", EmitDefaultValue = false), JsonPropertyName("average_crossing_score")]
     public float AverageCrossingScore { get; set; }
 
     /// <summary>
     /// Average boulder score.
     /// </summary>
     /// <value>Average boulder score.</value>
-    [DataMember(Name = "average_boulder_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_boulder_score", EmitDefaultValue = false), JsonPropertyName("average_boulder_score")]
     public float AverageBoulderScore { get; set; }
 
     /// <summary>
     /// Average tower score.
     /// </summary>
     /// <value>Average tower score.</value>
-    [DataMember(Name = "average_tower_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_tower_score", EmitDefaultValue = false), JsonPropertyName("average_tower_score")]
     public float AverageTowerScore { get; set; }
 
     /// <summary>
     /// Average foul score.
     /// </summary>
     /// <value>Average foul score.</value>
-    [DataMember(Name = "average_foul_score", EmitDefaultValue = false)]
+    [DataMember(Name = "average_foul_score", EmitDefaultValue = false), JsonPropertyName("average_foul_score")]
     public float AverageFoulScore { get; set; }
 
     /// <summary>
     /// An array with three values, high score, match key from the match with the high score, and the name of the match.
     /// </summary>
     /// <value>An array with three values, high score, match key from the match with the high score, and the name of the match.</value>
-    [DataMember(Name = "high_score", EmitDefaultValue = false)]
+    [DataMember(Name = "high_score", EmitDefaultValue = false), JsonPropertyName("high_score")]
     public List<string> HighScore { get; set; }
 
     /// <summary>

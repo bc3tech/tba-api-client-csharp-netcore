@@ -14,11 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// Rank of a team in a district.
 /// </summary>
@@ -52,35 +51,35 @@ public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatable
     /// TBA team key for the team.
     /// </summary>
     /// <value>TBA team key for the team.</value>
-    [DataMember(Name = "team_key", EmitDefaultValue = false)]
+    [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
     public string TeamKey { get; set; }
 
     /// <summary>
     /// Numerical rank of the team, 1 being top rank.
     /// </summary>
     /// <value>Numerical rank of the team, 1 being top rank.</value>
-    [DataMember(Name = "rank", EmitDefaultValue = false)]
+    [DataMember(Name = "rank", EmitDefaultValue = false), JsonPropertyName("rank")]
     public int Rank { get; set; }
 
     /// <summary>
     /// Any points added to a team as a result of the rookie bonus.
     /// </summary>
     /// <value>Any points added to a team as a result of the rookie bonus.</value>
-    [DataMember(Name = "rookie_bonus", EmitDefaultValue = false)]
+    [DataMember(Name = "rookie_bonus", EmitDefaultValue = false), JsonPropertyName("rookie_bonus")]
     public int RookieBonus { get; set; }
 
     /// <summary>
     /// Total district points for the team.
     /// </summary>
     /// <value>Total district points for the team.</value>
-    [DataMember(Name = "point_total", EmitDefaultValue = false)]
+    [DataMember(Name = "point_total", EmitDefaultValue = false), JsonPropertyName("point_total")]
     public int PointTotal { get; set; }
 
     /// <summary>
     /// List of events that contributed to the point total for the team.
     /// </summary>
     /// <value>List of events that contributed to the point total for the team.</value>
-    [DataMember(Name = "event_points", EmitDefaultValue = false)]
+    [DataMember(Name = "event_points", EmitDefaultValue = false), JsonPropertyName("event_points")]
     public List<DistrictRankingEventPoints> EventPoints { get; set; }
 
     /// <summary>

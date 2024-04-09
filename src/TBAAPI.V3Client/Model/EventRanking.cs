@@ -14,11 +14,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Runtime.Serialization;
 using System.Text;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 /// <summary>
 /// EventRanking
 /// </summary>
@@ -49,21 +48,21 @@ public partial class EventRanking : IEquatable<EventRanking>, IValidatableObject
     /// List of rankings at the event.
     /// </summary>
     /// <value>List of rankings at the event.</value>
-    [DataMember(Name = "rankings", EmitDefaultValue = false)]
+    [DataMember(Name = "rankings", EmitDefaultValue = false), JsonPropertyName("rankings")]
     public List<EventRankingRankings> Rankings { get; set; }
 
     /// <summary>
     /// List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item.
     /// </summary>
     /// <value>List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item.</value>
-    [DataMember(Name = "extra_stats_info", EmitDefaultValue = false)]
+    [DataMember(Name = "extra_stats_info", EmitDefaultValue = false), JsonPropertyName("extra_stats_info")]
     public List<EventRankingExtraStatsInfo> ExtraStatsInfo { get; set; }
 
     /// <summary>
     /// List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team.
     /// </summary>
     /// <value>List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team.</value>
-    [DataMember(Name = "sort_order_info", EmitDefaultValue = false)]
+    [DataMember(Name = "sort_order_info", EmitDefaultValue = false), JsonPropertyName("sort_order_info")]
     public List<EventRankingSortOrderInfo> SortOrderInfo { get; set; }
 
     /// <summary>
