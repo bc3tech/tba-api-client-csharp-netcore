@@ -22,8 +22,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventRankingRankings
 /// </summary>
-[DataContract]
-public partial class EventRankingRankings : IEquatable<EventRankingRankings>, IValidatableObject
+[DataContract]public partial record EventRankingRankings : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EventRankingRankings" /> class.

@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Insights for FIRST Stronghold qualification and elimination matches.
 /// </summary>
-[DataContract]
-public partial class EventInsights2016 : IEquatable<EventInsights2016>, IValidatableObject
+[DataContract]public partial record EventInsights2016 : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EventInsights2016" /> class.

@@ -20,8 +20,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventRankingSortOrderInfo
 /// </summary>
-[DataContract]
-public partial class EventRankingSortOrderInfo : IEquatable<EventRankingSortOrderInfo>, IValidatableObject
+[DataContract]public partial record EventRankingSortOrderInfo : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EventRankingSortOrderInfo" /> class.

@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// TeamSimple
 /// </summary>
-[DataContract]
-public partial class TeamSimple : IEquatable<TeamSimple>, IValidatableObject
+[DataContract]public partial record TeamSimple : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TeamSimple" /> class.

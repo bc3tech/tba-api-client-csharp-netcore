@@ -23,8 +23,7 @@ using TBAAPI.V3Client.Client;
 /// <summary>
 /// MatchSimple
 /// </summary>
-[DataContract]
-public partial class MatchSimple : IEquatable<MatchSimple>, IValidatableObject
+[DataContract]public partial record MatchSimple : IValidatableObject
 {
     /// <summary>
     /// The competition level the match was played at.

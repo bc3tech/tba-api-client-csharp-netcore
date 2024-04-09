@@ -24,8 +24,7 @@ using OpenAPIDateConverter = Client.OpenAPIDateConverter;
 /// <summary>
 /// Event
 /// </summary>
-[DataContract]
-public partial class Event : IEquatable<Event>, IValidatableObject
+[DataContract]public partial record Event : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Event" /> class.

@@ -22,8 +22,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Zebra
 /// </summary>
-[DataContract]
-public partial class Zebra : IEquatable<Zebra>, IValidatableObject
+[DataContract]public partial record Zebra : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Zebra" /> class.

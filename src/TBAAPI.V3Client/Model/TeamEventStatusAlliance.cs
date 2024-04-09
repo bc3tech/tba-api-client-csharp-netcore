@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -20,8 +19,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// TeamEventStatusAlliance
 /// </summary>
-[DataContract]
-public partial class TeamEventStatusAlliance : IEquatable<TeamEventStatusAlliance>, IValidatableObject
+[DataContract]public partial record TeamEventStatusAlliance : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="TeamEventStatusAlliance" /> class.

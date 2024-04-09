@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Insights for FIRST Power Up qualification and elimination matches.
 /// </summary>
-[DataContract]
-public partial class EventInsights2018 : IEquatable<EventInsights2018>, IValidatableObject
+[DataContract]public partial record EventInsights2018 : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EventInsights2018" /> class.

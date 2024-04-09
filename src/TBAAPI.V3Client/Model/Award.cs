@@ -22,8 +22,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Award
 /// </summary>
-[DataContract]
-public partial class Award : IEquatable<Award>, IValidatableObject
+[DataContract]public partial record Award : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Award" /> class.

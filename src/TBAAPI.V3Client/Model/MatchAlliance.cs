@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// MatchAlliance
 /// </summary>
-[DataContract]
-public partial class MatchAlliance : IEquatable<MatchAlliance>, IValidatableObject
+[DataContract]public partial record MatchAlliance : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MatchAlliance" /> class.

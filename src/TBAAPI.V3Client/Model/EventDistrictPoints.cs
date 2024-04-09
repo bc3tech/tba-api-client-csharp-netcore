@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventDistrictPoints
 /// </summary>
-[DataContract]
-public partial class EventDistrictPoints : IEquatable<EventDistrictPoints>, IValidatableObject
+[DataContract]public partial record EventDistrictPoints : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EventDistrictPoints" /> class.

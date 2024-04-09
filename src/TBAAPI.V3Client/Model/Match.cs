@@ -24,8 +24,7 @@ using TBAAPI.V3Client.Client;
 /// <summary>
 /// Match
 /// </summary>
-[DataContract]
-public partial class Match : IEquatable<Match>, IValidatableObject
+[DataContract]public partial record Match : IValidatableObject
 {
     /// <summary>
     /// The competition level the match was played at.

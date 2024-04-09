@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EliminationAlliance
 /// </summary>
-[DataContract]
-public partial class EliminationAlliance : IEquatable<EliminationAlliance>, IValidatableObject
+[DataContract]public partial record EliminationAlliance : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EliminationAlliance" /> class.

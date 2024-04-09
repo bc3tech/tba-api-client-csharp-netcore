@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// The &#x60;Media&#x60; object contains a reference for most any media associated with a team or event on TBA.
 /// </summary>
-[DataContract]
-public partial class Media : IEquatable<Media>, IValidatableObject
+[DataContract]public partial record Media : IValidatableObject
 {
     /// <summary>
     /// String type of the media element.

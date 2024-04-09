@@ -20,8 +20,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// DistrictRankingEventPoints
 /// </summary>
-[DataContract]
-public partial class DistrictRankingEventPoints : IEquatable<DistrictRankingEventPoints>, IValidatableObject
+[DataContract]public partial record DistrictRankingEventPoints : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="DistrictRankingEventPoints" /> class.

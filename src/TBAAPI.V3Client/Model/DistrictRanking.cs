@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Rank of a team in a district.
 /// </summary>
-[DataContract]
-public partial class DistrictRanking : IEquatable<DistrictRanking>, IValidatableObject
+[DataContract]public partial record DistrictRanking : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="DistrictRanking" /> class.

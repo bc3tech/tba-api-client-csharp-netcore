@@ -22,8 +22,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// APIStatus
 /// </summary>
-[DataContract]
-public partial class APIStatus : IEquatable<APIStatus>, IValidatableObject
+[DataContract]public partial record APIStatus : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="APIStatus" /> class.

@@ -21,8 +21,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Insights for FIRST STEAMWORKS qualification and elimination matches.
 /// </summary>
-[DataContract]
-public partial class EventInsights2017 : IEquatable<EventInsights2017>, IValidatableObject
+[DataContract]public partial record EventInsights2017 : IValidatableObject
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="EventInsights2017" /> class.

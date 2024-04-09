@@ -20,8 +20,7 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Webcast
 /// </summary>
-[DataContract]
-public partial class Webcast : IEquatable<Webcast>, IValidatableObject
+[DataContract]public partial record Webcast : IValidatableObject
 {
     /// <summary>
     /// Type of webcast, typically descriptive of the streaming provider.
