@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -24,10 +23,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="TeamEventStatusAllianceBackup" /> class.
 /// </remarks>
-/// <param name="_out">TBA key for the team replaced by the backup..</param>
-/// <param name="_in">TBA key for the backup team called in..</param>
 [DataContract]
-public partial class TeamEventStatusAllianceBackup(string? _out = default, string? _in = default) : IEquatable<TeamEventStatusAllianceBackup>, IValidatableObject
+public partial record TeamEventStatusAllianceBackup : IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +32,14 @@ public partial class TeamEventStatusAllianceBackup(string? _out = default, strin
     /// </summary>
     /// <value>TBA key for the team replaced by the backup.</value>
     [DataMember(Name = "out", EmitDefaultValue = false), JsonPropertyName("out")]
-    public string? Out { get; set; } = _out;
+    public string? Out { get; set; }
 
     /// <summary>
     /// TBA key for the backup team called in.
     /// </summary>
     /// <value>TBA key for the backup team called in.</value>
     [DataMember(Name = "in", EmitDefaultValue = false), JsonPropertyName("in")]
-    public string? In { get; set; } = _in;
+    public string? In { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -63,33 +60,6 @@ public partial class TeamEventStatusAllianceBackup(string? _out = default, strin
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as TeamEventStatusAllianceBackup);
-
-    /// <summary>
-    /// Returns true if TeamEventStatusAllianceBackup instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TeamEventStatusAllianceBackup to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusAllianceBackup? input)
-    {
-        return input is not null &&
-            (
-                this.Out == input.Out ||
-                (this.Out is not null &&
-                this.Out.Equals(input.Out))
-            ) &&
-            (
-                this.In == input.In ||
-                (this.In is not null &&
-                this.In.Equals(input.In))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -119,8 +89,5 @@ public partial class TeamEventStatusAllianceBackup(string? _out = default, strin
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

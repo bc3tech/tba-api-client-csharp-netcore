@@ -23,269 +23,232 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchScoreBreakdown2018Alliance" /> class.
 /// </remarks>
-/// <param name="adjustPoints">adjustPoints.</param>
-/// <param name="autoOwnershipPoints">autoOwnershipPoints.</param>
-/// <param name="autoPoints">autoPoints.</param>
-/// <param name="autoQuestRankingPoint">autoQuestRankingPoint.</param>
-/// <param name="autoRobot1">autoRobot1.</param>
-/// <param name="autoRobot2">autoRobot2.</param>
-/// <param name="autoRobot3">autoRobot3.</param>
-/// <param name="autoRunPoints">autoRunPoints.</param>
-/// <param name="autoScaleOwnershipSec">autoScaleOwnershipSec.</param>
-/// <param name="autoSwitchAtZero">autoSwitchAtZero.</param>
-/// <param name="autoSwitchOwnershipSec">autoSwitchOwnershipSec.</param>
-/// <param name="endgamePoints">endgamePoints.</param>
-/// <param name="endgameRobot1">endgameRobot1.</param>
-/// <param name="endgameRobot2">endgameRobot2.</param>
-/// <param name="endgameRobot3">endgameRobot3.</param>
-/// <param name="faceTheBossRankingPoint">faceTheBossRankingPoint.</param>
-/// <param name="foulCount">foulCount.</param>
-/// <param name="foulPoints">foulPoints.</param>
-/// <param name="rp">rp.</param>
-/// <param name="techFoulCount">techFoulCount.</param>
-/// <param name="teleopOwnershipPoints">teleopOwnershipPoints.</param>
-/// <param name="teleopPoints">teleopPoints.</param>
-/// <param name="teleopScaleBoostSec">teleopScaleBoostSec.</param>
-/// <param name="teleopScaleForceSec">teleopScaleForceSec.</param>
-/// <param name="teleopScaleOwnershipSec">teleopScaleOwnershipSec.</param>
-/// <param name="teleopSwitchBoostSec">teleopSwitchBoostSec.</param>
-/// <param name="teleopSwitchForceSec">teleopSwitchForceSec.</param>
-/// <param name="teleopSwitchOwnershipSec">teleopSwitchOwnershipSec.</param>
-/// <param name="totalPoints">totalPoints.</param>
-/// <param name="vaultBoostPlayed">vaultBoostPlayed.</param>
-/// <param name="vaultBoostTotal">vaultBoostTotal.</param>
-/// <param name="vaultForcePlayed">vaultForcePlayed.</param>
-/// <param name="vaultForceTotal">vaultForceTotal.</param>
-/// <param name="vaultLevitatePlayed">vaultLevitatePlayed.</param>
-/// <param name="vaultLevitateTotal">vaultLevitateTotal.</param>
-/// <param name="vaultPoints">vaultPoints.</param>
-/// <param name="tbaGameData">Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing &#x60;L&#x60; and &#x60;R&#x60; only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance&#39;s perspective. An &#x60;L&#x60; in a position indicates the platform on the left will be lit for the alliance while an &#x60;R&#x60; will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details)..</param>
 [DataContract]
-public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default, int autoOwnershipPoints = default, int autoPoints = default, bool autoQuestRankingPoint = default, string? autoRobot1 = default, string? autoRobot2 = default, string? autoRobot3 = default, int autoRunPoints = default, int autoScaleOwnershipSec = default, bool autoSwitchAtZero = default, int autoSwitchOwnershipSec = default, int endgamePoints = default, string? endgameRobot1 = default, string? endgameRobot2 = default, string? endgameRobot3 = default, bool faceTheBossRankingPoint = default, int foulCount = default, int foulPoints = default, int rp = default, int techFoulCount = default, int teleopOwnershipPoints = default, int teleopPoints = default, int teleopScaleBoostSec = default, int teleopScaleForceSec = default, int teleopScaleOwnershipSec = default, int teleopSwitchBoostSec = default, int teleopSwitchForceSec = default, int teleopSwitchOwnershipSec = default, int totalPoints = default, int vaultBoostPlayed = default, int vaultBoostTotal = default, int vaultForcePlayed = default, int vaultForceTotal = default, int vaultLevitatePlayed = default, int vaultLevitateTotal = default, int vaultPoints = default, string? tbaGameData = default) : IEquatable<MatchScoreBreakdown2018Alliance>, IValidatableObject
+public partial record MatchScoreBreakdown2018Alliance : IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
     [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
-    public int AdjustPoints { get; set; } = adjustPoints;
+    public int AdjustPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoOwnershipPoints
     /// </summary>
     [DataMember(Name = "autoOwnershipPoints", EmitDefaultValue = false), JsonPropertyName("autoOwnershipPoints")]
-    public int AutoOwnershipPoints { get; set; } = autoOwnershipPoints;
+    public int AutoOwnershipPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
     [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
-    public int AutoPoints { get; set; } = autoPoints;
+    public int AutoPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoQuestRankingPoint
     /// </summary>
     [DataMember(Name = "autoQuestRankingPoint", EmitDefaultValue = false), JsonPropertyName("autoQuestRankingPoint")]
-    public bool AutoQuestRankingPoint { get; set; } = autoQuestRankingPoint;
+    public bool AutoQuestRankingPoint { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoRobot1
     /// </summary>
     [DataMember(Name = "autoRobot1", EmitDefaultValue = false), JsonPropertyName("autoRobot1")]
-    public string AutoRobot1 { get; set; } = autoRobot1;
+    public string? AutoRobot1 { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoRobot2
     /// </summary>
     [DataMember(Name = "autoRobot2", EmitDefaultValue = false), JsonPropertyName("autoRobot2")]
-    public string AutoRobot2 { get; set; } = autoRobot2;
+    public string? AutoRobot2 { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoRobot3
     /// </summary>
     [DataMember(Name = "autoRobot3", EmitDefaultValue = false), JsonPropertyName("autoRobot3")]
-    public string AutoRobot3 { get; set; } = autoRobot3;
+    public string? AutoRobot3 { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoRunPoints
     /// </summary>
     [DataMember(Name = "autoRunPoints", EmitDefaultValue = false), JsonPropertyName("autoRunPoints")]
-    public int AutoRunPoints { get; set; } = autoRunPoints;
+    public int AutoRunPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoScaleOwnershipSec
     /// </summary>
     [DataMember(Name = "autoScaleOwnershipSec", EmitDefaultValue = false), JsonPropertyName("autoScaleOwnershipSec")]
-    public int AutoScaleOwnershipSec { get; set; } = autoScaleOwnershipSec;
+    public int AutoScaleOwnershipSec { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoSwitchAtZero
     /// </summary>
     [DataMember(Name = "autoSwitchAtZero", EmitDefaultValue = false), JsonPropertyName("autoSwitchAtZero")]
-    public bool AutoSwitchAtZero { get; set; } = autoSwitchAtZero;
+    public bool AutoSwitchAtZero { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoSwitchOwnershipSec
     /// </summary>
     [DataMember(Name = "autoSwitchOwnershipSec", EmitDefaultValue = false), JsonPropertyName("autoSwitchOwnershipSec")]
-    public int AutoSwitchOwnershipSec { get; set; } = autoSwitchOwnershipSec;
+    public int AutoSwitchOwnershipSec { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgamePoints
     /// </summary>
     [DataMember(Name = "endgamePoints", EmitDefaultValue = false), JsonPropertyName("endgamePoints")]
-    public int EndgamePoints { get; set; } = endgamePoints;
+    public int EndgamePoints { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot1
     /// </summary>
     [DataMember(Name = "endgameRobot1", EmitDefaultValue = false), JsonPropertyName("endgameRobot1")]
-    public string EndgameRobot1 { get; set; } = endgameRobot1;
+    public string? EndgameRobot1 { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot2
     /// </summary>
     [DataMember(Name = "endgameRobot2", EmitDefaultValue = false), JsonPropertyName("endgameRobot2")]
-    public string EndgameRobot2 { get; set; } = endgameRobot2;
+    public string? EndgameRobot2 { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot3
     /// </summary>
     [DataMember(Name = "endgameRobot3", EmitDefaultValue = false), JsonPropertyName("endgameRobot3")]
-    public string EndgameRobot3 { get; set; } = endgameRobot3;
+    public string? EndgameRobot3 { get; set; }
 
     /// <summary>
     /// Gets or Sets FaceTheBossRankingPoint
     /// </summary>
     [DataMember(Name = "faceTheBossRankingPoint", EmitDefaultValue = false), JsonPropertyName("faceTheBossRankingPoint")]
-    public bool FaceTheBossRankingPoint { get; set; } = faceTheBossRankingPoint;
+    public bool FaceTheBossRankingPoint { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
     [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
-    public int FoulCount { get; set; } = foulCount;
+    public int FoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
     [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
-    public int FoulPoints { get; set; } = foulPoints;
+    public int FoulPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets Rp
     /// </summary>
     [DataMember(Name = "rp", EmitDefaultValue = false), JsonPropertyName("rp")]
-    public int Rp { get; set; } = rp;
+    public int Rp { get; set; }
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
     [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
-    public int TechFoulCount { get; set; } = techFoulCount;
+    public int TechFoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopOwnershipPoints
     /// </summary>
     [DataMember(Name = "teleopOwnershipPoints", EmitDefaultValue = false), JsonPropertyName("teleopOwnershipPoints")]
-    public int TeleopOwnershipPoints { get; set; } = teleopOwnershipPoints;
+    public int TeleopOwnershipPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
     [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
-    public int TeleopPoints { get; set; } = teleopPoints;
+    public int TeleopPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopScaleBoostSec
     /// </summary>
     [DataMember(Name = "teleopScaleBoostSec", EmitDefaultValue = false), JsonPropertyName("teleopScaleBoostSec")]
-    public int TeleopScaleBoostSec { get; set; } = teleopScaleBoostSec;
+    public int TeleopScaleBoostSec { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopScaleForceSec
     /// </summary>
     [DataMember(Name = "teleopScaleForceSec", EmitDefaultValue = false), JsonPropertyName("teleopScaleForceSec")]
-    public int TeleopScaleForceSec { get; set; } = teleopScaleForceSec;
+    public int TeleopScaleForceSec { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopScaleOwnershipSec
     /// </summary>
     [DataMember(Name = "teleopScaleOwnershipSec", EmitDefaultValue = false), JsonPropertyName("teleopScaleOwnershipSec")]
-    public int TeleopScaleOwnershipSec { get; set; } = teleopScaleOwnershipSec;
+    public int TeleopScaleOwnershipSec { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopSwitchBoostSec
     /// </summary>
     [DataMember(Name = "teleopSwitchBoostSec", EmitDefaultValue = false), JsonPropertyName("teleopSwitchBoostSec")]
-    public int TeleopSwitchBoostSec { get; set; } = teleopSwitchBoostSec;
+    public int TeleopSwitchBoostSec { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopSwitchForceSec
     /// </summary>
     [DataMember(Name = "teleopSwitchForceSec", EmitDefaultValue = false), JsonPropertyName("teleopSwitchForceSec")]
-    public int TeleopSwitchForceSec { get; set; } = teleopSwitchForceSec;
+    public int TeleopSwitchForceSec { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopSwitchOwnershipSec
     /// </summary>
     [DataMember(Name = "teleopSwitchOwnershipSec", EmitDefaultValue = false), JsonPropertyName("teleopSwitchOwnershipSec")]
-    public int TeleopSwitchOwnershipSec { get; set; } = teleopSwitchOwnershipSec;
+    public int TeleopSwitchOwnershipSec { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
     [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
-    public int TotalPoints { get; set; } = totalPoints;
+    public int TotalPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets VaultBoostPlayed
     /// </summary>
     [DataMember(Name = "vaultBoostPlayed", EmitDefaultValue = false), JsonPropertyName("vaultBoostPlayed")]
-    public int VaultBoostPlayed { get; set; } = vaultBoostPlayed;
+    public int VaultBoostPlayed { get; set; }
 
     /// <summary>
     /// Gets or Sets VaultBoostTotal
     /// </summary>
     [DataMember(Name = "vaultBoostTotal", EmitDefaultValue = false), JsonPropertyName("vaultBoostTotal")]
-    public int VaultBoostTotal { get; set; } = vaultBoostTotal;
+    public int VaultBoostTotal { get; set; }
 
     /// <summary>
     /// Gets or Sets VaultForcePlayed
     /// </summary>
     [DataMember(Name = "vaultForcePlayed", EmitDefaultValue = false), JsonPropertyName("vaultForcePlayed")]
-    public int VaultForcePlayed { get; set; } = vaultForcePlayed;
+    public int VaultForcePlayed { get; set; }
 
     /// <summary>
     /// Gets or Sets VaultForceTotal
     /// </summary>
     [DataMember(Name = "vaultForceTotal", EmitDefaultValue = false), JsonPropertyName("vaultForceTotal")]
-    public int VaultForceTotal { get; set; } = vaultForceTotal;
+    public int VaultForceTotal { get; set; }
 
     /// <summary>
     /// Gets or Sets VaultLevitatePlayed
     /// </summary>
     [DataMember(Name = "vaultLevitatePlayed", EmitDefaultValue = false), JsonPropertyName("vaultLevitatePlayed")]
-    public int VaultLevitatePlayed { get; set; } = vaultLevitatePlayed;
+    public int VaultLevitatePlayed { get; set; }
 
     /// <summary>
     /// Gets or Sets VaultLevitateTotal
     /// </summary>
     [DataMember(Name = "vaultLevitateTotal", EmitDefaultValue = false), JsonPropertyName("vaultLevitateTotal")]
-    public int VaultLevitateTotal { get; set; } = vaultLevitateTotal;
+    public int VaultLevitateTotal { get; set; }
 
     /// <summary>
     /// Gets or Sets VaultPoints
     /// </summary>
     [DataMember(Name = "vaultPoints", EmitDefaultValue = false), JsonPropertyName("vaultPoints")]
-    public int VaultPoints { get; set; } = vaultPoints;
+    public int VaultPoints { get; set; }
 
     /// <summary>
     /// Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing &#x60;L&#x60; and &#x60;R&#x60; only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance&#39;s perspective. An &#x60;L&#x60; in a position indicates the platform on the left will be lit for the alliance while an &#x60;R&#x60; will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details).
     /// </summary>
     /// <value>Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing &#x60;L&#x60; and &#x60;R&#x60; only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance&#39;s perspective. An &#x60;L&#x60; in a position indicates the platform on the left will be lit for the alliance while an &#x60;R&#x60; will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details).</value>
     [DataMember(Name = "tba_gameData", EmitDefaultValue = false), JsonPropertyName("tba_gameData")]
-    public string TbaGameData { get; set; } = tbaGameData;
+    public string? TbaGameData { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -341,178 +304,6 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2018Alliance);
-
-    /// <summary>
-    /// Returns true if MatchScoreBreakdown2018Alliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchScoreBreakdown2018Alliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2018Alliance? input)
-    {
-        return input is not null
-&& (
-                this.AdjustPoints == input.AdjustPoints ||
-                this.AdjustPoints.Equals(input.AdjustPoints)
-            ) &&
-            (
-                this.AutoOwnershipPoints == input.AutoOwnershipPoints ||
-                this.AutoOwnershipPoints.Equals(input.AutoOwnershipPoints)
-            ) &&
-            (
-                this.AutoPoints == input.AutoPoints ||
-                this.AutoPoints.Equals(input.AutoPoints)
-            ) &&
-            (
-                this.AutoQuestRankingPoint == input.AutoQuestRankingPoint ||
-                this.AutoQuestRankingPoint.Equals(input.AutoQuestRankingPoint)
-            ) &&
-            (
-                this.AutoRobot1 == input.AutoRobot1 ||
-                (this.AutoRobot1 is not null &&
-                this.AutoRobot1.Equals(input.AutoRobot1))
-            ) &&
-            (
-                this.AutoRobot2 == input.AutoRobot2 ||
-                (this.AutoRobot2 is not null &&
-                this.AutoRobot2.Equals(input.AutoRobot2))
-            ) &&
-            (
-                this.AutoRobot3 == input.AutoRobot3 ||
-                (this.AutoRobot3 is not null &&
-                this.AutoRobot3.Equals(input.AutoRobot3))
-            ) &&
-            (
-                this.AutoRunPoints == input.AutoRunPoints ||
-                this.AutoRunPoints.Equals(input.AutoRunPoints)
-            ) &&
-            (
-                this.AutoScaleOwnershipSec == input.AutoScaleOwnershipSec ||
-                this.AutoScaleOwnershipSec.Equals(input.AutoScaleOwnershipSec)
-            ) &&
-            (
-                this.AutoSwitchAtZero == input.AutoSwitchAtZero ||
-                this.AutoSwitchAtZero.Equals(input.AutoSwitchAtZero)
-            ) &&
-            (
-                this.AutoSwitchOwnershipSec == input.AutoSwitchOwnershipSec ||
-                this.AutoSwitchOwnershipSec.Equals(input.AutoSwitchOwnershipSec)
-            ) &&
-            (
-                this.EndgamePoints == input.EndgamePoints ||
-                this.EndgamePoints.Equals(input.EndgamePoints)
-            ) &&
-            (
-                this.EndgameRobot1 == input.EndgameRobot1 ||
-                (this.EndgameRobot1 is not null &&
-                this.EndgameRobot1.Equals(input.EndgameRobot1))
-            ) &&
-            (
-                this.EndgameRobot2 == input.EndgameRobot2 ||
-                (this.EndgameRobot2 is not null &&
-                this.EndgameRobot2.Equals(input.EndgameRobot2))
-            ) &&
-            (
-                this.EndgameRobot3 == input.EndgameRobot3 ||
-                (this.EndgameRobot3 is not null &&
-                this.EndgameRobot3.Equals(input.EndgameRobot3))
-            ) &&
-            (
-                this.FaceTheBossRankingPoint == input.FaceTheBossRankingPoint ||
-                this.FaceTheBossRankingPoint.Equals(input.FaceTheBossRankingPoint)
-            ) &&
-            (
-                this.FoulCount == input.FoulCount ||
-                this.FoulCount.Equals(input.FoulCount)
-            ) &&
-            (
-                this.FoulPoints == input.FoulPoints ||
-                this.FoulPoints.Equals(input.FoulPoints)
-            ) &&
-            (
-                this.Rp == input.Rp ||
-                this.Rp.Equals(input.Rp)
-            ) &&
-            (
-                this.TechFoulCount == input.TechFoulCount ||
-                this.TechFoulCount.Equals(input.TechFoulCount)
-            ) &&
-            (
-                this.TeleopOwnershipPoints == input.TeleopOwnershipPoints ||
-                this.TeleopOwnershipPoints.Equals(input.TeleopOwnershipPoints)
-            ) &&
-            (
-                this.TeleopPoints == input.TeleopPoints ||
-                this.TeleopPoints.Equals(input.TeleopPoints)
-            ) &&
-            (
-                this.TeleopScaleBoostSec == input.TeleopScaleBoostSec ||
-                this.TeleopScaleBoostSec.Equals(input.TeleopScaleBoostSec)
-            ) &&
-            (
-                this.TeleopScaleForceSec == input.TeleopScaleForceSec ||
-                this.TeleopScaleForceSec.Equals(input.TeleopScaleForceSec)
-            ) &&
-            (
-                this.TeleopScaleOwnershipSec == input.TeleopScaleOwnershipSec ||
-                this.TeleopScaleOwnershipSec.Equals(input.TeleopScaleOwnershipSec)
-            ) &&
-            (
-                this.TeleopSwitchBoostSec == input.TeleopSwitchBoostSec ||
-                this.TeleopSwitchBoostSec.Equals(input.TeleopSwitchBoostSec)
-            ) &&
-            (
-                this.TeleopSwitchForceSec == input.TeleopSwitchForceSec ||
-                this.TeleopSwitchForceSec.Equals(input.TeleopSwitchForceSec)
-            ) &&
-            (
-                this.TeleopSwitchOwnershipSec == input.TeleopSwitchOwnershipSec ||
-                this.TeleopSwitchOwnershipSec.Equals(input.TeleopSwitchOwnershipSec)
-            ) &&
-            (
-                this.TotalPoints == input.TotalPoints ||
-                this.TotalPoints.Equals(input.TotalPoints)
-            ) &&
-            (
-                this.VaultBoostPlayed == input.VaultBoostPlayed ||
-                this.VaultBoostPlayed.Equals(input.VaultBoostPlayed)
-            ) &&
-            (
-                this.VaultBoostTotal == input.VaultBoostTotal ||
-                this.VaultBoostTotal.Equals(input.VaultBoostTotal)
-            ) &&
-            (
-                this.VaultForcePlayed == input.VaultForcePlayed ||
-                this.VaultForcePlayed.Equals(input.VaultForcePlayed)
-            ) &&
-            (
-                this.VaultForceTotal == input.VaultForceTotal ||
-                this.VaultForceTotal.Equals(input.VaultForceTotal)
-            ) &&
-            (
-                this.VaultLevitatePlayed == input.VaultLevitatePlayed ||
-                this.VaultLevitatePlayed.Equals(input.VaultLevitatePlayed)
-            ) &&
-            (
-                this.VaultLevitateTotal == input.VaultLevitateTotal ||
-                this.VaultLevitateTotal.Equals(input.VaultLevitateTotal)
-            ) &&
-            (
-                this.VaultPoints == input.VaultPoints ||
-                this.VaultPoints.Equals(input.VaultPoints)
-            ) &&
-            (
-                this.TbaGameData == input.TbaGameData ||
-                (this.TbaGameData is not null &&
-                this.TbaGameData.Equals(input.TbaGameData))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -597,8 +388,5 @@ public partial class MatchScoreBreakdown2018Alliance(int adjustPoints = default,
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

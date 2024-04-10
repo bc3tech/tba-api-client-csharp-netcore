@@ -23,366 +23,315 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchScoreBreakdown2019Alliance" /> class.
 /// </remarks>
-/// <param name="adjustPoints">adjustPoints.</param>
-/// <param name="autoPoints">autoPoints.</param>
-/// <param name="bay1">bay1.</param>
-/// <param name="bay2">bay2.</param>
-/// <param name="bay3">bay3.</param>
-/// <param name="bay4">bay4.</param>
-/// <param name="bay5">bay5.</param>
-/// <param name="bay6">bay6.</param>
-/// <param name="bay7">bay7.</param>
-/// <param name="bay8">bay8.</param>
-/// <param name="cargoPoints">cargoPoints.</param>
-/// <param name="completeRocketRankingPoint">completeRocketRankingPoint.</param>
-/// <param name="completedRocketFar">completedRocketFar.</param>
-/// <param name="completedRocketNear">completedRocketNear.</param>
-/// <param name="endgameRobot1">endgameRobot1.</param>
-/// <param name="endgameRobot2">endgameRobot2.</param>
-/// <param name="endgameRobot3">endgameRobot3.</param>
-/// <param name="foulCount">foulCount.</param>
-/// <param name="foulPoints">foulPoints.</param>
-/// <param name="habClimbPoints">habClimbPoints.</param>
-/// <param name="habDockingRankingPoint">habDockingRankingPoint.</param>
-/// <param name="habLineRobot1">habLineRobot1.</param>
-/// <param name="habLineRobot2">habLineRobot2.</param>
-/// <param name="habLineRobot3">habLineRobot3.</param>
-/// <param name="hatchPanelPoints">hatchPanelPoints.</param>
-/// <param name="lowLeftRocketFar">lowLeftRocketFar.</param>
-/// <param name="lowLeftRocketNear">lowLeftRocketNear.</param>
-/// <param name="lowRightRocketFar">lowRightRocketFar.</param>
-/// <param name="lowRightRocketNear">lowRightRocketNear.</param>
-/// <param name="midLeftRocketFar">midLeftRocketFar.</param>
-/// <param name="midLeftRocketNear">midLeftRocketNear.</param>
-/// <param name="midRightRocketFar">midRightRocketFar.</param>
-/// <param name="midRightRocketNear">midRightRocketNear.</param>
-/// <param name="preMatchBay1">preMatchBay1.</param>
-/// <param name="preMatchBay2">preMatchBay2.</param>
-/// <param name="preMatchBay3">preMatchBay3.</param>
-/// <param name="preMatchBay6">preMatchBay6.</param>
-/// <param name="preMatchBay7">preMatchBay7.</param>
-/// <param name="preMatchBay8">preMatchBay8.</param>
-/// <param name="preMatchLevelRobot1">preMatchLevelRobot1.</param>
-/// <param name="preMatchLevelRobot2">preMatchLevelRobot2.</param>
-/// <param name="preMatchLevelRobot3">preMatchLevelRobot3.</param>
-/// <param name="rp">rp.</param>
-/// <param name="sandStormBonusPoints">sandStormBonusPoints.</param>
-/// <param name="techFoulCount">techFoulCount.</param>
-/// <param name="teleopPoints">teleopPoints.</param>
-/// <param name="topLeftRocketFar">topLeftRocketFar.</param>
-/// <param name="topLeftRocketNear">topLeftRocketNear.</param>
-/// <param name="topRightRocketFar">topRightRocketFar.</param>
-/// <param name="topRightRocketNear">topRightRocketNear.</param>
-/// <param name="totalPoints">totalPoints.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default, int autoPoints = default, string? bay1 = default, string? bay2 = default, string? bay3 = default, string? bay4 = default, string? bay5 = default, string? bay6 = default, string? bay7 = default, string? bay8 = default, int cargoPoints = default, bool completeRocketRankingPoint = default, bool completedRocketFar = default, bool completedRocketNear = default, string? endgameRobot1 = default, string? endgameRobot2 = default, string? endgameRobot3 = default, int foulCount = default, int foulPoints = default, int habClimbPoints = default, bool habDockingRankingPoint = default, string? habLineRobot1 = default, string? habLineRobot2 = default, string? habLineRobot3 = default, int hatchPanelPoints = default, string? lowLeftRocketFar = default, string? lowLeftRocketNear = default, string? lowRightRocketFar = default, string? lowRightRocketNear = default, string? midLeftRocketFar = default, string? midLeftRocketNear = default, string? midRightRocketFar = default, string? midRightRocketNear = default, string? preMatchBay1 = default, string? preMatchBay2 = default, string? preMatchBay3 = default, string? preMatchBay6 = default, string? preMatchBay7 = default, string? preMatchBay8 = default, string? preMatchLevelRobot1 = default, string? preMatchLevelRobot2 = default, string? preMatchLevelRobot3 = default, int rp = default, int sandStormBonusPoints = default, int techFoulCount = default, int teleopPoints = default, string? topLeftRocketFar = default, string? topLeftRocketNear = default, string? topRightRocketFar = default, string? topRightRocketNear = default, int totalPoints = default) : IEquatable<MatchScoreBreakdown2019Alliance>, IValidatableObject
+public partial record MatchScoreBreakdown2019Alliance : IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
     [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
-    public int AdjustPoints { get; set; } = adjustPoints;
+    public int AdjustPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
     [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
-    public int AutoPoints { get; set; } = autoPoints;
+    public int AutoPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay1
     /// </summary>
     [DataMember(Name = "bay1", EmitDefaultValue = false), JsonPropertyName("bay1")]
-    public string Bay1 { get; set; } = bay1;
+    public string? Bay1 { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay2
     /// </summary>
     [DataMember(Name = "bay2", EmitDefaultValue = false), JsonPropertyName("bay2")]
-    public string Bay2 { get; set; } = bay2;
+    public string? Bay2 { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay3
     /// </summary>
     [DataMember(Name = "bay3", EmitDefaultValue = false), JsonPropertyName("bay3")]
-    public string Bay3 { get; set; } = bay3;
+    public string? Bay3 { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay4
     /// </summary>
     [DataMember(Name = "bay4", EmitDefaultValue = false), JsonPropertyName("bay4")]
-    public string Bay4 { get; set; } = bay4;
+    public string? Bay4 { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay5
     /// </summary>
     [DataMember(Name = "bay5", EmitDefaultValue = false), JsonPropertyName("bay5")]
-    public string Bay5 { get; set; } = bay5;
+    public string? Bay5 { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay6
     /// </summary>
     [DataMember(Name = "bay6", EmitDefaultValue = false), JsonPropertyName("bay6")]
-    public string Bay6 { get; set; } = bay6;
+    public string? Bay6 { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay7
     /// </summary>
     [DataMember(Name = "bay7", EmitDefaultValue = false), JsonPropertyName("bay7")]
-    public string Bay7 { get; set; } = bay7;
+    public string? Bay7 { get; set; }
 
     /// <summary>
     /// Gets or Sets Bay8
     /// </summary>
     [DataMember(Name = "bay8", EmitDefaultValue = false), JsonPropertyName("bay8")]
-    public string Bay8 { get; set; } = bay8;
+    public string? Bay8 { get; set; }
 
     /// <summary>
     /// Gets or Sets CargoPoints
     /// </summary>
     [DataMember(Name = "cargoPoints", EmitDefaultValue = false), JsonPropertyName("cargoPoints")]
-    public int CargoPoints { get; set; } = cargoPoints;
+    public int CargoPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets CompleteRocketRankingPoint
     /// </summary>
     [DataMember(Name = "completeRocketRankingPoint", EmitDefaultValue = false), JsonPropertyName("completeRocketRankingPoint")]
-    public bool CompleteRocketRankingPoint { get; set; } = completeRocketRankingPoint;
+    public bool CompleteRocketRankingPoint { get; set; }
 
     /// <summary>
     /// Gets or Sets CompletedRocketFar
     /// </summary>
     [DataMember(Name = "completedRocketFar", EmitDefaultValue = false), JsonPropertyName("completedRocketFar")]
-    public bool CompletedRocketFar { get; set; } = completedRocketFar;
+    public bool CompletedRocketFar { get; set; }
 
     /// <summary>
     /// Gets or Sets CompletedRocketNear
     /// </summary>
     [DataMember(Name = "completedRocketNear", EmitDefaultValue = false), JsonPropertyName("completedRocketNear")]
-    public bool CompletedRocketNear { get; set; } = completedRocketNear;
+    public bool CompletedRocketNear { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot1
     /// </summary>
     [DataMember(Name = "endgameRobot1", EmitDefaultValue = false), JsonPropertyName("endgameRobot1")]
-    public string EndgameRobot1 { get; set; } = endgameRobot1;
+    public string? EndgameRobot1 { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot2
     /// </summary>
     [DataMember(Name = "endgameRobot2", EmitDefaultValue = false), JsonPropertyName("endgameRobot2")]
-    public string EndgameRobot2 { get; set; } = endgameRobot2;
+    public string? EndgameRobot2 { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot3
     /// </summary>
     [DataMember(Name = "endgameRobot3", EmitDefaultValue = false), JsonPropertyName("endgameRobot3")]
-    public string EndgameRobot3 { get; set; } = endgameRobot3;
+    public string? EndgameRobot3 { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
     [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
-    public int FoulCount { get; set; } = foulCount;
+    public int FoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
     [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
-    public int FoulPoints { get; set; } = foulPoints;
+    public int FoulPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets HabClimbPoints
     /// </summary>
     [DataMember(Name = "habClimbPoints", EmitDefaultValue = false), JsonPropertyName("habClimbPoints")]
-    public int HabClimbPoints { get; set; } = habClimbPoints;
+    public int HabClimbPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets HabDockingRankingPoint
     /// </summary>
     [DataMember(Name = "habDockingRankingPoint", EmitDefaultValue = false), JsonPropertyName("habDockingRankingPoint")]
-    public bool HabDockingRankingPoint { get; set; } = habDockingRankingPoint;
+    public bool HabDockingRankingPoint { get; set; }
 
     /// <summary>
     /// Gets or Sets HabLineRobot1
     /// </summary>
     [DataMember(Name = "habLineRobot1", EmitDefaultValue = false), JsonPropertyName("habLineRobot1")]
-    public string HabLineRobot1 { get; set; } = habLineRobot1;
+    public string? HabLineRobot1 { get; set; }
 
     /// <summary>
     /// Gets or Sets HabLineRobot2
     /// </summary>
     [DataMember(Name = "habLineRobot2", EmitDefaultValue = false), JsonPropertyName("habLineRobot2")]
-    public string HabLineRobot2 { get; set; } = habLineRobot2;
+    public string? HabLineRobot2 { get; set; }
 
     /// <summary>
     /// Gets or Sets HabLineRobot3
     /// </summary>
     [DataMember(Name = "habLineRobot3", EmitDefaultValue = false), JsonPropertyName("habLineRobot3")]
-    public string HabLineRobot3 { get; set; } = habLineRobot3;
+    public string? HabLineRobot3 { get; set; }
 
     /// <summary>
     /// Gets or Sets HatchPanelPoints
     /// </summary>
     [DataMember(Name = "hatchPanelPoints", EmitDefaultValue = false), JsonPropertyName("hatchPanelPoints")]
-    public int HatchPanelPoints { get; set; } = hatchPanelPoints;
+    public int HatchPanelPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets LowLeftRocketFar
     /// </summary>
     [DataMember(Name = "lowLeftRocketFar", EmitDefaultValue = false), JsonPropertyName("lowLeftRocketFar")]
-    public string LowLeftRocketFar { get; set; } = lowLeftRocketFar;
+    public string? LowLeftRocketFar { get; set; }
 
     /// <summary>
     /// Gets or Sets LowLeftRocketNear
     /// </summary>
     [DataMember(Name = "lowLeftRocketNear", EmitDefaultValue = false), JsonPropertyName("lowLeftRocketNear")]
-    public string LowLeftRocketNear { get; set; } = lowLeftRocketNear;
+    public string? LowLeftRocketNear { get; set; }
 
     /// <summary>
     /// Gets or Sets LowRightRocketFar
     /// </summary>
     [DataMember(Name = "lowRightRocketFar", EmitDefaultValue = false), JsonPropertyName("lowRightRocketFar")]
-    public string LowRightRocketFar { get; set; } = lowRightRocketFar;
+    public string? LowRightRocketFar { get; set; }
 
     /// <summary>
     /// Gets or Sets LowRightRocketNear
     /// </summary>
     [DataMember(Name = "lowRightRocketNear", EmitDefaultValue = false), JsonPropertyName("lowRightRocketNear")]
-    public string LowRightRocketNear { get; set; } = lowRightRocketNear;
+    public string? LowRightRocketNear { get; set; }
 
     /// <summary>
     /// Gets or Sets MidLeftRocketFar
     /// </summary>
     [DataMember(Name = "midLeftRocketFar", EmitDefaultValue = false), JsonPropertyName("midLeftRocketFar")]
-    public string MidLeftRocketFar { get; set; } = midLeftRocketFar;
+    public string? MidLeftRocketFar { get; set; }
 
     /// <summary>
     /// Gets or Sets MidLeftRocketNear
     /// </summary>
     [DataMember(Name = "midLeftRocketNear", EmitDefaultValue = false), JsonPropertyName("midLeftRocketNear")]
-    public string MidLeftRocketNear { get; set; } = midLeftRocketNear;
+    public string? MidLeftRocketNear { get; set; }
 
     /// <summary>
     /// Gets or Sets MidRightRocketFar
     /// </summary>
     [DataMember(Name = "midRightRocketFar", EmitDefaultValue = false), JsonPropertyName("midRightRocketFar")]
-    public string MidRightRocketFar { get; set; } = midRightRocketFar;
+    public string? MidRightRocketFar { get; set; }
 
     /// <summary>
     /// Gets or Sets MidRightRocketNear
     /// </summary>
     [DataMember(Name = "midRightRocketNear", EmitDefaultValue = false), JsonPropertyName("midRightRocketNear")]
-    public string MidRightRocketNear { get; set; } = midRightRocketNear;
+    public string? MidRightRocketNear { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchBay1
     /// </summary>
     [DataMember(Name = "preMatchBay1", EmitDefaultValue = false), JsonPropertyName("preMatchBay1")]
-    public string PreMatchBay1 { get; set; } = preMatchBay1;
+    public string? PreMatchBay1 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchBay2
     /// </summary>
     [DataMember(Name = "preMatchBay2", EmitDefaultValue = false), JsonPropertyName("preMatchBay2")]
-    public string PreMatchBay2 { get; set; } = preMatchBay2;
+    public string? PreMatchBay2 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchBay3
     /// </summary>
     [DataMember(Name = "preMatchBay3", EmitDefaultValue = false), JsonPropertyName("preMatchBay3")]
-    public string PreMatchBay3 { get; set; } = preMatchBay3;
+    public string? PreMatchBay3 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchBay6
     /// </summary>
     [DataMember(Name = "preMatchBay6", EmitDefaultValue = false), JsonPropertyName("preMatchBay6")]
-    public string PreMatchBay6 { get; set; } = preMatchBay6;
+    public string? PreMatchBay6 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchBay7
     /// </summary>
     [DataMember(Name = "preMatchBay7", EmitDefaultValue = false), JsonPropertyName("preMatchBay7")]
-    public string PreMatchBay7 { get; set; } = preMatchBay7;
+    public string? PreMatchBay7 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchBay8
     /// </summary>
     [DataMember(Name = "preMatchBay8", EmitDefaultValue = false), JsonPropertyName("preMatchBay8")]
-    public string PreMatchBay8 { get; set; } = preMatchBay8;
+    public string? PreMatchBay8 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchLevelRobot1
     /// </summary>
     [DataMember(Name = "preMatchLevelRobot1", EmitDefaultValue = false), JsonPropertyName("preMatchLevelRobot1")]
-    public string PreMatchLevelRobot1 { get; set; } = preMatchLevelRobot1;
+    public string? PreMatchLevelRobot1 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchLevelRobot2
     /// </summary>
     [DataMember(Name = "preMatchLevelRobot2", EmitDefaultValue = false), JsonPropertyName("preMatchLevelRobot2")]
-    public string PreMatchLevelRobot2 { get; set; } = preMatchLevelRobot2;
+    public string? PreMatchLevelRobot2 { get; set; }
 
     /// <summary>
     /// Gets or Sets PreMatchLevelRobot3
     /// </summary>
     [DataMember(Name = "preMatchLevelRobot3", EmitDefaultValue = false), JsonPropertyName("preMatchLevelRobot3")]
-    public string PreMatchLevelRobot3 { get; set; } = preMatchLevelRobot3;
+    public string? PreMatchLevelRobot3 { get; set; }
 
     /// <summary>
     /// Gets or Sets Rp
     /// </summary>
     [DataMember(Name = "rp", EmitDefaultValue = false), JsonPropertyName("rp")]
-    public int Rp { get; set; } = rp;
+    public int Rp { get; set; }
 
     /// <summary>
     /// Gets or Sets SandStormBonusPoints
     /// </summary>
     [DataMember(Name = "sandStormBonusPoints", EmitDefaultValue = false), JsonPropertyName("sandStormBonusPoints")]
-    public int SandStormBonusPoints { get; set; } = sandStormBonusPoints;
+    public int SandStormBonusPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
     [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
-    public int TechFoulCount { get; set; } = techFoulCount;
+    public int TechFoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
     [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
-    public int TeleopPoints { get; set; } = teleopPoints;
+    public int TeleopPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TopLeftRocketFar
     /// </summary>
     [DataMember(Name = "topLeftRocketFar", EmitDefaultValue = false), JsonPropertyName("topLeftRocketFar")]
-    public string TopLeftRocketFar { get; set; } = topLeftRocketFar;
+    public string? TopLeftRocketFar { get; set; }
 
     /// <summary>
     /// Gets or Sets TopLeftRocketNear
     /// </summary>
     [DataMember(Name = "topLeftRocketNear", EmitDefaultValue = false), JsonPropertyName("topLeftRocketNear")]
-    public string TopLeftRocketNear { get; set; } = topLeftRocketNear;
+    public string? TopLeftRocketNear { get; set; }
 
     /// <summary>
     /// Gets or Sets TopRightRocketFar
     /// </summary>
     [DataMember(Name = "topRightRocketFar", EmitDefaultValue = false), JsonPropertyName("topRightRocketFar")]
-    public string TopRightRocketFar { get; set; } = topRightRocketFar;
+    public string? TopRightRocketFar { get; set; }
 
     /// <summary>
     /// Gets or Sets TopRightRocketNear
     /// </summary>
     [DataMember(Name = "topRightRocketNear", EmitDefaultValue = false), JsonPropertyName("topRightRocketNear")]
-    public string TopRightRocketNear { get; set; } = topRightRocketNear;
+    public string? TopRightRocketNear { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
     [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
-    public int TotalPoints { get; set; } = totalPoints;
+    public int TotalPoints { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -452,262 +401,6 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2019Alliance);
-
-    /// <summary>
-    /// Returns true if MatchScoreBreakdown2019Alliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchScoreBreakdown2019Alliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2019Alliance? input)
-    {
-        return input is not null
-&& (
-                this.AdjustPoints == input.AdjustPoints ||
-                this.AdjustPoints.Equals(input.AdjustPoints)
-            ) &&
-            (
-                this.AutoPoints == input.AutoPoints ||
-                this.AutoPoints.Equals(input.AutoPoints)
-            ) &&
-            (
-                this.Bay1 == input.Bay1 ||
-                (this.Bay1 is not null &&
-                this.Bay1.Equals(input.Bay1))
-            ) &&
-            (
-                this.Bay2 == input.Bay2 ||
-                (this.Bay2 is not null &&
-                this.Bay2.Equals(input.Bay2))
-            ) &&
-            (
-                this.Bay3 == input.Bay3 ||
-                (this.Bay3 is not null &&
-                this.Bay3.Equals(input.Bay3))
-            ) &&
-            (
-                this.Bay4 == input.Bay4 ||
-                (this.Bay4 is not null &&
-                this.Bay4.Equals(input.Bay4))
-            ) &&
-            (
-                this.Bay5 == input.Bay5 ||
-                (this.Bay5 is not null &&
-                this.Bay5.Equals(input.Bay5))
-            ) &&
-            (
-                this.Bay6 == input.Bay6 ||
-                (this.Bay6 is not null &&
-                this.Bay6.Equals(input.Bay6))
-            ) &&
-            (
-                this.Bay7 == input.Bay7 ||
-                (this.Bay7 is not null &&
-                this.Bay7.Equals(input.Bay7))
-            ) &&
-            (
-                this.Bay8 == input.Bay8 ||
-                (this.Bay8 is not null &&
-                this.Bay8.Equals(input.Bay8))
-            ) &&
-            (
-                this.CargoPoints == input.CargoPoints ||
-                this.CargoPoints.Equals(input.CargoPoints)
-            ) &&
-            (
-                this.CompleteRocketRankingPoint == input.CompleteRocketRankingPoint ||
-                this.CompleteRocketRankingPoint.Equals(input.CompleteRocketRankingPoint)
-            ) &&
-            (
-                this.CompletedRocketFar == input.CompletedRocketFar ||
-                this.CompletedRocketFar.Equals(input.CompletedRocketFar)
-            ) &&
-            (
-                this.CompletedRocketNear == input.CompletedRocketNear ||
-                this.CompletedRocketNear.Equals(input.CompletedRocketNear)
-            ) &&
-            (
-                this.EndgameRobot1 == input.EndgameRobot1 ||
-                (this.EndgameRobot1 is not null &&
-                this.EndgameRobot1.Equals(input.EndgameRobot1))
-            ) &&
-            (
-                this.EndgameRobot2 == input.EndgameRobot2 ||
-                (this.EndgameRobot2 is not null &&
-                this.EndgameRobot2.Equals(input.EndgameRobot2))
-            ) &&
-            (
-                this.EndgameRobot3 == input.EndgameRobot3 ||
-                (this.EndgameRobot3 is not null &&
-                this.EndgameRobot3.Equals(input.EndgameRobot3))
-            ) &&
-            (
-                this.FoulCount == input.FoulCount ||
-                this.FoulCount.Equals(input.FoulCount)
-            ) &&
-            (
-                this.FoulPoints == input.FoulPoints ||
-                this.FoulPoints.Equals(input.FoulPoints)
-            ) &&
-            (
-                this.HabClimbPoints == input.HabClimbPoints ||
-                this.HabClimbPoints.Equals(input.HabClimbPoints)
-            ) &&
-            (
-                this.HabDockingRankingPoint == input.HabDockingRankingPoint ||
-                this.HabDockingRankingPoint.Equals(input.HabDockingRankingPoint)
-            ) &&
-            (
-                this.HabLineRobot1 == input.HabLineRobot1 ||
-                (this.HabLineRobot1 is not null &&
-                this.HabLineRobot1.Equals(input.HabLineRobot1))
-            ) &&
-            (
-                this.HabLineRobot2 == input.HabLineRobot2 ||
-                (this.HabLineRobot2 is not null &&
-                this.HabLineRobot2.Equals(input.HabLineRobot2))
-            ) &&
-            (
-                this.HabLineRobot3 == input.HabLineRobot3 ||
-                (this.HabLineRobot3 is not null &&
-                this.HabLineRobot3.Equals(input.HabLineRobot3))
-            ) &&
-            (
-                this.HatchPanelPoints == input.HatchPanelPoints ||
-                this.HatchPanelPoints.Equals(input.HatchPanelPoints)
-            ) &&
-            (
-                this.LowLeftRocketFar == input.LowLeftRocketFar ||
-                (this.LowLeftRocketFar is not null &&
-                this.LowLeftRocketFar.Equals(input.LowLeftRocketFar))
-            ) &&
-            (
-                this.LowLeftRocketNear == input.LowLeftRocketNear ||
-                (this.LowLeftRocketNear is not null &&
-                this.LowLeftRocketNear.Equals(input.LowLeftRocketNear))
-            ) &&
-            (
-                this.LowRightRocketFar == input.LowRightRocketFar ||
-                (this.LowRightRocketFar is not null &&
-                this.LowRightRocketFar.Equals(input.LowRightRocketFar))
-            ) &&
-            (
-                this.LowRightRocketNear == input.LowRightRocketNear ||
-                (this.LowRightRocketNear is not null &&
-                this.LowRightRocketNear.Equals(input.LowRightRocketNear))
-            ) &&
-            (
-                this.MidLeftRocketFar == input.MidLeftRocketFar ||
-                (this.MidLeftRocketFar is not null &&
-                this.MidLeftRocketFar.Equals(input.MidLeftRocketFar))
-            ) &&
-            (
-                this.MidLeftRocketNear == input.MidLeftRocketNear ||
-                (this.MidLeftRocketNear is not null &&
-                this.MidLeftRocketNear.Equals(input.MidLeftRocketNear))
-            ) &&
-            (
-                this.MidRightRocketFar == input.MidRightRocketFar ||
-                (this.MidRightRocketFar is not null &&
-                this.MidRightRocketFar.Equals(input.MidRightRocketFar))
-            ) &&
-            (
-                this.MidRightRocketNear == input.MidRightRocketNear ||
-                (this.MidRightRocketNear is not null &&
-                this.MidRightRocketNear.Equals(input.MidRightRocketNear))
-            ) &&
-            (
-                this.PreMatchBay1 == input.PreMatchBay1 ||
-                (this.PreMatchBay1 is not null &&
-                this.PreMatchBay1.Equals(input.PreMatchBay1))
-            ) &&
-            (
-                this.PreMatchBay2 == input.PreMatchBay2 ||
-                (this.PreMatchBay2 is not null &&
-                this.PreMatchBay2.Equals(input.PreMatchBay2))
-            ) &&
-            (
-                this.PreMatchBay3 == input.PreMatchBay3 ||
-                (this.PreMatchBay3 is not null &&
-                this.PreMatchBay3.Equals(input.PreMatchBay3))
-            ) &&
-            (
-                this.PreMatchBay6 == input.PreMatchBay6 ||
-                (this.PreMatchBay6 is not null &&
-                this.PreMatchBay6.Equals(input.PreMatchBay6))
-            ) &&
-            (
-                this.PreMatchBay7 == input.PreMatchBay7 ||
-                (this.PreMatchBay7 is not null &&
-                this.PreMatchBay7.Equals(input.PreMatchBay7))
-            ) &&
-            (
-                this.PreMatchBay8 == input.PreMatchBay8 ||
-                (this.PreMatchBay8 is not null &&
-                this.PreMatchBay8.Equals(input.PreMatchBay8))
-            ) &&
-            (
-                this.PreMatchLevelRobot1 == input.PreMatchLevelRobot1 ||
-                (this.PreMatchLevelRobot1 is not null &&
-                this.PreMatchLevelRobot1.Equals(input.PreMatchLevelRobot1))
-            ) &&
-            (
-                this.PreMatchLevelRobot2 == input.PreMatchLevelRobot2 ||
-                (this.PreMatchLevelRobot2 is not null &&
-                this.PreMatchLevelRobot2.Equals(input.PreMatchLevelRobot2))
-            ) &&
-            (
-                this.PreMatchLevelRobot3 == input.PreMatchLevelRobot3 ||
-                (this.PreMatchLevelRobot3 is not null &&
-                this.PreMatchLevelRobot3.Equals(input.PreMatchLevelRobot3))
-            ) &&
-            (
-                this.Rp == input.Rp ||
-                this.Rp.Equals(input.Rp)
-            ) &&
-            (
-                this.SandStormBonusPoints == input.SandStormBonusPoints ||
-                this.SandStormBonusPoints.Equals(input.SandStormBonusPoints)
-            ) &&
-            (
-                this.TechFoulCount == input.TechFoulCount ||
-                this.TechFoulCount.Equals(input.TechFoulCount)
-            ) &&
-            (
-                this.TeleopPoints == input.TeleopPoints ||
-                this.TeleopPoints.Equals(input.TeleopPoints)
-            ) &&
-            (
-                this.TopLeftRocketFar == input.TopLeftRocketFar ||
-                (this.TopLeftRocketFar is not null &&
-                this.TopLeftRocketFar.Equals(input.TopLeftRocketFar))
-            ) &&
-            (
-                this.TopLeftRocketNear == input.TopLeftRocketNear ||
-                (this.TopLeftRocketNear is not null &&
-                this.TopLeftRocketNear.Equals(input.TopLeftRocketNear))
-            ) &&
-            (
-                this.TopRightRocketFar == input.TopRightRocketFar ||
-                (this.TopRightRocketFar is not null &&
-                this.TopRightRocketFar.Equals(input.TopRightRocketFar))
-            ) &&
-            (
-                this.TopRightRocketNear == input.TopRightRocketNear ||
-                (this.TopRightRocketNear is not null &&
-                this.TopRightRocketNear.Equals(input.TopRightRocketNear))
-            ) &&
-            (
-                this.TotalPoints == input.TotalPoints ||
-                this.TotalPoints.Equals(input.TotalPoints)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -918,8 +611,5 @@ public partial class MatchScoreBreakdown2019Alliance(int adjustPoints = default,
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

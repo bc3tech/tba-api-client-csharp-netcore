@@ -20,30 +20,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventDistrictPointsPoints
 /// </summary>
-[DataContract]public partial record EventDistrictPointsPoints : IValidatableObject
+[DataContract]
+public partial record EventDistrictPointsPoints: IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventDistrictPointsPoints" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventDistrictPointsPoints() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventDistrictPointsPoints" /> class.
-    /// </summary>
-    /// <param name="total">Total points awarded at this event. (required).</param>
-    /// <param name="alliancePoints">Points awarded for alliance selection (required).</param>
-    /// <param name="elimPoints">Points awarded for elimination match performance. (required).</param>
-    /// <param name="awardPoints">Points awarded for event awards. (required).</param>
-    /// <param name="qualPoints">Points awarded for qualification match performance. (required).</param>
-    public EventDistrictPointsPoints(int total = default, int alliancePoints = default, int elimPoints = default, int awardPoints = default, int qualPoints = default)
-    {
-        this.Total = total;
-        this.AlliancePoints = alliancePoints;
-        this.ElimPoints = elimPoints;
-        this.AwardPoints = awardPoints;
-        this.QualPoints = qualPoints;
-    }
-
     /// <summary>
     /// Total points awarded at this event.
     /// </summary>
@@ -103,43 +82,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventDistrictPointsPoints);
-
-    /// <summary>
-    /// Returns true if EventDistrictPointsPoints instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventDistrictPointsPoints to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventDistrictPointsPoints? input)
-    {
-        return input is not null
-&& (
-                this.Total == input.Total ||
-                this.Total.Equals(input.Total)
-            ) &&
-            (
-                this.AlliancePoints == input.AlliancePoints ||
-                this.AlliancePoints.Equals(input.AlliancePoints)
-            ) &&
-            (
-                this.ElimPoints == input.ElimPoints ||
-                this.ElimPoints.Equals(input.ElimPoints)
-            ) &&
-            (
-                this.AwardPoints == input.AwardPoints ||
-                this.AwardPoints.Equals(input.AwardPoints)
-            ) &&
-            (
-                this.QualPoints == input.QualPoints ||
-                this.QualPoints.Equals(input.QualPoints)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -150,8 +92,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

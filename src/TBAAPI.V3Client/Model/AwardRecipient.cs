@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -24,10 +23,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="AwardRecipient" /> class.
 /// </remarks>
-/// <param name="teamKey">The TBA team key for the team that was given the award. May be null..</param>
-/// <param name="awardee">The name of the individual given the award. May be null..</param>
 [DataContract]
-public partial class AwardRecipient(string? teamKey = default, string? awardee = default) : IEquatable<AwardRecipient>, IValidatableObject
+public partial record AwardRecipient : IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +32,14 @@ public partial class AwardRecipient(string? teamKey = default, string? awardee =
     /// </summary>
     /// <value>The TBA team key for the team that was given the award. May be null.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string? TeamKey { get; set; } = teamKey;
+    public string? TeamKey { get; set; }
 
     /// <summary>
     /// The name of the individual given the award. May be null.
     /// </summary>
     /// <value>The name of the individual given the award. May be null.</value>
     [DataMember(Name = "awardee", EmitDefaultValue = false), JsonPropertyName("awardee")]
-    public string? Awardee { get; set; } = awardee;
+    public string? Awardee { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -63,33 +60,6 @@ public partial class AwardRecipient(string? teamKey = default, string? awardee =
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as AwardRecipient);
-
-    /// <summary>
-    /// Returns true if AwardRecipient instances are equal
-    /// </summary>
-    /// <param name="input">Instance of AwardRecipient to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(AwardRecipient? input)
-    {
-        return input is not null
-&& (
-                this.TeamKey == input.TeamKey ||
-                (this.TeamKey is not null &&
-                this.TeamKey.Equals(input.TeamKey))
-            ) &&
-            (
-                this.Awardee == input.Awardee ||
-                (this.Awardee is not null &&
-                this.Awardee.Equals(input.Awardee))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -119,8 +89,5 @@ public partial class AwardRecipient(string? teamKey = default, string? awardee =
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

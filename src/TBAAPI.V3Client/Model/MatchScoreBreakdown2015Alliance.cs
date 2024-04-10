@@ -23,177 +23,153 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchScoreBreakdown2015Alliance" /> class.
 /// </remarks>
-/// <param name="autoPoints">autoPoints.</param>
-/// <param name="teleopPoints">teleopPoints.</param>
-/// <param name="containerPoints">containerPoints.</param>
-/// <param name="totePoints">totePoints.</param>
-/// <param name="litterPoints">litterPoints.</param>
-/// <param name="foulPoints">foulPoints.</param>
-/// <param name="adjustPoints">adjustPoints.</param>
-/// <param name="totalPoints">totalPoints.</param>
-/// <param name="foulCount">foulCount.</param>
-/// <param name="toteCountFar">toteCountFar.</param>
-/// <param name="toteCountNear">toteCountNear.</param>
-/// <param name="toteSet">toteSet.</param>
-/// <param name="toteStack">toteStack.</param>
-/// <param name="containerCountLevel1">containerCountLevel1.</param>
-/// <param name="containerCountLevel2">containerCountLevel2.</param>
-/// <param name="containerCountLevel3">containerCountLevel3.</param>
-/// <param name="containerCountLevel4">containerCountLevel4.</param>
-/// <param name="containerCountLevel5">containerCountLevel5.</param>
-/// <param name="containerCountLevel6">containerCountLevel6.</param>
-/// <param name="containerSet">containerSet.</param>
-/// <param name="litterCountContainer">litterCountContainer.</param>
-/// <param name="litterCountLandfill">litterCountLandfill.</param>
-/// <param name="litterCountUnprocessed">litterCountUnprocessed.</param>
-/// <param name="robotSet">robotSet.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2015Alliance(int autoPoints = default, int teleopPoints = default, int containerPoints = default, int totePoints = default, int litterPoints = default, int foulPoints = default, int adjustPoints = default, int totalPoints = default, int foulCount = default, int toteCountFar = default, int toteCountNear = default, bool toteSet = default, bool toteStack = default, int containerCountLevel1 = default, int containerCountLevel2 = default, int containerCountLevel3 = default, int containerCountLevel4 = default, int containerCountLevel5 = default, int containerCountLevel6 = default, bool containerSet = default, int litterCountContainer = default, int litterCountLandfill = default, int litterCountUnprocessed = default, bool robotSet = default) : IEquatable<MatchScoreBreakdown2015Alliance>, IValidatableObject
+public partial record MatchScoreBreakdown2015Alliance : IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
     [DataMember(Name = "auto_points", EmitDefaultValue = false), JsonPropertyName("auto_points")]
-    public int AutoPoints { get; set; } = autoPoints;
+    public int AutoPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
     [DataMember(Name = "teleop_points", EmitDefaultValue = false), JsonPropertyName("teleop_points")]
-    public int TeleopPoints { get; set; } = teleopPoints;
+    public int TeleopPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerPoints
     /// </summary>
     [DataMember(Name = "container_points", EmitDefaultValue = false), JsonPropertyName("container_points")]
-    public int ContainerPoints { get; set; } = containerPoints;
+    public int ContainerPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TotePoints
     /// </summary>
     [DataMember(Name = "tote_points", EmitDefaultValue = false), JsonPropertyName("tote_points")]
-    public int TotePoints { get; set; } = totePoints;
+    public int TotePoints { get; set; }
 
     /// <summary>
     /// Gets or Sets LitterPoints
     /// </summary>
     [DataMember(Name = "litter_points", EmitDefaultValue = false), JsonPropertyName("litter_points")]
-    public int LitterPoints { get; set; } = litterPoints;
+    public int LitterPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
     [DataMember(Name = "foul_points", EmitDefaultValue = false), JsonPropertyName("foul_points")]
-    public int FoulPoints { get; set; } = foulPoints;
+    public int FoulPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
     [DataMember(Name = "adjust_points", EmitDefaultValue = false), JsonPropertyName("adjust_points")]
-    public int AdjustPoints { get; set; } = adjustPoints;
+    public int AdjustPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
     [DataMember(Name = "total_points", EmitDefaultValue = false), JsonPropertyName("total_points")]
-    public int TotalPoints { get; set; } = totalPoints;
+    public int TotalPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
     [DataMember(Name = "foul_count", EmitDefaultValue = false), JsonPropertyName("foul_count")]
-    public int FoulCount { get; set; } = foulCount;
+    public int FoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets ToteCountFar
     /// </summary>
     [DataMember(Name = "tote_count_far", EmitDefaultValue = false), JsonPropertyName("tote_count_far")]
-    public int ToteCountFar { get; set; } = toteCountFar;
+    public int ToteCountFar { get; set; }
 
     /// <summary>
     /// Gets or Sets ToteCountNear
     /// </summary>
     [DataMember(Name = "tote_count_near", EmitDefaultValue = false), JsonPropertyName("tote_count_near")]
-    public int ToteCountNear { get; set; } = toteCountNear;
+    public int ToteCountNear { get; set; }
 
     /// <summary>
     /// Gets or Sets ToteSet
     /// </summary>
     [DataMember(Name = "tote_set", EmitDefaultValue = false), JsonPropertyName("tote_set")]
-    public bool ToteSet { get; set; } = toteSet;
+    public bool ToteSet { get; set; }
 
     /// <summary>
     /// Gets or Sets ToteStack
     /// </summary>
     [DataMember(Name = "tote_stack", EmitDefaultValue = false), JsonPropertyName("tote_stack")]
-    public bool ToteStack { get; set; } = toteStack;
+    public bool ToteStack { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel1
     /// </summary>
     [DataMember(Name = "container_count_level1", EmitDefaultValue = false), JsonPropertyName("container_count_level1")]
-    public int ContainerCountLevel1 { get; set; } = containerCountLevel1;
+    public int ContainerCountLevel1 { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel2
     /// </summary>
     [DataMember(Name = "container_count_level2", EmitDefaultValue = false), JsonPropertyName("container_count_level2")]
-    public int ContainerCountLevel2 { get; set; } = containerCountLevel2;
+    public int ContainerCountLevel2 { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel3
     /// </summary>
     [DataMember(Name = "container_count_level3", EmitDefaultValue = false), JsonPropertyName("container_count_level3")]
-    public int ContainerCountLevel3 { get; set; } = containerCountLevel3;
+    public int ContainerCountLevel3 { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel4
     /// </summary>
     [DataMember(Name = "container_count_level4", EmitDefaultValue = false), JsonPropertyName("container_count_level4")]
-    public int ContainerCountLevel4 { get; set; } = containerCountLevel4;
+    public int ContainerCountLevel4 { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel5
     /// </summary>
     [DataMember(Name = "container_count_level5", EmitDefaultValue = false), JsonPropertyName("container_count_level5")]
-    public int ContainerCountLevel5 { get; set; } = containerCountLevel5;
+    public int ContainerCountLevel5 { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerCountLevel6
     /// </summary>
     [DataMember(Name = "container_count_level6", EmitDefaultValue = false), JsonPropertyName("container_count_level6")]
-    public int ContainerCountLevel6 { get; set; } = containerCountLevel6;
+    public int ContainerCountLevel6 { get; set; }
 
     /// <summary>
     /// Gets or Sets ContainerSet
     /// </summary>
     [DataMember(Name = "container_set", EmitDefaultValue = false), JsonPropertyName("container_set")]
-    public bool ContainerSet { get; set; } = containerSet;
+    public bool ContainerSet { get; set; }
 
     /// <summary>
     /// Gets or Sets LitterCountContainer
     /// </summary>
     [DataMember(Name = "litter_count_container", EmitDefaultValue = false), JsonPropertyName("litter_count_container")]
-    public int LitterCountContainer { get; set; } = litterCountContainer;
+    public int LitterCountContainer { get; set; }
 
     /// <summary>
     /// Gets or Sets LitterCountLandfill
     /// </summary>
     [DataMember(Name = "litter_count_landfill", EmitDefaultValue = false), JsonPropertyName("litter_count_landfill")]
-    public int LitterCountLandfill { get; set; } = litterCountLandfill;
+    public int LitterCountLandfill { get; set; }
 
     /// <summary>
     /// Gets or Sets LitterCountUnprocessed
     /// </summary>
     [DataMember(Name = "litter_count_unprocessed", EmitDefaultValue = false), JsonPropertyName("litter_count_unprocessed")]
-    public int LitterCountUnprocessed { get; set; } = litterCountUnprocessed;
+    public int LitterCountUnprocessed { get; set; }
 
     /// <summary>
     /// Gets or Sets RobotSet
     /// </summary>
     [DataMember(Name = "robot_set", EmitDefaultValue = false), JsonPropertyName("robot_set")]
-    public bool RobotSet { get; set; } = robotSet;
+    public bool RobotSet { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -238,119 +214,6 @@ public partial class MatchScoreBreakdown2015Alliance(int autoPoints = default, i
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2015Alliance);
-
-    /// <summary>
-    /// Returns true if MatchScoreBreakdown2015Alliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchScoreBreakdown2015Alliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2015Alliance? input)
-    {
-        return input is not null &&
-            (
-                this.AutoPoints == input.AutoPoints ||
-                this.AutoPoints.Equals(input.AutoPoints)
-            ) &&
-            (
-                this.TeleopPoints == input.TeleopPoints ||
-                this.TeleopPoints.Equals(input.TeleopPoints)
-            ) &&
-            (
-                this.ContainerPoints == input.ContainerPoints ||
-                this.ContainerPoints.Equals(input.ContainerPoints)
-            ) &&
-            (
-                this.TotePoints == input.TotePoints ||
-                this.TotePoints.Equals(input.TotePoints)
-            ) &&
-            (
-                this.LitterPoints == input.LitterPoints ||
-                this.LitterPoints.Equals(input.LitterPoints)
-            ) &&
-            (
-                this.FoulPoints == input.FoulPoints ||
-                this.FoulPoints.Equals(input.FoulPoints)
-            ) &&
-            (
-                this.AdjustPoints == input.AdjustPoints ||
-                this.AdjustPoints.Equals(input.AdjustPoints)
-            ) &&
-            (
-                this.TotalPoints == input.TotalPoints ||
-                this.TotalPoints.Equals(input.TotalPoints)
-            ) &&
-            (
-                this.FoulCount == input.FoulCount ||
-                this.FoulCount.Equals(input.FoulCount)
-            ) &&
-            (
-                this.ToteCountFar == input.ToteCountFar ||
-                this.ToteCountFar.Equals(input.ToteCountFar)
-            ) &&
-            (
-                this.ToteCountNear == input.ToteCountNear ||
-                this.ToteCountNear.Equals(input.ToteCountNear)
-            ) &&
-            (
-                this.ToteSet == input.ToteSet ||
-                this.ToteSet.Equals(input.ToteSet)
-            ) &&
-            (
-                this.ToteStack == input.ToteStack ||
-                this.ToteStack.Equals(input.ToteStack)
-            ) &&
-            (
-                this.ContainerCountLevel1 == input.ContainerCountLevel1 ||
-                this.ContainerCountLevel1.Equals(input.ContainerCountLevel1)
-            ) &&
-            (
-                this.ContainerCountLevel2 == input.ContainerCountLevel2 ||
-                this.ContainerCountLevel2.Equals(input.ContainerCountLevel2)
-            ) &&
-            (
-                this.ContainerCountLevel3 == input.ContainerCountLevel3 ||
-                this.ContainerCountLevel3.Equals(input.ContainerCountLevel3)
-            ) &&
-            (
-                this.ContainerCountLevel4 == input.ContainerCountLevel4 ||
-                this.ContainerCountLevel4.Equals(input.ContainerCountLevel4)
-            ) &&
-            (
-                this.ContainerCountLevel5 == input.ContainerCountLevel5 ||
-                this.ContainerCountLevel5.Equals(input.ContainerCountLevel5)
-            ) &&
-            (
-                this.ContainerCountLevel6 == input.ContainerCountLevel6 ||
-                this.ContainerCountLevel6.Equals(input.ContainerCountLevel6)
-            ) &&
-            (
-                this.ContainerSet == input.ContainerSet ||
-                this.ContainerSet.Equals(input.ContainerSet)
-            ) &&
-            (
-                this.LitterCountContainer == input.LitterCountContainer ||
-                this.LitterCountContainer.Equals(input.LitterCountContainer)
-            ) &&
-            (
-                this.LitterCountLandfill == input.LitterCountLandfill ||
-                this.LitterCountLandfill.Equals(input.LitterCountLandfill)
-            ) &&
-            (
-                this.LitterCountUnprocessed == input.LitterCountUnprocessed ||
-                this.LitterCountUnprocessed.Equals(input.LitterCountUnprocessed)
-            ) &&
-            (
-                this.RobotSet == input.RobotSet ||
-                this.RobotSet.Equals(input.RobotSet)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -389,8 +252,5 @@ public partial class MatchScoreBreakdown2015Alliance(int autoPoints = default, i
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

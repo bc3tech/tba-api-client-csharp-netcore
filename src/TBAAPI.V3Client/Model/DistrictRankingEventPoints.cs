@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -20,35 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// DistrictRankingEventPoints
 /// </summary>
-[DataContract]public partial record DistrictRankingEventPoints : IValidatableObject
+[DataContract]
+public partial record DistrictRankingEventPoints : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DistrictRankingEventPoints" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected DistrictRankingEventPoints() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DistrictRankingEventPoints" /> class.
-    /// </summary>
-    /// <param name="districtCmp">&#x60;true&#x60; if this event is a District Championship event. (required).</param>
-    /// <param name="total">Total points awarded at this event. (required).</param>
-    /// <param name="alliancePoints">Points awarded for alliance selection. (required).</param>
-    /// <param name="elimPoints">Points awarded for elimination match performance. (required).</param>
-    /// <param name="awardPoints">Points awarded for event awards. (required).</param>
-    /// <param name="eventKey">TBA Event key for this event. (required).</param>
-    /// <param name="qualPoints">Points awarded for qualification match performance. (required).</param>
-    public DistrictRankingEventPoints(bool districtCmp = default, int total = default, int alliancePoints = default, int elimPoints = default, int awardPoints = default, string? eventKey = default, int qualPoints = default)
-    {
-        this.DistrictCmp = districtCmp;
-        this.Total = total;
-        this.AlliancePoints = alliancePoints;
-        this.ElimPoints = elimPoints;
-        this.AwardPoints = awardPoints;
-        // to ensure "eventKey" is required (not null)
-        this.EventKey = eventKey ?? throw new ArgumentNullException(nameof(eventKey));
-        this.QualPoints = qualPoints;
-    }
-
     /// <summary>
     /// &#x60;true&#x60; if this event is a District Championship event.
     /// </summary>
@@ -89,7 +62,7 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <value>TBA Event key for this event.</value>
     [DataMember(Name = "event_key", EmitDefaultValue = false), JsonPropertyName("event_key")]
-    public string EventKey { get; set; }
+    public string? EventKey { get; set; }
 
     /// <summary>
     /// Points awarded for qualification match performance.
@@ -124,52 +97,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as DistrictRankingEventPoints);
-
-    /// <summary>
-    /// Returns true if DistrictRankingEventPoints instances are equal
-    /// </summary>
-    /// <param name="input">Instance of DistrictRankingEventPoints to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(DistrictRankingEventPoints? input)
-    {
-        return input is not null
-&& (
-                this.DistrictCmp == input.DistrictCmp ||
-                this.DistrictCmp.Equals(input.DistrictCmp)
-            ) &&
-            (
-                this.Total == input.Total ||
-                this.Total.Equals(input.Total)
-            ) &&
-            (
-                this.AlliancePoints == input.AlliancePoints ||
-                this.AlliancePoints.Equals(input.AlliancePoints)
-            ) &&
-            (
-                this.ElimPoints == input.ElimPoints ||
-                this.ElimPoints.Equals(input.ElimPoints)
-            ) &&
-            (
-                this.AwardPoints == input.AwardPoints ||
-                this.AwardPoints.Equals(input.AwardPoints)
-            ) &&
-            (
-                this.EventKey == input.EventKey ||
-                (this.EventKey is not null &&
-                this.EventKey.Equals(input.EventKey))
-            ) &&
-            (
-                this.QualPoints == input.QualPoints ||
-                this.QualPoints.Equals(input.QualPoints)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -198,8 +125,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

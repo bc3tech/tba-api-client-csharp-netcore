@@ -23,45 +23,9 @@ using OpenAPIDateConverter = Client.OpenAPIDateConverter;
 /// <summary>
 /// EventSimple
 /// </summary>
-[DataContract]public partial record EventSimple : IValidatableObject
+[DataContract]
+public partial record EventSimple: IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventSimple" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventSimple() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventSimple" /> class.
-    /// </summary>
-    /// <param name="key">TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event. (required).</param>
-    /// <param name="name">Official name of event on record either provided by FIRST or organizers of offseason event. (required).</param>
-    /// <param name="eventCode">Event short code, as provided by FIRST. (required).</param>
-    /// <param name="eventType">Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2 (required).</param>
-    /// <param name="district">district.</param>
-    /// <param name="city">City, town, village, etc. the event is located in..</param>
-    /// <param name="stateProv">State or Province the event is located in..</param>
-    /// <param name="country">Country the event is located in..</param>
-    /// <param name="startDate">Event start date in &#x60;yyyy-mm-dd&#x60; format. (required).</param>
-    /// <param name="endDate">Event end date in &#x60;yyyy-mm-dd&#x60; format. (required).</param>
-    /// <param name="year">Year the event data is for. (required).</param>
-    public EventSimple(string? key = default, string? name = default, string? eventCode = default, int eventType = default, DistrictList? district = default, string? city = default, string? stateProv = default, string? country = default, DateTime startDate = default, DateTime endDate = default, int year = default)
-    {
-        // to ensure "key" is required (not null)
-        this.Key = key ?? throw new ArgumentNullException(nameof(key));
-        // to ensure "name" is required (not null)
-        this.Name = name ?? throw new ArgumentNullException(nameof(name));
-        // to ensure "eventCode" is required (not null)
-        this.EventCode = eventCode ?? throw new ArgumentNullException(nameof(eventCode));
-        this.EventType = eventType;
-        this.StartDate = startDate;
-        this.EndDate = endDate;
-        this.Year = year;
-        this.District = district;
-        this.City = city;
-        this.StateProv = stateProv;
-        this.Country = country;
-    }
-
     /// <summary>
     /// TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
     /// </summary>
@@ -168,76 +132,6 @@ using OpenAPIDateConverter = Client.OpenAPIDateConverter;
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventSimple);
-
-    /// <summary>
-    /// Returns true if EventSimple instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventSimple to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventSimple? input)
-    {
-        return input is not null
-&& (
-                this.Key == input.Key ||
-                (this.Key is not null &&
-                this.Key.Equals(input.Key))
-            ) &&
-            (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            ) &&
-            (
-                this.EventCode == input.EventCode ||
-                (this.EventCode is not null &&
-                this.EventCode.Equals(input.EventCode))
-            ) &&
-            (
-                this.EventType == input.EventType ||
-                this.EventType.Equals(input.EventType)
-            ) &&
-            (
-                this.District == input.District ||
-                (this.District is not null &&
-                this.District.Equals(input.District))
-            ) &&
-            (
-                this.City == input.City ||
-                (this.City is not null &&
-                this.City.Equals(input.City))
-            ) &&
-            (
-                this.StateProv == input.StateProv ||
-                (this.StateProv is not null &&
-                this.StateProv.Equals(input.StateProv))
-            ) &&
-            (
-                this.Country == input.Country ||
-                (this.Country is not null &&
-                this.Country.Equals(input.Country))
-            ) &&
-            (
-                this.StartDate == input.StartDate ||
-                (this.StartDate is not null &&
-                this.StartDate.Equals(input.StartDate))
-            ) &&
-            (
-                this.EndDate == input.EndDate ||
-                (this.EndDate is not null &&
-                this.EndDate.Equals(input.EndDate))
-            ) &&
-            (
-                this.Year == input.Year ||
-                this.Year.Equals(input.Year)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code

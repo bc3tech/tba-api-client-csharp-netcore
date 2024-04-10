@@ -21,24 +21,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// APIStatusAppVersion
 /// </summary>
-[DataContract]public partial record APIStatusAppVersion : IValidatableObject
+[DataContract]
+public partial record APIStatusAppVersion : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="APIStatusAppVersion" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected APIStatusAppVersion() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="APIStatusAppVersion" /> class.
-    /// </summary>
-    /// <param name="minAppVersion">Internal use - Minimum application version required to correctly connect and process data. (required).</param>
-    /// <param name="latestAppVersion">Internal use - Latest application version available. (required).</param>
-    public APIStatusAppVersion(int minAppVersion = default, int latestAppVersion = default)
-    {
-        this.MinAppVersion = minAppVersion;
-        this.LatestAppVersion = latestAppVersion;
-    }
-
     /// <summary>
     /// Internal use - Minimum application version required to correctly connect and process data.
     /// </summary>
@@ -74,31 +59,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as APIStatusAppVersion);
-
-    /// <summary>
-    /// Returns true if APIStatusAppVersion instances are equal
-    /// </summary>
-    /// <param name="input">Instance of APIStatusAppVersion to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(APIStatusAppVersion? input)
-    {
-        return input is not null
-&& (
-                this.MinAppVersion == input.MinAppVersion ||
-                this.MinAppVersion.Equals(input.MinAppVersion)
-            ) &&
-            (
-                this.LatestAppVersion == input.LatestAppVersion ||
-                this.LatestAppVersion.Equals(input.LatestAppVersion)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -109,8 +69,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

@@ -13,7 +13,6 @@ namespace TBAAPI.V3Client.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -24,97 +23,22 @@ using OpenAPIDateConverter = Client.OpenAPIDateConverter;
 /// <summary>
 /// Event
 /// </summary>
-[DataContract]public partial record Event : IValidatableObject
+[DataContract]
+public partial record Event : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Event" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected Event() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Event" /> class.
-    /// </summary>
-    /// <param name="key">TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event. (required).</param>
-    /// <param name="name">Official name of event on record either provided by FIRST or organizers of offseason event. (required).</param>
-    /// <param name="eventCode">Event short code, as provided by FIRST. (required).</param>
-    /// <param name="eventType">Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2 (required).</param>
-    /// <param name="district">district.</param>
-    /// <param name="city">City, town, village, etc. the event is located in..</param>
-    /// <param name="stateProv">State or Province the event is located in..</param>
-    /// <param name="country">Country the event is located in..</param>
-    /// <param name="startDate">Event start date in &#x60;yyyy-mm-dd&#x60; format. (required).</param>
-    /// <param name="endDate">Event end date in &#x60;yyyy-mm-dd&#x60; format. (required).</param>
-    /// <param name="year">Year the event data is for. (required).</param>
-    /// <param name="shortName">Same as &#x60;name&#x60; but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null..</param>
-    /// <param name="eventTypeString">Event Type, eg Regional, District, or Offseason. (required).</param>
-    /// <param name="week">Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 &#39;preseason&#39; event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.).</param>
-    /// <param name="address">Address of the event&#39;s venue, if available..</param>
-    /// <param name="postalCode">Postal code from the event address..</param>
-    /// <param name="gmapsPlaceId">Google Maps Place ID for the event address..</param>
-    /// <param name="gmapsUrl">Link to address location on Google Maps..</param>
-    /// <param name="lat">Latitude for the event address..</param>
-    /// <param name="lng">Longitude for the event address..</param>
-    /// <param name="locationName">Name of the location at the address for the event, eg. Blue Alliance High School..</param>
-    /// <param name="timezone">Timezone name..</param>
-    /// <param name="website">The event&#39;s website, if any..</param>
-    /// <param name="firstEventId">The FIRST internal Event ID, used to link to the event on the FRC webpage..</param>
-    /// <param name="firstEventCode">Public facing event code used by FIRST (on frc-events.firstinspires.org, for example).</param>
-    /// <param name="webcasts">webcasts.</param>
-    /// <param name="divisionKeys">An array of event keys for the divisions at this event..</param>
-    /// <param name="parentEventKey">The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;..</param>
-    /// <param name="playoffType">Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null..</param>
-    /// <param name="playoffTypeString">String representation of the &#x60;playoff_type&#x60;, or null..</param>
-    public Event(string? key = default, string? name = default, string? eventCode = default, int eventType = default, DistrictList? district = default, string? city = default, string? stateProv = default, string? country = default, DateTime startDate = default, DateTime endDate = default, int year = default, string? shortName = default, string? eventTypeString = default, int week = default, string? address = default, string? postalCode = default, string? gmapsPlaceId = default, string? gmapsUrl = default, double lat = default, double lng = default, string? locationName = default, string? timezone = default, string? website = default, string? firstEventId = default, string? firstEventCode = default, List<Webcast>? webcasts = default, List<string>? divisionKeys = default, string? parentEventKey = default, int playoffType = default, string? playoffTypeString = default)
-    {
-        // to ensure "key" is required (not null)
-        this.Key = key ?? throw new ArgumentNullException(nameof(key));
-        // to ensure "name" is required (not null)
-        this.Name = name ?? throw new ArgumentNullException(nameof(name));
-        // to ensure "eventCode" is required (not null)
-        this.EventCode = eventCode ?? throw new ArgumentNullException(nameof(eventCode));
-        this.EventType = eventType;
-        this.StartDate = startDate;
-        this.EndDate = endDate;
-        this.Year = year;
-        // to ensure "eventTypeString" is required (not null)
-        this.EventTypeString = eventTypeString ?? throw new ArgumentNullException(nameof(eventTypeString));
-        this.District = district;
-        this.City = city;
-        this.StateProv = stateProv;
-        this.Country = country;
-        this.ShortName = shortName;
-        this.Week = week;
-        this.Address = address;
-        this.PostalCode = postalCode;
-        this.GmapsPlaceId = gmapsPlaceId;
-        this.GmapsUrl = gmapsUrl;
-        this.Lat = lat;
-        this.Lng = lng;
-        this.LocationName = locationName;
-        this.Timezone = timezone;
-        this.Website = website;
-        this.FirstEventId = firstEventId;
-        this.FirstEventCode = firstEventCode;
-        this.Webcasts = webcasts;
-        this.DivisionKeys = divisionKeys;
-        this.ParentEventKey = parentEventKey;
-        this.PlayoffType = playoffType;
-        this.PlayoffTypeString = playoffTypeString;
-    }
-
     /// <summary>
     /// TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.
     /// </summary>
     /// <value>TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
-    public string Key { get; set; }
+    public string? Key { get; set; }
 
     /// <summary>
     /// Official name of event on record either provided by FIRST or organizers of offseason event.
     /// </summary>
     /// <value>Official name of event on record either provided by FIRST or organizers of offseason event.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Event short code, as provided by FIRST.
@@ -361,169 +285,6 @@ using OpenAPIDateConverter = Client.OpenAPIDateConverter;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as Event);
-
-    /// <summary>
-    /// Returns true if Event instances are equal
-    /// </summary>
-    /// <param name="input">Instance of Event to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(Event? input)
-    {
-        return input is not null
-&& (
-                this.Key == input.Key ||
-                (this.Key is not null &&
-                this.Key.Equals(input.Key))
-            ) &&
-            (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            ) &&
-            (
-                this.EventCode == input.EventCode ||
-                (this.EventCode is not null &&
-                this.EventCode.Equals(input.EventCode))
-            ) &&
-            (
-                this.EventType == input.EventType ||
-                this.EventType.Equals(input.EventType)
-            ) &&
-            (
-                this.District == input.District ||
-                (this.District is not null &&
-                this.District.Equals(input.District))
-            ) &&
-            (
-                this.City == input.City ||
-                (this.City is not null &&
-                this.City.Equals(input.City))
-            ) &&
-            (
-                this.StateProv == input.StateProv ||
-                (this.StateProv is not null &&
-                this.StateProv.Equals(input.StateProv))
-            ) &&
-            (
-                this.Country == input.Country ||
-                (this.Country is not null &&
-                this.Country.Equals(input.Country))
-            ) &&
-            (
-                this.StartDate == input.StartDate ||
-                (this.StartDate is not null &&
-                this.StartDate.Equals(input.StartDate))
-            ) &&
-            (
-                this.EndDate == input.EndDate ||
-                (this.EndDate is not null &&
-                this.EndDate.Equals(input.EndDate))
-            ) &&
-            (
-                this.Year == input.Year ||
-                this.Year.Equals(input.Year)
-            ) &&
-            (
-                this.ShortName == input.ShortName ||
-                (this.ShortName is not null &&
-                this.ShortName.Equals(input.ShortName))
-            ) &&
-            (
-                this.EventTypeString == input.EventTypeString ||
-                (this.EventTypeString is not null &&
-                this.EventTypeString.Equals(input.EventTypeString))
-            ) &&
-            (
-                this.Week == input.Week ||
-                this.Week.Equals(input.Week)
-            ) &&
-            (
-                this.Address == input.Address ||
-                (this.Address is not null &&
-                this.Address.Equals(input.Address))
-            ) &&
-            (
-                this.PostalCode == input.PostalCode ||
-                (this.PostalCode is not null &&
-                this.PostalCode.Equals(input.PostalCode))
-            ) &&
-            (
-                this.GmapsPlaceId == input.GmapsPlaceId ||
-                (this.GmapsPlaceId is not null &&
-                this.GmapsPlaceId.Equals(input.GmapsPlaceId))
-            ) &&
-            (
-                this.GmapsUrl == input.GmapsUrl ||
-                (this.GmapsUrl is not null &&
-                this.GmapsUrl.Equals(input.GmapsUrl))
-            ) &&
-            (
-                this.Lat == input.Lat ||
-                this.Lat.Equals(input.Lat)
-            ) &&
-            (
-                this.Lng == input.Lng ||
-                this.Lng.Equals(input.Lng)
-            ) &&
-            (
-                this.LocationName == input.LocationName ||
-                (this.LocationName is not null &&
-                this.LocationName.Equals(input.LocationName))
-            ) &&
-            (
-                this.Timezone == input.Timezone ||
-                (this.Timezone is not null &&
-                this.Timezone.Equals(input.Timezone))
-            ) &&
-            (
-                this.Website == input.Website ||
-                (this.Website is not null &&
-                this.Website.Equals(input.Website))
-            ) &&
-            (
-                this.FirstEventId == input.FirstEventId ||
-                (this.FirstEventId is not null &&
-                this.FirstEventId.Equals(input.FirstEventId))
-            ) &&
-            (
-                this.FirstEventCode == input.FirstEventCode ||
-                (this.FirstEventCode is not null &&
-                this.FirstEventCode.Equals(input.FirstEventCode))
-            ) &&
-            (
-                this.Webcasts == input.Webcasts ||
-                (this.Webcasts is not null &&
-                input.Webcasts is not null &&
-                this.Webcasts.SequenceEqual(input.Webcasts))
-            ) &&
-            (
-                this.DivisionKeys == input.DivisionKeys ||
-                (this.DivisionKeys is not null &&
-                input.DivisionKeys is not null &&
-                this.DivisionKeys.SequenceEqual(input.DivisionKeys))
-            ) &&
-            (
-                this.ParentEventKey == input.ParentEventKey ||
-                (this.ParentEventKey is not null &&
-                this.ParentEventKey.Equals(input.ParentEventKey))
-            ) &&
-            (
-                this.PlayoffType == input.PlayoffType ||
-                this.PlayoffType.Equals(input.PlayoffType)
-            ) &&
-            (
-                this.PlayoffTypeString == input.PlayoffTypeString ||
-                (this.PlayoffTypeString is not null &&
-                this.PlayoffTypeString.Equals(input.PlayoffTypeString))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -568,8 +329,5 @@ using OpenAPIDateConverter = Client.OpenAPIDateConverter;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

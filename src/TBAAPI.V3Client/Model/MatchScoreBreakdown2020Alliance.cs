@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -23,249 +22,215 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchScoreBreakdown2020Alliance" /> class.
 /// </remarks>
-/// <param name="initLineRobot1">initLineRobot1.</param>
-/// <param name="endgameRobot1">endgameRobot1.</param>
-/// <param name="initLineRobot2">initLineRobot2.</param>
-/// <param name="endgameRobot2">endgameRobot2.</param>
-/// <param name="initLineRobot3">initLineRobot3.</param>
-/// <param name="endgameRobot3">endgameRobot3.</param>
-/// <param name="autoCellsBottom">autoCellsBottom.</param>
-/// <param name="autoCellsOuter">autoCellsOuter.</param>
-/// <param name="autoCellsInner">autoCellsInner.</param>
-/// <param name="teleopCellsBottom">teleopCellsBottom.</param>
-/// <param name="teleopCellsOuter">teleopCellsOuter.</param>
-/// <param name="teleopCellsInner">teleopCellsInner.</param>
-/// <param name="stage1Activated">stage1Activated.</param>
-/// <param name="stage2Activated">stage2Activated.</param>
-/// <param name="stage3Activated">stage3Activated.</param>
-/// <param name="stage3TargetColor">stage3TargetColor.</param>
-/// <param name="endgameRungIsLevel">endgameRungIsLevel.</param>
-/// <param name="autoInitLinePoints">autoInitLinePoints.</param>
-/// <param name="autoCellPoints">autoCellPoints.</param>
-/// <param name="autoPoints">autoPoints.</param>
-/// <param name="teleopCellPoints">teleopCellPoints.</param>
-/// <param name="controlPanelPoints">controlPanelPoints.</param>
-/// <param name="endgamePoints">endgamePoints.</param>
-/// <param name="teleopPoints">teleopPoints.</param>
-/// <param name="shieldOperationalRankingPoint">shieldOperationalRankingPoint.</param>
-/// <param name="shieldEnergizedRankingPoint">shieldEnergizedRankingPoint.</param>
-/// <param name="tbaShieldEnergizedRankingPointFromFoul">Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul..</param>
-/// <param name="tbaNumRobotsHanging">Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match..</param>
-/// <param name="foulCount">foulCount.</param>
-/// <param name="techFoulCount">techFoulCount.</param>
-/// <param name="adjustPoints">adjustPoints.</param>
-/// <param name="foulPoints">foulPoints.</param>
-/// <param name="rp">rp.</param>
-/// <param name="totalPoints">totalPoints.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2020Alliance(string? initLineRobot1 = default, string? endgameRobot1 = default, string? initLineRobot2 = default, string? endgameRobot2 = default, string? initLineRobot3 = default, string? endgameRobot3 = default, int autoCellsBottom = default, int autoCellsOuter = default, int autoCellsInner = default, int teleopCellsBottom = default, int teleopCellsOuter = default, int teleopCellsInner = default, bool stage1Activated = default, bool stage2Activated = default, bool stage3Activated = default, string? stage3TargetColor = default, string? endgameRungIsLevel = default, int autoInitLinePoints = default, int autoCellPoints = default, int autoPoints = default, int teleopCellPoints = default, int controlPanelPoints = default, int endgamePoints = default, int teleopPoints = default, bool shieldOperationalRankingPoint = default, bool shieldEnergizedRankingPoint = default, bool tbaShieldEnergizedRankingPointFromFoul = default, int tbaNumRobotsHanging = default, int foulCount = default, int techFoulCount = default, int adjustPoints = default, int foulPoints = default, int rp = default, int totalPoints = default) : IEquatable<MatchScoreBreakdown2020Alliance>, IValidatableObject
+public partial record MatchScoreBreakdown2020Alliance : IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets InitLineRobot1
     /// </summary>
     [DataMember(Name = "initLineRobot1", EmitDefaultValue = false), JsonPropertyName("initLineRobot1")]
-    public string? InitLineRobot1 { get; set; } = initLineRobot1;
+    public string? InitLineRobot1 { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot1
     /// </summary>
     [DataMember(Name = "endgameRobot1", EmitDefaultValue = false), JsonPropertyName("endgameRobot1")]
-    public string? EndgameRobot1 { get; set; } = endgameRobot1;
+    public string? EndgameRobot1 { get; set; }
 
     /// <summary>
     /// Gets or Sets InitLineRobot2
     /// </summary>
     [DataMember(Name = "initLineRobot2", EmitDefaultValue = false), JsonPropertyName("initLineRobot2")]
-    public string? InitLineRobot2 { get; set; } = initLineRobot2;
+    public string? InitLineRobot2 { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot2
     /// </summary>
     [DataMember(Name = "endgameRobot2", EmitDefaultValue = false), JsonPropertyName("endgameRobot2")]
-    public string? EndgameRobot2 { get; set; } = endgameRobot2;
+    public string? EndgameRobot2 { get; set; }
 
     /// <summary>
     /// Gets or Sets InitLineRobot3
     /// </summary>
     [DataMember(Name = "initLineRobot3", EmitDefaultValue = false), JsonPropertyName("initLineRobot3")]
-    public string? InitLineRobot3 { get; set; } = initLineRobot3;
+    public string? InitLineRobot3 { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRobot3
     /// </summary>
     [DataMember(Name = "endgameRobot3", EmitDefaultValue = false), JsonPropertyName("endgameRobot3")]
-    public string? EndgameRobot3 { get; set; } = endgameRobot3;
+    public string? EndgameRobot3 { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoCellsBottom
     /// </summary>
     [DataMember(Name = "autoCellsBottom", EmitDefaultValue = false), JsonPropertyName("autoCellsBottom")]
-    public int AutoCellsBottom { get; set; } = autoCellsBottom;
+    public int AutoCellsBottom { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoCellsOuter
     /// </summary>
     [DataMember(Name = "autoCellsOuter", EmitDefaultValue = false), JsonPropertyName("autoCellsOuter")]
-    public int AutoCellsOuter { get; set; } = autoCellsOuter;
+    public int AutoCellsOuter { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoCellsInner
     /// </summary>
     [DataMember(Name = "autoCellsInner", EmitDefaultValue = false), JsonPropertyName("autoCellsInner")]
-    public int AutoCellsInner { get; set; } = autoCellsInner;
+    public int AutoCellsInner { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopCellsBottom
     /// </summary>
     [DataMember(Name = "teleopCellsBottom", EmitDefaultValue = false), JsonPropertyName("teleopCellsBottom")]
-    public int TeleopCellsBottom { get; set; } = teleopCellsBottom;
+    public int TeleopCellsBottom { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopCellsOuter
     /// </summary>
     [DataMember(Name = "teleopCellsOuter", EmitDefaultValue = false), JsonPropertyName("teleopCellsOuter")]
-    public int TeleopCellsOuter { get; set; } = teleopCellsOuter;
+    public int TeleopCellsOuter { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopCellsInner
     /// </summary>
     [DataMember(Name = "teleopCellsInner", EmitDefaultValue = false), JsonPropertyName("teleopCellsInner")]
-    public int TeleopCellsInner { get; set; } = teleopCellsInner;
+    public int TeleopCellsInner { get; set; }
 
     /// <summary>
     /// Gets or Sets Stage1Activated
     /// </summary>
     [DataMember(Name = "stage1Activated", EmitDefaultValue = false), JsonPropertyName("stage1Activated")]
-    public bool Stage1Activated { get; set; } = stage1Activated;
+    public bool Stage1Activated { get; set; }
 
     /// <summary>
     /// Gets or Sets Stage2Activated
     /// </summary>
     [DataMember(Name = "stage2Activated", EmitDefaultValue = false), JsonPropertyName("stage2Activated")]
-    public bool Stage2Activated { get; set; } = stage2Activated;
+    public bool Stage2Activated { get; set; }
 
     /// <summary>
     /// Gets or Sets Stage3Activated
     /// </summary>
     [DataMember(Name = "stage3Activated", EmitDefaultValue = false), JsonPropertyName("stage3Activated")]
-    public bool Stage3Activated { get; set; } = stage3Activated;
+    public bool Stage3Activated { get; set; }
 
     /// <summary>
     /// Gets or Sets Stage3TargetColor
     /// </summary>
     [DataMember(Name = "stage3TargetColor", EmitDefaultValue = false), JsonPropertyName("stage3TargetColor")]
-    public string? Stage3TargetColor { get; set; } = stage3TargetColor;
+    public string? Stage3TargetColor { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgameRungIsLevel
     /// </summary>
     [DataMember(Name = "endgameRungIsLevel", EmitDefaultValue = false), JsonPropertyName("endgameRungIsLevel")]
-    public string? EndgameRungIsLevel { get; set; } = endgameRungIsLevel;
+    public string? EndgameRungIsLevel { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoInitLinePoints
     /// </summary>
     [DataMember(Name = "autoInitLinePoints", EmitDefaultValue = false), JsonPropertyName("autoInitLinePoints")]
-    public int AutoInitLinePoints { get; set; } = autoInitLinePoints;
+    public int AutoInitLinePoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoCellPoints
     /// </summary>
     [DataMember(Name = "autoCellPoints", EmitDefaultValue = false), JsonPropertyName("autoCellPoints")]
-    public int AutoCellPoints { get; set; } = autoCellPoints;
+    public int AutoCellPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
     [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
-    public int AutoPoints { get; set; } = autoPoints;
+    public int AutoPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopCellPoints
     /// </summary>
     [DataMember(Name = "teleopCellPoints", EmitDefaultValue = false), JsonPropertyName("teleopCellPoints")]
-    public int TeleopCellPoints { get; set; } = teleopCellPoints;
+    public int TeleopCellPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets ControlPanelPoints
     /// </summary>
     [DataMember(Name = "controlPanelPoints", EmitDefaultValue = false), JsonPropertyName("controlPanelPoints")]
-    public int ControlPanelPoints { get; set; } = controlPanelPoints;
+    public int ControlPanelPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets EndgamePoints
     /// </summary>
     [DataMember(Name = "endgamePoints", EmitDefaultValue = false), JsonPropertyName("endgamePoints")]
-    public int EndgamePoints { get; set; } = endgamePoints;
+    public int EndgamePoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
     [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
-    public int TeleopPoints { get; set; } = teleopPoints;
+    public int TeleopPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets ShieldOperationalRankingPoint
     /// </summary>
     [DataMember(Name = "shieldOperationalRankingPoint", EmitDefaultValue = false), JsonPropertyName("shieldOperationalRankingPoint")]
-    public bool ShieldOperationalRankingPoint { get; set; } = shieldOperationalRankingPoint;
+    public bool ShieldOperationalRankingPoint { get; set; }
 
     /// <summary>
     /// Gets or Sets ShieldEnergizedRankingPoint
     /// </summary>
     [DataMember(Name = "shieldEnergizedRankingPoint", EmitDefaultValue = false), JsonPropertyName("shieldEnergizedRankingPoint")]
-    public bool ShieldEnergizedRankingPoint { get; set; } = shieldEnergizedRankingPoint;
+    public bool ShieldEnergizedRankingPoint { get; set; }
 
     /// <summary>
     /// Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul.
     /// </summary>
     /// <value>Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul.</value>
     [DataMember(Name = "tba_shieldEnergizedRankingPointFromFoul", EmitDefaultValue = false), JsonPropertyName("tba_shieldEnergizedRankingPointFromFoul")]
-    public bool TbaShieldEnergizedRankingPointFromFoul { get; set; } = tbaShieldEnergizedRankingPointFromFoul;
+    public bool TbaShieldEnergizedRankingPointFromFoul { get; set; }
 
     /// <summary>
     /// Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match.
     /// </summary>
     /// <value>Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match.</value>
     [DataMember(Name = "tba_numRobotsHanging", EmitDefaultValue = false), JsonPropertyName("tba_numRobotsHanging")]
-    public int TbaNumRobotsHanging { get; set; } = tbaNumRobotsHanging;
+    public int TbaNumRobotsHanging { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
     [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
-    public int FoulCount { get; set; } = foulCount;
+    public int FoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
     [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
-    public int TechFoulCount { get; set; } = techFoulCount;
+    public int TechFoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
     [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
-    public int AdjustPoints { get; set; } = adjustPoints;
+    public int AdjustPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
     [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
-    public int FoulPoints { get; set; } = foulPoints;
+    public int FoulPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets Rp
     /// </summary>
     [DataMember(Name = "rp", EmitDefaultValue = false), JsonPropertyName("rp")]
-    public int Rp { get; set; } = rp;
+    public int Rp { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
     [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
-    public int TotalPoints { get; set; } = totalPoints;
+    public int TotalPoints { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -318,167 +283,6 @@ public partial class MatchScoreBreakdown2020Alliance(string? initLineRobot1 = de
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2020Alliance);
-
-    /// <summary>
-    /// Returns true if MatchScoreBreakdown2020Alliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchScoreBreakdown2020Alliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2020Alliance? input)
-    {
-        return input is not null &&
-            (
-                this.InitLineRobot1 == input.InitLineRobot1 ||
-                (this.InitLineRobot1 is not null &&
-                this.InitLineRobot1.Equals(input.InitLineRobot1))
-            ) &&
-            (
-                this.EndgameRobot1 == input.EndgameRobot1 ||
-                (this.EndgameRobot1 is not null &&
-                this.EndgameRobot1.Equals(input.EndgameRobot1))
-            ) &&
-            (
-                this.InitLineRobot2 == input.InitLineRobot2 ||
-                (this.InitLineRobot2 is not null &&
-                this.InitLineRobot2.Equals(input.InitLineRobot2))
-            ) &&
-            (
-                this.EndgameRobot2 == input.EndgameRobot2 ||
-                (this.EndgameRobot2 is not null &&
-                this.EndgameRobot2.Equals(input.EndgameRobot2))
-            ) &&
-            (
-                this.InitLineRobot3 == input.InitLineRobot3 ||
-                (this.InitLineRobot3 is not null &&
-                this.InitLineRobot3.Equals(input.InitLineRobot3))
-            ) &&
-            (
-                this.EndgameRobot3 == input.EndgameRobot3 ||
-                (this.EndgameRobot3 is not null &&
-                this.EndgameRobot3.Equals(input.EndgameRobot3))
-            ) &&
-            (
-                this.AutoCellsBottom == input.AutoCellsBottom ||
-                this.AutoCellsBottom.Equals(input.AutoCellsBottom)
-            ) &&
-            (
-                this.AutoCellsOuter == input.AutoCellsOuter ||
-                this.AutoCellsOuter.Equals(input.AutoCellsOuter)
-            ) &&
-            (
-                this.AutoCellsInner == input.AutoCellsInner ||
-                this.AutoCellsInner.Equals(input.AutoCellsInner)
-            ) &&
-            (
-                this.TeleopCellsBottom == input.TeleopCellsBottom ||
-                this.TeleopCellsBottom.Equals(input.TeleopCellsBottom)
-            ) &&
-            (
-                this.TeleopCellsOuter == input.TeleopCellsOuter ||
-                this.TeleopCellsOuter.Equals(input.TeleopCellsOuter)
-            ) &&
-            (
-                this.TeleopCellsInner == input.TeleopCellsInner ||
-                this.TeleopCellsInner.Equals(input.TeleopCellsInner)
-            ) &&
-            (
-                this.Stage1Activated == input.Stage1Activated ||
-                this.Stage1Activated.Equals(input.Stage1Activated)
-            ) &&
-            (
-                this.Stage2Activated == input.Stage2Activated ||
-                this.Stage2Activated.Equals(input.Stage2Activated)
-            ) &&
-            (
-                this.Stage3Activated == input.Stage3Activated ||
-                this.Stage3Activated.Equals(input.Stage3Activated)
-            ) &&
-            (
-                this.Stage3TargetColor == input.Stage3TargetColor ||
-                (this.Stage3TargetColor is not null &&
-                this.Stage3TargetColor.Equals(input.Stage3TargetColor))
-            ) &&
-            (
-                this.EndgameRungIsLevel == input.EndgameRungIsLevel ||
-                (this.EndgameRungIsLevel is not null &&
-                this.EndgameRungIsLevel.Equals(input.EndgameRungIsLevel))
-            ) &&
-            (
-                this.AutoInitLinePoints == input.AutoInitLinePoints ||
-                this.AutoInitLinePoints.Equals(input.AutoInitLinePoints)
-            ) &&
-            (
-                this.AutoCellPoints == input.AutoCellPoints ||
-                this.AutoCellPoints.Equals(input.AutoCellPoints)
-            ) &&
-            (
-                this.AutoPoints == input.AutoPoints ||
-                this.AutoPoints.Equals(input.AutoPoints)
-            ) &&
-            (
-                this.TeleopCellPoints == input.TeleopCellPoints ||
-                this.TeleopCellPoints.Equals(input.TeleopCellPoints)
-            ) &&
-            (
-                this.ControlPanelPoints == input.ControlPanelPoints ||
-                this.ControlPanelPoints.Equals(input.ControlPanelPoints)
-            ) &&
-            (
-                this.EndgamePoints == input.EndgamePoints ||
-                this.EndgamePoints.Equals(input.EndgamePoints)
-            ) &&
-            (
-                this.TeleopPoints == input.TeleopPoints ||
-                this.TeleopPoints.Equals(input.TeleopPoints)
-            ) &&
-            (
-                this.ShieldOperationalRankingPoint == input.ShieldOperationalRankingPoint ||
-                this.ShieldOperationalRankingPoint.Equals(input.ShieldOperationalRankingPoint)
-            ) &&
-            (
-                this.ShieldEnergizedRankingPoint == input.ShieldEnergizedRankingPoint ||
-                this.ShieldEnergizedRankingPoint.Equals(input.ShieldEnergizedRankingPoint)
-            ) &&
-            (
-                this.TbaShieldEnergizedRankingPointFromFoul == input.TbaShieldEnergizedRankingPointFromFoul ||
-                this.TbaShieldEnergizedRankingPointFromFoul.Equals(input.TbaShieldEnergizedRankingPointFromFoul)
-            ) &&
-            (
-                this.TbaNumRobotsHanging == input.TbaNumRobotsHanging ||
-                this.TbaNumRobotsHanging.Equals(input.TbaNumRobotsHanging)
-            ) &&
-            (
-                this.FoulCount == input.FoulCount ||
-                this.FoulCount.Equals(input.FoulCount)
-            ) &&
-            (
-                this.TechFoulCount == input.TechFoulCount ||
-                this.TechFoulCount.Equals(input.TechFoulCount)
-            ) &&
-            (
-                this.AdjustPoints == input.AdjustPoints ||
-                this.AdjustPoints.Equals(input.AdjustPoints)
-            ) &&
-            (
-                this.FoulPoints == input.FoulPoints ||
-                this.FoulPoints.Equals(input.FoulPoints)
-            ) &&
-            (
-                this.Rp == input.Rp ||
-                this.Rp.Equals(input.Rp)
-            ) &&
-            (
-                this.TotalPoints == input.TotalPoints ||
-                this.TotalPoints.Equals(input.TotalPoints)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -564,8 +368,5 @@ public partial class MatchScoreBreakdown2020Alliance(string? initLineRobot1 = de
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

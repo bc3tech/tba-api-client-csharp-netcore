@@ -21,31 +21,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// TeamRobot
 /// </summary>
-[DataContract]public partial record TeamRobot : IValidatableObject
+[DataContract]
+public partial record TeamRobot: IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TeamRobot" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected TeamRobot() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TeamRobot" /> class.
-    /// </summary>
-    /// <param name="year">Year this robot competed in. (required).</param>
-    /// <param name="robotName">Name of the robot as provided by the team. (required).</param>
-    /// <param name="key">Internal TBA identifier for this robot. (required).</param>
-    /// <param name="teamKey">TBA team key for this robot. (required).</param>
-    public TeamRobot(int year = default, string? robotName = default, string? key = default, string? teamKey = default)
-    {
-        this.Year = year;
-        // to ensure "robotName" is required (not null)
-        this.RobotName = robotName ?? throw new ArgumentNullException(nameof(robotName));
-        // to ensure "key" is required (not null)
-        this.Key = key ?? throw new ArgumentNullException(nameof(key));
-        // to ensure "teamKey" is required (not null)
-        this.TeamKey = teamKey ?? throw new ArgumentNullException(teamKey);
-    }
-
     /// <summary>
     /// Year this robot competed in.
     /// </summary>
@@ -58,14 +36,14 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <value>Name of the robot as provided by the team.</value>
     [DataMember(Name = "robot_name", EmitDefaultValue = false), JsonPropertyName("robot_name")]
-    public string RobotName { get; set; }
+    public string? RobotName { get; set; }
 
     /// <summary>
     /// Internal TBA identifier for this robot.
     /// </summary>
     /// <value>Internal TBA identifier for this robot.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
-    public string Key { get; set; }
+    public string? Key { get; set; }
 
     /// <summary>
     /// TBA team key for this robot.
@@ -95,42 +73,6 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as TeamRobot);
-
-    /// <summary>
-    /// Returns true if TeamRobot instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TeamRobot to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TeamRobot? input)
-    {
-        return input is not null
-&& (
-                this.Year == input.Year ||
-                this.Year.Equals(input.Year)
-            ) &&
-            (
-                this.RobotName == input.RobotName ||
-                (this.RobotName is not null &&
-                this.RobotName.Equals(input.RobotName))
-            ) &&
-            (
-                this.Key == input.Key ||
-                (this.Key is not null &&
-                this.Key.Equals(input.Key))
-            ) &&
-            (
-                this.TeamKey == input.TeamKey ||
-                (this.TeamKey is not null &&
-                this.TeamKey.Equals(input.TeamKey))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -166,8 +108,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

@@ -2049,7 +2049,7 @@ public partial class TeamApi : ITeamApi
     /// </summary>
     public ExceptionFactory ExceptionFactory
     {
-        get => _exceptionFactory is not null && _exceptionFactory.GetInvocationList().Length > 1
+        get => _exceptionFactory.GetInvocationList().Length > 1
                 ? throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.")
                 : _exceptionFactory;
         set => _exceptionFactory = value;
@@ -6355,7 +6355,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("team_key", teamKey); // path parameter
-        localVarRequestOptions.PathParameters.Add("media_tag", ClientUtils.ParameterToString(mediaTag)); // path parameter
+        localVarRequestOptions.PathParameters.Add("media_tag", mediaTag); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -6439,7 +6439,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("team_key", teamKey); // path parameter
-        localVarRequestOptions.PathParameters.Add("media_tag", ClientUtils.ParameterToString(mediaTag)); // path parameter
+        localVarRequestOptions.PathParameters.Add("media_tag", mediaTag); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -6527,7 +6527,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("team_key", teamKey); // path parameter
-        localVarRequestOptions.PathParameters.Add("media_tag", ClientUtils.ParameterToString(mediaTag)); // path parameter
+        localVarRequestOptions.PathParameters.Add("media_tag", mediaTag); // path parameter
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
@@ -6614,7 +6614,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("team_key", teamKey); // path parameter
-        localVarRequestOptions.PathParameters.Add("media_tag", ClientUtils.ParameterToString(mediaTag)); // path parameter
+        localVarRequestOptions.PathParameters.Add("media_tag", mediaTag); // path parameter
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
@@ -7452,7 +7452,7 @@ public partial class TeamApi : ITeamApi
             localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
         }
 
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -7522,7 +7522,7 @@ public partial class TeamApi : ITeamApi
             localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
         }
 
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -7596,7 +7596,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -7669,7 +7669,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -7743,7 +7743,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -7816,7 +7816,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -7890,7 +7890,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -7963,7 +7963,7 @@ public partial class TeamApi : ITeamApi
         }
 
         localVarRequestOptions.PathParameters.Add("year", year.ToString()); // path parameter
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -8034,7 +8034,7 @@ public partial class TeamApi : ITeamApi
             localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
         }
 
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -8104,7 +8104,7 @@ public partial class TeamApi : ITeamApi
             localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
         }
 
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -8175,7 +8175,7 @@ public partial class TeamApi : ITeamApi
             localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
         }
 
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter
@@ -8245,7 +8245,7 @@ public partial class TeamApi : ITeamApi
             localVarRequestOptions.HeaderParameters.Add("Accept", _accept);
         }
 
-        localVarRequestOptions.PathParameters.Add("page_num", ClientUtils.ParameterToString(pageNum)); // path parameter
+        localVarRequestOptions.PathParameters.Add("page_num", pageNum.ToString()); // path parameter
         if (ifModifiedSince is not null)
         {
             localVarRequestOptions.HeaderParameters.Add("If-Modified-Since", ClientUtils.ParameterToString(ifModifiedSince)); // header parameter

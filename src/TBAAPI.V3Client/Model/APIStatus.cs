@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -22,35 +20,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// APIStatus
 /// </summary>
-[DataContract]public partial record APIStatus : IValidatableObject
+[DataContract]
+public partial record APIStatus : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="APIStatus" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected APIStatus() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="APIStatus" /> class.
-    /// </summary>
-    /// <param name="currentSeason">Year of the current FRC season. (required).</param>
-    /// <param name="maxSeason">Maximum FRC season year for valid queries. (required).</param>
-    /// <param name="isDatafeedDown">True if the entire FMS API provided by FIRST is down. (required).</param>
-    /// <param name="downEvents">An array of strings containing event keys of any active events that are no longer updating. (required).</param>
-    /// <param name="ios">ios (required).</param>
-    /// <param name="android">android (required).</param>
-    public APIStatus(int currentSeason = default, int maxSeason = default, bool isDatafeedDown = default, List<string>? downEvents = default, APIStatusAppVersion? ios = default, APIStatusAppVersion? android = default)
-    {
-        this.CurrentSeason = currentSeason;
-        this.MaxSeason = maxSeason;
-        this.IsDatafeedDown = isDatafeedDown;
-        // to ensure "downEvents" is required (not null)
-        this.DownEvents = downEvents ?? throw new ArgumentNullException(nameof(downEvents));
-        // to ensure "ios" is required (not null)
-        this.Ios = ios ?? throw new ArgumentNullException(nameof(ios));
-        // to ensure "android" is required (not null)
-        this.Android = android ?? throw new ArgumentNullException(nameof(android));
-    }
-
     /// <summary>
     /// Year of the current FRC season.
     /// </summary>
@@ -83,13 +55,13 @@ using System.Text.Json.Serialization;
     /// Gets or Sets Ios
     /// </summary>
     [DataMember(Name = "ios", EmitDefaultValue = false), JsonPropertyName("ios")]
-    public APIStatusAppVersion Ios { get; set; }
+    public APIStatusAppVersion? Ios { get; set; }
 
     /// <summary>
     /// Gets or Sets Android
     /// </summary>
     [DataMember(Name = "android", EmitDefaultValue = false), JsonPropertyName("android")]
-    public APIStatusAppVersion Android { get; set; }
+    public APIStatusAppVersion? Android { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -114,51 +86,6 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as APIStatus);
-
-    /// <summary>
-    /// Returns true if APIStatus instances are equal
-    /// </summary>
-    /// <param name="input">Instance of APIStatus to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(APIStatus? input)
-    {
-        return input is not null
-&& (
-                this.CurrentSeason == input.CurrentSeason ||
-                this.CurrentSeason.Equals(input.CurrentSeason)
-            ) &&
-            (
-                this.MaxSeason == input.MaxSeason ||
-                this.MaxSeason.Equals(input.MaxSeason)
-            ) &&
-            (
-                this.IsDatafeedDown == input.IsDatafeedDown ||
-                this.IsDatafeedDown.Equals(input.IsDatafeedDown)
-            ) &&
-            (
-                this.DownEvents == input.DownEvents ||
-                (this.DownEvents is not null &&
-                input.DownEvents is not null &&
-                this.DownEvents.SequenceEqual(input.DownEvents))
-            ) &&
-            (
-                this.Ios == input.Ios ||
-                (this.Ios is not null &&
-                this.Ios.Equals(input.Ios))
-            ) &&
-            (
-                this.Android == input.Android ||
-                (this.Android is not null &&
-                this.Android.Equals(input.Android))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -196,8 +123,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

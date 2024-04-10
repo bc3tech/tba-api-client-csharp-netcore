@@ -23,10 +23,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="TeamEventStatusRankSortOrderInfo" /> class.
 /// </remarks>
-/// <param name="precision">The number of digits of precision used for this value, eg &#x60;2&#x60; would correspond to a value of &#x60;101.11&#x60; while &#x60;0&#x60; would correspond to &#x60;101&#x60;..</param>
-/// <param name="name">The descriptive name of the value used to sort the ranking..</param>
 [DataContract]
-public partial class TeamEventStatusRankSortOrderInfo(int precision = default, string? name = default) : IEquatable<TeamEventStatusRankSortOrderInfo>, IValidatableObject
+public partial record TeamEventStatusRankSortOrderInfo : IValidatableObject
 {
 
     /// <summary>
@@ -34,14 +32,14 @@ public partial class TeamEventStatusRankSortOrderInfo(int precision = default, s
     /// </summary>
     /// <value>The number of digits of precision used for this value, eg &#x60;2&#x60; would correspond to a value of &#x60;101.11&#x60; while &#x60;0&#x60; would correspond to &#x60;101&#x60;.</value>
     [DataMember(Name = "precision", EmitDefaultValue = false), JsonPropertyName("precision")]
-    public int Precision { get; set; } = precision;
+    public int Precision { get; set; }
 
     /// <summary>
     /// The descriptive name of the value used to sort the ranking.
     /// </summary>
     /// <value>The descriptive name of the value used to sort the ranking.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; } = name;
+    public string? Name { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -62,32 +60,6 @@ public partial class TeamEventStatusRankSortOrderInfo(int precision = default, s
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as TeamEventStatusRankSortOrderInfo);
-
-    /// <summary>
-    /// Returns true if TeamEventStatusRankSortOrderInfo instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TeamEventStatusRankSortOrderInfo to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusRankSortOrderInfo? input)
-    {
-        return input is not null
-&& (
-                this.Precision == input.Precision ||
-                this.Precision.Equals(input.Precision)
-            ) &&
-            (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -113,8 +85,5 @@ public partial class TeamEventStatusRankSortOrderInfo(int precision = default, s
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

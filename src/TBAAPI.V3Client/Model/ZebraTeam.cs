@@ -22,29 +22,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// ZebraTeam
 /// </summary>
-[DataContract]public partial record ZebraTeam : IValidatableObject
+[DataContract]
+public partial record ZebraTeam: IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ZebraTeam" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected ZebraTeam() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ZebraTeam" /> class.
-    /// </summary>
-    /// <param name="teamKey">The TBA team key for the Zebra MotionWorks data. (required).</param>
-    /// <param name="xs">A list containing doubles and nulls representing a teams X position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp. (required).</param>
-    /// <param name="ys">A list containing doubles and nulls representing a teams Y position in feet at the corresponding timestamp. A null value represents no tracking data for a given timestamp. (required).</param>
-    public ZebraTeam(string? teamKey = default, List<double>? xs = default, List<double>? ys = default)
-    {
-        // to ensure "teamKey" is required (not null)
-        this.TeamKey = teamKey ?? throw new ArgumentNullException(nameof(teamKey));
-        // to ensure "xs" is required (not null)
-        this.Xs = xs ?? throw new ArgumentNullException(nameof(xs));
-        // to ensure "ys" is required (not null)
-        this.Ys = ys ?? throw new ArgumentNullException(nameof(ys));
-    }
-
     /// <summary>
     /// The TBA team key for the Zebra MotionWorks data.
     /// </summary>
@@ -88,40 +68,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as ZebraTeam);
-
-    /// <summary>
-    /// Returns true if ZebraTeam instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ZebraTeam to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ZebraTeam? input)
-    {
-        return input is not null
-&& (
-                this.TeamKey == input.TeamKey ||
-                (this.TeamKey is not null &&
-                this.TeamKey.Equals(input.TeamKey))
-            ) &&
-            (
-                this.Xs == input.Xs ||
-                (this.Xs is not null &&
-                input.Xs is not null &&
-                this.Xs.SequenceEqual(input.Xs))
-            ) &&
-            (
-                this.Ys == input.Ys ||
-                (this.Ys is not null &&
-                input.Ys is not null &&
-                this.Ys.SequenceEqual(input.Ys))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -154,8 +100,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

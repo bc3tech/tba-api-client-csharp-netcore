@@ -19,28 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// TeamEventStatusAlliance
 /// </summary>
-[DataContract]public partial record TeamEventStatusAlliance : IValidatableObject
+[DataContract]
+public partial record TeamEventStatusAlliance : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TeamEventStatusAlliance" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected TeamEventStatusAlliance() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TeamEventStatusAlliance" /> class.
-    /// </summary>
-    /// <param name="name">Alliance name, may be null..</param>
-    /// <param name="number">Alliance number. (required).</param>
-    /// <param name="backup">backup.</param>
-    /// <param name="pick">Order the team was picked in the alliance from 0-2, with 0 being alliance captain. (required).</param>
-    public TeamEventStatusAlliance(string? name = default, int number = default, TeamEventStatusAllianceBackup? backup = default, int pick = default)
-    {
-        this.Number = number;
-        this.Pick = pick;
-        this.Name = name;
-        this.Backup = backup;
-    }
-
     /// <summary>
     /// Alliance name, may be null.
     /// </summary>
@@ -91,41 +72,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as TeamEventStatusAlliance);
-
-    /// <summary>
-    /// Returns true if TeamEventStatusAlliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TeamEventStatusAlliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusAlliance? input)
-    {
-        return input is not null &&
-            (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            ) &&
-            (
-                this.Number == input.Number ||
-                this.Number.Equals(input.Number)
-            ) &&
-            (
-                this.Backup == input.Backup ||
-                (this.Backup is not null &&
-                this.Backup.Equals(input.Backup))
-            ) &&
-            (
-                this.Pick == input.Pick ||
-                this.Pick.Equals(input.Pick)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -155,8 +101,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

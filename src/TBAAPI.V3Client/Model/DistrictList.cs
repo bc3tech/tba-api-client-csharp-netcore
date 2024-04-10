@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -20,51 +19,29 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// DistrictList
 /// </summary>
-[DataContract]public partial record DistrictList : IValidatableObject
+[DataContract]
+public partial record DistrictList : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DistrictList" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected DistrictList() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DistrictList" /> class.
-    /// </summary>
-    /// <param name="abbreviation">The short identifier for the district. (required).</param>
-    /// <param name="displayName">The long name for the district. (required).</param>
-    /// <param name="key">Key for this district, e.g. &#x60;2016ne&#x60;. (required).</param>
-    /// <param name="year">Year this district participated. (required).</param>
-    public DistrictList(string? abbreviation = default, string? displayName = default, string? key = default, int year = default)
-    {
-        // to ensure "abbreviation" is required (not null)
-        this.Abbreviation = abbreviation ?? throw new ArgumentNullException(nameof(abbreviation));
-        // to ensure "displayName" is required (not null)
-        this.DisplayName = displayName ?? throw new ArgumentNullException(nameof(displayName));
-        // to ensure "key" is required (not null)
-        this.Key = key ?? throw new ArgumentNullException(nameof(key));
-        this.Year = year;
-    }
-
     /// <summary>
     /// The short identifier for the district.
     /// </summary>
     /// <value>The short identifier for the district.</value>
     [DataMember(Name = "abbreviation", EmitDefaultValue = false), JsonPropertyName("abbreviation")]
-    public string Abbreviation { get; set; }
+    public string? Abbreviation { get; set; }
 
     /// <summary>
     /// The long name for the district.
     /// </summary>
     /// <value>The long name for the district.</value>
     [DataMember(Name = "display_name", EmitDefaultValue = false), JsonPropertyName("display_name")]
-    public string DisplayName { get; set; }
+    public string? DisplayName { get; set; }
 
     /// <summary>
     /// Key for this district, e.g. &#x60;2016ne&#x60;.
     /// </summary>
     /// <value>Key for this district, e.g. &#x60;2016ne&#x60;.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
-    public string Key { get; set; }
+    public string? Key { get; set; }
 
     /// <summary>
     /// Year this district participated.
@@ -94,42 +71,6 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as DistrictList);
-
-    /// <summary>
-    /// Returns true if DistrictList instances are equal
-    /// </summary>
-    /// <param name="input">Instance of DistrictList to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(DistrictList? input)
-    {
-        return input is not null
-&& (
-                this.Abbreviation == input.Abbreviation ||
-                (this.Abbreviation is not null &&
-                this.Abbreviation.Equals(input.Abbreviation))
-            ) &&
-            (
-                this.DisplayName == input.DisplayName ||
-                (this.DisplayName is not null &&
-                this.DisplayName.Equals(input.DisplayName))
-            ) &&
-            (
-                this.Key == input.Key ||
-                (this.Key is not null &&
-                this.Key.Equals(input.Key))
-            ) &&
-            (
-                this.Year == input.Year ||
-                this.Year.Equals(input.Year)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -165,8 +106,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

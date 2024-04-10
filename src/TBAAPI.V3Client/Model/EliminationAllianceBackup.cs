@@ -24,10 +24,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="EliminationAllianceBackup" /> class.
 /// </remarks>
-/// <param name="_in">Team key that was called in as the backup..</param>
-/// <param name="_out">Team key that was replaced by the backup team..</param>
 [DataContract]
-public partial class EliminationAllianceBackup(string? _in = default, string? _out = default) : IEquatable<EliminationAllianceBackup>, IValidatableObject
+public partial record EliminationAllianceBackup : IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +33,14 @@ public partial class EliminationAllianceBackup(string? _in = default, string? _o
     /// </summary>
     /// <value>Team key that was called in as the backup.</value>
     [DataMember(Name = "in", EmitDefaultValue = false), JsonPropertyName("in")]
-    public string? In { get; set; } = _in;
+    public string? In { get; set; }
 
     /// <summary>
     /// Team key that was replaced by the backup team.
     /// </summary>
     /// <value>Team key that was replaced by the backup team.</value>
     [DataMember(Name = "out", EmitDefaultValue = false), JsonPropertyName("out")]
-    public string? Out { get; set; } = _out;
+    public string? Out { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -63,33 +61,6 @@ public partial class EliminationAllianceBackup(string? _in = default, string? _o
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EliminationAllianceBackup);
-
-    /// <summary>
-    /// Returns true if EliminationAllianceBackup instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EliminationAllianceBackup to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EliminationAllianceBackup? input)
-    {
-        return input is not null &&
-            (
-                this.In == input.In ||
-                (this.In is not null &&
-                this.In.Equals(input.In))
-            ) &&
-            (
-                this.Out == input.Out ||
-                (this.Out is not null &&
-                this.Out.Equals(input.Out))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code

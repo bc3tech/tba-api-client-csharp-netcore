@@ -23,44 +23,39 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="EliminationAllianceStatus" /> class.
 /// </remarks>
-/// <param name="playoffAverage">playoffAverage.</param>
-/// <param name="level">level.</param>
-/// <param name="record">record.</param>
-/// <param name="currentLevelRecord">currentLevelRecord.</param>
-/// <param name="status">status.</param>
 [DataContract]
-public partial class EliminationAllianceStatus(double playoffAverage = default, string? level = default, WLTRecord? record = default, WLTRecord? currentLevelRecord = default, string? status = default) : IEquatable<EliminationAllianceStatus>, IValidatableObject
+public partial record EliminationAllianceStatus : IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets PlayoffAverage
     /// </summary>
     [DataMember(Name = "playoff_average", EmitDefaultValue = false), JsonPropertyName("playoff_average")]
-    public double PlayoffAverage { get; set; } = playoffAverage;
+    public double PlayoffAverage { get; set; }
 
     /// <summary>
     /// Gets or Sets Level
     /// </summary>
     [DataMember(Name = "level", EmitDefaultValue = false), JsonPropertyName("level")]
-    public string? Level { get; set; } = level;
+    public string? Level { get; set; }
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
     [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
-    public WLTRecord? Record { get; set; } = record;
+    public WLTRecord? Record { get; set; }
 
     /// <summary>
     /// Gets or Sets CurrentLevelRecord
     /// </summary>
     [DataMember(Name = "current_level_record", EmitDefaultValue = false), JsonPropertyName("current_level_record")]
-    public WLTRecord? CurrentLevelRecord { get; set; } = currentLevelRecord;
+    public WLTRecord? CurrentLevelRecord { get; set; }
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
     [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
-    public string? Status { get; set; } = status;
+    public string? Status { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -84,47 +79,6 @@ public partial class EliminationAllianceStatus(double playoffAverage = default, 
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EliminationAllianceStatus);
-
-    /// <summary>
-    /// Returns true if EliminationAllianceStatus instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EliminationAllianceStatus to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EliminationAllianceStatus? input)
-    {
-        return input is not null
-&& (
-                this.PlayoffAverage == input.PlayoffAverage ||
-                this.PlayoffAverage.Equals(input.PlayoffAverage)
-            ) &&
-            (
-                this.Level == input.Level ||
-                (this.Level is not null &&
-                this.Level.Equals(input.Level))
-            ) &&
-            (
-                this.Record == input.Record ||
-                (this.Record is not null &&
-                this.Record.Equals(input.Record))
-            ) &&
-            (
-                this.CurrentLevelRecord == input.CurrentLevelRecord ||
-                (this.CurrentLevelRecord is not null &&
-                this.CurrentLevelRecord.Equals(input.CurrentLevelRecord))
-            ) &&
-            (
-                this.Status == input.Status ||
-                (this.Status is not null &&
-                this.Status.Equals(input.Status))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code

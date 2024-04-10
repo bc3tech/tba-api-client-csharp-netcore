@@ -21,28 +21,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventRanking
 /// </summary>
-[DataContract]public partial record EventRanking : IValidatableObject
+[DataContract]
+public partial record EventRanking: IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRanking" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventRanking() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRanking" /> class.
-    /// </summary>
-    /// <param name="rankings">List of rankings at the event. (required).</param>
-    /// <param name="extraStatsInfo">List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item..</param>
-    /// <param name="sortOrderInfo">List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team. (required).</param>
-    public EventRanking(List<EventRankingRankings>? rankings = default, List<EventRankingExtraStatsInfo>? extraStatsInfo = default, List<EventRankingSortOrderInfo>? sortOrderInfo = default)
-    {
-        // to ensure "rankings" is required (not null)
-        this.Rankings = rankings ?? throw new ArgumentNullException(nameof(rankings));
-        // to ensure "sortOrderInfo" is required (not null)
-        this.SortOrderInfo = sortOrderInfo ?? throw new ArgumentNullException(nameof(sortOrderInfo));
-        this.ExtraStatsInfo = extraStatsInfo;
-    }
-
     /// <summary>
     /// List of rankings at the event.
     /// </summary>
@@ -86,41 +67,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventRanking);
-
-    /// <summary>
-    /// Returns true if EventRanking instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventRanking to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventRanking? input)
-    {
-        return input is not null
-&& (
-                this.Rankings == input.Rankings ||
-                (this.Rankings is not null &&
-                input.Rankings is not null &&
-                this.Rankings.SequenceEqual(input.Rankings))
-            ) &&
-            (
-                this.ExtraStatsInfo == input.ExtraStatsInfo ||
-                (this.ExtraStatsInfo is not null &&
-                input.ExtraStatsInfo is not null &&
-                this.ExtraStatsInfo.SequenceEqual(input.ExtraStatsInfo))
-            ) &&
-            (
-                this.SortOrderInfo == input.SortOrderInfo ||
-                (this.SortOrderInfo is not null &&
-                input.SortOrderInfo is not null &&
-                this.SortOrderInfo.SequenceEqual(input.SortOrderInfo))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -153,8 +99,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

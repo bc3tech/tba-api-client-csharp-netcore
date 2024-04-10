@@ -21,26 +21,8 @@ using System.Text.Json.Serialization;
 /// A Win-Loss-Tie record for a team, or an alliance.
 /// </summary>
 [DataContract]
-public partial class WLTRecord : IEquatable<WLTRecord>, IValidatableObject
+public partial record WLTRecord : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="WLTRecord" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected WLTRecord() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="WLTRecord" /> class.
-    /// </summary>
-    /// <param name="losses">Number of losses. (required).</param>
-    /// <param name="wins">Number of wins. (required).</param>
-    /// <param name="ties">Number of ties. (required).</param>
-    public WLTRecord(int losses = default, int wins = default, int ties = default)
-    {
-        this.Losses = losses;
-        this.Wins = wins;
-        this.Ties = ties;
-    }
-
     /// <summary>
     /// Number of losses.
     /// </summary>
@@ -84,35 +66,6 @@ public partial class WLTRecord : IEquatable<WLTRecord>, IValidatableObject
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as WLTRecord);
-
-    /// <summary>
-    /// Returns true if WLTRecord instances are equal
-    /// </summary>
-    /// <param name="input">Instance of WLTRecord to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(WLTRecord? input)
-    {
-        return input is not null &&
-            (
-                this.Losses == input.Losses ||
-                this.Losses.Equals(input.Losses)
-            ) &&
-            (
-                this.Wins == input.Wins ||
-                this.Wins.Equals(input.Wins)
-            ) &&
-            (
-                this.Ties == input.Ties ||
-                this.Ties.Equals(input.Ties)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -123,8 +76,5 @@ public partial class WLTRecord : IEquatable<WLTRecord>, IValidatableObject
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -25,15 +23,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="TeamEventStatusRankRanking" /> class.
 /// </remarks>
-/// <param name="matchesPlayed">Number of matches played..</param>
-/// <param name="qualAverage">For some years, average qualification score. Can be null..</param>
-/// <param name="sortOrders">Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value..</param>
-/// <param name="record">record.</param>
-/// <param name="rank">Relative rank of this team..</param>
-/// <param name="dq">Number of matches the team was disqualified for..</param>
-/// <param name="teamKey">TBA team key for this rank..</param>
 [DataContract]
-public partial class TeamEventStatusRankRanking(int matchesPlayed = default, double qualAverage = default, List<decimal>? sortOrders = default, WLTRecord? record = default, int rank = default, int dq = default, string? teamKey = default) : IEquatable<TeamEventStatusRankRanking>, IValidatableObject
+public partial record TeamEventStatusRankRanking : IValidatableObject
 {
 
     /// <summary>
@@ -41,48 +32,48 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
     /// </summary>
     /// <value>Number of matches played.</value>
     [DataMember(Name = "matches_played", EmitDefaultValue = false), JsonPropertyName("matches_played")]
-    public int MatchesPlayed { get; set; } = matchesPlayed;
+    public int MatchesPlayed { get; set; }
 
     /// <summary>
     /// For some years, average qualification score. Can be null.
     /// </summary>
     /// <value>For some years, average qualification score. Can be null.</value>
     [DataMember(Name = "qual_average", EmitDefaultValue = false), JsonPropertyName("qual_average")]
-    public double QualAverage { get; set; } = qualAverage;
+    public double QualAverage { get; set; }
 
     /// <summary>
     /// Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value.
     /// </summary>
     /// <value>Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value.</value>
     [DataMember(Name = "sort_orders", EmitDefaultValue = false), JsonPropertyName("sort_orders")]
-    public IList<decimal>? SortOrders { get; set; } = sortOrders;
+    public IList<decimal>? SortOrders { get; set; }
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
     [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
-    public WLTRecord? Record { get; set; } = record;
+    public WLTRecord? Record { get; set; }
 
     /// <summary>
     /// Relative rank of this team.
     /// </summary>
     /// <value>Relative rank of this team.</value>
     [DataMember(Name = "rank", EmitDefaultValue = false), JsonPropertyName("rank")]
-    public int Rank { get; set; } = rank;
+    public int Rank { get; set; }
 
     /// <summary>
     /// Number of matches the team was disqualified for.
     /// </summary>
     /// <value>Number of matches the team was disqualified for.</value>
     [DataMember(Name = "dq", EmitDefaultValue = false), JsonPropertyName("dq")]
-    public int Dq { get; set; } = dq;
+    public int Dq { get; set; }
 
     /// <summary>
     /// TBA team key for this rank.
     /// </summary>
     /// <value>TBA team key for this rank.</value>
     [DataMember(Name = "team_key", EmitDefaultValue = false), JsonPropertyName("team_key")]
-    public string? TeamKey { get; set; } = teamKey;
+    public string? TeamKey { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -108,55 +99,6 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as TeamEventStatusRankRanking);
-
-    /// <summary>
-    /// Returns true if TeamEventStatusRankRanking instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TeamEventStatusRankRanking to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusRankRanking? input)
-    {
-        return input is not null &&
-            (
-                this.MatchesPlayed == input.MatchesPlayed ||
-                this.MatchesPlayed.Equals(input.MatchesPlayed)
-            ) &&
-            (
-                this.QualAverage == input.QualAverage ||
-                this.QualAverage.Equals(input.QualAverage)
-            ) &&
-            (
-                this.SortOrders == input.SortOrders ||
-                (this.SortOrders is not null &&
-                input.SortOrders is not null &&
-                this.SortOrders.SequenceEqual(input.SortOrders))
-            ) &&
-            (
-                this.Record == input.Record ||
-                (this.Record is not null &&
-                this.Record.Equals(input?.Record))
-            ) &&
-            (
-                this.Rank == input.Rank ||
-                this.Rank.Equals(input.Rank)
-            ) &&
-            (
-                this.Dq == input.Dq ||
-                this.Dq.Equals(input.Dq)
-            ) &&
-            (
-                this.TeamKey == input.TeamKey ||
-                (this.TeamKey is not null &&
-                this.TeamKey.Equals(input.TeamKey))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -195,8 +137,5 @@ public partial class TeamEventStatusRankRanking(int matchesPlayed = default, dou
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

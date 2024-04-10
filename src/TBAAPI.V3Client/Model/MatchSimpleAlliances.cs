@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -23,23 +22,21 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchSimpleAlliances" /> class.
 /// </remarks>
-/// <param name="red">red.</param>
-/// <param name="blue">blue.</param>
 [DataContract]
-public partial class MatchSimpleAlliances(MatchAlliance? red = default, MatchAlliance? blue = default) : IEquatable<MatchSimpleAlliances>, IValidatableObject
+public partial record MatchSimpleAlliances : IValidatableObject
 {
 
     /// <summary>
     /// Gets or Sets Red
     /// </summary>
     [DataMember(Name = "red", EmitDefaultValue = false), JsonPropertyName("red")]
-    public MatchAlliance? Red { get; set; } = red;
+    public MatchAlliance? Red { get; set; }
 
     /// <summary>
     /// Gets or Sets Blue
     /// </summary>
     [DataMember(Name = "blue", EmitDefaultValue = false), JsonPropertyName("blue")]
-    public MatchAlliance? Blue { get; set; } = blue;
+    public MatchAlliance? Blue { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -60,33 +57,6 @@ public partial class MatchSimpleAlliances(MatchAlliance? red = default, MatchAll
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchSimpleAlliances);
-
-    /// <summary>
-    /// Returns true if MatchSimpleAlliances instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchSimpleAlliances to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchSimpleAlliances? input)
-    {
-        return input is not null &&
-            (
-                this.Red == input.Red ||
-                (this.Red is not null &&
-                this.Red.Equals(input.Red))
-            ) &&
-            (
-                this.Blue == input.Blue ||
-                (this.Blue is not null &&
-                this.Blue.Equals(input.Blue))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -116,8 +86,5 @@ public partial class MatchSimpleAlliances(MatchAlliance? red = default, MatchAll
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

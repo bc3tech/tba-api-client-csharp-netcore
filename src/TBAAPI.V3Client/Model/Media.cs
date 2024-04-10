@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -21,139 +20,29 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// The &#x60;Media&#x60; object contains a reference for most any media associated with a team or event on TBA.
 /// </summary>
-[DataContract]public partial record Media : IValidatableObject
+[DataContract]
+public partial record Media : IValidatableObject
 {
-    /// <summary>
-    /// String type of the media element.
-    /// </summary>
-    /// <value>String type of the media element.</value>
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum TypeEnum
-    {
-        /// <summary>
-        /// Enum Youtube for value: youtube
-        /// </summary>
-        [EnumMember(Value = "youtube")]
-        Youtube = 1,
-
-        /// <summary>
-        /// Enum Cdphotothread for value: cdphotothread
-        /// </summary>
-        [EnumMember(Value = "cdphotothread")]
-        Cdphotothread = 2,
-
-        /// <summary>
-        /// Enum Imgur for value: imgur
-        /// </summary>
-        [EnumMember(Value = "imgur")]
-        Imgur = 3,
-
-        /// <summary>
-        /// Enum FacebookProfile for value: facebook-profile
-        /// </summary>
-        [EnumMember(Value = "facebook-profile")]
-        FacebookProfile = 4,
-
-        /// <summary>
-        /// Enum YoutubeChannel for value: youtube-channel
-        /// </summary>
-        [EnumMember(Value = "youtube-channel")]
-        YoutubeChannel = 5,
-
-        /// <summary>
-        /// Enum TwitterProfile for value: twitter-profile
-        /// </summary>
-        [EnumMember(Value = "twitter-profile")]
-        TwitterProfile = 6,
-
-        /// <summary>
-        /// Enum GithubProfile for value: github-profile
-        /// </summary>
-        [EnumMember(Value = "github-profile")]
-        GithubProfile = 7,
-
-        /// <summary>
-        /// Enum InstagramProfile for value: instagram-profile
-        /// </summary>
-        [EnumMember(Value = "instagram-profile")]
-        InstagramProfile = 8,
-
-        /// <summary>
-        /// Enum PeriscopeProfile for value: periscope-profile
-        /// </summary>
-        [EnumMember(Value = "periscope-profile")]
-        PeriscopeProfile = 9,
-
-        /// <summary>
-        /// Enum Grabcad for value: grabcad
-        /// </summary>
-        [EnumMember(Value = "grabcad")]
-        Grabcad = 10,
-
-        /// <summary>
-        /// Enum InstagramImage for value: instagram-image
-        /// </summary>
-        [EnumMember(Value = "instagram-image")]
-        InstagramImage = 11,
-
-        /// <summary>
-        /// Enum ExternalLink for value: external-link
-        /// </summary>
-        [EnumMember(Value = "external-link")]
-        ExternalLink = 12,
-
-        /// <summary>
-        /// Enum Avatar for value: avatar
-        /// </summary>
-        [EnumMember(Value = "avatar")]
-        Avatar = 13
-
-    }
-
     /// <summary>
     /// String type of the media element.
     /// </summary>
     /// <value>String type of the media element.</value>
     [DataMember(Name = "type", EmitDefaultValue = false), JsonPropertyName("type")]
     public TypeEnum Type { get; set; }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Media" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected Media() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Media" /> class.
-    /// </summary>
-    /// <param name="type">String type of the media element. (required).</param>
-    /// <param name="foreignKey">The key used to identify this media on the media site. (required).</param>
-    /// <param name="details">If required, a JSON dict of additional media information..</param>
-    /// <param name="preferred">True if the media is of high quality..</param>
-    /// <param name="directUrl">Direct URL to the media..</param>
-    /// <param name="viewUrl">The URL that leads to the full web page for the media, if one exists..</param>
-    public Media(TypeEnum type = default, string? foreignKey = default, object? details = default, bool preferred = default, string? directUrl = default, string? viewUrl = default)
-    {
-        this.Type = type;
-        // to ensure "foreignKey" is required (not null)
-        this.ForeignKey = foreignKey ?? throw new ArgumentNullException(nameof(foreignKey));
-        this.Details = details;
-        this.Preferred = preferred;
-        this.DirectUrl = directUrl;
-        this.ViewUrl = viewUrl;
-    }
 
     /// <summary>
     /// The key used to identify this media on the media site.
     /// </summary>
     /// <value>The key used to identify this media on the media site.</value>
     [DataMember(Name = "foreign_key", EmitDefaultValue = false), JsonPropertyName("foreign_key")]
-    public string ForeignKey { get; set; }
+    public string? ForeignKey { get; set; }
 
     /// <summary>
     /// If required, a JSON dict of additional media information.
     /// </summary>
     /// <value>If required, a JSON dict of additional media information.</value>
     [DataMember(Name = "details", EmitDefaultValue = false), JsonPropertyName("details")]
-    public object Details { get; set; }
+    public object? Details { get; set; }
 
     /// <summary>
     /// True if the media is of high quality.
@@ -167,14 +56,14 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <value>Direct URL to the media.</value>
     [DataMember(Name = "direct_url", EmitDefaultValue = false), JsonPropertyName("direct_url")]
-    public string DirectUrl { get; set; }
+    public string? DirectUrl { get; set; }
 
     /// <summary>
     /// The URL that leads to the full web page for the media, if one exists.
     /// </summary>
     /// <value>The URL that leads to the full web page for the media, if one exists.</value>
     [DataMember(Name = "view_url", EmitDefaultValue = false), JsonPropertyName("view_url")]
-    public string ViewUrl { get; set; }
+    public string? ViewUrl { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -199,51 +88,6 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as Media);
-
-    /// <summary>
-    /// Returns true if Media instances are equal
-    /// </summary>
-    /// <param name="input">Instance of Media to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(Media? input)
-    {
-        return input is not null
-&& (
-                this.Type == input.Type ||
-                this.Type.Equals(input.Type)
-            ) &&
-            (
-                this.ForeignKey == input.ForeignKey ||
-                (this.ForeignKey is not null &&
-                this.ForeignKey.Equals(input.ForeignKey))
-            ) &&
-            (
-                this.Details == input.Details ||
-                (this.Details is not null &&
-                this.Details.Equals(input.Details))
-            ) &&
-            (
-                this.Preferred == input.Preferred ||
-                this.Preferred.Equals(input.Preferred)
-            ) &&
-            (
-                this.DirectUrl == input.DirectUrl ||
-                (this.DirectUrl is not null &&
-                this.DirectUrl.Equals(input.DirectUrl))
-            ) &&
-            (
-                this.ViewUrl == input.ViewUrl ||
-                (this.ViewUrl is not null &&
-                this.ViewUrl.Equals(input.ViewUrl))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -285,8 +129,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

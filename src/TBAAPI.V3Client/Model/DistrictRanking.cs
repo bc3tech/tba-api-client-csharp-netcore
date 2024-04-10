@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -21,31 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Rank of a team in a district.
 /// </summary>
-[DataContract]public partial record DistrictRanking : IValidatableObject
+[DataContract]
+public partial record DistrictRanking : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DistrictRanking" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected DistrictRanking() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="DistrictRanking" /> class.
-    /// </summary>
-    /// <param name="teamKey">TBA team key for the team. (required).</param>
-    /// <param name="rank">Numerical rank of the team, 1 being top rank. (required).</param>
-    /// <param name="rookieBonus">Any points added to a team as a result of the rookie bonus..</param>
-    /// <param name="pointTotal">Total district points for the team. (required).</param>
-    /// <param name="eventPoints">List of events that contributed to the point total for the team..</param>
-    public DistrictRanking(string? teamKey = default, int rank = default, int rookieBonus = default, int pointTotal = default, List<DistrictRankingEventPoints>? eventPoints = default)
-    {
-        // to ensure "teamKey" is required (not null)
-        this.TeamKey = teamKey ?? throw new ArgumentNullException(nameof(teamKey));
-        this.Rank = rank;
-        this.PointTotal = pointTotal;
-        this.RookieBonus = rookieBonus;
-        this.EventPoints = eventPoints;
-    }
-
     /// <summary>
     /// TBA team key for the team.
     /// </summary>
@@ -105,46 +81,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as DistrictRanking);
-
-    /// <summary>
-    /// Returns true if DistrictRanking instances are equal
-    /// </summary>
-    /// <param name="input">Instance of DistrictRanking to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(DistrictRanking? input)
-    {
-        return input is not null
-&& (
-                this.TeamKey == input.TeamKey ||
-                (this.TeamKey is not null &&
-                this.TeamKey.Equals(input.TeamKey))
-            ) &&
-            (
-                this.Rank == input.Rank ||
-                this.Rank.Equals(input.Rank)
-            ) &&
-            (
-                this.RookieBonus == input.RookieBonus ||
-                this.RookieBonus.Equals(input.RookieBonus)
-            ) &&
-            (
-                this.PointTotal == input.PointTotal ||
-                this.PointTotal.Equals(input.PointTotal)
-            ) &&
-            (
-                this.EventPoints == input.EventPoints ||
-                (this.EventPoints is not null &&
-                input.EventPoints is not null &&
-                this.EventPoints.SequenceEqual(input.EventPoints))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -175,8 +111,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

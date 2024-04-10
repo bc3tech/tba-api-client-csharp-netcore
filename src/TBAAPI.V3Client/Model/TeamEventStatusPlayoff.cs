@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -23,13 +22,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="TeamEventStatusPlayoff" /> class.
 /// </remarks>
-/// <param name="level">The highest playoff level the team reached..</param>
-/// <param name="currentLevelRecord">currentLevelRecord.</param>
-/// <param name="record">record.</param>
-/// <param name="status">Current competition status for the playoffs..</param>
-/// <param name="playoffAverage">The average match score during playoffs. Year specific. May be null if not relevant for a given year..</param>
 [DataContract]
-public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? level = default, WLTRecord? currentLevelRecord = default, WLTRecord? record = default, TeamEventStatusPlayoff.StatusEnum? status = default, int playoffAverage = default) : IEquatable<TeamEventStatusPlayoff>, IValidatableObject
+public partial record TeamEventStatusPlayoff : IValidatableObject
 {
     /// <summary>
     /// The highest playoff level the team reached.
@@ -75,7 +69,7 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// </summary>
     /// <value>The highest playoff level the team reached.</value>
     [DataMember(Name = "level", EmitDefaultValue = false), JsonPropertyName("level")]
-    public LevelEnum? Level { get; set; } = level;
+    public LevelEnum? Level { get; set; }
     /// <summary>
     /// Current competition status for the playoffs.
     /// </summary>
@@ -108,26 +102,26 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// </summary>
     /// <value>Current competition status for the playoffs.</value>
     [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
-    public StatusEnum? Status { get; set; } = status;
+    public StatusEnum? Status { get; set; }
 
     /// <summary>
     /// Gets or Sets CurrentLevelRecord
     /// </summary>
     [DataMember(Name = "current_level_record", EmitDefaultValue = false), JsonPropertyName("current_level_record")]
-    public WLTRecord? CurrentLevelRecord { get; set; } = currentLevelRecord;
+    public WLTRecord? CurrentLevelRecord { get; set; }
 
     /// <summary>
     /// Gets or Sets Record
     /// </summary>
     [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
-    public WLTRecord? Record { get; set; } = record;
+    public WLTRecord? Record { get; set; }
 
     /// <summary>
     /// The average match score during playoffs. Year specific. May be null if not relevant for a given year.
     /// </summary>
     /// <value>The average match score during playoffs. Year specific. May be null if not relevant for a given year.</value>
     [DataMember(Name = "playoff_average", EmitDefaultValue = false), JsonPropertyName("playoff_average")]
-    public int PlayoffAverage { get; set; } = playoffAverage;
+    public int PlayoffAverage { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -151,45 +145,6 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as TeamEventStatusPlayoff);
-
-    /// <summary>
-    /// Returns true if TeamEventStatusPlayoff instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TeamEventStatusPlayoff to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusPlayoff? input)
-    {
-        return input is not null &&
-            (
-                this.Level == input.Level ||
-                this.Level.Equals(input.Level)
-            ) &&
-            (
-                this.CurrentLevelRecord == input.CurrentLevelRecord ||
-                (this.CurrentLevelRecord is not null &&
-                this.CurrentLevelRecord.Equals(input.CurrentLevelRecord))
-            ) &&
-            (
-                this.Record == input.Record ||
-                (this.Record is not null &&
-                this.Record.Equals(input.Record))
-            ) &&
-            (
-                this.Status == input.Status ||
-                this.Status.Equals(input.Status)
-            ) &&
-            (
-                this.PlayoffAverage == input.PlayoffAverage ||
-                this.PlayoffAverage.Equals(input.PlayoffAverage)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -222,8 +177,5 @@ public partial class TeamEventStatusPlayoff(TeamEventStatusPlayoff.LevelEnum? le
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

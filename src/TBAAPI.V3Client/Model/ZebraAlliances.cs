@@ -24,10 +24,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="ZebraAlliances" /> class.
 /// </remarks>
-/// <param name="red">Zebra MotionWorks data for teams on the red alliance.</param>
-/// <param name="blue">Zebra data for teams on the blue alliance.</param>
 [DataContract]
-public partial class ZebraAlliances(List<ZebraTeam>? red = default, List<ZebraTeam>? blue = default) : IEquatable<ZebraAlliances>, IValidatableObject
+public partial record ZebraAlliances : IValidatableObject
 {
 
     /// <summary>
@@ -35,14 +33,14 @@ public partial class ZebraAlliances(List<ZebraTeam>? red = default, List<ZebraTe
     /// </summary>
     /// <value>Zebra MotionWorks data for teams on the red alliance</value>
     [DataMember(Name = "red", EmitDefaultValue = false), JsonPropertyName("red")]
-    public IList<ZebraTeam>? Red { get; set; } = red;
+    public IList<ZebraTeam>? Red { get; set; }
 
     /// <summary>
     /// Zebra data for teams on the blue alliance
     /// </summary>
     /// <value>Zebra data for teams on the blue alliance</value>
     [DataMember(Name = "blue", EmitDefaultValue = false), JsonPropertyName("blue")]
-    public IList<ZebraTeam>? Blue { get; set; } = blue;
+    public IList<ZebraTeam>? Blue { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -63,35 +61,6 @@ public partial class ZebraAlliances(List<ZebraTeam>? red = default, List<ZebraTe
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as ZebraAlliances);
-
-    /// <summary>
-    /// Returns true if ZebraAlliances instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ZebraAlliances to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ZebraAlliances? input)
-    {
-        return input is not null
-&& (
-                this.Red == input.Red ||
-                (this.Red is not null &&
-                input.Red is not null &&
-                this.Red.SequenceEqual(input.Red))
-            ) &&
-            (
-                this.Blue == input.Blue ||
-                (this.Blue is not null &&
-                input.Blue is not null &&
-                this.Blue.SequenceEqual(input.Blue))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -121,8 +90,5 @@ public partial class ZebraAlliances(List<ZebraTeam>? red = default, List<ZebraTe
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

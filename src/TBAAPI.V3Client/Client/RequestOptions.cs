@@ -23,7 +23,7 @@ public class RequestOptions
     /// <summary>
     /// Parameters to be bound to path parts of the Request's URL
     /// </summary>
-    public IDictionary<string, string>? PathParameters { get; set; }
+    public IDictionary<string, string> PathParameters { get; set; } = new Dictionary<string, string>();
 
     /// <summary>
     /// Query parameters to be applied to the request.

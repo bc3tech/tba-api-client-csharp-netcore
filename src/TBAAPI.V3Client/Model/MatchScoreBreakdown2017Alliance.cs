@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -23,41 +22,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchScoreBreakdown2017Alliance" /> class.
 /// </remarks>
-/// <param name="autoPoints">autoPoints.</param>
-/// <param name="teleopPoints">teleopPoints.</param>
-/// <param name="foulPoints">foulPoints.</param>
-/// <param name="adjustPoints">adjustPoints.</param>
-/// <param name="totalPoints">totalPoints.</param>
-/// <param name="robot1Auto">robot1Auto.</param>
-/// <param name="robot2Auto">robot2Auto.</param>
-/// <param name="robot3Auto">robot3Auto.</param>
-/// <param name="rotor1Auto">rotor1Auto.</param>
-/// <param name="rotor2Auto">rotor2Auto.</param>
-/// <param name="autoFuelLow">autoFuelLow.</param>
-/// <param name="autoFuelHigh">autoFuelHigh.</param>
-/// <param name="autoMobilityPoints">autoMobilityPoints.</param>
-/// <param name="autoRotorPoints">autoRotorPoints.</param>
-/// <param name="autoFuelPoints">autoFuelPoints.</param>
-/// <param name="teleopFuelPoints">teleopFuelPoints.</param>
-/// <param name="teleopFuelLow">teleopFuelLow.</param>
-/// <param name="teleopFuelHigh">teleopFuelHigh.</param>
-/// <param name="teleopRotorPoints">teleopRotorPoints.</param>
-/// <param name="kPaRankingPointAchieved">kPaRankingPointAchieved.</param>
-/// <param name="teleopTakeoffPoints">teleopTakeoffPoints.</param>
-/// <param name="kPaBonusPoints">kPaBonusPoints.</param>
-/// <param name="rotorBonusPoints">rotorBonusPoints.</param>
-/// <param name="rotor1Engaged">rotor1Engaged.</param>
-/// <param name="rotor2Engaged">rotor2Engaged.</param>
-/// <param name="rotor3Engaged">rotor3Engaged.</param>
-/// <param name="rotor4Engaged">rotor4Engaged.</param>
-/// <param name="rotorRankingPointAchieved">rotorRankingPointAchieved.</param>
-/// <param name="techFoulCount">techFoulCount.</param>
-/// <param name="foulCount">foulCount.</param>
-/// <param name="touchpadNear">touchpadNear.</param>
-/// <param name="touchpadMiddle">touchpadMiddle.</param>
-/// <param name="touchpadFar">touchpadFar.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, int teleopPoints = default, int foulPoints = default, int adjustPoints = default, int totalPoints = default, MatchScoreBreakdown2017Alliance.Robot1AutoEnum? robot1Auto = default, MatchScoreBreakdown2017Alliance.Robot2AutoEnum? robot2Auto = default, MatchScoreBreakdown2017Alliance.Robot3AutoEnum? robot3Auto = default, bool rotor1Auto = default, bool rotor2Auto = default, int autoFuelLow = default, int autoFuelHigh = default, int autoMobilityPoints = default, int autoRotorPoints = default, int autoFuelPoints = default, int teleopFuelPoints = default, int teleopFuelLow = default, int teleopFuelHigh = default, int teleopRotorPoints = default, bool kPaRankingPointAchieved = default, int teleopTakeoffPoints = default, int kPaBonusPoints = default, int rotorBonusPoints = default, bool rotor1Engaged = default, bool rotor2Engaged = default, bool rotor3Engaged = default, bool rotor4Engaged = default, bool rotorRankingPointAchieved = default, int techFoulCount = default, int foulCount = default, string? touchpadNear = default, string? touchpadMiddle = default, string? touchpadFar = default) : IEquatable<MatchScoreBreakdown2017Alliance>, IValidatableObject
+public partial record MatchScoreBreakdown2017Alliance : IValidatableObject
 {
     /// <summary>
     /// Defines Robot1Auto
@@ -89,7 +55,7 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// Gets or Sets Robot1Auto
     /// </summary>
     [DataMember(Name = "robot1Auto", EmitDefaultValue = false), JsonPropertyName("robot1Auto")]
-    public Robot1AutoEnum? Robot1Auto { get; set; } = robot1Auto;
+    public Robot1AutoEnum? Robot1Auto { get; set; }
     /// <summary>
     /// Defines Robot2Auto
     /// </summary>
@@ -120,7 +86,7 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// Gets or Sets Robot2Auto
     /// </summary>
     [DataMember(Name = "robot2Auto", EmitDefaultValue = false), JsonPropertyName("robot2Auto")]
-    public Robot2AutoEnum? Robot2Auto { get; set; } = robot2Auto;
+    public Robot2AutoEnum? Robot2Auto { get; set; }
     /// <summary>
     /// Defines Robot3Auto
     /// </summary>
@@ -151,187 +117,187 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// Gets or Sets Robot3Auto
     /// </summary>
     [DataMember(Name = "robot3Auto", EmitDefaultValue = false), JsonPropertyName("robot3Auto")]
-    public Robot3AutoEnum? Robot3Auto { get; set; } = robot3Auto;
+    public Robot3AutoEnum? Robot3Auto { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
     [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
-    public int AutoPoints { get; set; } = autoPoints;
+    public int AutoPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
     [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
-    public int TeleopPoints { get; set; } = teleopPoints;
+    public int TeleopPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
     [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
-    public int FoulPoints { get; set; } = foulPoints;
+    public int FoulPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
     [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
-    public int AdjustPoints { get; set; } = adjustPoints;
+    public int AdjustPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
     [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
-    public int TotalPoints { get; set; } = totalPoints;
+    public int TotalPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets Rotor1Auto
     /// </summary>
     [DataMember(Name = "rotor1Auto", EmitDefaultValue = false), JsonPropertyName("rotor1Auto")]
-    public bool Rotor1Auto { get; set; } = rotor1Auto;
+    public bool Rotor1Auto { get; set; }
 
     /// <summary>
     /// Gets or Sets Rotor2Auto
     /// </summary>
     [DataMember(Name = "rotor2Auto", EmitDefaultValue = false), JsonPropertyName("rotor2Auto")]
-    public bool Rotor2Auto { get; set; } = rotor2Auto;
+    public bool Rotor2Auto { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoFuelLow
     /// </summary>
     [DataMember(Name = "autoFuelLow", EmitDefaultValue = false), JsonPropertyName("autoFuelLow")]
-    public int AutoFuelLow { get; set; } = autoFuelLow;
+    public int AutoFuelLow { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoFuelHigh
     /// </summary>
     [DataMember(Name = "autoFuelHigh", EmitDefaultValue = false), JsonPropertyName("autoFuelHigh")]
-    public int AutoFuelHigh { get; set; } = autoFuelHigh;
+    public int AutoFuelHigh { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoMobilityPoints
     /// </summary>
     [DataMember(Name = "autoMobilityPoints", EmitDefaultValue = false), JsonPropertyName("autoMobilityPoints")]
-    public int AutoMobilityPoints { get; set; } = autoMobilityPoints;
+    public int AutoMobilityPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoRotorPoints
     /// </summary>
     [DataMember(Name = "autoRotorPoints", EmitDefaultValue = false), JsonPropertyName("autoRotorPoints")]
-    public int AutoRotorPoints { get; set; } = autoRotorPoints;
+    public int AutoRotorPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoFuelPoints
     /// </summary>
     [DataMember(Name = "autoFuelPoints", EmitDefaultValue = false), JsonPropertyName("autoFuelPoints")]
-    public int AutoFuelPoints { get; set; } = autoFuelPoints;
+    public int AutoFuelPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopFuelPoints
     /// </summary>
     [DataMember(Name = "teleopFuelPoints", EmitDefaultValue = false), JsonPropertyName("teleopFuelPoints")]
-    public int TeleopFuelPoints { get; set; } = teleopFuelPoints;
+    public int TeleopFuelPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopFuelLow
     /// </summary>
     [DataMember(Name = "teleopFuelLow", EmitDefaultValue = false), JsonPropertyName("teleopFuelLow")]
-    public int TeleopFuelLow { get; set; } = teleopFuelLow;
+    public int TeleopFuelLow { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopFuelHigh
     /// </summary>
     [DataMember(Name = "teleopFuelHigh", EmitDefaultValue = false), JsonPropertyName("teleopFuelHigh")]
-    public int TeleopFuelHigh { get; set; } = teleopFuelHigh;
+    public int TeleopFuelHigh { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopRotorPoints
     /// </summary>
     [DataMember(Name = "teleopRotorPoints", EmitDefaultValue = false), JsonPropertyName("teleopRotorPoints")]
-    public int TeleopRotorPoints { get; set; } = teleopRotorPoints;
+    public int TeleopRotorPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets KPaRankingPointAchieved
     /// </summary>
     [DataMember(Name = "kPaRankingPointAchieved", EmitDefaultValue = false), JsonPropertyName("kPaRankingPointAchieved")]
-    public bool KPaRankingPointAchieved { get; set; } = kPaRankingPointAchieved;
+    public bool KPaRankingPointAchieved { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopTakeoffPoints
     /// </summary>
     [DataMember(Name = "teleopTakeoffPoints", EmitDefaultValue = false), JsonPropertyName("teleopTakeoffPoints")]
-    public int TeleopTakeoffPoints { get; set; } = teleopTakeoffPoints;
+    public int TeleopTakeoffPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets KPaBonusPoints
     /// </summary>
     [DataMember(Name = "kPaBonusPoints", EmitDefaultValue = false), JsonPropertyName("kPaBonusPoints")]
-    public int KPaBonusPoints { get; set; } = kPaBonusPoints;
+    public int KPaBonusPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets RotorBonusPoints
     /// </summary>
     [DataMember(Name = "rotorBonusPoints", EmitDefaultValue = false), JsonPropertyName("rotorBonusPoints")]
-    public int RotorBonusPoints { get; set; } = rotorBonusPoints;
+    public int RotorBonusPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets Rotor1Engaged
     /// </summary>
     [DataMember(Name = "rotor1Engaged", EmitDefaultValue = false), JsonPropertyName("rotor1Engaged")]
-    public bool Rotor1Engaged { get; set; } = rotor1Engaged;
+    public bool Rotor1Engaged { get; set; }
 
     /// <summary>
     /// Gets or Sets Rotor2Engaged
     /// </summary>
     [DataMember(Name = "rotor2Engaged", EmitDefaultValue = false), JsonPropertyName("rotor2Engaged")]
-    public bool Rotor2Engaged { get; set; } = rotor2Engaged;
+    public bool Rotor2Engaged { get; set; }
 
     /// <summary>
     /// Gets or Sets Rotor3Engaged
     /// </summary>
     [DataMember(Name = "rotor3Engaged", EmitDefaultValue = false), JsonPropertyName("rotor3Engaged")]
-    public bool Rotor3Engaged { get; set; } = rotor3Engaged;
+    public bool Rotor3Engaged { get; set; }
 
     /// <summary>
     /// Gets or Sets Rotor4Engaged
     /// </summary>
     [DataMember(Name = "rotor4Engaged", EmitDefaultValue = false), JsonPropertyName("rotor4Engaged")]
-    public bool Rotor4Engaged { get; set; } = rotor4Engaged;
+    public bool Rotor4Engaged { get; set; }
 
     /// <summary>
     /// Gets or Sets RotorRankingPointAchieved
     /// </summary>
     [DataMember(Name = "rotorRankingPointAchieved", EmitDefaultValue = false), JsonPropertyName("rotorRankingPointAchieved")]
-    public bool RotorRankingPointAchieved { get; set; } = rotorRankingPointAchieved;
+    public bool RotorRankingPointAchieved { get; set; }
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
     [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
-    public int TechFoulCount { get; set; } = techFoulCount;
+    public int TechFoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
     [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
-    public int FoulCount { get; set; } = foulCount;
+    public int FoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets TouchpadNear
     /// </summary>
     [DataMember(Name = "touchpadNear", EmitDefaultValue = false), JsonPropertyName("touchpadNear")]
-    public string TouchpadNear { get; set; } = touchpadNear;
+    public string? TouchpadNear { get; set; }
 
     /// <summary>
     /// Gets or Sets TouchpadMiddle
     /// </summary>
     [DataMember(Name = "touchpadMiddle", EmitDefaultValue = false), JsonPropertyName("touchpadMiddle")]
-    public string TouchpadMiddle { get; set; } = touchpadMiddle;
+    public string? TouchpadMiddle { get; set; }
 
     /// <summary>
     /// Gets or Sets TouchpadFar
     /// </summary>
     [DataMember(Name = "touchpadFar", EmitDefaultValue = false), JsonPropertyName("touchpadFar")]
-    public string TouchpadFar { get; set; } = touchpadFar;
+    public string? TouchpadFar { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -383,158 +349,6 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2017Alliance);
-
-    /// <summary>
-    /// Returns true if MatchScoreBreakdown2017Alliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchScoreBreakdown2017Alliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2017Alliance? input)
-    {
-        return input is not null
-&& (
-                this.AutoPoints == input.AutoPoints ||
-                this.AutoPoints.Equals(input.AutoPoints)
-            ) &&
-            (
-                this.TeleopPoints == input.TeleopPoints ||
-                this.TeleopPoints.Equals(input.TeleopPoints)
-            ) &&
-            (
-                this.FoulPoints == input.FoulPoints ||
-                this.FoulPoints.Equals(input.FoulPoints)
-            ) &&
-            (
-                this.AdjustPoints == input.AdjustPoints ||
-                this.AdjustPoints.Equals(input.AdjustPoints)
-            ) &&
-            (
-                this.TotalPoints == input.TotalPoints ||
-                this.TotalPoints.Equals(input.TotalPoints)
-            ) &&
-            (
-                this.Robot1Auto == input.Robot1Auto ||
-                this.Robot1Auto.Equals(input.Robot1Auto)
-            ) &&
-            (
-                this.Robot2Auto == input.Robot2Auto ||
-                this.Robot2Auto.Equals(input.Robot2Auto)
-            ) &&
-            (
-                this.Robot3Auto == input.Robot3Auto ||
-                this.Robot3Auto.Equals(input.Robot3Auto)
-            ) &&
-            (
-                this.Rotor1Auto == input.Rotor1Auto ||
-                this.Rotor1Auto.Equals(input.Rotor1Auto)
-            ) &&
-            (
-                this.Rotor2Auto == input.Rotor2Auto ||
-                this.Rotor2Auto.Equals(input.Rotor2Auto)
-            ) &&
-            (
-                this.AutoFuelLow == input.AutoFuelLow ||
-                this.AutoFuelLow.Equals(input.AutoFuelLow)
-            ) &&
-            (
-                this.AutoFuelHigh == input.AutoFuelHigh ||
-                this.AutoFuelHigh.Equals(input.AutoFuelHigh)
-            ) &&
-            (
-                this.AutoMobilityPoints == input.AutoMobilityPoints ||
-                this.AutoMobilityPoints.Equals(input.AutoMobilityPoints)
-            ) &&
-            (
-                this.AutoRotorPoints == input.AutoRotorPoints ||
-                this.AutoRotorPoints.Equals(input.AutoRotorPoints)
-            ) &&
-            (
-                this.AutoFuelPoints == input.AutoFuelPoints ||
-                this.AutoFuelPoints.Equals(input.AutoFuelPoints)
-            ) &&
-            (
-                this.TeleopFuelPoints == input.TeleopFuelPoints ||
-                this.TeleopFuelPoints.Equals(input.TeleopFuelPoints)
-            ) &&
-            (
-                this.TeleopFuelLow == input.TeleopFuelLow ||
-                this.TeleopFuelLow.Equals(input.TeleopFuelLow)
-            ) &&
-            (
-                this.TeleopFuelHigh == input.TeleopFuelHigh ||
-                this.TeleopFuelHigh.Equals(input.TeleopFuelHigh)
-            ) &&
-            (
-                this.TeleopRotorPoints == input.TeleopRotorPoints ||
-                this.TeleopRotorPoints.Equals(input.TeleopRotorPoints)
-            ) &&
-            (
-                this.KPaRankingPointAchieved == input.KPaRankingPointAchieved ||
-                this.KPaRankingPointAchieved.Equals(input.KPaRankingPointAchieved)
-            ) &&
-            (
-                this.TeleopTakeoffPoints == input.TeleopTakeoffPoints ||
-                this.TeleopTakeoffPoints.Equals(input.TeleopTakeoffPoints)
-            ) &&
-            (
-                this.KPaBonusPoints == input.KPaBonusPoints ||
-                this.KPaBonusPoints.Equals(input.KPaBonusPoints)
-            ) &&
-            (
-                this.RotorBonusPoints == input.RotorBonusPoints ||
-                this.RotorBonusPoints.Equals(input.RotorBonusPoints)
-            ) &&
-            (
-                this.Rotor1Engaged == input.Rotor1Engaged ||
-                this.Rotor1Engaged.Equals(input.Rotor1Engaged)
-            ) &&
-            (
-                this.Rotor2Engaged == input.Rotor2Engaged ||
-                this.Rotor2Engaged.Equals(input.Rotor2Engaged)
-            ) &&
-            (
-                this.Rotor3Engaged == input.Rotor3Engaged ||
-                this.Rotor3Engaged.Equals(input.Rotor3Engaged)
-            ) &&
-            (
-                this.Rotor4Engaged == input.Rotor4Engaged ||
-                this.Rotor4Engaged.Equals(input.Rotor4Engaged)
-            ) &&
-            (
-                this.RotorRankingPointAchieved == input.RotorRankingPointAchieved ||
-                this.RotorRankingPointAchieved.Equals(input.RotorRankingPointAchieved)
-            ) &&
-            (
-                this.TechFoulCount == input.TechFoulCount ||
-                this.TechFoulCount.Equals(input.TechFoulCount)
-            ) &&
-            (
-                this.FoulCount == input.FoulCount ||
-                this.FoulCount.Equals(input.FoulCount)
-            ) &&
-            (
-                this.TouchpadNear == input.TouchpadNear ||
-                (this.TouchpadNear is not null &&
-                this.TouchpadNear.Equals(input.TouchpadNear))
-            ) &&
-            (
-                this.TouchpadMiddle == input.TouchpadMiddle ||
-                (this.TouchpadMiddle is not null &&
-                this.TouchpadMiddle.Equals(input.TouchpadMiddle))
-            ) &&
-            (
-                this.TouchpadFar == input.TouchpadFar ||
-                (this.TouchpadFar is not null &&
-                this.TouchpadFar.Equals(input.TouchpadFar))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -599,8 +413,5 @@ public partial class MatchScoreBreakdown2017Alliance(int autoPoints = default, i
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -22,39 +20,15 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Award
 /// </summary>
-[DataContract]public partial record Award : IValidatableObject
+[DataContract]
+public partial record Award : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Award" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected Award() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="Award" /> class.
-    /// </summary>
-    /// <param name="name">The name of the award as provided by FIRST. May vary for the same award type. (required).</param>
-    /// <param name="awardType">Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6 (required).</param>
-    /// <param name="eventKey">The event_key of the event the award was won at. (required).</param>
-    /// <param name="recipientList">A list of recipients of the award at the event. May have either a team_key or an awardee, both, or neither (in the case the award wasn&#39;t awarded at the event). (required).</param>
-    /// <param name="year">The year this award was won. (required).</param>
-    public Award(string? name = default, int awardType = default, string? eventKey = default, List<AwardRecipient>? recipientList = default, int year = default)
-    {
-        // to ensure "name" is required (not null)
-        this.Name = name ?? throw new ArgumentNullException(nameof(name));
-        this.AwardType = awardType;
-        // to ensure "eventKey" is required (not null)
-        this.EventKey = eventKey ?? throw new ArgumentNullException(nameof(eventKey));
-        // to ensure "recipientList" is required (not null)
-        this.RecipientList = recipientList ?? throw new ArgumentNullException(nameof(recipientList));
-        this.Year = year;
-    }
-
     /// <summary>
     /// The name of the award as provided by FIRST. May vary for the same award type.
     /// </summary>
     /// <value>The name of the award as provided by FIRST. May vary for the same award type.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6
@@ -68,7 +42,7 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <value>The event_key of the event the award was won at.</value>
     [DataMember(Name = "event_key", EmitDefaultValue = false), JsonPropertyName("event_key")]
-    public string EventKey { get; set; }
+    public string? EventKey { get; set; }
 
     /// <summary>
     /// A list of recipients of the award at the event. May have either a team_key or an awardee, both, or neither (in the case the award wasn&#39;t awarded at the event).
@@ -108,47 +82,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as Award);
-
-    /// <summary>
-    /// Returns true if Award instances are equal
-    /// </summary>
-    /// <param name="input">Instance of Award to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(Award? input)
-    {
-        return input is not null
-&& (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            ) &&
-            (
-                this.AwardType == input.AwardType ||
-                this.AwardType.Equals(input.AwardType)
-            ) &&
-            (
-                this.EventKey == input.EventKey ||
-                (this.EventKey is not null &&
-                this.EventKey.Equals(input.EventKey))
-            ) &&
-            (
-                this.RecipientList == input.RecipientList ||
-                (this.RecipientList is not null &&
-                input.RecipientList is not null &&
-                this.RecipientList.SequenceEqual(input.RecipientList))
-            ) &&
-            (
-                this.Year == input.Year ||
-                this.Year.Equals(input.Year)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -183,8 +116,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

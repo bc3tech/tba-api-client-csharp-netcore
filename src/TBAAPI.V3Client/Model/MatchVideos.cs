@@ -23,10 +23,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchVideos" /> class.
 /// </remarks>
-/// <param name="type">Can be one of &#39;youtube&#39; or &#39;tba&#39;.</param>
-/// <param name="key">Unique key representing this video.</param>
 [DataContract]
-public partial class MatchVideos(string? type = default, string? key = default) : IEquatable<MatchVideos>, IValidatableObject
+public partial record MatchVideos : IValidatableObject
 {
 
     /// <summary>
@@ -34,14 +32,14 @@ public partial class MatchVideos(string? type = default, string? key = default) 
     /// </summary>
     /// <value>Can be one of &#39;youtube&#39; or &#39;tba&#39;</value>
     [DataMember(Name = "type", EmitDefaultValue = false), JsonPropertyName("type")]
-    public string Type { get; set; } = type;
+    public string? Type { get; set; }
 
     /// <summary>
     /// Unique key representing this video
     /// </summary>
     /// <value>Unique key representing this video</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
-    public string Key { get; set; } = key;
+    public string? Key { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -62,33 +60,6 @@ public partial class MatchVideos(string? type = default, string? key = default) 
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchVideos);
-
-    /// <summary>
-    /// Returns true if MatchVideos instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchVideos to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchVideos? input)
-    {
-        return input is not null
-&& (
-                this.Type == input.Type ||
-                (this.Type is not null &&
-                this.Type.Equals(input.Type))
-            ) &&
-            (
-                this.Key == input.Key ||
-                (this.Key is not null &&
-                this.Key.Equals(input.Key))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -118,8 +89,5 @@ public partial class MatchVideos(string? type = default, string? key = default) 
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

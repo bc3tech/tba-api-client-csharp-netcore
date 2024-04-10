@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -20,25 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventRankingExtraStatsInfo
 /// </summary>
-[DataContract]public partial record EventRankingExtraStatsInfo : IValidatableObject
+[DataContract]
+public partial record EventRankingExtraStatsInfo : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRankingExtraStatsInfo" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventRankingExtraStatsInfo() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRankingExtraStatsInfo" /> class.
-    /// </summary>
-    /// <param name="precision">Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;. (required).</param>
-    /// <param name="name">Name of the field used in the &#x60;extra_stats&#x60; array. (required).</param>
-    public EventRankingExtraStatsInfo(decimal precision = default, string? name = default)
-    {
-        this.Precision = precision;
-        // to ensure "name" is required (not null)
-        this.Name = name ?? throw new ArgumentNullException(nameof(name));
-    }
-
     /// <summary>
     /// Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;.
     /// </summary>
@@ -51,7 +34,7 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <value>Name of the field used in the &#x60;extra_stats&#x60; array.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -72,32 +55,6 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventRankingExtraStatsInfo);
-
-    /// <summary>
-    /// Returns true if EventRankingExtraStatsInfo instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventRankingExtraStatsInfo to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventRankingExtraStatsInfo? input)
-    {
-        return input is not null
-&& (
-                this.Precision == input.Precision ||
-                this.Precision.Equals(input.Precision)
-            ) &&
-            (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -123,8 +80,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

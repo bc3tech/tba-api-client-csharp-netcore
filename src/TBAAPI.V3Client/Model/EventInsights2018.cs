@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -21,105 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Insights for FIRST Power Up qualification and elimination matches.
 /// </summary>
-[DataContract]public partial record EventInsights2018 : IValidatableObject
+[DataContract]
+public partial record EventInsights2018 : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventInsights2018" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventInsights2018() { }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventInsights2018" /> class.
-    /// </summary>
-    /// <param name="autoQuestAchieved">An array with three values, number of times auto quest was completed, number of opportunities to complete the auto quest, and percentage. (required).</param>
-    /// <param name="averageBoostPlayed">Average number of boost power up scored (out of 3). (required).</param>
-    /// <param name="averageEndgamePoints">Average endgame points. (required).</param>
-    /// <param name="averageForcePlayed">Average number of force power up scored (out of 3). (required).</param>
-    /// <param name="averageFoulScore">Average foul score. (required).</param>
-    /// <param name="averagePointsAuto">Average points scored during auto. (required).</param>
-    /// <param name="averagePointsTeleop">Average points scored during teleop. (required).</param>
-    /// <param name="averageRunPointsAuto">Average mobility points scored during auto. (required).</param>
-    /// <param name="averageScaleOwnershipPoints">Average scale ownership points scored. (required).</param>
-    /// <param name="averageScaleOwnershipPointsAuto">Average scale ownership points scored during auto. (required).</param>
-    /// <param name="averageScaleOwnershipPointsTeleop">Average scale ownership points scored during teleop. (required).</param>
-    /// <param name="averageScore">Average score. (required).</param>
-    /// <param name="averageSwitchOwnershipPoints">Average switch ownership points scored. (required).</param>
-    /// <param name="averageSwitchOwnershipPointsAuto">Average switch ownership points scored during auto. (required).</param>
-    /// <param name="averageSwitchOwnershipPointsTeleop">Average switch ownership points scored during teleop. (required).</param>
-    /// <param name="averageVaultPoints">Average value points scored. (required).</param>
-    /// <param name="averageWinMargin">Average margin of victory. (required).</param>
-    /// <param name="averageWinScore">Average winning score. (required).</param>
-    /// <param name="boostPlayedCounts">An array with three values, number of times a boost power up was played, number of opportunities to play a boost power up, and percentage. (required).</param>
-    /// <param name="climbCounts">An array with three values, number of times a climb occurred, number of opportunities to climb, and percentage. (required).</param>
-    /// <param name="faceTheBossAchieved">An array with three values, number of times an alliance faced the boss, number of opportunities to face the boss, and percentage. (required).</param>
-    /// <param name="forcePlayedCounts">An array with three values, number of times a force power up was played, number of opportunities to play a force power up, and percentage. (required).</param>
-    /// <param name="highScore">An array with three values, high score, match key from the match with the high score, and the name of the match (required).</param>
-    /// <param name="levitatePlayedCounts">An array with three values, number of times a levitate power up was played, number of opportunities to play a levitate power up, and percentage. (required).</param>
-    /// <param name="runCountsAuto">An array with three values, number of times a team scored mobility points in auto, number of opportunities to score mobility points in auto, and percentage. (required).</param>
-    /// <param name="scaleNeutralPercentage">Average scale neutral percentage. (required).</param>
-    /// <param name="scaleNeutralPercentageAuto">Average scale neutral percentage during auto. (required).</param>
-    /// <param name="scaleNeutralPercentageTeleop">Average scale neutral percentage during teleop. (required).</param>
-    /// <param name="switchOwnedCountsAuto">An array with three values, number of times a switch was owned during auto, number of opportunities to own a switch during auto, and percentage. (required).</param>
-    /// <param name="unicornMatches">An array with three values, number of times a unicorn match (Win + Auto Quest + Face the Boss) occurred, number of opportunities to have a unicorn match, and percentage. (required).</param>
-    /// <param name="winningOppSwitchDenialPercentageTeleop">Average opposing switch denail percentage for the winning alliance during teleop. (required).</param>
-    /// <param name="winningOwnSwitchOwnershipPercentage">Average own switch ownership percentage for the winning alliance. (required).</param>
-    /// <param name="winningOwnSwitchOwnershipPercentageAuto">Average own switch ownership percentage for the winning alliance during auto. (required).</param>
-    /// <param name="winningOwnSwitchOwnershipPercentageTeleop">Average own switch ownership percentage for the winning alliance during teleop. (required).</param>
-    /// <param name="winningScaleOwnershipPercentage">Average scale ownership percentage for the winning alliance. (required).</param>
-    /// <param name="winningScaleOwnershipPercentageAuto">Average scale ownership percentage for the winning alliance during auto. (required).</param>
-    /// <param name="winningScaleOwnershipPercentageTeleop">Average scale ownership percentage for the winning alliance during teleop. (required).</param>
-    public EventInsights2018(IList<float>? autoQuestAchieved = default, float averageBoostPlayed = default, float averageEndgamePoints = default, float averageForcePlayed = default, float averageFoulScore = default, float averagePointsAuto = default, float averagePointsTeleop = default, float averageRunPointsAuto = default, float averageScaleOwnershipPoints = default, float averageScaleOwnershipPointsAuto = default, float averageScaleOwnershipPointsTeleop = default, float averageScore = default, float averageSwitchOwnershipPoints = default, float averageSwitchOwnershipPointsAuto = default, float averageSwitchOwnershipPointsTeleop = default, float averageVaultPoints = default, float averageWinMargin = default, float averageWinScore = default, IList<float>? boostPlayedCounts = default, IList<float>? climbCounts = default, IList<float>? faceTheBossAchieved = default, IList<float>? forcePlayedCounts = default, IList<string>? highScore = default, IList<float>? levitatePlayedCounts = default, IList<float>? runCountsAuto = default, float scaleNeutralPercentage = default, float scaleNeutralPercentageAuto = default, float scaleNeutralPercentageTeleop = default, IList<float>? switchOwnedCountsAuto = default, IList<float>? unicornMatches = default, float winningOppSwitchDenialPercentageTeleop = default, float winningOwnSwitchOwnershipPercentage = default, float winningOwnSwitchOwnershipPercentageAuto = default, float winningOwnSwitchOwnershipPercentageTeleop = default, float winningScaleOwnershipPercentage = default, float winningScaleOwnershipPercentageAuto = default, float winningScaleOwnershipPercentageTeleop = default)
-    {
-        // to ensure "autoQuestAchieved" is required (not null)
-        this.AutoQuestAchieved = autoQuestAchieved ?? throw new ArgumentNullException(nameof(autoQuestAchieved));
-        this.AverageBoostPlayed = averageBoostPlayed;
-        this.AverageEndgamePoints = averageEndgamePoints;
-        this.AverageForcePlayed = averageForcePlayed;
-        this.AverageFoulScore = averageFoulScore;
-        this.AveragePointsAuto = averagePointsAuto;
-        this.AveragePointsTeleop = averagePointsTeleop;
-        this.AverageRunPointsAuto = averageRunPointsAuto;
-        this.AverageScaleOwnershipPoints = averageScaleOwnershipPoints;
-        this.AverageScaleOwnershipPointsAuto = averageScaleOwnershipPointsAuto;
-        this.AverageScaleOwnershipPointsTeleop = averageScaleOwnershipPointsTeleop;
-        this.AverageScore = averageScore;
-        this.AverageSwitchOwnershipPoints = averageSwitchOwnershipPoints;
-        this.AverageSwitchOwnershipPointsAuto = averageSwitchOwnershipPointsAuto;
-        this.AverageSwitchOwnershipPointsTeleop = averageSwitchOwnershipPointsTeleop;
-        this.AverageVaultPoints = averageVaultPoints;
-        this.AverageWinMargin = averageWinMargin;
-        this.AverageWinScore = averageWinScore;
-        // to ensure "boostPlayedCounts" is required (not null)
-        this.BoostPlayedCounts = boostPlayedCounts ?? throw new ArgumentNullException(nameof(boostPlayedCounts));
-        // to ensure "climbCounts" is required (not null)
-        this.ClimbCounts = climbCounts ?? throw new ArgumentNullException(nameof(climbCounts));
-        // to ensure "faceTheBossAchieved" is required (not null)
-        this.FaceTheBossAchieved = faceTheBossAchieved ?? throw new ArgumentNullException(nameof(faceTheBossAchieved));
-        // to ensure "forcePlayedCounts" is required (not null)
-        this.ForcePlayedCounts = forcePlayedCounts ?? throw new ArgumentNullException(nameof(forcePlayedCounts));
-        // to ensure "highScore" is required (not null)
-        this.HighScore = highScore ?? throw new ArgumentNullException(nameof(highScore));
-        // to ensure "levitatePlayedCounts" is required (not null)
-        this.LevitatePlayedCounts = levitatePlayedCounts ?? throw new ArgumentNullException(nameof(levitatePlayedCounts));
-        // to ensure "runCountsAuto" is required (not null)
-        this.RunCountsAuto = runCountsAuto ?? throw new ArgumentNullException(nameof(runCountsAuto));
-        this.ScaleNeutralPercentage = scaleNeutralPercentage;
-        this.ScaleNeutralPercentageAuto = scaleNeutralPercentageAuto;
-        this.ScaleNeutralPercentageTeleop = scaleNeutralPercentageTeleop;
-        // to ensure "switchOwnedCountsAuto" is required (not null)
-        this.SwitchOwnedCountsAuto = switchOwnedCountsAuto ?? throw new ArgumentNullException(nameof(switchOwnedCountsAuto));
-        // to ensure "unicornMatches" is required (not null)
-        this.UnicornMatches = unicornMatches ?? throw new ArgumentNullException(nameof(unicornMatches));
-        this.WinningOppSwitchDenialPercentageTeleop = winningOppSwitchDenialPercentageTeleop;
-        this.WinningOwnSwitchOwnershipPercentage = winningOwnSwitchOwnershipPercentage;
-        this.WinningOwnSwitchOwnershipPercentageAuto = winningOwnSwitchOwnershipPercentageAuto;
-        this.WinningOwnSwitchOwnershipPercentageTeleop = winningOwnSwitchOwnershipPercentageTeleop;
-        this.WinningScaleOwnershipPercentage = winningScaleOwnershipPercentage;
-        this.WinningScaleOwnershipPercentageAuto = winningScaleOwnershipPercentageAuto;
-        this.WinningScaleOwnershipPercentageTeleop = winningScaleOwnershipPercentageTeleop;
-    }
-
     /// <summary>
     /// An array with three values, number of times auto quest was completed, number of opportunities to complete the auto quest, and percentage.
     /// </summary>
@@ -435,191 +337,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventInsights2018);
-
-    /// <summary>
-    /// Returns true if EventInsights2018 instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventInsights2018 to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventInsights2018? input)
-    {
-        return input is not null &&
-            (
-                this.AutoQuestAchieved == input.AutoQuestAchieved ||
-                (this.AutoQuestAchieved is not null &&
-                input.AutoQuestAchieved is not null &&
-                this.AutoQuestAchieved.SequenceEqual(input.AutoQuestAchieved))
-            ) &&
-            (
-                this.AverageBoostPlayed == input.AverageBoostPlayed ||
-                this.AverageBoostPlayed.Equals(input.AverageBoostPlayed)
-            ) &&
-            (
-                this.AverageEndgamePoints == input.AverageEndgamePoints ||
-                this.AverageEndgamePoints.Equals(input.AverageEndgamePoints)
-            ) &&
-            (
-                this.AverageForcePlayed == input.AverageForcePlayed ||
-                this.AverageForcePlayed.Equals(input.AverageForcePlayed)
-            ) &&
-            (
-                this.AverageFoulScore == input.AverageFoulScore ||
-                this.AverageFoulScore.Equals(input.AverageFoulScore)
-            ) &&
-            (
-                this.AveragePointsAuto == input.AveragePointsAuto ||
-                this.AveragePointsAuto.Equals(input.AveragePointsAuto)
-            ) &&
-            (
-                this.AveragePointsTeleop == input.AveragePointsTeleop ||
-                this.AveragePointsTeleop.Equals(input.AveragePointsTeleop)
-            ) &&
-            (
-                this.AverageRunPointsAuto == input.AverageRunPointsAuto ||
-                this.AverageRunPointsAuto.Equals(input.AverageRunPointsAuto)
-            ) &&
-            (
-                this.AverageScaleOwnershipPoints == input.AverageScaleOwnershipPoints ||
-                this.AverageScaleOwnershipPoints.Equals(input.AverageScaleOwnershipPoints)
-            ) &&
-            (
-                this.AverageScaleOwnershipPointsAuto == input.AverageScaleOwnershipPointsAuto ||
-                this.AverageScaleOwnershipPointsAuto.Equals(input.AverageScaleOwnershipPointsAuto)
-            ) &&
-            (
-                this.AverageScaleOwnershipPointsTeleop == input.AverageScaleOwnershipPointsTeleop ||
-                this.AverageScaleOwnershipPointsTeleop.Equals(input.AverageScaleOwnershipPointsTeleop)
-            ) &&
-            (
-                this.AverageScore == input.AverageScore ||
-                this.AverageScore.Equals(input.AverageScore)
-            ) &&
-            (
-                this.AverageSwitchOwnershipPoints == input.AverageSwitchOwnershipPoints ||
-                this.AverageSwitchOwnershipPoints.Equals(input.AverageSwitchOwnershipPoints)
-            ) &&
-            (
-                this.AverageSwitchOwnershipPointsAuto == input.AverageSwitchOwnershipPointsAuto ||
-                this.AverageSwitchOwnershipPointsAuto.Equals(input.AverageSwitchOwnershipPointsAuto)
-            ) &&
-            (
-                this.AverageSwitchOwnershipPointsTeleop == input.AverageSwitchOwnershipPointsTeleop ||
-                this.AverageSwitchOwnershipPointsTeleop.Equals(input.AverageSwitchOwnershipPointsTeleop)
-            ) &&
-            (
-                this.AverageVaultPoints == input.AverageVaultPoints ||
-                this.AverageVaultPoints.Equals(input.AverageVaultPoints)
-            ) &&
-            (
-                this.AverageWinMargin == input.AverageWinMargin ||
-                this.AverageWinMargin.Equals(input.AverageWinMargin)
-            ) &&
-            (
-                this.AverageWinScore == input.AverageWinScore ||
-                this.AverageWinScore.Equals(input.AverageWinScore)
-            ) &&
-            (
-                this.BoostPlayedCounts == input.BoostPlayedCounts ||
-                (this.BoostPlayedCounts is not null &&
-                input.BoostPlayedCounts is not null &&
-                this.BoostPlayedCounts.SequenceEqual(input.BoostPlayedCounts))
-            ) &&
-            (
-                this.ClimbCounts == input.ClimbCounts ||
-                (this.ClimbCounts is not null &&
-                input.ClimbCounts is not null &&
-                this.ClimbCounts.SequenceEqual(input.ClimbCounts))
-            ) &&
-            (
-                this.FaceTheBossAchieved == input.FaceTheBossAchieved ||
-                (this.FaceTheBossAchieved is not null &&
-                input.FaceTheBossAchieved is not null &&
-                this.FaceTheBossAchieved.SequenceEqual(input.FaceTheBossAchieved))
-            ) &&
-            (
-                this.ForcePlayedCounts == input.ForcePlayedCounts ||
-                (this.ForcePlayedCounts is not null &&
-                input.ForcePlayedCounts is not null &&
-                this.ForcePlayedCounts.SequenceEqual(input.ForcePlayedCounts))
-            ) &&
-            (
-                this.HighScore == input.HighScore ||
-                (this.HighScore is not null &&
-                input.HighScore is not null &&
-                this.HighScore.SequenceEqual(input.HighScore))
-            ) &&
-            (
-                this.LevitatePlayedCounts == input.LevitatePlayedCounts ||
-                (this.LevitatePlayedCounts is not null &&
-                input.LevitatePlayedCounts is not null &&
-                this.LevitatePlayedCounts.SequenceEqual(input.LevitatePlayedCounts))
-            ) &&
-            (
-                this.RunCountsAuto == input.RunCountsAuto ||
-                (this.RunCountsAuto is not null &&
-                input.RunCountsAuto is not null &&
-                this.RunCountsAuto.SequenceEqual(input.RunCountsAuto))
-            ) &&
-            (
-                this.ScaleNeutralPercentage == input.ScaleNeutralPercentage ||
-                this.ScaleNeutralPercentage.Equals(input.ScaleNeutralPercentage)
-            ) &&
-            (
-                this.ScaleNeutralPercentageAuto == input.ScaleNeutralPercentageAuto ||
-                this.ScaleNeutralPercentageAuto.Equals(input.ScaleNeutralPercentageAuto)
-            ) &&
-            (
-                this.ScaleNeutralPercentageTeleop == input.ScaleNeutralPercentageTeleop ||
-                this.ScaleNeutralPercentageTeleop.Equals(input.ScaleNeutralPercentageTeleop)
-            ) &&
-            (
-                this.SwitchOwnedCountsAuto == input.SwitchOwnedCountsAuto ||
-                (this.SwitchOwnedCountsAuto is not null &&
-                input.SwitchOwnedCountsAuto is not null &&
-                this.SwitchOwnedCountsAuto.SequenceEqual(input.SwitchOwnedCountsAuto))
-            ) &&
-            (
-                this.UnicornMatches == input.UnicornMatches ||
-                (this.UnicornMatches is not null &&
-                input.UnicornMatches is not null &&
-                this.UnicornMatches.SequenceEqual(input.UnicornMatches))
-            ) &&
-            (
-                this.WinningOppSwitchDenialPercentageTeleop == input.WinningOppSwitchDenialPercentageTeleop ||
-                this.WinningOppSwitchDenialPercentageTeleop.Equals(input.WinningOppSwitchDenialPercentageTeleop)
-            ) &&
-            (
-                this.WinningOwnSwitchOwnershipPercentage == input.WinningOwnSwitchOwnershipPercentage ||
-                this.WinningOwnSwitchOwnershipPercentage.Equals(input.WinningOwnSwitchOwnershipPercentage)
-            ) &&
-            (
-                this.WinningOwnSwitchOwnershipPercentageAuto == input.WinningOwnSwitchOwnershipPercentageAuto ||
-                this.WinningOwnSwitchOwnershipPercentageAuto.Equals(input.WinningOwnSwitchOwnershipPercentageAuto)
-            ) &&
-            (
-                this.WinningOwnSwitchOwnershipPercentageTeleop == input.WinningOwnSwitchOwnershipPercentageTeleop ||
-                this.WinningOwnSwitchOwnershipPercentageTeleop.Equals(input.WinningOwnSwitchOwnershipPercentageTeleop)
-            ) &&
-            (
-                this.WinningScaleOwnershipPercentage == input.WinningScaleOwnershipPercentage ||
-                this.WinningScaleOwnershipPercentage.Equals(input.WinningScaleOwnershipPercentage)
-            ) &&
-            (
-                this.WinningScaleOwnershipPercentageAuto == input.WinningScaleOwnershipPercentageAuto ||
-                this.WinningScaleOwnershipPercentageAuto.Equals(input.WinningScaleOwnershipPercentageAuto)
-            ) &&
-            (
-                this.WinningScaleOwnershipPercentageTeleop == input.WinningScaleOwnershipPercentageTeleop ||
-                this.WinningScaleOwnershipPercentageTeleop.Equals(input.WinningScaleOwnershipPercentageTeleop)
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -714,8 +431,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

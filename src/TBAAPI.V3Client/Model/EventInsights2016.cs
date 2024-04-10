@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -21,82 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// Insights for FIRST Stronghold qualification and elimination matches.
 /// </summary>
-[DataContract]public partial record EventInsights2016 : IValidatableObject
+[DataContract]
+public partial record EventInsights2016 : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventInsights2016" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventInsights2016() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventInsights2016" /> class.
-    /// </summary>
-    /// <param name="lowBar">For the Low Bar - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="aChevalDeFrise">For the Cheval De Frise - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="aPortcullis">For the Portcullis - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="bRamparts">For the Ramparts - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="bMoat">For the Moat - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="cSallyPort">For the Sally Port - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="cDrawbridge">For the Drawbridge - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="dRoughTerrain">For the Rough Terrain - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="dRockWall">For the Rock Wall - An array with three values, number of times damaged, number of opportunities to damage, and percentage. (required).</param>
-    /// <param name="averageHighGoals">Average number of high goals scored. (required).</param>
-    /// <param name="averageLowGoals">Average number of low goals scored. (required).</param>
-    /// <param name="breaches">An array with three values, number of times breached, number of opportunities to breach, and percentage. (required).</param>
-    /// <param name="scales">An array with three values, number of times scaled, number of opportunities to scale, and percentage. (required).</param>
-    /// <param name="challenges">An array with three values, number of times challenged, number of opportunities to challenge, and percentage. (required).</param>
-    /// <param name="captures">An array with three values, number of times captured, number of opportunities to capture, and percentage. (required).</param>
-    /// <param name="averageWinScore">Average winning score. (required).</param>
-    /// <param name="averageWinMargin">Average margin of victory. (required).</param>
-    /// <param name="averageScore">Average total score. (required).</param>
-    /// <param name="averageAutoScore">Average autonomous score. (required).</param>
-    /// <param name="averageCrossingScore">Average crossing score. (required).</param>
-    /// <param name="averageBoulderScore">Average boulder score. (required).</param>
-    /// <param name="averageTowerScore">Average tower score. (required).</param>
-    /// <param name="averageFoulScore">Average foul score. (required).</param>
-    /// <param name="highScore">An array with three values, high score, match key from the match with the high score, and the name of the match. (required).</param>
-    public EventInsights2016(IList<float>? lowBar = default, IList<float>? aChevalDeFrise = default, IList<float>? aPortcullis = default, IList<float>? bRamparts = default, IList<float>? bMoat = default, IList<float>? cSallyPort = default, IList<float>? cDrawbridge = default, IList<float>? dRoughTerrain = default, IList<float>? dRockWall = default, float averageHighGoals = default, float averageLowGoals = default, IList<float>? breaches = default, IList<float>? scales = default, IList<float>? challenges = default, IList<float>? captures = default, float averageWinScore = default, float averageWinMargin = default, float averageScore = default, float averageAutoScore = default, float averageCrossingScore = default, float averageBoulderScore = default, float averageTowerScore = default, float averageFoulScore = default, IList<string>? highScore = default)
-    {
-        // to ensure "lowBar" is required (not null)
-        this.LowBar = lowBar ?? throw new ArgumentNullException(nameof(lowBar));
-        // to ensure "aChevalDeFrise" is required (not null)
-        this.AChevalDeFrise = aChevalDeFrise ?? throw new ArgumentNullException(nameof(aChevalDeFrise));
-        // to ensure "aPortcullis" is required (not null)
-        this.APortcullis = aPortcullis ?? throw new ArgumentNullException(nameof(aPortcullis));
-        // to ensure "bRamparts" is required (not null)
-        this.BRamparts = bRamparts ?? throw new ArgumentNullException(nameof(bRamparts));
-        // to ensure "bMoat" is required (not null)
-        this.BMoat = bMoat ?? throw new ArgumentNullException(nameof(bMoat));
-        // to ensure "cSallyPort" is required (not null)
-        this.CSallyPort = cSallyPort ?? throw new ArgumentNullException(nameof(cSallyPort));
-        // to ensure "cDrawbridge" is required (not null)
-        this.CDrawbridge = cDrawbridge ?? throw new ArgumentNullException(nameof(cDrawbridge));
-        // to ensure "dRoughTerrain" is required (not null)
-        this.DRoughTerrain = dRoughTerrain ?? throw new ArgumentNullException(nameof(dRoughTerrain));
-        // to ensure "dRockWall" is required (not null)
-        this.DRockWall = dRockWall ?? throw new ArgumentNullException(nameof(dRockWall));
-        this.AverageHighGoals = averageHighGoals;
-        this.AverageLowGoals = averageLowGoals;
-        // to ensure "breaches" is required (not null)
-        this.Breaches = breaches ?? throw new ArgumentNullException(nameof(breaches));
-        // to ensure "scales" is required (not null)
-        this.Scales = scales ?? throw new ArgumentNullException(nameof(scales));
-        // to ensure "challenges" is required (not null)
-        this.Challenges = challenges ?? throw new ArgumentNullException(nameof(challenges));
-        // to ensure "captures" is required (not null)
-        this.Captures = captures ?? throw new ArgumentNullException(nameof(captures));
-        this.AverageWinScore = averageWinScore;
-        this.AverageWinMargin = averageWinMargin;
-        this.AverageScore = averageScore;
-        this.AverageAutoScore = averageAutoScore;
-        this.AverageCrossingScore = averageCrossingScore;
-        this.AverageBoulderScore = averageBoulderScore;
-        this.AverageTowerScore = averageTowerScore;
-        this.AverageFoulScore = averageFoulScore;
-        // to ensure "highScore" is required (not null)
-        this.HighScore = highScore ?? throw new ArgumentNullException(nameof(highScore));
-    }
-
     /// <summary>
     /// For the Low Bar - An array with three values, number of times damaged, number of opportunities to damage, and percentage.
     /// </summary>
@@ -308,147 +233,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventInsights2016);
-
-    /// <summary>
-    /// Returns true if EventInsights2016 instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventInsights2016 to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventInsights2016? input)
-    {
-        return input is not null &&
-            (
-                this.LowBar == input.LowBar ||
-                (this.LowBar is not null &&
-                input.LowBar is not null &&
-                this.LowBar.SequenceEqual(input.LowBar))
-            ) &&
-            (
-                this.AChevalDeFrise == input.AChevalDeFrise ||
-                (this.AChevalDeFrise is not null &&
-                input.AChevalDeFrise is not null &&
-                this.AChevalDeFrise.SequenceEqual(input.AChevalDeFrise))
-            ) &&
-            (
-                this.APortcullis == input.APortcullis ||
-                (this.APortcullis is not null &&
-                input.APortcullis is not null &&
-                this.APortcullis.SequenceEqual(input.APortcullis))
-            ) &&
-            (
-                this.BRamparts == input.BRamparts ||
-                (this.BRamparts is not null &&
-                input.BRamparts is not null &&
-                this.BRamparts.SequenceEqual(input.BRamparts))
-            ) &&
-            (
-                this.BMoat == input.BMoat ||
-                (this.BMoat is not null &&
-                input.BMoat is not null &&
-                this.BMoat.SequenceEqual(input.BMoat))
-            ) &&
-            (
-                this.CSallyPort == input.CSallyPort ||
-                (this.CSallyPort is not null &&
-                input.CSallyPort is not null &&
-                this.CSallyPort.SequenceEqual(input.CSallyPort))
-            ) &&
-            (
-                this.CDrawbridge == input.CDrawbridge ||
-                (this.CDrawbridge is not null &&
-                input.CDrawbridge is not null &&
-                this.CDrawbridge.SequenceEqual(input.CDrawbridge))
-            ) &&
-            (
-                this.DRoughTerrain == input.DRoughTerrain ||
-                (this.DRoughTerrain is not null &&
-                input.DRoughTerrain is not null &&
-                this.DRoughTerrain.SequenceEqual(input.DRoughTerrain))
-            ) &&
-            (
-                this.DRockWall == input.DRockWall ||
-                (this.DRockWall is not null &&
-                input.DRockWall is not null &&
-                this.DRockWall.SequenceEqual(input.DRockWall))
-            ) &&
-            (
-                this.AverageHighGoals == input.AverageHighGoals ||
-                this.AverageHighGoals.Equals(input.AverageHighGoals)
-            ) &&
-            (
-                this.AverageLowGoals == input.AverageLowGoals ||
-                this.AverageLowGoals.Equals(input.AverageLowGoals)
-            ) &&
-            (
-                this.Breaches == input.Breaches ||
-                (this.Breaches is not null &&
-                input.Breaches is not null &&
-                this.Breaches.SequenceEqual(input.Breaches))
-            ) &&
-            (
-                this.Scales == input.Scales ||
-                (this.Scales is not null &&
-                input.Scales is not null &&
-                this.Scales.SequenceEqual(input.Scales))
-            ) &&
-            (
-                this.Challenges == input.Challenges ||
-                (this.Challenges is not null &&
-                input.Challenges is not null &&
-                this.Challenges.SequenceEqual(input.Challenges))
-            ) &&
-            (
-                this.Captures == input.Captures ||
-                (this.Captures is not null &&
-                input.Captures is not null &&
-                this.Captures.SequenceEqual(input.Captures))
-            ) &&
-            (
-                this.AverageWinScore == input.AverageWinScore ||
-                this.AverageWinScore.Equals(input.AverageWinScore)
-            ) &&
-            (
-                this.AverageWinMargin == input.AverageWinMargin ||
-                this.AverageWinMargin.Equals(input.AverageWinMargin)
-            ) &&
-            (
-                this.AverageScore == input.AverageScore ||
-                this.AverageScore.Equals(input.AverageScore)
-            ) &&
-            (
-                this.AverageAutoScore == input.AverageAutoScore ||
-                this.AverageAutoScore.Equals(input.AverageAutoScore)
-            ) &&
-            (
-                this.AverageCrossingScore == input.AverageCrossingScore ||
-                this.AverageCrossingScore.Equals(input.AverageCrossingScore)
-            ) &&
-            (
-                this.AverageBoulderScore == input.AverageBoulderScore ||
-                this.AverageBoulderScore.Equals(input.AverageBoulderScore)
-            ) &&
-            (
-                this.AverageTowerScore == input.AverageTowerScore ||
-                this.AverageTowerScore.Equals(input.AverageTowerScore)
-            ) &&
-            (
-                this.AverageFoulScore == input.AverageFoulScore ||
-                this.AverageFoulScore.Equals(input.AverageFoulScore)
-            ) &&
-            (
-                this.HighScore == input.HighScore ||
-                (this.HighScore is not null &&
-                input.HighScore is not null &&
-                this.HighScore.SequenceEqual(input.HighScore))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -546,8 +330,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

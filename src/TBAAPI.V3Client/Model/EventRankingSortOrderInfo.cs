@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -20,26 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventRankingSortOrderInfo
 /// </summary>
-[DataContract]public partial record EventRankingSortOrderInfo : IValidatableObject
+[DataContract]
+public partial record EventRankingSortOrderInfo : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRankingSortOrderInfo" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventRankingSortOrderInfo() { }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRankingSortOrderInfo" /> class.
-    /// </summary>
-    /// <param name="precision">Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;. (required).</param>
-    /// <param name="name">Name of the field used in the &#x60;sort_order&#x60; array. (required).</param>
-    public EventRankingSortOrderInfo(int precision = default, string? name = default)
-    {
-        this.Precision = precision;
-        // to ensure "name" is required (not null)
-        this.Name = name ?? throw new ArgumentNullException(nameof(name));
-    }
-
     /// <summary>
     /// Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;.
     /// </summary>
@@ -75,32 +57,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventRankingSortOrderInfo);
-
-    /// <summary>
-    /// Returns true if EventRankingSortOrderInfo instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventRankingSortOrderInfo to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventRankingSortOrderInfo? input)
-    {
-        return input is not null &&
-            (
-                this.Precision == input.Precision ||
-                this.Precision.Equals(input.Precision)
-            ) &&
-            (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -124,8 +80,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

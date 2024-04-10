@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -21,30 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// MatchAlliance
 /// </summary>
-[DataContract]public partial record MatchAlliance : IValidatableObject
+[DataContract]
+public partial record MatchAlliance : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MatchAlliance" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected MatchAlliance() { }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MatchAlliance" /> class.
-    /// </summary>
-    /// <param name="score">Score for this alliance. Will be null or -1 for an unplayed match. (required).</param>
-    /// <param name="teamKeys">teamKeys (required).</param>
-    /// <param name="surrogateTeamKeys">TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate..</param>
-    /// <param name="dqTeamKeys">TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams..</param>
-    public MatchAlliance(int score = default, IList<string>? teamKeys = default, IList<string>? surrogateTeamKeys = default, IList<string>? dqTeamKeys = default)
-    {
-        this.Score = score;
-        // to ensure "teamKeys" is required (not null)
-        this.TeamKeys = teamKeys ?? throw new ArgumentNullException(nameof(teamKeys));
-        this.SurrogateTeamKeys = surrogateTeamKeys;
-        this.DqTeamKeys = dqTeamKeys;
-    }
-
     /// <summary>
     /// Score for this alliance. Will be null or -1 for an unplayed match.
     /// </summary>
@@ -56,7 +33,7 @@ using System.Text.Json.Serialization;
     /// Gets or Sets TeamKeys
     /// </summary>
     [DataMember(Name = "team_keys", EmitDefaultValue = false), JsonPropertyName("team_keys")]
-    public IList<string> TeamKeys { get; set; } = [];
+    public IList<string>? TeamKeys { get; set; }
 
     /// <summary>
     /// TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate.
@@ -95,45 +72,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchAlliance);
-
-    /// <summary>
-    /// Returns true if MatchAlliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchAlliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchAlliance? input)
-    {
-        return input is not null &&
-            (
-                this.Score == input.Score ||
-                this.Score.Equals(input.Score)
-            ) &&
-            (
-                this.TeamKeys == input.TeamKeys ||
-                (this.TeamKeys is not null &&
-                input.TeamKeys is not null &&
-                this.TeamKeys.SequenceEqual(input.TeamKeys))
-            ) &&
-            (
-                this.SurrogateTeamKeys == input.SurrogateTeamKeys ||
-                (this.SurrogateTeamKeys is not null &&
-                input.SurrogateTeamKeys is not null &&
-                this.SurrogateTeamKeys.SequenceEqual(input.SurrogateTeamKeys))
-            ) &&
-            (
-                this.DqTeamKeys == input.DqTeamKeys ||
-                (this.DqTeamKeys is not null &&
-                input.DqTeamKeys is not null &&
-                this.DqTeamKeys.SequenceEqual(input.DqTeamKeys))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -167,8 +105,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

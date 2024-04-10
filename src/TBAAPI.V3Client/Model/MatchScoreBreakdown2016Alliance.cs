@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -23,46 +22,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="MatchScoreBreakdown2016Alliance" /> class.
 /// </remarks>
-/// <param name="autoPoints">autoPoints.</param>
-/// <param name="teleopPoints">teleopPoints.</param>
-/// <param name="breachPoints">breachPoints.</param>
-/// <param name="foulPoints">foulPoints.</param>
-/// <param name="capturePoints">capturePoints.</param>
-/// <param name="adjustPoints">adjustPoints.</param>
-/// <param name="totalPoints">totalPoints.</param>
-/// <param name="robot1Auto">robot1Auto.</param>
-/// <param name="robot2Auto">robot2Auto.</param>
-/// <param name="robot3Auto">robot3Auto.</param>
-/// <param name="autoReachPoints">autoReachPoints.</param>
-/// <param name="autoCrossingPoints">autoCrossingPoints.</param>
-/// <param name="autoBouldersLow">autoBouldersLow.</param>
-/// <param name="autoBouldersHigh">autoBouldersHigh.</param>
-/// <param name="autoBoulderPoints">autoBoulderPoints.</param>
-/// <param name="teleopCrossingPoints">teleopCrossingPoints.</param>
-/// <param name="teleopBouldersLow">teleopBouldersLow.</param>
-/// <param name="teleopBouldersHigh">teleopBouldersHigh.</param>
-/// <param name="teleopBoulderPoints">teleopBoulderPoints.</param>
-/// <param name="teleopDefensesBreached">teleopDefensesBreached.</param>
-/// <param name="teleopChallengePoints">teleopChallengePoints.</param>
-/// <param name="teleopScalePoints">teleopScalePoints.</param>
-/// <param name="teleopTowerCaptured">teleopTowerCaptured.</param>
-/// <param name="towerFaceA">towerFaceA.</param>
-/// <param name="towerFaceB">towerFaceB.</param>
-/// <param name="towerFaceC">towerFaceC.</param>
-/// <param name="towerEndStrength">towerEndStrength.</param>
-/// <param name="techFoulCount">techFoulCount.</param>
-/// <param name="foulCount">foulCount.</param>
-/// <param name="position2">position2.</param>
-/// <param name="position3">position3.</param>
-/// <param name="position4">position4.</param>
-/// <param name="position5">position5.</param>
-/// <param name="position1crossings">position1crossings.</param>
-/// <param name="position2crossings">position2crossings.</param>
-/// <param name="position3crossings">position3crossings.</param>
-/// <param name="position4crossings">position4crossings.</param>
-/// <param name="position5crossings">position5crossings.</param>
 [DataContract]
-public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, int teleopPoints = default, int breachPoints = default, int foulPoints = default, int capturePoints = default, int adjustPoints = default, int totalPoints = default, MatchScoreBreakdown2016Alliance.Robot1AutoEnum? robot1Auto = default, MatchScoreBreakdown2016Alliance.Robot2AutoEnum? robot2Auto = default, MatchScoreBreakdown2016Alliance.Robot3AutoEnum? robot3Auto = default, int autoReachPoints = default, int autoCrossingPoints = default, int autoBouldersLow = default, int autoBouldersHigh = default, int autoBoulderPoints = default, int teleopCrossingPoints = default, int teleopBouldersLow = default, int teleopBouldersHigh = default, int teleopBoulderPoints = default, bool teleopDefensesBreached = default, int teleopChallengePoints = default, int teleopScalePoints = default, int teleopTowerCaptured = default, string? towerFaceA = default, string? towerFaceB = default, string? towerFaceC = default, int towerEndStrength = default, int techFoulCount = default, int foulCount = default, string? position2 = default, string? position3 = default, string? position4 = default, string? position5 = default, int position1crossings = default, int position2crossings = default, int position3crossings = default, int position4crossings = default, int position5crossings = default) : IEquatable<MatchScoreBreakdown2016Alliance>, IValidatableObject
+public partial record MatchScoreBreakdown2016Alliance : IValidatableObject
 {
     /// <summary>
     /// Defines Robot1Auto
@@ -94,7 +55,7 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
     /// Gets or Sets Robot1Auto
     /// </summary>
     [DataMember(Name = "robot1Auto", EmitDefaultValue = false), JsonPropertyName("robot1Auto")]
-    public Robot1AutoEnum? Robot1Auto { get; set; } = robot1Auto;
+    public Robot1AutoEnum? Robot1Auto { get; set; }
     /// <summary>
     /// Defines Robot2Auto
     /// </summary>
@@ -125,7 +86,7 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
     /// Gets or Sets Robot2Auto
     /// </summary>
     [DataMember(Name = "robot2Auto", EmitDefaultValue = false), JsonPropertyName("robot2Auto")]
-    public Robot2AutoEnum? Robot2Auto { get; set; } = robot2Auto;
+    public Robot2AutoEnum? Robot2Auto { get; set; }
     /// <summary>
     /// Defines Robot3Auto
     /// </summary>
@@ -156,217 +117,217 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
     /// Gets or Sets Robot3Auto
     /// </summary>
     [DataMember(Name = "robot3Auto", EmitDefaultValue = false), JsonPropertyName("robot3Auto")]
-    public Robot3AutoEnum? Robot3Auto { get; set; } = robot3Auto;
+    public Robot3AutoEnum? Robot3Auto { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoPoints
     /// </summary>
     [DataMember(Name = "autoPoints", EmitDefaultValue = false), JsonPropertyName("autoPoints")]
-    public int AutoPoints { get; set; } = autoPoints;
+    public int AutoPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopPoints
     /// </summary>
     [DataMember(Name = "teleopPoints", EmitDefaultValue = false), JsonPropertyName("teleopPoints")]
-    public int TeleopPoints { get; set; } = teleopPoints;
+    public int TeleopPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets BreachPoints
     /// </summary>
     [DataMember(Name = "breachPoints", EmitDefaultValue = false), JsonPropertyName("breachPoints")]
-    public int BreachPoints { get; set; } = breachPoints;
+    public int BreachPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulPoints
     /// </summary>
     [DataMember(Name = "foulPoints", EmitDefaultValue = false), JsonPropertyName("foulPoints")]
-    public int FoulPoints { get; set; } = foulPoints;
+    public int FoulPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets CapturePoints
     /// </summary>
     [DataMember(Name = "capturePoints", EmitDefaultValue = false), JsonPropertyName("capturePoints")]
-    public int CapturePoints { get; set; } = capturePoints;
+    public int CapturePoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AdjustPoints
     /// </summary>
     [DataMember(Name = "adjustPoints", EmitDefaultValue = false), JsonPropertyName("adjustPoints")]
-    public int AdjustPoints { get; set; } = adjustPoints;
+    public int AdjustPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TotalPoints
     /// </summary>
     [DataMember(Name = "totalPoints", EmitDefaultValue = false), JsonPropertyName("totalPoints")]
-    public int TotalPoints { get; set; } = totalPoints;
+    public int TotalPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoReachPoints
     /// </summary>
     [DataMember(Name = "autoReachPoints", EmitDefaultValue = false), JsonPropertyName("autoReachPoints")]
-    public int AutoReachPoints { get; set; } = autoReachPoints;
+    public int AutoReachPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoCrossingPoints
     /// </summary>
     [DataMember(Name = "autoCrossingPoints", EmitDefaultValue = false), JsonPropertyName("autoCrossingPoints")]
-    public int AutoCrossingPoints { get; set; } = autoCrossingPoints;
+    public int AutoCrossingPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoBouldersLow
     /// </summary>
     [DataMember(Name = "autoBouldersLow", EmitDefaultValue = false), JsonPropertyName("autoBouldersLow")]
-    public int AutoBouldersLow { get; set; } = autoBouldersLow;
+    public int AutoBouldersLow { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoBouldersHigh
     /// </summary>
     [DataMember(Name = "autoBouldersHigh", EmitDefaultValue = false), JsonPropertyName("autoBouldersHigh")]
-    public int AutoBouldersHigh { get; set; } = autoBouldersHigh;
+    public int AutoBouldersHigh { get; set; }
 
     /// <summary>
     /// Gets or Sets AutoBoulderPoints
     /// </summary>
     [DataMember(Name = "autoBoulderPoints", EmitDefaultValue = false), JsonPropertyName("autoBoulderPoints")]
-    public int AutoBoulderPoints { get; set; } = autoBoulderPoints;
+    public int AutoBoulderPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopCrossingPoints
     /// </summary>
     [DataMember(Name = "teleopCrossingPoints", EmitDefaultValue = false), JsonPropertyName("teleopCrossingPoints")]
-    public int TeleopCrossingPoints { get; set; } = teleopCrossingPoints;
+    public int TeleopCrossingPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopBouldersLow
     /// </summary>
     [DataMember(Name = "teleopBouldersLow", EmitDefaultValue = false), JsonPropertyName("teleopBouldersLow")]
-    public int TeleopBouldersLow { get; set; } = teleopBouldersLow;
+    public int TeleopBouldersLow { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopBouldersHigh
     /// </summary>
     [DataMember(Name = "teleopBouldersHigh", EmitDefaultValue = false), JsonPropertyName("teleopBouldersHigh")]
-    public int TeleopBouldersHigh { get; set; } = teleopBouldersHigh;
+    public int TeleopBouldersHigh { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopBoulderPoints
     /// </summary>
     [DataMember(Name = "teleopBoulderPoints", EmitDefaultValue = false), JsonPropertyName("teleopBoulderPoints")]
-    public int TeleopBoulderPoints { get; set; } = teleopBoulderPoints;
+    public int TeleopBoulderPoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopDefensesBreached
     /// </summary>
     [DataMember(Name = "teleopDefensesBreached", EmitDefaultValue = false), JsonPropertyName("teleopDefensesBreached")]
-    public bool TeleopDefensesBreached { get; set; } = teleopDefensesBreached;
+    public bool TeleopDefensesBreached { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopChallengePoints
     /// </summary>
     [DataMember(Name = "teleopChallengePoints", EmitDefaultValue = false), JsonPropertyName("teleopChallengePoints")]
-    public int TeleopChallengePoints { get; set; } = teleopChallengePoints;
+    public int TeleopChallengePoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopScalePoints
     /// </summary>
     [DataMember(Name = "teleopScalePoints", EmitDefaultValue = false), JsonPropertyName("teleopScalePoints")]
-    public int TeleopScalePoints { get; set; } = teleopScalePoints;
+    public int TeleopScalePoints { get; set; }
 
     /// <summary>
     /// Gets or Sets TeleopTowerCaptured
     /// </summary>
     [DataMember(Name = "teleopTowerCaptured", EmitDefaultValue = false), JsonPropertyName("teleopTowerCaptured")]
-    public int TeleopTowerCaptured { get; set; } = teleopTowerCaptured;
+    public int TeleopTowerCaptured { get; set; }
 
     /// <summary>
     /// Gets or Sets TowerFaceA
     /// </summary>
     [DataMember(Name = "towerFaceA", EmitDefaultValue = false), JsonPropertyName("towerFaceA")]
-    public string TowerFaceA { get; set; } = towerFaceA;
+    public string? TowerFaceA { get; set; }
 
     /// <summary>
     /// Gets or Sets TowerFaceB
     /// </summary>
     [DataMember(Name = "towerFaceB", EmitDefaultValue = false), JsonPropertyName("towerFaceB")]
-    public string TowerFaceB { get; set; } = towerFaceB;
+    public string? TowerFaceB { get; set; }
 
     /// <summary>
     /// Gets or Sets TowerFaceC
     /// </summary>
     [DataMember(Name = "towerFaceC", EmitDefaultValue = false), JsonPropertyName("towerFaceC")]
-    public string TowerFaceC { get; set; } = towerFaceC;
+    public string? TowerFaceC { get; set; }
 
     /// <summary>
     /// Gets or Sets TowerEndStrength
     /// </summary>
     [DataMember(Name = "towerEndStrength", EmitDefaultValue = false), JsonPropertyName("towerEndStrength")]
-    public int TowerEndStrength { get; set; } = towerEndStrength;
+    public int TowerEndStrength { get; set; }
 
     /// <summary>
     /// Gets or Sets TechFoulCount
     /// </summary>
     [DataMember(Name = "techFoulCount", EmitDefaultValue = false), JsonPropertyName("techFoulCount")]
-    public int TechFoulCount { get; set; } = techFoulCount;
+    public int TechFoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets FoulCount
     /// </summary>
     [DataMember(Name = "foulCount", EmitDefaultValue = false), JsonPropertyName("foulCount")]
-    public int FoulCount { get; set; } = foulCount;
+    public int FoulCount { get; set; }
 
     /// <summary>
     /// Gets or Sets Position2
     /// </summary>
     [DataMember(Name = "position2", EmitDefaultValue = false), JsonPropertyName("position2")]
-    public string Position2 { get; set; } = position2;
+    public string? Position2 { get; set; }
 
     /// <summary>
     /// Gets or Sets Position3
     /// </summary>
     [DataMember(Name = "position3", EmitDefaultValue = false), JsonPropertyName("position3")]
-    public string Position3 { get; set; } = position3;
+    public string? Position3 { get; set; }
 
     /// <summary>
     /// Gets or Sets Position4
     /// </summary>
     [DataMember(Name = "position4", EmitDefaultValue = false), JsonPropertyName("position4")]
-    public string Position4 { get; set; } = position4;
+    public string? Position4 { get; set; }
 
     /// <summary>
     /// Gets or Sets Position5
     /// </summary>
     [DataMember(Name = "position5", EmitDefaultValue = false), JsonPropertyName("position5")]
-    public string Position5 { get; set; } = position5;
+    public string? Position5 { get; set; }
 
     /// <summary>
     /// Gets or Sets Position1crossings
     /// </summary>
     [DataMember(Name = "position1crossings", EmitDefaultValue = false), JsonPropertyName("position1crossings")]
-    public int Position1crossings { get; set; } = position1crossings;
+    public int Position1crossings { get; set; }
 
     /// <summary>
     /// Gets or Sets Position2crossings
     /// </summary>
     [DataMember(Name = "position2crossings", EmitDefaultValue = false), JsonPropertyName("position2crossings")]
-    public int Position2crossings { get; set; } = position2crossings;
+    public int Position2crossings { get; set; }
 
     /// <summary>
     /// Gets or Sets Position3crossings
     /// </summary>
     [DataMember(Name = "position3crossings", EmitDefaultValue = false), JsonPropertyName("position3crossings")]
-    public int Position3crossings { get; set; } = position3crossings;
+    public int Position3crossings { get; set; }
 
     /// <summary>
     /// Gets or Sets Position4crossings
     /// </summary>
     [DataMember(Name = "position4crossings", EmitDefaultValue = false), JsonPropertyName("position4crossings")]
-    public int Position4crossings { get; set; } = position4crossings;
+    public int Position4crossings { get; set; }
 
     /// <summary>
     /// Gets or Sets Position5crossings
     /// </summary>
     [DataMember(Name = "position5crossings", EmitDefaultValue = false), JsonPropertyName("position5crossings")]
-    public int Position5crossings { get; set; } = position5crossings;
+    public int Position5crossings { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -423,182 +384,6 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as MatchScoreBreakdown2016Alliance);
-
-    /// <summary>
-    /// Returns true if MatchScoreBreakdown2016Alliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of MatchScoreBreakdown2016Alliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(MatchScoreBreakdown2016Alliance? input)
-    {
-        return input is not null
-&& (
-                this.AutoPoints == input.AutoPoints ||
-                this.AutoPoints.Equals(input.AutoPoints)
-            ) &&
-            (
-                this.TeleopPoints == input.TeleopPoints ||
-                this.TeleopPoints.Equals(input.TeleopPoints)
-            ) &&
-            (
-                this.BreachPoints == input.BreachPoints ||
-                this.BreachPoints.Equals(input.BreachPoints)
-            ) &&
-            (
-                this.FoulPoints == input.FoulPoints ||
-                this.FoulPoints.Equals(input.FoulPoints)
-            ) &&
-            (
-                this.CapturePoints == input.CapturePoints ||
-                this.CapturePoints.Equals(input.CapturePoints)
-            ) &&
-            (
-                this.AdjustPoints == input.AdjustPoints ||
-                this.AdjustPoints.Equals(input.AdjustPoints)
-            ) &&
-            (
-                this.TotalPoints == input.TotalPoints ||
-                this.TotalPoints.Equals(input.TotalPoints)
-            ) &&
-            (
-                this.Robot1Auto == input.Robot1Auto ||
-                this.Robot1Auto.Equals(input.Robot1Auto)
-            ) &&
-            (
-                this.Robot2Auto == input.Robot2Auto ||
-                this.Robot2Auto.Equals(input.Robot2Auto)
-            ) &&
-            (
-                this.Robot3Auto == input.Robot3Auto ||
-                this.Robot3Auto.Equals(input.Robot3Auto)
-            ) &&
-            (
-                this.AutoReachPoints == input.AutoReachPoints ||
-                this.AutoReachPoints.Equals(input.AutoReachPoints)
-            ) &&
-            (
-                this.AutoCrossingPoints == input.AutoCrossingPoints ||
-                this.AutoCrossingPoints.Equals(input.AutoCrossingPoints)
-            ) &&
-            (
-                this.AutoBouldersLow == input.AutoBouldersLow ||
-                this.AutoBouldersLow.Equals(input.AutoBouldersLow)
-            ) &&
-            (
-                this.AutoBouldersHigh == input.AutoBouldersHigh ||
-                this.AutoBouldersHigh.Equals(input.AutoBouldersHigh)
-            ) &&
-            (
-                this.AutoBoulderPoints == input.AutoBoulderPoints ||
-                this.AutoBoulderPoints.Equals(input.AutoBoulderPoints)
-            ) &&
-            (
-                this.TeleopCrossingPoints == input.TeleopCrossingPoints ||
-                this.TeleopCrossingPoints.Equals(input.TeleopCrossingPoints)
-            ) &&
-            (
-                this.TeleopBouldersLow == input.TeleopBouldersLow ||
-                this.TeleopBouldersLow.Equals(input.TeleopBouldersLow)
-            ) &&
-            (
-                this.TeleopBouldersHigh == input.TeleopBouldersHigh ||
-                this.TeleopBouldersHigh.Equals(input.TeleopBouldersHigh)
-            ) &&
-            (
-                this.TeleopBoulderPoints == input.TeleopBoulderPoints ||
-                this.TeleopBoulderPoints.Equals(input.TeleopBoulderPoints)
-            ) &&
-            (
-                this.TeleopDefensesBreached == input.TeleopDefensesBreached ||
-                this.TeleopDefensesBreached.Equals(input.TeleopDefensesBreached)
-            ) &&
-            (
-                this.TeleopChallengePoints == input.TeleopChallengePoints ||
-                this.TeleopChallengePoints.Equals(input.TeleopChallengePoints)
-            ) &&
-            (
-                this.TeleopScalePoints == input.TeleopScalePoints ||
-                this.TeleopScalePoints.Equals(input.TeleopScalePoints)
-            ) &&
-            (
-                this.TeleopTowerCaptured == input.TeleopTowerCaptured ||
-                this.TeleopTowerCaptured.Equals(input.TeleopTowerCaptured)
-            ) &&
-            (
-                this.TowerFaceA == input.TowerFaceA ||
-                (this.TowerFaceA is not null &&
-                this.TowerFaceA.Equals(input.TowerFaceA))
-            ) &&
-            (
-                this.TowerFaceB == input.TowerFaceB ||
-                (this.TowerFaceB is not null &&
-                this.TowerFaceB.Equals(input.TowerFaceB))
-            ) &&
-            (
-                this.TowerFaceC == input.TowerFaceC ||
-                (this.TowerFaceC is not null &&
-                this.TowerFaceC.Equals(input.TowerFaceC))
-            ) &&
-            (
-                this.TowerEndStrength == input.TowerEndStrength ||
-                this.TowerEndStrength.Equals(input.TowerEndStrength)
-            ) &&
-            (
-                this.TechFoulCount == input.TechFoulCount ||
-                this.TechFoulCount.Equals(input.TechFoulCount)
-            ) &&
-            (
-                this.FoulCount == input.FoulCount ||
-                this.FoulCount.Equals(input.FoulCount)
-            ) &&
-            (
-                this.Position2 == input.Position2 ||
-                (this.Position2 is not null &&
-                this.Position2.Equals(input.Position2))
-            ) &&
-            (
-                this.Position3 == input.Position3 ||
-                (this.Position3 is not null &&
-                this.Position3.Equals(input.Position3))
-            ) &&
-            (
-                this.Position4 == input.Position4 ||
-                (this.Position4 is not null &&
-                this.Position4.Equals(input.Position4))
-            ) &&
-            (
-                this.Position5 == input.Position5 ||
-                (this.Position5 is not null &&
-                this.Position5.Equals(input.Position5))
-            ) &&
-            (
-                this.Position1crossings == input.Position1crossings ||
-                this.Position1crossings.Equals(input.Position1crossings)
-            ) &&
-            (
-                this.Position2crossings == input.Position2crossings ||
-                this.Position2crossings.Equals(input.Position2crossings)
-            ) &&
-            (
-                this.Position3crossings == input.Position3crossings ||
-                this.Position3crossings.Equals(input.Position3crossings)
-            ) &&
-            (
-                this.Position4crossings == input.Position4crossings ||
-                this.Position4crossings.Equals(input.Position4crossings)
-            ) &&
-            (
-                this.Position5crossings == input.Position5crossings ||
-                this.Position5crossings.Equals(input.Position5crossings)
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -684,8 +469,5 @@ public partial class MatchScoreBreakdown2016Alliance(int autoPoints = default, i
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

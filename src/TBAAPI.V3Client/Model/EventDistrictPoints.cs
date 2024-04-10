@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -21,25 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventDistrictPoints
 /// </summary>
-[DataContract]public partial record EventDistrictPoints : IValidatableObject
+[DataContract]
+public partial record EventDistrictPoints : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventDistrictPoints" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventDistrictPoints() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventDistrictPoints" /> class.
-    /// </summary>
-    /// <param name="points">Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value. (required).</param>
-    /// <param name="tiebreakers">Tiebreaker values for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the tiebreaker elements as its value..</param>
-    public EventDistrictPoints(IDictionary<string, EventDistrictPointsPoints>? points = default, IDictionary<string, EventDistrictPointsTiebreakers>? tiebreakers = default)
-    {
-        // to ensure "points" is required (not null)
-        this.Points = points ?? throw new ArgumentNullException(nameof(points));
-        this.Tiebreakers = tiebreakers;
-    }
-
     /// <summary>
     /// Points gained for each team at the event. Stored as a key-value pair with the team key as the key, and an object describing the points as its value.
     /// </summary>
@@ -75,35 +57,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventDistrictPoints);
-
-    /// <summary>
-    /// Returns true if EventDistrictPoints instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventDistrictPoints to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventDistrictPoints? input)
-    {
-        return input is not null
-&& (
-                this.Points == input.Points ||
-                (this.Points is not null &&
-                input.Points is not null &&
-                this.Points.SequenceEqual(input.Points))
-            ) &&
-            (
-                this.Tiebreakers == input.Tiebreakers ||
-                (this.Tiebreakers is not null &&
-                input.Tiebreakers is not null &&
-                this.Tiebreakers.SequenceEqual(input.Tiebreakers))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -131,8 +84,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

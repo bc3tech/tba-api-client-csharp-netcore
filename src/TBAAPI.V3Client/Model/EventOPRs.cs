@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -24,11 +22,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="EventOPRs" /> class.
 /// </remarks>
-/// <param name="oprs">A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value..</param>
-/// <param name="dprs">A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value..</param>
-/// <param name="ccwms">A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value..</param>
 [DataContract]
-public partial class EventOPRs(IDictionary<string, float>? oprs = default, IDictionary<string, float>? dprs = default, IDictionary<string, float>? ccwms = default) : IEquatable<EventOPRs>, IValidatableObject
+public partial record EventOPRs : IValidatableObject
 {
 
     /// <summary>
@@ -36,21 +31,21 @@ public partial class EventOPRs(IDictionary<string, float>? oprs = default, IDict
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value.</value>
     [DataMember(Name = "oprs", EmitDefaultValue = false), JsonPropertyName("oprs")]
-    public IDictionary<string, float>? Oprs { get; set; } = oprs;
+    public IDictionary<string, float>? Oprs { get; set; }
 
     /// <summary>
     /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.</value>
     [DataMember(Name = "dprs", EmitDefaultValue = false), JsonPropertyName("dprs")]
-    public IDictionary<string, float>? Dprs { get; set; } = dprs;
+    public IDictionary<string, float>? Dprs { get; set; }
 
     /// <summary>
     /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.
     /// </summary>
     /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.</value>
     [DataMember(Name = "ccwms", EmitDefaultValue = false), JsonPropertyName("ccwms")]
-    public IDictionary<string, float>? Ccwms { get; set; } = ccwms;
+    public IDictionary<string, float>? Ccwms { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -72,41 +67,6 @@ public partial class EventOPRs(IDictionary<string, float>? oprs = default, IDict
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventOPRs);
-
-    /// <summary>
-    /// Returns true if EventOPRs instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventOPRs to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventOPRs? input)
-    {
-        return input is not null &&
-            (
-                this.Oprs == input.Oprs ||
-                (this.Oprs is not null &&
-                input.Oprs is not null &&
-                this.Oprs.SequenceEqual(input.Oprs))
-            ) &&
-            (
-                this.Dprs == input.Dprs ||
-                (this.Dprs is not null &&
-                input.Dprs is not null &&
-                this.Dprs.SequenceEqual(input.Dprs))
-            ) &&
-            (
-                this.Ccwms == input.Ccwms ||
-                (this.Ccwms is not null &&
-                input.Ccwms is not null &&
-                this.Ccwms.SequenceEqual(input.Ccwms))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -141,8 +101,5 @@ public partial class EventOPRs(IDictionary<string, float>? oprs = default, IDict
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -25,12 +23,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="TeamEventStatusRank" /> class.
 /// </remarks>
-/// <param name="numTeams">Number of teams ranked..</param>
-/// <param name="ranking">ranking.</param>
-/// <param name="sortOrderInfo">Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array..</param>
-/// <param name="status">status.</param>
 [DataContract]
-public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatusRankRanking? ranking = default, IList<TeamEventStatusRankSortOrderInfo>? sortOrderInfo = default, string? status = default) : IEquatable<TeamEventStatusRank>, IValidatableObject
+public partial record TeamEventStatusRank : IValidatableObject
 {
 
     /// <summary>
@@ -38,26 +32,26 @@ public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatus
     /// </summary>
     /// <value>Number of teams ranked.</value>
     [DataMember(Name = "num_teams", EmitDefaultValue = false), JsonPropertyName("num_teams")]
-    public int NumTeams { get; set; } = numTeams;
+    public int NumTeams { get; set; }
 
     /// <summary>
     /// Gets or Sets Ranking
     /// </summary>
     [DataMember(Name = "ranking", EmitDefaultValue = false), JsonPropertyName("ranking")]
-    public TeamEventStatusRankRanking? Ranking { get; set; } = ranking;
+    public TeamEventStatusRankRanking? Ranking { get; set; }
 
     /// <summary>
     /// Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.
     /// </summary>
     /// <value>Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.</value>
     [DataMember(Name = "sort_order_info", EmitDefaultValue = false), JsonPropertyName("sort_order_info")]
-    public IList<TeamEventStatusRankSortOrderInfo>? SortOrderInfo { get; set; } = sortOrderInfo;
+    public IList<TeamEventStatusRankSortOrderInfo>? SortOrderInfo { get; set; }
 
     /// <summary>
     /// Gets or Sets Status
     /// </summary>
     [DataMember(Name = "status", EmitDefaultValue = false), JsonPropertyName("status")]
-    public string? Status { get; set; } = status;
+    public string? Status { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -80,43 +74,6 @@ public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatus
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as TeamEventStatusRank);
-
-    /// <summary>
-    /// Returns true if TeamEventStatusRank instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TeamEventStatusRank to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TeamEventStatusRank? input)
-    {
-        return input is not null &&
-            (
-                this.NumTeams == input.NumTeams ||
-                this.NumTeams.Equals(input.NumTeams)
-            ) &&
-            (
-                this.Ranking == input.Ranking ||
-                (this.Ranking is not null &&
-                this.Ranking.Equals(input.Ranking))
-            ) &&
-            (
-                this.SortOrderInfo == input.SortOrderInfo ||
-                (this.SortOrderInfo is not null &&
-                input.SortOrderInfo is not null &&
-                this.SortOrderInfo.SequenceEqual(input.SortOrderInfo))
-            ) &&
-            (
-                this.Status == input.Status ||
-                (this.Status is not null &&
-                this.Status.Equals(input.Status))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code
@@ -152,8 +109,5 @@ public partial class TeamEventStatusRank(int numTeams = default, TeamEventStatus
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

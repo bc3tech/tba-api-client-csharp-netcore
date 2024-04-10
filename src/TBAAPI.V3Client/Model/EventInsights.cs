@@ -23,10 +23,8 @@ using System.Text.Json.Serialization;
 /// <remarks>
 /// Initializes a new instance of the <see cref="EventInsights" /> class.
 /// </remarks>
-/// <param name="qual">Inights for the qualification round of an event.</param>
-/// <param name="playoff">Insights for the playoff round of an event.</param>
 [DataContract]
-public partial class EventInsights(object? qual = default, object? playoff = default) : IEquatable<EventInsights>, IValidatableObject
+public partial record EventInsights : IValidatableObject
 {
 
     /// <summary>
@@ -34,14 +32,14 @@ public partial class EventInsights(object? qual = default, object? playoff = def
     /// </summary>
     /// <value>Inights for the qualification round of an event</value>
     [DataMember(Name = "qual", EmitDefaultValue = false), JsonPropertyName("qual")]
-    public object? Qual { get; set; } = qual;
+    public object? Qual { get; set; }
 
     /// <summary>
     /// Insights for the playoff round of an event
     /// </summary>
     /// <value>Insights for the playoff round of an event</value>
     [DataMember(Name = "playoff", EmitDefaultValue = false), JsonPropertyName("playoff")]
-    public object? Playoff { get; set; } = playoff;
+    public object? Playoff { get; set; }
 
     /// <summary>
     /// Returns the string presentation of the object
@@ -62,33 +60,6 @@ public partial class EventInsights(object? qual = default, object? playoff = def
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventInsights);
-
-    /// <summary>
-    /// Returns true if EventInsights instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventInsights to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventInsights? input)
-    {
-        return input is not null
-&& (
-                this.Qual == input.Qual ||
-                (this.Qual is not null &&
-                this.Qual.Equals(input.Qual))
-            ) &&
-            (
-                this.Playoff == input.Playoff ||
-                (this.Playoff is not null &&
-                this.Playoff.Equals(input.Playoff))
-            );
-    }
 
     /// <summary>
     /// Gets the hash code

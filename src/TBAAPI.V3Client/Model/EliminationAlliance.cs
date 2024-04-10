@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -21,31 +19,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EliminationAlliance
 /// </summary>
-[DataContract]public partial record EliminationAlliance : IValidatableObject
+[DataContract]
+public partial record EliminationAlliance : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EliminationAlliance" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EliminationAlliance() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EliminationAlliance" /> class.
-    /// </summary>
-    /// <param name="name">Alliance name, may be null..</param>
-    /// <param name="backup">backup.</param>
-    /// <param name="declines">List of teams that declined the alliance..</param>
-    /// <param name="picks">List of team keys picked for the alliance. First pick is captain. (required).</param>
-    /// <param name="status">status.</param>
-    public EliminationAlliance(string? name = default, EliminationAllianceBackup? backup = default, List<string>? declines = default, List<string>? picks = default, EliminationAllianceStatus? status = default)
-    {
-        // to ensure "picks" is required (not null)
-        this.Picks = picks ?? throw new ArgumentNullException(nameof(picks));
-        this.Name = name;
-        this.Backup = backup;
-        this.Declines = declines;
-        this.Status = status;
-    }
-
     /// <summary>
     /// Alliance name, may be null.
     /// </summary>
@@ -103,50 +79,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EliminationAlliance);
-
-    /// <summary>
-    /// Returns true if EliminationAlliance instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EliminationAlliance to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EliminationAlliance? input)
-    {
-        return input is not null
-&& (
-                this.Name == input.Name ||
-                (this.Name is not null &&
-                this.Name.Equals(input.Name))
-            ) &&
-            (
-                this.Backup == input.Backup ||
-                (this.Backup is not null &&
-                this.Backup.Equals(input.Backup))
-            ) &&
-            (
-                this.Declines == input.Declines ||
-                (this.Declines is not null &&
-                input.Declines is not null &&
-                this.Declines.SequenceEqual(input.Declines))
-            ) &&
-            (
-                this.Picks == input.Picks ||
-                (this.Picks is not null &&
-                input.Picks is not null &&
-                this.Picks.SequenceEqual(input.Picks))
-            ) &&
-            (
-                this.Status == input.Status ||
-                (this.Status is not null &&
-                this.Status.Equals(input.Status))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -189,8 +121,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }

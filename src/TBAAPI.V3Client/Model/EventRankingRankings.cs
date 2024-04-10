@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -22,38 +20,9 @@ using System.Text.Json.Serialization;
 /// <summary>
 /// EventRankingRankings
 /// </summary>
-[DataContract]public partial record EventRankingRankings : IValidatableObject
+[DataContract]
+public partial record EventRankingRankings : IValidatableObject
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRankingRankings" /> class.
-    /// </summary>
-    [JsonConstructor]
-    protected EventRankingRankings() { }
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EventRankingRankings" /> class.
-    /// </summary>
-    /// <param name="matchesPlayed">Number of matches played by this team. (required).</param>
-    /// <param name="qualAverage">The average match score during qualifications. Year specific. May be null if not relevant for a given year..</param>
-    /// <param name="extraStats">Additional special data on the team&#39;s performance calculated by TBA..</param>
-    /// <param name="sortOrders">Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details..</param>
-    /// <param name="record">record (required).</param>
-    /// <param name="rank">The team&#39;s rank at the event as provided by FIRST. (required).</param>
-    /// <param name="dq">Number of times disqualified. (required).</param>
-    /// <param name="teamKey">The team with this rank. (required).</param>
-    public EventRankingRankings(int matchesPlayed = default, int qualAverage = default, List<decimal>? extraStats = default, List<decimal>? sortOrders = default, WLTRecord? record = default, int rank = default, int dq = default, string? teamKey = default)
-    {
-        this.MatchesPlayed = matchesPlayed;
-        // to ensure "record" is required (not null)
-        this.Record = record ?? throw new ArgumentNullException(nameof(record));
-        this.Rank = rank;
-        this.Dq = dq;
-        // to ensure "teamKey" is required (not null)
-        this.TeamKey = teamKey ?? throw new ArgumentNullException(nameof(teamKey));
-        this.QualAverage = qualAverage;
-        this.ExtraStats = extraStats;
-        this.SortOrders = sortOrders;
-    }
-
     /// <summary>
     /// Number of matches played by this team.
     /// </summary>
@@ -86,7 +55,7 @@ using System.Text.Json.Serialization;
     /// Gets or Sets Record
     /// </summary>
     [DataMember(Name = "record", EmitDefaultValue = false), JsonPropertyName("record")]
-    public WLTRecord Record { get; set; }
+    public WLTRecord? Record { get; set; }
 
     /// <summary>
     /// The team&#39;s rank at the event as provided by FIRST.
@@ -136,61 +105,6 @@ using System.Text.Json.Serialization;
     public virtual string ToJson() => JsonSerializer.Serialize(this, GetType());
 
     /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object? input) => Equals(input as EventRankingRankings);
-
-    /// <summary>
-    /// Returns true if EventRankingRankings instances are equal
-    /// </summary>
-    /// <param name="input">Instance of EventRankingRankings to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(EventRankingRankings? input)
-    {
-        return input is not null
-&& (
-                this.MatchesPlayed == input.MatchesPlayed ||
-                this.MatchesPlayed.Equals(input.MatchesPlayed)
-            ) &&
-            (
-                this.QualAverage == input.QualAverage ||
-                this.QualAverage.Equals(input.QualAverage)
-            ) &&
-            (
-                this.ExtraStats == input.ExtraStats ||
-                (this.ExtraStats is not null &&
-                input.ExtraStats is not null &&
-                this.ExtraStats.SequenceEqual(input.ExtraStats))
-            ) &&
-            (
-                this.SortOrders == input.SortOrders ||
-                (this.SortOrders is not null &&
-                input.SortOrders is not null &&
-                this.SortOrders.SequenceEqual(input.SortOrders))
-            ) &&
-            (
-                this.Record == input.Record ||
-                (this.Record is not null &&
-                this.Record.Equals(input.Record))
-            ) &&
-            (
-                this.Rank == input.Rank ||
-                this.Rank.Equals(input.Rank)
-            ) &&
-            (
-                this.Dq == input.Dq ||
-                this.Dq.Equals(input.Dq)
-            ) &&
-            (
-                this.TeamKey == input.TeamKey ||
-                (this.TeamKey is not null &&
-                this.TeamKey.Equals(input.TeamKey))
-            );
-    }
-
-    /// <summary>
     /// Gets the hash code
     /// </summary>
     /// <returns>Hash code</returns>
@@ -232,8 +146,5 @@ using System.Text.Json.Serialization;
     /// </summary>
     /// <param name="validationContext">Validation context</param>
     /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-    {
-        yield break;
-    }
+    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext) => [];
 }
