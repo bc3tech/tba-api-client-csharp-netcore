@@ -13,6 +13,8 @@ namespace TBAAPI.V3Client.Api;
 using System;
 using System.Collections.Generic;
 
+using Microsoft.SemanticKernel;
+
 using TBAAPI.V3Client.Client;
 using TBAAPI.V3Client.Model;
 
@@ -1200,6 +1202,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Event&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Event>> GetDistrictEventsAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = await GetDistrictEventsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1214,6 +1217,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Event>>> GetDistrictEventsAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1352,6 +1356,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetDistrictEventsKeysAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictEventsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1366,6 +1371,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetDistrictEventsKeysAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1504,6 +1510,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;EventSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<EventSimple>> GetDistrictEventsSimpleAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = await GetDistrictEventsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1518,6 +1525,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<EventSimple>>> GetDistrictEventsSimpleAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1656,6 +1664,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;DistrictRanking&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<DistrictRanking>> GetDistrictRankingsAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1670,6 +1679,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;DistrictRanking&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<DistrictRanking>>> GetDistrictRankingsAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1808,6 +1818,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Team>> GetDistrictTeamsAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetDistrictTeamsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1822,6 +1833,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Team>>> GetDistrictTeamsAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1960,6 +1972,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetDistrictTeamsKeysAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1974,6 +1987,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetDistrictTeamsKeysAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -2112,6 +2126,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<TeamSimple>> GetDistrictTeamsSimpleAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -2126,6 +2141,7 @@ public partial class ListApi : IListApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<TeamSimple>>> GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -2264,6 +2280,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Team>> GetEventTeamsAsync(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetEventTeamsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
@@ -2278,6 +2295,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Team>>> GetEventTeamsAsyncWithHttpInfoAsync(string eventKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
@@ -2416,6 +2434,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetEventTeamsKeysAsync(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetEventTeamsKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
@@ -2430,6 +2449,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventTeamsKeysAsyncWithHttpInfoAsync(string eventKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
@@ -2568,6 +2588,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<TeamSimple>> GetEventTeamsSimpleAsync(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetEventTeamsSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
@@ -2582,6 +2603,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<TeamSimple>>> GetEventTeamsSimpleAsyncWithHttpInfoAsync(string eventKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
@@ -2720,6 +2742,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of Dictionary&lt;string, TeamEventStatus&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<Dictionary<string, TeamEventStatus>> GetEventTeamsStatusesAsync(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetEventTeamsStatusesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
@@ -2734,6 +2757,7 @@ public partial class ListApi : IListApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, TeamEventStatus&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, TeamEventStatus>>> GetEventTeamsStatusesAsyncWithHttpInfoAsync(string eventKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
@@ -2866,6 +2890,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Event&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Event>> GetEventsByYearAsync(int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = await GetEventsByYearAsyncWithHttpInfoAsync(year, ifModifiedSince);
@@ -2880,6 +2905,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Event>>> GetEventsByYearAsyncWithHttpInfoAsync(int year, string? ifModifiedSince = default)
     {
 
@@ -3007,6 +3033,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetEventsByYearKeysAsync(int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetEventsByYearKeysAsyncWithHttpInfoAsync(year, ifModifiedSince);
@@ -3021,6 +3048,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetEventsByYearKeysAsyncWithHttpInfoAsync(int year, string? ifModifiedSince = default)
     {
 
@@ -3148,6 +3176,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;EventSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<EventSimple>> GetEventsByYearSimpleAsync(int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = await GetEventsByYearSimpleAsyncWithHttpInfoAsync(year, ifModifiedSince);
@@ -3162,6 +3191,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<EventSimple>>> GetEventsByYearSimpleAsyncWithHttpInfoAsync(int year, string? ifModifiedSince = default)
     {
 
@@ -3299,6 +3329,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of Dictionary&lt;string, TeamEventStatus&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<Dictionary<string, TeamEventStatus>> GetTeamEventsStatusesByYearAsync(string teamKey, int year, string? ifModifiedSince = default)
     {
         ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
@@ -3314,6 +3345,7 @@ public partial class ListApi : IListApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, TeamEventStatus&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<Dictionary<string, TeamEventStatus>>> GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(string teamKey, int year, string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
@@ -3447,6 +3479,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Team>> GetTeamsAsync(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetTeamsAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
@@ -3461,6 +3494,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Team>>> GetTeamsAsyncWithHttpInfoAsync(int pageNum, string? ifModifiedSince = default)
     {
 
@@ -3592,6 +3626,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Team>> GetTeamsByYearAsync(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetTeamsByYearAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
@@ -3607,6 +3642,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Team>>> GetTeamsByYearAsyncWithHttpInfoAsync(int year, int pageNum, string? ifModifiedSince = default)
     {
 
@@ -3739,6 +3775,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetTeamsByYearKeysAsync(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamsByYearKeysAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
@@ -3754,6 +3791,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamsByYearKeysAsyncWithHttpInfoAsync(int year, int pageNum, string? ifModifiedSince = default)
     {
 
@@ -3886,6 +3924,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<TeamSimple>> GetTeamsByYearSimpleAsync(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsByYearSimpleAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
@@ -3901,6 +3940,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<TeamSimple>>> GetTeamsByYearSimpleAsyncWithHttpInfoAsync(int year, int pageNum, string? ifModifiedSince = default)
     {
 
@@ -4029,6 +4069,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetTeamsKeysAsync(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamsKeysAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
@@ -4043,6 +4084,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetTeamsKeysAsyncWithHttpInfoAsync(int pageNum, string? ifModifiedSince = default)
     {
 
@@ -4170,6 +4212,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<TeamSimple>> GetTeamsSimpleAsync(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsSimpleAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
@@ -4184,6 +4227,7 @@ public partial class ListApi : IListApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<TeamSimple>>> GetTeamsSimpleAsyncWithHttpInfoAsync(int pageNum, string? ifModifiedSince = default)
     {
 

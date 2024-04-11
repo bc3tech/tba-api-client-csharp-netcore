@@ -13,6 +13,8 @@ namespace TBAAPI.V3Client.Api;
 using System;
 using System.Collections.Generic;
 
+using Microsoft.SemanticKernel;
+
 using TBAAPI.V3Client.Client;
 using TBAAPI.V3Client.Model;
 
@@ -678,6 +680,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Event&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Event>> GetDistrictEventsAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = await GetDistrictEventsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -692,6 +695,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Event>>> GetDistrictEventsAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -830,6 +834,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetDistrictEventsKeysAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictEventsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -844,6 +849,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetDistrictEventsKeysAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -982,6 +988,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;EventSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<EventSimple>> GetDistrictEventsSimpleAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = await GetDistrictEventsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -996,6 +1003,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<EventSimple>>> GetDistrictEventsSimpleAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1134,6 +1142,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;DistrictRanking&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<DistrictRanking>> GetDistrictRankingsAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1148,6 +1157,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;DistrictRanking&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<DistrictRanking>>> GetDistrictRankingsAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1286,6 +1296,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<Team>> GetDistrictTeamsAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetDistrictTeamsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1300,6 +1311,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<Team>>> GetDistrictTeamsAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1438,6 +1450,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<string>> GetDistrictTeamsKeysAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1452,6 +1465,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<string>>> GetDistrictTeamsKeysAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1590,6 +1604,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<TeamSimple>> GetDistrictTeamsSimpleAsync(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
@@ -1604,6 +1619,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg &#x60;2016fim&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<TeamSimple>>> GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(string districtKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
@@ -1736,6 +1752,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;DistrictList&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<DistrictList>> GetDistrictsByYearAsync(int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictList>> localVarResponse = await GetDistrictsByYearAsyncWithHttpInfoAsync(year, ifModifiedSince);
@@ -1750,6 +1767,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;DistrictList&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<DistrictList>>> GetDistrictsByYearAsyncWithHttpInfoAsync(int year, string? ifModifiedSince = default)
     {
 
@@ -1883,6 +1901,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of EventDistrictPoints</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<EventDistrictPoints> GetEventDistrictPointsAsync(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<EventDistrictPoints> localVarResponse = await GetEventDistrictPointsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
@@ -1897,6 +1916,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="eventKey">TBA Event Key, eg &#x60;2016nytr&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (EventDistrictPoints)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<EventDistrictPoints>> GetEventDistrictPointsAsyncWithHttpInfoAsync(string eventKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
@@ -2035,6 +2055,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="teamKey">TBA Team Key, eg &#x60;frc254&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;DistrictList&gt;</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<List<DistrictList>> GetTeamDistrictsAsync(string teamKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictList>> localVarResponse = await GetTeamDistrictsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
@@ -2049,6 +2070,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="teamKey">TBA Team Key, eg &#x60;frc254&#x60;</param>
     /// <param name="ifModifiedSince">Value of the &#x60;Last-Modified&#x60; header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;DistrictList&gt;)</returns>
+    [KernelFunction]
     public async System.Threading.Tasks.Task<ApiResponse<List<DistrictList>>> GetTeamDistrictsAsyncWithHttpInfoAsync(string teamKey, string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
