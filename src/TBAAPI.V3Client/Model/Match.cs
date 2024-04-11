@@ -17,8 +17,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-using TBAAPI.V3Client.Client;
-
 /// <summary>
 /// Match
 /// </summary>
@@ -36,7 +34,7 @@ public partial record Match : IValidatableObject
     /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
     /// </summary>
     /// <value>The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.</value>
-    [DataMember(Name = "winning_alliance", EmitDefaultValue = false), JsonPropertyName("winning_alliance"), JsonConverter(typeof(OpenAPIEnumConverter<WinningAllianceEnum>))]
+    [DataMember(Name = "winning_alliance", EmitDefaultValue = false), JsonPropertyName("winning_alliance")]
     public WinningAllianceEnum? WinningAlliance { get; set; }
 
     /// <summary>
@@ -78,28 +76,28 @@ public partial record Match : IValidatableObject
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.</value>
     [DataMember(Name = "time", EmitDefaultValue = false), JsonPropertyName("time")]
-    public long Time { get; set; }
+    public long? Time { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.</value>
     [DataMember(Name = "actual_time", EmitDefaultValue = false), JsonPropertyName("actual_time")]
-    public long ActualTime { get; set; }
+    public long? ActualTime { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.</value>
     [DataMember(Name = "predicted_time", EmitDefaultValue = false), JsonPropertyName("predicted_time")]
-    public long PredictedTime { get; set; }
+    public long? PredictedTime { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted.</value>
     [DataMember(Name = "post_result_time", EmitDefaultValue = false), JsonPropertyName("post_result_time")]
-    public long PostResultTime { get; set; }
+    public long? PostResultTime { get; set; }
 
     /// <summary>
     /// Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null.
@@ -144,7 +142,7 @@ public partial record Match : IValidatableObject
     /// Returns the JSON string presentation of the object
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson() => JsonSerializer.Serialize(this, JsonSerializerOptions.Default);
+    public virtual string ToJson() => JsonSerializer.Serialize(this);
 
     /// <summary>
     /// Gets the hash code

@@ -78,21 +78,21 @@ public partial record MatchSimple : IValidatableObject
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.</value>
     [DataMember(Name = "time", EmitDefaultValue = false), JsonPropertyName("time")]
-    public long Time { get; set; }
+    public long? Time { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.</value>
     [DataMember(Name = "predicted_time", EmitDefaultValue = false), JsonPropertyName("predicted_time")]
-    public long PredictedTime { get; set; }
+    public long? PredictedTime { get; set; }
 
     /// <summary>
     /// UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.
     /// </summary>
     /// <value>UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.</value>
     [DataMember(Name = "actual_time", EmitDefaultValue = false), JsonPropertyName("actual_time")]
-    public long ActualTime { get; set; }
+    public long? ActualTime { get; set; }
     /// <summary>
     /// Returns the string presentation of the object
     /// </summary>
