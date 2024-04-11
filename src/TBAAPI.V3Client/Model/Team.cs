@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -21,14 +20,14 @@ using System.Text.Json.Serialization;
 /// Team
 /// </summary>
 [DataContract]
-public partial record Team: IValidatableObject
+public partial record Team : IValidatableObject
 {
     /// <summary>
     /// TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.
     /// </summary>
     /// <value>TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
-    public string? Key { get; set; }
+    public string Key { get; set; } = string.Empty;
 
     /// <summary>
     /// Official team number issued by FIRST.
@@ -112,14 +111,14 @@ public partial record Team: IValidatableObject
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
     [DataMember(Name = "lat", EmitDefaultValue = false), JsonPropertyName("lat")]
-    public double Lat { get; set; }
+    public double? Lat { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
     /// </summary>
     /// <value>Will be NULL, for future development.</value>
     [DataMember(Name = "lng", EmitDefaultValue = false), JsonPropertyName("lng")]
-    public double Lng { get; set; }
+    public double? Lng { get; set; }
 
     /// <summary>
     /// Will be NULL, for future development.
@@ -140,7 +139,7 @@ public partial record Team: IValidatableObject
     /// </summary>
     /// <value>First year the team officially competed.</value>
     [DataMember(Name = "rookie_year", EmitDefaultValue = false), JsonPropertyName("rookie_year")]
-    public int RookieYear { get; set; }
+    public int? RookieYear { get; set; }
 
     /// <summary>
     /// Team&#39;s motto as provided by FIRST. This field is deprecated and will return null - will be removed at end-of-season in 2019.
