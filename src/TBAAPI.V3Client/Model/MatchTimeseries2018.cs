@@ -35,16 +35,16 @@ public partial record MatchTimeseries2018 : IValidatableObject
     public string? EventKey { get; set; }
 
     /// <summary>
-    /// Match ID consisting of the level, match number, and set number, eg &#x60;qm45&#x60; or &#x60;f1m1&#x60;.
+    /// Match ID consisting of the level, match number, and set number, eg 'qm45' or 'f1m1'.
     /// </summary>
-    /// <value>Match ID consisting of the level, match number, and set number, eg &#x60;qm45&#x60; or &#x60;f1m1&#x60;.</value>
+    /// <value>Match ID consisting of the level, match number, and set number, eg 'qm45' or 'f1m1'.</value>
     [DataMember(Name = "match_id", EmitDefaultValue = false), JsonPropertyName("match_id")]
     public string? MatchId { get; set; }
 
     /// <summary>
-    /// Current mode of play, can be &#x60;pre_match&#x60;, &#x60;auto&#x60;, &#x60;telop&#x60;, or &#x60;post_match&#x60;.
+    /// Current mode of play, can be 'pre_match', 'auto', 'telop', or 'post_match'.
     /// </summary>
-    /// <value>Current mode of play, can be &#x60;pre_match&#x60;, &#x60;auto&#x60;, &#x60;telop&#x60;, or &#x60;post_match&#x60;.</value>
+    /// <value>Current mode of play, can be 'pre_match', 'auto', 'telop', or 'post_match'.</value>
     [DataMember(Name = "mode", EmitDefaultValue = false), JsonPropertyName("mode")]
     public string? Mode { get; set; }
 
@@ -55,9 +55,9 @@ public partial record MatchTimeseries2018 : IValidatableObject
     public int Play { get; set; }
 
     /// <summary>
-    /// Amount of time remaining in the match, only valid during &#x60;auto&#x60; and &#x60;teleop&#x60; modes.
+    /// Amount of time remaining in the match, only valid during 'auto' and 'teleop' modes.
     /// </summary>
-    /// <value>Amount of time remaining in the match, only valid during &#x60;auto&#x60; and &#x60;teleop&#x60; modes.</value>
+    /// <value>Amount of time remaining in the match, only valid during 'auto' and 'teleop' modes.</value>
     [DataMember(Name = "time_remaining", EmitDefaultValue = false), JsonPropertyName("time_remaining")]
     public int TimeRemaining { get; set; }
 
@@ -83,9 +83,9 @@ public partial record MatchTimeseries2018 : IValidatableObject
     public int BlueBoostPlayed { get; set; }
 
     /// <summary>
-    /// Name of the current blue alliance POWER UP being played, or &#x60;null&#x60;.
+    /// Name of the current blue alliance POWER UP being played, or 'null'.
     /// </summary>
-    /// <value>Name of the current blue alliance POWER UP being played, or &#x60;null&#x60;.</value>
+    /// <value>Name of the current blue alliance POWER UP being played, or 'null'.</value>
     [DataMember(Name = "blue_current_powerup", EmitDefaultValue = false), JsonPropertyName("blue_current_powerup")]
     public string? BlueCurrentPowerup { get; set; }
 
@@ -174,9 +174,9 @@ public partial record MatchTimeseries2018 : IValidatableObject
     public int RedBoostPlayed { get; set; }
 
     /// <summary>
-    /// Name of the current red alliance POWER UP being played, or &#x60;null&#x60;.
+    /// Name of the current red alliance POWER UP being played, or 'null'.
     /// </summary>
-    /// <value>Name of the current red alliance POWER UP being played, or &#x60;null&#x60;.</value>
+    /// <value>Name of the current red alliance POWER UP being played, or 'null'.</value>
     [DataMember(Name = "red_current_powerup", EmitDefaultValue = false), JsonPropertyName("red_current_powerup")]
     public string? RedCurrentPowerup { get; set; }
 

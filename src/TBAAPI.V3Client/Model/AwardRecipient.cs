@@ -18,7 +18,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 /// <summary>
-/// An &#x60;Award_Recipient&#x60; object represents the team and/or person who received an award at an event.
+/// An 'Award_Recipient' object represents the team and/or person who received an award at an event.
 /// </summary>
 /// <remarks>
 /// Initializes a new instance of the <see cref="AwardRecipient" /> class.

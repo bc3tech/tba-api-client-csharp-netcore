@@ -25,9 +25,9 @@ using System.Text.Json.Serialization;
 public partial record TeamSimple: IValidatableObject
 {
     /// <summary>
-    /// TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.
+    /// TBA team key with the format 'frcXXXX' with 'XXXX' representing the team number.
     /// </summary>
-    /// <value>TBA team key with the format &#x60;frcXXXX&#x60; with &#x60;XXXX&#x60; representing the team number.</value>
+    /// <value>TBA team key with the format 'frcXXXX' with 'XXXX' representing the team number.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string? Key { get; set; }
 

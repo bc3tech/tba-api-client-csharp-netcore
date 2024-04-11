@@ -23,16 +23,16 @@ using System.Text.Json.Serialization;
 public partial record EventRankingExtraStatsInfo : IValidatableObject
 {
     /// <summary>
-    /// Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;.
+    /// Integer expressing the number of digits of precision in the number provided in 'sort_orders'.
     /// </summary>
-    /// <value>Integer expressing the number of digits of precision in the number provided in &#x60;sort_orders&#x60;.</value>
+    /// <value>Integer expressing the number of digits of precision in the number provided in 'sort_orders'.</value>
     [DataMember(Name = "precision", EmitDefaultValue = false), JsonPropertyName("precision")]
     public decimal Precision { get; set; }
 
     /// <summary>
-    /// Name of the field used in the &#x60;extra_stats&#x60; array.
+    /// Name of the field used in the 'extra_stats' array.
     /// </summary>
-    /// <value>Name of the field used in the &#x60;extra_stats&#x60; array.</value>
+    /// <value>Name of the field used in the 'extra_stats' array.</value>
     [DataMember(Name = "name", EmitDefaultValue = false), JsonPropertyName("name")]
     public string? Name { get; set; }
 

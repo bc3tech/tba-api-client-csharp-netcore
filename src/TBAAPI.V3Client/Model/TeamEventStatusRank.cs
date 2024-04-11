@@ -41,9 +41,9 @@ public partial record TeamEventStatusRank : IValidatableObject
     public TeamEventStatusRankRanking? Ranking { get; set; }
 
     /// <summary>
-    /// Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.
+    /// Ordered list of names corresponding to the elements of the 'sort_orders' array.
     /// </summary>
-    /// <value>Ordered list of names corresponding to the elements of the &#x60;sort_orders&#x60; array.</value>
+    /// <value>Ordered list of names corresponding to the elements of the 'sort_orders' array.</value>
     [DataMember(Name = "sort_order_info", EmitDefaultValue = false), JsonPropertyName("sort_order_info")]
     public IList<TeamEventStatusRankSortOrderInfo>? SortOrderInfo { get; set; }
 

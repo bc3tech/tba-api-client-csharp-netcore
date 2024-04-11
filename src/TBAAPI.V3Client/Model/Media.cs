@@ -18,7 +18,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 /// <summary>
-/// The &#x60;Media&#x60; object contains a reference for most any media associated with a team or event on TBA.
+/// The 'Media' object contains a reference for most any media associated with a team or event on TBA.
 /// </summary>
 [DataContract]
 public partial record Media : IValidatableObject

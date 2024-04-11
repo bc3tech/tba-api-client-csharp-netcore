@@ -42,9 +42,9 @@ public partial record TeamEventStatusRankRanking : IValidatableObject
     public double QualAverage { get; set; }
 
     /// <summary>
-    /// Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value.
+    /// Ordered list of values used to determine the rank. See the 'sort_order_info' property for the name of each value.
     /// </summary>
-    /// <value>Ordered list of values used to determine the rank. See the &#x60;sort_order_info&#x60; property for the name of each value.</value>
+    /// <value>Ordered list of values used to determine the rank. See the 'sort_order_info' property for the name of each value.</value>
     [DataMember(Name = "sort_orders", EmitDefaultValue = false), JsonPropertyName("sort_orders")]
     public IList<decimal>? SortOrders { get; set; }
 

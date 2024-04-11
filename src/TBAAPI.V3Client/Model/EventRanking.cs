@@ -32,16 +32,16 @@ public partial record EventRanking: IValidatableObject
     public IList<EventRankingRankings>? Rankings { get; set; }
 
     /// <summary>
-    /// List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item.
+    /// List of special TBA-generated values provided in the 'extra_stats' array for each item.
     /// </summary>
-    /// <value>List of special TBA-generated values provided in the &#x60;extra_stats&#x60; array for each item.</value>
+    /// <value>List of special TBA-generated values provided in the 'extra_stats' array for each item.</value>
     [DataMember(Name = "extra_stats_info", EmitDefaultValue = false), JsonPropertyName("extra_stats_info")]
     public IList<EventRankingExtraStatsInfo>? ExtraStatsInfo { get; set; }
 
     /// <summary>
-    /// List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team.
+    /// List of year-specific values provided in the 'sort_orders' array for each team.
     /// </summary>
-    /// <value>List of year-specific values provided in the &#x60;sort_orders&#x60; array for each team.</value>
+    /// <value>List of year-specific values provided in the 'sort_orders' array for each team.</value>
     [DataMember(Name = "sort_order_info", EmitDefaultValue = false), JsonPropertyName("sort_order_info")]
     public IList<EventRankingSortOrderInfo>? SortOrderInfo { get; set; }
 

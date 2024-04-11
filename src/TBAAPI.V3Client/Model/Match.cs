@@ -38,9 +38,9 @@ public partial record Match : IValidatableObject
     public WinningAllianceEnum? WinningAlliance { get; set; }
 
     /// <summary>
-    /// TBA match key with the format &#x60;yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]&#x60;, where &#x60;yyyy&#x60; is the year, and &#x60;EVENT_CODE&#x60; is the event code of the event, &#x60;COMP_LEVEL&#x60; is (qm, ef, qf, sf, f), and &#x60;MATCH_NUMBER&#x60; is the match number in the competition level. A set number may be appended to the competition level if more than one match in required per set.
+    /// TBA match key with the format 'yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]', where 'yyyy' is the year, and 'EVENT_CODE' is the event code of the event, 'COMP_LEVEL' is (qm, ef, qf, sf, f), and 'MATCH_NUMBER' is the match number in the competition level. A set number may be appended to the competition level if more than one match in required per set.
     /// </summary>
-    /// <value>TBA match key with the format &#x60;yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]&#x60;, where &#x60;yyyy&#x60; is the year, and &#x60;EVENT_CODE&#x60; is the event code of the event, &#x60;COMP_LEVEL&#x60; is (qm, ef, qf, sf, f), and &#x60;MATCH_NUMBER&#x60; is the match number in the competition level. A set number may be appended to the competition level if more than one match in required per set.</value>
+    /// <value>TBA match key with the format 'yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]', where 'yyyy' is the year, and 'EVENT_CODE' is the event code of the event, 'COMP_LEVEL' is (qm, ef, qf, sf, f), and 'MATCH_NUMBER' is the match number in the competition level. A set number may be appended to the competition level if more than one match in required per set.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string? Key { get; set; }
 

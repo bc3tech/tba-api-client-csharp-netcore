@@ -45,9 +45,9 @@ public partial record EventRankingRankings : IValidatableObject
     public IList<decimal>? ExtraStats { get; set; }
 
     /// <summary>
-    /// Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details.
+    /// Additional year-specific information, may be null. See parent 'sort_order_info' for details.
     /// </summary>
-    /// <value>Additional year-specific information, may be null. See parent &#x60;sort_order_info&#x60; for details.</value>
+    /// <value>Additional year-specific information, may be null. See parent 'sort_order_info' for details.</value>
     [DataMember(Name = "sort_orders", EmitDefaultValue = false), JsonPropertyName("sort_orders")]
     public IList<decimal>? SortOrders { get; set; }
 

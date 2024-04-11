@@ -82,17 +82,17 @@ public partial record EventSimple: IValidatableObject
     public string? Country { get; set; }
 
     /// <summary>
-    /// Event start date in &#x60;yyyy-mm-dd&#x60; format.
+    /// Event start date in 'yyyy-mm-dd' format.
     /// </summary>
-    /// <value>Event start date in &#x60;yyyy-mm-dd&#x60; format.</value>
+    /// <value>Event start date in 'yyyy-mm-dd' format.</value>
     [DataMember(Name = "start_date", EmitDefaultValue = false), JsonPropertyName("start_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? StartDate { get; set; }
 
     /// <summary>
-    /// Event end date in &#x60;yyyy-mm-dd&#x60; format.
+    /// Event end date in 'yyyy-mm-dd' format.
     /// </summary>
-    /// <value>Event end date in &#x60;yyyy-mm-dd&#x60; format.</value>
+    /// <value>Event end date in 'yyyy-mm-dd' format.</value>
     [DataMember(Name = "end_date", EmitDefaultValue = false), JsonPropertyName("end_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? EndDate { get; set; }

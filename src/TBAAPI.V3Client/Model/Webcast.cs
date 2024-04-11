@@ -37,9 +37,9 @@ public partial record Webcast : IValidatableObject
     public string? Channel { get; set; }
 
     /// <summary>
-    /// The date for the webcast in &#x60;yyyy-mm-dd&#x60; format. May be null.
+    /// The date for the webcast in 'yyyy-mm-dd' format. May be null.
     /// </summary>
-    /// <value>The date for the webcast in &#x60;yyyy-mm-dd&#x60; format. May be null.</value>
+    /// <value>The date for the webcast in 'yyyy-mm-dd' format. May be null.</value>
     [DataMember(Name = "date", EmitDefaultValue = false), JsonPropertyName("date")]
     public string? Date { get; set; }
 

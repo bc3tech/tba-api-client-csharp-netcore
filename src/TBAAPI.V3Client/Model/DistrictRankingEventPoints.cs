@@ -23,9 +23,9 @@ using System.Text.Json.Serialization;
 public partial record DistrictRankingEventPoints : IValidatableObject
 {
     /// <summary>
-    /// &#x60;true&#x60; if this event is a District Championship event.
+    /// 'true' if this event is a District Championship event.
     /// </summary>
-    /// <value>&#x60;true&#x60; if this event is a District Championship event.</value>
+    /// <value>'true' if this event is a District Championship event.</value>
     [DataMember(Name = "district_cmp", EmitDefaultValue = false), JsonPropertyName("district_cmp")]
     public bool DistrictCmp { get; set; }
 

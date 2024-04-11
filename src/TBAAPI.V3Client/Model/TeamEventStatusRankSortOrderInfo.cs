@@ -28,9 +28,9 @@ public partial record TeamEventStatusRankSortOrderInfo : IValidatableObject
 {
 
     /// <summary>
-    /// The number of digits of precision used for this value, eg &#x60;2&#x60; would correspond to a value of &#x60;101.11&#x60; while &#x60;0&#x60; would correspond to &#x60;101&#x60;.
+    /// The number of digits of precision used for this value, eg '2' would correspond to a value of '101.11' while '0' would correspond to '101'.
     /// </summary>
-    /// <value>The number of digits of precision used for this value, eg &#x60;2&#x60; would correspond to a value of &#x60;101.11&#x60; while &#x60;0&#x60; would correspond to &#x60;101&#x60;.</value>
+    /// <value>The number of digits of precision used for this value, eg '2' would correspond to a value of '101.11' while '0' would correspond to '101'.</value>
     [DataMember(Name = "precision", EmitDefaultValue = false), JsonPropertyName("precision")]
     public int Precision { get; set; }
 

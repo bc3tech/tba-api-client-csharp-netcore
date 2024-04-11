@@ -18,7 +18,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 /// <summary>
-/// A year-specific event insight object expressed as a JSON string, separated in to &#x60;qual&#x60; and &#x60;playoff&#x60; fields. See also Event_Insights_2016, Event_Insights_2017, etc.
+/// A year-specific event insight object expressed as a JSON string, separated in to 'qual' and 'playoff' fields. See also Event_Insights_2016, Event_Insights_2017, etc.
 /// </summary>
 /// <remarks>
 /// Initializes a new instance of the <see cref="EventInsights" /> class.

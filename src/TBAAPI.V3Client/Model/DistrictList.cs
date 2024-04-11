@@ -37,9 +37,9 @@ public partial record DistrictList : IValidatableObject
     public string? DisplayName { get; set; }
 
     /// <summary>
-    /// Key for this district, e.g. &#x60;2016ne&#x60;.
+    /// Key for this district, e.g. '2016ne'.
     /// </summary>
-    /// <value>Key for this district, e.g. &#x60;2016ne&#x60;.</value>
+    /// <value>Key for this district, e.g. '2016ne'.</value>
     [DataMember(Name = "key", EmitDefaultValue = false), JsonPropertyName("key")]
     public string? Key { get; set; }
 

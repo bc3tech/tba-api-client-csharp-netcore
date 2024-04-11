@@ -36,16 +36,16 @@ public partial record MatchAlliance : IValidatableObject
     public IList<string>? TeamKeys { get; set; }
 
     /// <summary>
-    /// TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate.
+    /// TBA team keys (eg 'frc254') of any teams playing as a surrogate.
     /// </summary>
-    /// <value>TBA team keys (eg &#x60;frc254&#x60;) of any teams playing as a surrogate.</value>
+    /// <value>TBA team keys (eg 'frc254') of any teams playing as a surrogate.</value>
     [DataMember(Name = "surrogate_team_keys", EmitDefaultValue = false), JsonPropertyName("surrogate_team_keys")]
     public IList<string>? SurrogateTeamKeys { get; set; }
 
     /// <summary>
-    /// TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams.
+    /// TBA team keys (eg 'frc254') of any disqualified teams.
     /// </summary>
-    /// <value>TBA team keys (eg &#x60;frc254&#x60;) of any disqualified teams.</value>
+    /// <value>TBA team keys (eg 'frc254') of any disqualified teams.</value>
     [DataMember(Name = "dq_team_keys", EmitDefaultValue = false), JsonPropertyName("dq_team_keys")]
     public IList<string>? DqTeamKeys { get; set; }
 

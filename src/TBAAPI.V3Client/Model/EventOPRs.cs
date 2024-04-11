@@ -27,23 +27,23 @@ public partial record EventOPRs : IValidatableObject
 {
 
     /// <summary>
-    /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value.
+    /// A key-value pair with team key (eg 'frc254') as key and OPR as value.
     /// </summary>
-    /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and OPR as value.</value>
+    /// <value>A key-value pair with team key (eg 'frc254') as key and OPR as value.</value>
     [DataMember(Name = "oprs", EmitDefaultValue = false), JsonPropertyName("oprs")]
     public IDictionary<string, float>? Oprs { get; set; }
 
     /// <summary>
-    /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.
+    /// A key-value pair with team key (eg 'frc254') as key and DPR as value.
     /// </summary>
-    /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and DPR as value.</value>
+    /// <value>A key-value pair with team key (eg 'frc254') as key and DPR as value.</value>
     [DataMember(Name = "dprs", EmitDefaultValue = false), JsonPropertyName("dprs")]
     public IDictionary<string, float>? Dprs { get; set; }
 
     /// <summary>
-    /// A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.
+    /// A key-value pair with team key (eg 'frc254') as key and CCWM as value.
     /// </summary>
-    /// <value>A key-value pair with team key (eg &#x60;frc254&#x60;) as key and CCWM as value.</value>
+    /// <value>A key-value pair with team key (eg 'frc254') as key and CCWM as value.</value>
     [DataMember(Name = "ccwms", EmitDefaultValue = false), JsonPropertyName("ccwms")]
     public IDictionary<string, float>? Ccwms { get; set; }
 

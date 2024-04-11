@@ -82,17 +82,17 @@ public partial record Event : IValidatableObject
     public string? Country { get; set; }
 
     /// <summary>
-    /// Event start date in &#x60;yyyy-mm-dd&#x60; format.
+    /// Event start date in 'yyyy-mm-dd' format.
     /// </summary>
-    /// <value>Event start date in &#x60;yyyy-mm-dd&#x60; format.</value>
+    /// <value>Event start date in 'yyyy-mm-dd' format.</value>
     [DataMember(Name = "start_date", EmitDefaultValue = false), JsonPropertyName("start_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? StartDate { get; set; }
 
     /// <summary>
-    /// Event end date in &#x60;yyyy-mm-dd&#x60; format.
+    /// Event end date in 'yyyy-mm-dd' format.
     /// </summary>
-    /// <value>Event end date in &#x60;yyyy-mm-dd&#x60; format.</value>
+    /// <value>Event end date in 'yyyy-mm-dd' format.</value>
     [DataMember(Name = "end_date", EmitDefaultValue = false), JsonPropertyName("end_date")]
     [JsonConverter(typeof(OpenAPIDateConverter))]
     public DateTime? EndDate { get; set; }
@@ -105,9 +105,9 @@ public partial record Event : IValidatableObject
     public int Year { get; set; }
 
     /// <summary>
-    /// Same as &#x60;name&#x60; but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null.
+    /// Same as 'name' but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null.
     /// </summary>
-    /// <value>Same as &#x60;name&#x60; but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null.</value>
+    /// <value>Same as 'name' but doesn&#39;t include event specifiers, such as &#39;Regional&#39; or &#39;District&#39;. May be null.</value>
     [DataMember(Name = "short_name", EmitDefaultValue = false), JsonPropertyName("short_name")]
     public string? ShortName { get; set; }
 
@@ -216,9 +216,9 @@ public partial record Event : IValidatableObject
     public IList<string>? DivisionKeys { get; set; }
 
     /// <summary>
-    /// The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;.
+    /// The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of 'divison_keys'.
     /// </summary>
-    /// <value>The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of &#x60;divison_keys&#x60;.</value>
+    /// <value>The TBA Event key that represents the event&#39;s parent. Used to link back to the event from a division event. It is also the inverse relation of 'divison_keys'.</value>
     [DataMember(Name = "parent_event_key", EmitDefaultValue = false), JsonPropertyName("parent_event_key")]
     public string? ParentEventKey { get; set; }
 
@@ -230,9 +230,9 @@ public partial record Event : IValidatableObject
     public int? PlayoffType { get; set; }
 
     /// <summary>
-    /// String representation of the &#x60;playoff_type&#x60;, or null.
+    /// String representation of the 'playoff_type', or null.
     /// </summary>
-    /// <value>String representation of the &#x60;playoff_type&#x60;, or null.</value>
+    /// <value>String representation of the 'playoff_type', or null.</value>
     [DataMember(Name = "playoff_type_string", EmitDefaultValue = false), JsonPropertyName("playoff_type_string")]
     public string? PlayoffTypeString { get; set; }
 
