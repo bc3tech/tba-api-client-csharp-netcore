@@ -16,7 +16,7 @@ public class JsonStringEnumConverterWithEnumMemberSupport<T> : JsonConverter<T> 
         var enumString = reader.GetString();
         if (string.IsNullOrEmpty(enumString))
         {
-            return default;
+            return default!;
         }
 
         Type enumType = typeof(T);
