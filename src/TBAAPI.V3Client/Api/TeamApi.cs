@@ -2065,8 +2065,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;DistrictRanking&gt;</returns>
-    [KernelFunction, Description("Gets a list of team district rankings for the given district.")]
-    [return: Description("List<DistrictRanking>")]
     public DistrictRanking[]? GetDistrictRankings(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictRanking>> localVarResponse = GetDistrictRankingsWithHttpInfo(districtKey, ifModifiedSince);
@@ -2228,8 +2226,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Team&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in events in the given district.")]
-    [return: Description("List<Team>")]
     public Team[]? GetDistrictTeams(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetDistrictTeamsWithHttpInfo(districtKey, ifModifiedSince);
@@ -2391,7 +2387,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in events in the given district.")]
     [return: Description("List<string>")]
     public string[]? GetDistrictTeamsKeys(string districtKey, string? ifModifiedSince = default)
     {
@@ -2554,7 +2549,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;TeamSimple&gt;</returns>
-    [KernelFunction, Description("Gets a short-form list of 'Team' objects that competed in events in the given district.")]
     [return: Description("List<TeamSimple>")]
     public TeamSimple[]? GetDistrictTeamsSimple(string districtKey, string? ifModifiedSince = default)
     {
@@ -2717,7 +2711,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Team&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in the given event.")]
     [return: Description("List<Team>")]
     public Team[]? GetEventTeams(string eventKey, string? ifModifiedSince = default)
     {
@@ -2880,7 +2873,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' keys that competed in the given event.")]
     [return: Description("List<string>")]
     public string[]? GetEventTeamsKeys(string eventKey, string? ifModifiedSince = default)
     {
@@ -3043,7 +3035,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;TeamSimple&gt;</returns>
-    [KernelFunction, Description("Gets a short-form list of 'Team' objects that competed in the given event.")]
     [return: Description("List<TeamSimple>")]
     public TeamSimple[]? GetEventTeamsSimple(string eventKey, string? ifModifiedSince = default)
     {
@@ -3368,7 +3359,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Team</returns>
-    [KernelFunction, Description("Gets a 'Team' object for the team referenced by the given key.")]
     [return: Description("Team")]
     public Team GetTeam(string teamKey,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -3532,7 +3522,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Award&gt;</returns>
-    [KernelFunction, Description("Gets a list of awards the given team has won.")]
     [return: Description("List<Award>")]
     public Award[]? GetTeamAwards(string teamKey, string? ifModifiedSince = default)
     {
@@ -3696,7 +3685,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Award&gt;</returns>
-    [KernelFunction, Description("Gets a list of awards the given team has won in a given year.")]
     [return: Description("List<Award>")]
     public Award[]? GetTeamAwardsByYear(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -3864,7 +3852,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;DistrictList&gt;</returns>
-    [KernelFunction, Description("Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.")]
     [return: Description("List<DistrictList>")]
     public DistrictList[]? GetTeamDistricts(string teamKey, string? ifModifiedSince = default)
     {
@@ -4028,7 +4015,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Award&gt;</returns>
-    [KernelFunction, Description("Gets a list of awards the given team won at the given event.")]
     [return: Description("List<Award>")]
     public Award[]? GetTeamEventAwards(string teamKey, string eventKey, string? ifModifiedSince = default)
     {
@@ -4209,7 +4195,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Match&gt;</returns>
-    [KernelFunction, Description("Gets a list of matches for the given team and event.")]
     [return: Description("List<Match>")]
     public Match[]? GetTeamEventMatches(string teamKey, string eventKey, string? ifModifiedSince = default)
     {
@@ -4390,7 +4375,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of match keys for matches for the given team and event.")]
     [return: Description("List<string>")]
     public string[]? GetTeamEventMatchesKeys(string teamKey, string eventKey, string? ifModifiedSince = default)
     {
@@ -4571,7 +4555,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Match&gt;</returns>
-    [KernelFunction, Description("Gets a short-form list of matches for the given team and event.")]
     [return: Description("List<Match>")]
     public Match[]? GetTeamEventMatchesSimple(string teamKey, string eventKey, string? ifModifiedSince = default)
     {
@@ -4752,7 +4735,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>TeamEventStatus</returns>
-    [KernelFunction, Description("Gets the competition rank and status of the team at the given event.")]
     [return: Description("TeamEventStatus")]
     public TeamEventStatus GetTeamEventStatus(string teamKey, string eventKey,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -4933,7 +4915,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Event&gt;</returns>
-    [KernelFunction, Description("Gets a list of all events this team has competed at.")]
     [return: Description("List<Event>")]
     public Event[]? GetTeamEvents(string teamKey, string? ifModifiedSince = default)
     {
@@ -5097,7 +5078,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Event&gt;</returns>
-    [KernelFunction, Description("Gets a list of events this team has competed at in the given year.")]
     [return: Description("List<Event>")]
     public Event[]? GetTeamEventsByYear(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -5266,7 +5246,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of the event keys for events this team has competed at in the given year.")]
     [return: Description("List<string>")]
     public string[]? GetTeamEventsByYearKeys(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -5435,7 +5414,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;EventSimple&gt;</returns>
-    [KernelFunction, Description("Gets a short-form list of events this team has competed at in the given year.")]
     [return: Description("List<EventSimple>")]
     public EventSimple[]? GetTeamEventsByYearSimple(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -5603,7 +5581,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of the event keys for all events this team has competed at.")]
     [return: Description("List<string>")]
     public string[]? GetTeamEventsKeys(string teamKey, string? ifModifiedSince = default)
     {
@@ -5766,7 +5743,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;EventSimple&gt;</returns>
-    [KernelFunction, Description("Gets a short-form list of all events this team has competed at.")]
     [return: Description("List<EventSimple>")]
     public EventSimple[]? GetTeamEventsSimple(string teamKey, string? ifModifiedSince = default)
     {
@@ -6099,7 +6075,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Match&gt;</returns>
-    [KernelFunction, Description("Gets a list of matches for the given team and year.")]
     [return: Description("List<Match>")]
     public Match[]? GetTeamMatchesByYear(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -6268,7 +6243,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of match keys for matches for the given team and year.")]
     [return: Description("List<string>")]
     public string[]? GetTeamMatchesByYearKeys(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -6437,7 +6411,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;MatchSimple&gt;</returns>
-    [KernelFunction, Description("Gets a short-form list of matches for the given team and year.")]
     [return: Description("List<MatchSimple>")]
     public MatchSimple[]? GetTeamMatchesByYearSimple(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -6606,7 +6579,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="mediaTag">Media Tag which describes the Media.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Media&gt;</returns>
-    [KernelFunction, Description("Gets a list of Media (videos / pictures) for the given team and tag.")]
     [return: Description("List<Media>")]
     public Media[]? GetTeamMediaByTag(string teamKey, string mediaTag, string? ifModifiedSince = default)
     {
@@ -6788,7 +6760,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Media&gt;</returns>
-    [KernelFunction, Description("Gets a list of Media (videos / pictures) for the given team, tag and year.")]
     [return: Description("List<Media>")]
     public Media[]? GetTeamMediaByTagYear(string teamKey, string mediaTag, int year, string? ifModifiedSince = default)
     {
@@ -6974,7 +6945,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Media&gt;</returns>
-    [KernelFunction, Description("Gets a list of Media (videos / pictures) for the given team and year.")]
     [return: Description("List<Media>")]
     public Media[]? GetTeamMediaByYear(string teamKey, int year, string? ifModifiedSince = default)
     {
@@ -7142,7 +7112,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;TeamRobot&gt;</returns>
-    [KernelFunction, Description("Gets a list of year and robot name pairs for each year that a robot name was provided. Will return an empty array if the team has never named a robot.")]
     [return: Description("List<TeamRobot>")]
     public TeamRobot[]? GetTeamRobots(string teamKey, string? ifModifiedSince = default)
     {
@@ -7305,7 +7274,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>TeamSimple</returns>
-    [KernelFunction, Description("Gets a 'Team_Simple' object for the team referenced by the given key.")]
     [return: Description("TeamSimple")]
     public TeamSimple GetTeamSimple(string teamKey,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -7469,7 +7437,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Media&gt;</returns>
-    [KernelFunction, Description("Gets a list of Media (social media) for the given team.")]
     [return: Description("List<Media>")]
     public Media[]? GetTeamSocialMedia(string teamKey, string? ifModifiedSince = default)
     {
@@ -7632,7 +7599,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;int&gt;</returns>
-    [KernelFunction, Description("Gets a list of years in which the team participated in at least one competition.")]
     [return: Description("List<int>")]
     public int[]? GetTeamYearsParticipated(string teamKey, string? ifModifiedSince = default)
     {
@@ -7795,7 +7761,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Team&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects, paginated in groups of 500.")]
     [return: Description("List<Team>")]
     public Team[]? GetTeams(int pageNum, string? ifModifiedSince = default)
     {
@@ -7868,7 +7833,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects, paginated in groups of 500.")]
     [return: Description("Task of List<Team>")]
     public async Task<List<Team>> GetTeamsAsync(int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -7885,7 +7849,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects, paginated in groups of 500.")]
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetTeamsAsyncWithHttpInfoAsync(int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -7946,7 +7909,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Team&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in the given year, paginated in groups of 500.")]
     [return: Description("List<Team>")]
     public Team[]? GetTeamsByYear(int year, int pageNum, string? ifModifiedSince = default)
     {
@@ -8022,7 +7984,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in the given year, paginated in groups of 500.")]
     [return: Description("Task of List<Team>")]
     public async Task<List<Team>> GetTeamsByYearAsync(int year, int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8040,7 +8001,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in the given year, paginated in groups of 500.")]
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetTeamsByYearAsyncWithHttpInfoAsync(int year, int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8102,7 +8062,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list Team Keys that competed in the given year, paginated in groups of 500.")]
     [return: Description("List<string>")]
     public string[]? GetTeamsByYearKeys(int year, int pageNum, string? ifModifiedSince = default)
     {
@@ -8178,7 +8137,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list Team Keys that competed in the given year, paginated in groups of 500.")]
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamsByYearKeysAsync(int year, int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8196,7 +8154,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets a list Team Keys that competed in the given year, paginated in groups of 500.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamsByYearKeysAsyncWithHttpInfoAsync(int year, int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8258,7 +8215,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;TeamSimple&gt;</returns>
-    [KernelFunction, Description("Gets a list of short form 'Team_Simple' objects that competed in the given year, paginated in groups of 500.")]
     [return: Description("List<TeamSimple>")]
     public TeamSimple[]? GetTeamsByYearSimple(int year, int pageNum, string? ifModifiedSince = default)
     {
@@ -8334,7 +8290,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
-    [KernelFunction, Description("Gets a list of short form 'Team_Simple' objects that competed in the given year, paginated in groups of 500.")]
     [return: Description("Task of List<TeamSimple>")]
     public async Task<List<TeamSimple>> GetTeamsByYearSimpleAsync(int year, int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8352,7 +8307,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
-    [KernelFunction, Description("Gets a list of short form 'Team_Simple' objects that competed in the given year, paginated in groups of 500.")]
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetTeamsByYearSimpleAsyncWithHttpInfoAsync(int year, int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8413,7 +8367,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of Team keys, paginated in groups of 500. (Note, each page will not have 500 teams, but will include the teams within that range of 500.)")]
     [return: Description("List<string>")]
     public string[]? GetTeamsKeys(int pageNum, string? ifModifiedSince = default)
     {
@@ -8486,7 +8439,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
-    [KernelFunction, Description("Gets a list of Team keys, paginated in groups of 500. (Note, each page will not have 500 teams, but will include the teams within that range of 500.)")]
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamsKeysAsync(int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8503,7 +8455,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets a list of Team keys, paginated in groups of 500. (Note, each page will not have 500 teams, but will include the teams within that range of 500.)")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamsKeysAsyncWithHttpInfoAsync(int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8563,8 +8514,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;TeamSimple&gt;</returns>
-    [KernelFunction, Description("Gets a list of short form 'Team_Simple' objects, paginated in groups of 500.")]
-    [return: Description("List<TeamSimple>")]
     public TeamSimple[]? GetTeamsSimple(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = GetTeamsSimpleWithHttpInfo(pageNum, ifModifiedSince);
@@ -8636,7 +8585,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
-    [KernelFunction, Description("Gets a list of short form 'Team_Simple' objects, paginated in groups of 500.")]
     [return: Description("Task of List<TeamSimple>")]
     public async Task<List<TeamSimple>> GetTeamsSimpleAsync(int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -8653,7 +8601,6 @@ public partial class TeamApi : ITeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
-    [KernelFunction, Description("Gets a list of short form 'Team_Simple' objects, paginated in groups of 500.")]
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetTeamsSimpleAsyncWithHttpInfoAsync(int pageNum,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
