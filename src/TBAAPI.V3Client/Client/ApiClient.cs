@@ -33,9 +33,6 @@ internal partial class CustomJsonCodec : RestSharp.Serializers.ISerializer, IDes
     private static readonly string _contentType = "application/json";
     private readonly JsonSerializerOptions _serializerSettings = new()
     {
-        // OpenAPI generated types generally hide default constructors.
-        Converters = { new OpenAPIDateConverter() },
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         WriteIndented = true,
     };
 
