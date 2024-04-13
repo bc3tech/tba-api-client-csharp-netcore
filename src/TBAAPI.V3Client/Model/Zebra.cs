@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -23,7 +21,7 @@ using System.Text.Json.Serialization;
 /// Zebra
 /// </summary>
 [DataContract]
-public partial record Zebra: IValidatableObject
+public partial record Zebra : IValidatableObject
 {
     /// <summary>
     /// TBA match key with the format 'yyyy[EVENT_CODE]_[COMP_LEVEL]m[MATCH_NUMBER]', where 'yyyy' is the year, and 'EVENT_CODE' is the event code of the event, 'COMP_LEVEL' is (qm, ef, qf, sf, f), and 'MATCH_NUMBER' is the match number in the competition level. A set number may be appended to the competition level if more than one match in required per set.

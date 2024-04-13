@@ -21,7 +21,7 @@ using System.Text.Json.Serialization;
 /// EventDistrictPointsPoints
 /// </summary>
 [DataContract]
-public partial record EventDistrictPointsPoints: IValidatableObject
+public partial record EventDistrictPointsPoints : IValidatableObject
 {
     /// <summary>
     /// Total points awarded at this event.

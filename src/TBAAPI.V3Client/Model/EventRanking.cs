@@ -10,10 +10,8 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json;
@@ -22,7 +20,7 @@ using System.Text.Json.Serialization;
 /// EventRanking
 /// </summary>
 [DataContract]
-public partial record EventRanking: IValidatableObject
+public partial record EventRanking : IValidatableObject
 {
     /// <summary>
     /// List of rankings at the event.

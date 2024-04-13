@@ -24,7 +24,7 @@ using OpenAPIDateConverter = Client.OpenAPIDateConverter;
 /// EventSimple
 /// </summary>
 [DataContract]
-public partial record EventSimple: IValidatableObject
+public partial record EventSimple : IValidatableObject
 {
     /// <summary>
     /// TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event.

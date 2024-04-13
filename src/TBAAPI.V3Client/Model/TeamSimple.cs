@@ -10,7 +10,6 @@
 
 namespace TBAAPI.V3Client.Model;
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -22,7 +21,7 @@ using System.Text.Json.Serialization;
 /// TeamSimple
 /// </summary>
 [DataContract]
-public partial record TeamSimple: IValidatableObject
+public partial record TeamSimple : IValidatableObject
 {
     /// <summary>
     /// TBA team key with the format 'frcXXXX' with 'XXXX' representing the team number.
