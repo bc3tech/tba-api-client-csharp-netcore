@@ -14,7 +14,6 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
 /// <summary>
@@ -46,12 +45,13 @@ public class Configuration : IReadableConfiguration
     /// </summary>
     public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
     {
-        var status = (int)response.StatusCode;
-        return status >= 400
-            ? new ApiException(status,
-                string.Format("Error calling {0}: {1}", methodName, response.RawContent),
-                response.RawContent)
-            : (Exception?)null;
+        //var status = (int)response.StatusCode;
+        //return status >= 400
+        //    ? new ApiException(status,
+        //        string.Format("Error calling {0}: {1}", methodName, response.RawContent),
+        //        response.RawContent)
+        //    : (Exception?)null;
+        return default(Exception?);
     };
 
     #endregion Static Members
@@ -188,20 +188,17 @@ public class Configuration : IReadableConfiguration
 
         set
         {
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 _tempFolderPath = Path.GetTempPath();
                 return;
             }
 
             // create the directory if it does not exist
-            if (!Directory.Exists(value))
-            {
-                Directory.CreateDirectory(value);
-            }
+            Directory.CreateDirectory(value);
 
             // check if the path contains directory separator at the end
-            _tempFolderPath = value[^1] == Path.DirectorySeparatorChar ? value : value + Path.DirectorySeparatorChar;
+            _tempFolderPath = value.TrimEnd(Path.DirectorySeparatorChar);
         }
     }
 
@@ -218,7 +215,7 @@ public class Configuration : IReadableConfiguration
         get => _dateTimeFormat;
         set
         {
-            if (string.IsNullOrEmpty(value))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 // Never allow a blank or null string, go back to the default
                 _dateTimeFormat = ISO8601_DATETIME_FORMAT;
@@ -272,21 +269,6 @@ public class Configuration : IReadableConfiguration
         return report;
     }
 
-    /// <summary>
-    /// Add Api Key Header.
-    /// </summary>
-    /// <param name="key">Api Key name.</param>
-    /// <param name="value">Api Key value.</param>
-    /// <returns></returns>
-    public void AddApiKey(string key, string value) => this.ApiKey[key] = value;
-
-    /// <summary>
-    /// Sets the API key prefix.
-    /// </summary>
-    /// <param name="key">Api Key name.</param>
-    /// <param name="value">Api Key value.</param>
-    public void AddApiKeyPrefix(string key, string value) => this.ApiKeyPrefix[key] = value;
-
     #endregion Methods
 
     #region Static Members
@@ -303,9 +285,9 @@ public class Configuration : IReadableConfiguration
             return first ?? GlobalConfiguration.Instance;
         }
 
-        var apiKey = first.ApiKey.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
-        var apiKeyPrefix = first.ApiKeyPrefix.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
-        var defaultHeaders = first.DefaultHeaders.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        var apiKey = first.ApiKey;
+        var apiKeyPrefix = first.ApiKeyPrefix;
+        var defaultHeaders = first.DefaultHeaders;
 
         foreach (KeyValuePair<string, string> kvp in second.ApiKey)
         {

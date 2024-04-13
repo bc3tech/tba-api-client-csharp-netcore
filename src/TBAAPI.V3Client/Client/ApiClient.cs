@@ -322,7 +322,7 @@ public partial class ApiClient : ISynchronousClient, IAsynchronousClient
 
         var transformed = new ApiResponse<T>(response.StatusCode, [], result, rawContent)
         {
-            ErrorText = response.ErrorMessage,
+            ErrorText = response.ErrorMessage ?? (!response.IsSuccessful ? rawContent : null),
             Cookies = []
         };
 
