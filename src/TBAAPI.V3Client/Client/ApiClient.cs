@@ -13,124 +13,10 @@ namespace TBAAPI.V3Client.Client;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 using RestSharp;
 using RestSharp.Deserializers;
-
-using RestSharpMethod = RestSharp.Method;
-
-/// <summary>
-/// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON. 
-/// </summary>
-internal partial class CustomJsonCodec : RestSharp.Serializers.ISerializer, IDeserializer
-{
-    private readonly IReadableConfiguration _configuration;
-    private static readonly string _contentType = "application/json";
-    private readonly JsonSerializerOptions _serializerSettings = new()
-    {
-        WriteIndented = true,
-    };
-
-    public CustomJsonCodec(IReadableConfiguration configuration) => _configuration = configuration;
-
-    public CustomJsonCodec(JsonSerializerOptions serializerSettings, IReadableConfiguration configuration)
-    {
-        _serializerSettings = serializerSettings;
-        _configuration = configuration;
-    }
-
-    public string Serialize(object obj)
-    {
-        var result = JsonSerializer.Serialize(obj, obj.GetType(), _serializerSettings);
-        return result;
-    }
-
-    public T? Deserialize<T>(IRestResponse response)
-    {
-        var result = (T?)Deserialize(response, typeof(T));
-        return result;
-    }
-
-    /// <summary>
-    /// Deserialize the JSON string into a proper object.
-    /// </summary>
-    /// <param name="response">The HTTP response.</param>
-    /// <param name="type">Object type.</param>
-    /// <returns>Object representation of the JSON string.</returns>
-    internal object? Deserialize(IRestResponse response, Type type)
-    {
-        IList<Parameter> headers = response.Headers;
-        if (type == typeof(byte[])) // return byte array
-        {
-            return response.RawBytes;
-        }
-
-        // TODO: ? if (type.IsAssignableFrom(typeof(Stream)))
-        if (type == typeof(Stream))
-        {
-            if (headers is not null)
-            {
-                var filePath = string.IsNullOrEmpty(_configuration.TempFolderPath)
-                    ? Path.GetTempPath()
-                    : _configuration.TempFolderPath;
-                Regex regex = ContentDispositionRegex();
-                foreach (Parameter header in headers)
-                {
-                    Match match = regex.Match(header.ToString());
-                    if (match.Success)
-                    {
-                        var fileName = filePath + ClientUtils.SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
-                        File.WriteAllBytes(fileName, response.RawBytes);
-                        return new FileStream(fileName, FileMode.Open);
-                    }
-                }
-            }
-
-            var stream = new MemoryStream(response.RawBytes);
-            return stream;
-        }
-
-        if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
-        {
-            return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
-        }
-
-        if (type == typeof(string) || type.Name.StartsWith("System.Nullable")) // return primitive type
-        {
-            return Convert.ChangeType(response.Content, type);
-        }
-
-        // at this point, it must be a model (json)
-        try
-        {
-            return JsonSerializer.Deserialize(response.Content, type, _serializerSettings);
-        }
-        catch (Exception e)
-        {
-            throw new ApiException(500, e.Message);
-        }
-    }
-
-    public string? RootElement { get; set; }
-
-    public string? Namespace { get; set; }
-
-    public string? DateFormat { get; set; }
-
-    public string ContentType
-    {
-        get => _contentType;
-        set => throw new InvalidOperationException("Not allowed to set content type.");
-    }
-
-    [GeneratedRegex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$")]
-    private static partial Regex ContentDispositionRegex();
-}
 /// <summary>
 /// Provides a default implementation of an Api client (both synchronous and asynchronous implementatios),
 /// encapsulating general REST accessor use cases.
@@ -175,17 +61,17 @@ public partial class ApiClient : ISynchronousClient, IAsynchronousClient
     /// <param name="method">Swagger Client Custom HttpMethod</param>
     /// <returns>RestSharp's HttpMethod instance.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    private static RestSharpMethod Method(HttpMethod method)
+    private static RestSharp.Method Method(HttpMethod method)
     {
-        RestSharpMethod other = method switch
+        RestSharp.Method other = method switch
         {
-            HttpMethod.Get => RestSharpMethod.GET,
-            HttpMethod.Post => RestSharpMethod.POST,
-            HttpMethod.Put => RestSharpMethod.PUT,
-            HttpMethod.Delete => RestSharpMethod.DELETE,
-            HttpMethod.Head => RestSharpMethod.HEAD,
-            HttpMethod.Options => RestSharpMethod.OPTIONS,
-            HttpMethod.Patch => RestSharpMethod.PATCH,
+            HttpMethod.Get => RestSharp.Method.GET,
+            HttpMethod.Post => RestSharp.Method.POST,
+            HttpMethod.Put => RestSharp.Method.PUT,
+            HttpMethod.Delete => RestSharp.Method.DELETE,
+            HttpMethod.Head => RestSharp.Method.HEAD,
+            HttpMethod.Options => RestSharp.Method.OPTIONS,
+            HttpMethod.Patch => RestSharp.Method.PATCH,
             _ => throw new ArgumentOutOfRangeException(nameof(method), method, null),
         };
         return other;
