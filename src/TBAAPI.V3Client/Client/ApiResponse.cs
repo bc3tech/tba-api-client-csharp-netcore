@@ -67,7 +67,7 @@ public interface IApiResponse
 /// <param name="headers">HTTP headers.</param>
 /// <param name="data">Data (parsed HTTP body)</param>
 /// <param name="rawContent">Raw content.</param>
-public class ApiResponse<T>(HttpStatusCode statusCode, Multimap<string, string?>? headers, T data, string? rawContent) : IApiResponse
+public class ApiResponse<T>(HttpStatusCode statusCode, Multimap<string, string?>? headers, T? data, string? rawContent) : IApiResponse
 {
     #region Properties
 
@@ -87,7 +87,7 @@ public class ApiResponse<T>(HttpStatusCode statusCode, Multimap<string, string?>
     /// Gets or sets the data (parsed HTTP body)
     /// </summary>
     /// <value>The data.</value>
-    public T Data { get; } = data;
+    public T? Data { get; } = data;
 
     /// <summary>
     /// Gets or sets any error text defined by the calling client.
