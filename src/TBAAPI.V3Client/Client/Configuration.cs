@@ -285,9 +285,9 @@ public class Configuration : IReadableConfiguration
             return first ?? GlobalConfiguration.Instance;
         }
 
-        var apiKey = first.ApiKey;
-        var apiKeyPrefix = first.ApiKeyPrefix;
-        var defaultHeaders = first.DefaultHeaders;
+        IDictionary<string, string> apiKey = first.ApiKey;
+        IDictionary<string, string> apiKeyPrefix = first.ApiKeyPrefix;
+        IDictionary<string, string> defaultHeaders = first.DefaultHeaders;
 
         foreach (KeyValuePair<string, string> kvp in second.ApiKey)
         {
