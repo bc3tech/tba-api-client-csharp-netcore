@@ -909,7 +909,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.")]
+//[KernelFunction, Description("Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetEventMatchTimeseriesAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1071,7 +1071,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    [KernelFunction, Description("Gets a list of matches for the given event.")]
+//[KernelFunction, Description("Gets a list of matches for the given event.")]
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetEventMatchesAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1233,7 +1233,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets a list of match keys for the given event.")]
+//[KernelFunction, Description("Gets a list of match keys for the given event.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetEventMatchesKeysAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1395,7 +1395,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;MatchSimple&gt;)</returns>
-    [KernelFunction, Description("Gets a short-form list of matches for the given event.")]
+//[KernelFunction, Description("Gets a short-form list of matches for the given event.")]
     [return: Description("Task of ApiResponse (List<MatchSimple>)")]
     public async Task<ApiResponse<List<MatchSimple>>> GetEventMatchesSimpleAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1557,7 +1557,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg '2016nytr_qm1'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Match)</returns>
-    [KernelFunction, Description("Gets a 'Match' object for the given match key.")]
+//[KernelFunction, Description("Gets a 'Match' object for the given match key.")]
     [return: Description("Task of ApiResponse (Match)")]
     public async Task<ApiResponse<Match>> GetMatchAsyncWithHttpInfoAsync(
         [Description("Match Key, eg '2016nytr_qm1'")] string matchKey,
@@ -1719,7 +1719,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg '2016nytr_qm1'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (MatchSimple)</returns>
-    [KernelFunction, Description("Gets a short-form 'Match' object for the given match key.")]
+//[KernelFunction, Description("Gets a short-form 'Match' object for the given match key.")]
     [return: Description("Task of ApiResponse (MatchSimple)")]
     public async Task<ApiResponse<MatchSimple>> GetMatchSimpleAsyncWithHttpInfoAsync(
         [Description("Match Key, eg '2016nytr_qm1'")] string matchKey,
@@ -1881,7 +1881,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg '2016nytr_qm1'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Object&gt;)</returns>
-    [KernelFunction, Description("Gets an array of game-specific Match Timeseries objects for the given match key or an empty array if not available. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.")]
+//[KernelFunction, Description("Gets an array of game-specific Match Timeseries objects for the given match key or an empty array if not available. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.")]
     [return: Description("Task of ApiResponse (List<Object>)")]
     public async Task<ApiResponse<List<object>>> GetMatchTimeseriesAsyncWithHttpInfoAsync(
         [Description("Match Key, eg '2016nytr_qm1'")] string matchKey,
@@ -2043,7 +2043,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="matchKey">TBA Match Key, eg '2016nytr_qm1'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Zebra)</returns>
-    [KernelFunction, Description("Gets Zebra MotionWorks data for a Match for the given match key.")]
+//[KernelFunction, Description("Gets Zebra MotionWorks data for a Match for the given match key.")]
     [return: Description("Task of ApiResponse (Zebra)")]
     public async Task<ApiResponse<Zebra>> GetMatchZebraAsyncWithHttpInfoAsync(
         [Description("Match Key, eg '2016nytr_qm1'")] string matchKey,
@@ -2216,7 +2216,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    [KernelFunction, Description("Gets a list of matches for the given team and event.")]
+//[KernelFunction, Description("Gets a list of matches for the given team and event.")]
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamEventMatchesAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -2396,7 +2396,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets a list of match keys for matches for the given team and event.")]
+//[KernelFunction, Description("Gets a list of match keys for matches for the given team and event.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -2576,7 +2576,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    [KernelFunction, Description("Gets a short-form list of matches for the given team and event.")]
+//[KernelFunction, Description("Gets a short-form list of matches for the given team and event.")]
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -2750,7 +2750,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-    [KernelFunction, Description("Gets a list of matches for the given team and year.")]
+//[KernelFunction, Description("Gets a list of matches for the given team and year.")]
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamMatchesByYearAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
@@ -2918,7 +2918,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets a list of match keys for matches for the given team and year.")]
+//[KernelFunction, Description("Gets a list of match keys for matches for the given team and year.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
@@ -3086,7 +3086,7 @@ public partial class MatchApi : IMatchApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;MatchSimple&gt;)</returns>
-    [KernelFunction, Description("Gets a short-form list of matches for the given team and year.")]
+//[KernelFunction, Description("Gets a short-form list of matches for the given team and year.")]
     [return: Description("Task of ApiResponse (List<MatchSimple>)")]
     public async Task<ApiResponse<List<MatchSimple>>> GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,

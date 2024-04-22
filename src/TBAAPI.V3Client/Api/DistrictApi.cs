@@ -701,7 +701,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
-    [KernelFunction, Description("Gets a list of events in the given district.")]
+//[KernelFunction, Description("Gets a list of events in the given district.")]
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetDistrictEventsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -863,7 +863,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets a list of event keys for events in the given district.")]
+//[KernelFunction, Description("Gets a list of event keys for events in the given district.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetDistrictEventsKeysAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -1025,7 +1025,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
-    [KernelFunction, Description("Gets a short-form list of events in the given district.")]
+//[KernelFunction, Description("Gets a short-form list of events in the given district.")]
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetDistrictEventsSimpleAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -1187,7 +1187,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;DistrictRanking&gt;)</returns>
-    [KernelFunction, Description("Gets a list of team district rankings for the given district.")]
+//[KernelFunction, Description("Gets a list of team district rankings for the given district.")]
     [return: Description("Task of ApiResponse (List<DistrictRanking>)")]
     public async Task<ApiResponse<List<DistrictRanking>>> GetDistrictRankingsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -1349,7 +1349,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in events in the given district.")]
+//[KernelFunction, Description("Gets a list of 'Team' objects that competed in events in the given district.")]
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetDistrictTeamsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -1511,7 +1511,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in events in the given district.")]
+//[KernelFunction, Description("Gets a list of 'Team' objects that competed in events in the given district.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetDistrictTeamsKeysAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -1673,7 +1673,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
-    [KernelFunction, Description("Gets a short-form list of 'Team' objects that competed in events in the given district.")]
+//[KernelFunction, Description("Gets a short-form list of 'Team' objects that competed in events in the given district.")]
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -1828,7 +1828,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;DistrictList&gt;)</returns>
-    [KernelFunction, Description("Gets a list of districts and their corresponding district key, for the given year.")]
+//[KernelFunction, Description("Gets a list of districts and their corresponding district key, for the given year.")]
     [return: Description("Task of ApiResponse (List<DistrictList>)")]
     public async Task<ApiResponse<List<DistrictList>>> GetDistrictsByYearAsyncWithHttpInfoAsync(int year,
         [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
@@ -1984,7 +1984,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (EventDistrictPoints)</returns>
-    [KernelFunction, Description("Gets a list of team rankings for the Event.")]
+//[KernelFunction, Description("Gets a list of team rankings for the Event.")]
     [return: Description("Task of ApiResponse (EventDistrictPoints)")]
     public async Task<ApiResponse<EventDistrictPoints>> GetEventDistrictPointsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -2146,7 +2146,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;DistrictList&gt;)</returns>
-    [KernelFunction, Description("Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.")]
+//[KernelFunction, Description("Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.")]
     [return: Description("Task of ApiResponse (List<DistrictList>)")]
     public async Task<ApiResponse<List<DistrictList>>> GetTeamDistrictsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
