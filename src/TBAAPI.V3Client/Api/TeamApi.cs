@@ -2079,7 +2079,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;DistrictRanking&gt;</returns>
     public ApiResponse<List<DistrictRanking>> GetDistrictRankingsWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2146,7 +2146,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<DistrictRanking>")]
     public async Task<List<DistrictRanking>> GetDistrictRankingsAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -2164,7 +2164,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<DistrictRanking>)")]
     public async Task<ApiResponse<List<DistrictRanking>>> GetDistrictRankingsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2240,7 +2240,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Team&gt;</returns>
     public ApiResponse<List<Team>> GetDistrictTeamsWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2307,7 +2307,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Team>")]
     public async Task<List<Team>> GetDistrictTeamsAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetDistrictTeamsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -2325,7 +2325,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetDistrictTeamsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2402,7 +2402,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetDistrictTeamsKeysWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2469,7 +2469,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetDistrictTeamsKeysAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -2487,7 +2487,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetDistrictTeamsKeysAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2564,7 +2564,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;TeamSimple&gt;</returns>
     public ApiResponse<List<TeamSimple>> GetDistrictTeamsSimpleWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2631,7 +2631,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<TeamSimple>")]
     public async Task<List<TeamSimple>> GetDistrictTeamsSimpleAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -2649,7 +2649,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -2726,7 +2726,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Team&gt;</returns>
     public ApiResponse<List<Team>> GetEventTeamsWithHttpInfo(string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -2793,7 +2793,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Team>")]
     public async Task<List<Team>> GetEventTeamsAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetEventTeamsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -2811,7 +2811,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetEventTeamsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -2888,7 +2888,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetEventTeamsKeysWithHttpInfo(string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -2955,7 +2955,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetEventTeamsKeysAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetEventTeamsKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -2973,7 +2973,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetEventTeamsKeysAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -3050,7 +3050,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;TeamSimple&gt;</returns>
     public ApiResponse<List<TeamSimple>> GetEventTeamsSimpleWithHttpInfo(string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -3117,7 +3117,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<TeamSimple>")]
     public async Task<List<TeamSimple>> GetEventTeamsSimpleAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetEventTeamsSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -3135,7 +3135,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetEventTeamsSimpleAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -3198,7 +3198,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Dictionary&lt;string, TeamEventStatus&gt;</returns>
     public IDictionary<string, TeamEventStatus>? GetEventTeamsStatuses(string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = GetEventTeamsStatusesWithHttpInfo(eventKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -3212,7 +3212,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of Dictionary&lt;string, TeamEventStatus&gt;</returns>
     public ApiResponse<Dictionary<string, TeamEventStatus>> GetEventTeamsStatusesWithHttpInfo(string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -3279,7 +3279,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of Dictionary<string, TeamEventStatus>")]
     public async Task<Dictionary<string, TeamEventStatus>> GetEventTeamsStatusesAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetEventTeamsStatusesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -3297,7 +3297,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (Dictionary<string, TeamEventStatus>)")]
     public async Task<ApiResponse<Dictionary<string, TeamEventStatus>>> GetEventTeamsStatusesAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -3361,7 +3361,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Team</returns>
     [return: Description("Team")]
     public Team GetTeam(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<Team> localVarResponse = GetTeamWithHttpInfo(teamKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -3375,7 +3375,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of Team</returns>
     public ApiResponse<Team> GetTeamWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -3442,7 +3442,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of Team")]
     public async Task<Team> GetTeamAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<Team> localVarResponse = await GetTeamAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -3460,7 +3460,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (Team)")]
     public async Task<ApiResponse<Team>> GetTeamAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -3537,7 +3537,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Award&gt;</returns>
     public ApiResponse<List<Award>> GetTeamAwardsWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -3604,7 +3604,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Award>")]
     public async Task<List<Award>> GetTeamAwardsAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -3622,7 +3622,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Award>)")]
     public async Task<ApiResponse<List<Award>>> GetTeamAwardsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -3701,7 +3701,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Award&gt;</returns>
     public ApiResponse<List<Award>> GetTeamAwardsByYearWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -3770,7 +3770,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Award>")]
     public async Task<List<Award>> GetTeamAwardsByYearAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -3789,7 +3789,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Award>)")]
     public async Task<ApiResponse<List<Award>>> GetTeamAwardsByYearAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -3867,7 +3867,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;DistrictList&gt;</returns>
     public ApiResponse<List<DistrictList>> GetTeamDistrictsWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -3934,7 +3934,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<DistrictList>")]
     public async Task<List<DistrictList>> GetTeamDistrictsAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictList>> localVarResponse = await GetTeamDistrictsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -3952,7 +3952,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<DistrictList>)")]
     public async Task<ApiResponse<List<DistrictList>>> GetTeamDistrictsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4031,7 +4031,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Award&gt;</returns>
     public ApiResponse<List<Award>> GetTeamEventAwardsWithHttpInfo(string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4106,7 +4106,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Award>")]
     public async Task<List<Award>> GetTeamEventAwardsAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = await GetTeamEventAwardsAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -4125,7 +4125,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Award>)")]
     public async Task<ApiResponse<List<Award>>> GetTeamEventAwardsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4211,7 +4211,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Match&gt;</returns>
     public ApiResponse<List<Match>> GetTeamEventMatchesWithHttpInfo(string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4286,7 +4286,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Match>")]
     public async Task<List<Match>> GetTeamEventMatchesAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -4304,7 +4304,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamEventMatchesAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4390,7 +4390,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetTeamEventMatchesKeysWithHttpInfo(string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4465,7 +4465,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamEventMatchesKeysAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -4484,7 +4484,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4570,7 +4570,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Match&gt;</returns>
     public ApiResponse<List<Match>> GetTeamEventMatchesSimpleWithHttpInfo(string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4645,7 +4645,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Match>")]
     public async Task<List<Match>> GetTeamEventMatchesSimpleAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -4664,7 +4664,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4736,7 +4736,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>TeamEventStatus</returns>
     [return: Description("TeamEventStatus")]
     public TeamEventStatus GetTeamEventStatus(string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<TeamEventStatus> localVarResponse = GetTeamEventStatusWithHttpInfo(teamKey, eventKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -4751,7 +4751,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of TeamEventStatus</returns>
     public ApiResponse<TeamEventStatus> GetTeamEventStatusWithHttpInfo(string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4826,7 +4826,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of TeamEventStatus")]
     public async Task<TeamEventStatus> GetTeamEventStatusAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<TeamEventStatus> localVarResponse = await GetTeamEventStatusAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -4845,7 +4845,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (TeamEventStatus)")]
     public async Task<ApiResponse<TeamEventStatus>> GetTeamEventStatusAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4929,7 +4929,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Event&gt;</returns>
     public ApiResponse<List<Event>> GetTeamEventsWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -4996,7 +4996,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Event>")]
     public async Task<List<Event>> GetTeamEventsAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = await GetTeamEventsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -5014,7 +5014,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetTeamEventsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5093,7 +5093,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Event&gt;</returns>
     public ApiResponse<List<Event>> GetTeamEventsByYearWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5162,7 +5162,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Event>")]
     public async Task<List<Event>> GetTeamEventsByYearAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = await GetTeamEventsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -5181,7 +5181,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetTeamEventsByYearAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5261,7 +5261,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetTeamEventsByYearKeysWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5330,7 +5330,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamEventsByYearKeysAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -5349,7 +5349,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5429,7 +5429,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;EventSimple&gt;</returns>
     public ApiResponse<List<EventSimple>> GetTeamEventsByYearSimpleWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5498,7 +5498,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<EventSimple>")]
     public async Task<List<EventSimple>> GetTeamEventsByYearSimpleAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -5517,7 +5517,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5595,7 +5595,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetTeamEventsKeysWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5662,7 +5662,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamEventsKeysAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamEventsKeysAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -5680,7 +5680,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamEventsKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5757,7 +5757,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;EventSimple&gt;</returns>
     public ApiResponse<List<EventSimple>> GetTeamEventsSimpleWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5824,7 +5824,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<EventSimple>")]
     public async Task<List<EventSimple>> GetTeamEventsSimpleAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -5842,7 +5842,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetTeamEventsSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5907,7 +5907,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Dictionary&lt;string, TeamEventStatus&gt;</returns>
 
     public IDictionary<string, TeamEventStatus>? GetTeamEventsStatusesByYear(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = GetTeamEventsStatusesByYearWithHttpInfo(teamKey, year, ifModifiedSince);
         return localVarResponse.Data;
@@ -5922,7 +5922,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of Dictionary&lt;string, TeamEventStatus&gt;</returns>
     public ApiResponse<Dictionary<string, TeamEventStatus>> GetTeamEventsStatusesByYearWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -5991,7 +5991,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of Dictionary<string, TeamEventStatus>")]
     public async Task<Dictionary<string, TeamEventStatus>> GetTeamEventsStatusesByYearAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return localVarResponse.Data;
@@ -6010,7 +6010,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (Dictionary<string, TeamEventStatus>)")]
     public async Task<ApiResponse<Dictionary<string, TeamEventStatus>>> GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6090,7 +6090,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Match&gt;</returns>
     public ApiResponse<List<Match>> GetTeamMatchesByYearWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6159,7 +6159,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Match>")]
     public async Task<List<Match>> GetTeamMatchesByYearAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Match>> localVarResponse = await GetTeamMatchesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -6178,7 +6178,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamMatchesByYearAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6258,7 +6258,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetTeamMatchesByYearKeysWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6327,7 +6327,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamMatchesByYearKeysAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -6346,7 +6346,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6426,7 +6426,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;MatchSimple&gt;</returns>
     public ApiResponse<List<MatchSimple>> GetTeamMatchesByYearSimpleWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6495,7 +6495,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<MatchSimple>")]
     public async Task<List<MatchSimple>> GetTeamMatchesByYearSimpleAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<MatchSimple>> localVarResponse = await GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -6514,7 +6514,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<MatchSimple>)")]
     public async Task<ApiResponse<List<MatchSimple>>> GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6594,7 +6594,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Media&gt;</returns>
     public ApiResponse<List<Media>> GetTeamMediaByTagWithHttpInfo(string teamKey, string mediaTag,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6669,7 +6669,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Media>")]
     public async Task<List<Media>> GetTeamMediaByTagAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string mediaTag,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagAsyncWithHttpInfoAsync(teamKey, mediaTag, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -6688,7 +6688,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Media>)")]
     public async Task<ApiResponse<List<Media>>> GetTeamMediaByTagAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string mediaTag,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6776,7 +6776,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Media&gt;</returns>
     public ApiResponse<List<Media>> GetTeamMediaByTagYearWithHttpInfo(string teamKey, string mediaTag, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6853,7 +6853,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Media>")]
     public async Task<List<Media>> GetTeamMediaByTagYearAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string mediaTag, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagYearAsyncWithHttpInfoAsync(teamKey, mediaTag, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -6873,7 +6873,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Media>)")]
     public async Task<ApiResponse<List<Media>>> GetTeamMediaByTagYearAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string mediaTag, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -6960,7 +6960,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Media&gt;</returns>
     public ApiResponse<List<Media>> GetTeamMediaByYearWithHttpInfo(string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7029,7 +7029,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Media>")]
     public async Task<List<Media>> GetTeamMediaByYearAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -7048,7 +7048,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Media>)")]
     public async Task<ApiResponse<List<Media>>> GetTeamMediaByYearAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7126,7 +7126,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;TeamRobot&gt;</returns>
     public ApiResponse<List<TeamRobot>> GetTeamRobotsWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7193,7 +7193,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<TeamRobot>")]
     public async Task<List<TeamRobot>> GetTeamRobotsAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamRobot>> localVarResponse = await GetTeamRobotsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -7211,7 +7211,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<TeamRobot>)")]
     public async Task<ApiResponse<List<TeamRobot>>> GetTeamRobotsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7275,7 +7275,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>TeamSimple</returns>
     [return: Description("TeamSimple")]
     public TeamSimple GetTeamSimple(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<TeamSimple> localVarResponse = GetTeamSimpleWithHttpInfo(teamKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -7289,7 +7289,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of TeamSimple</returns>
     public ApiResponse<TeamSimple> GetTeamSimpleWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7356,7 +7356,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of TeamSimple")]
     public async Task<TeamSimple> GetTeamSimpleAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<TeamSimple> localVarResponse = await GetTeamSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -7374,7 +7374,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (TeamSimple)")]
     public async Task<ApiResponse<TeamSimple>> GetTeamSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7451,7 +7451,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Media&gt;</returns>
     public ApiResponse<List<Media>> GetTeamSocialMediaWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7518,7 +7518,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<Media>")]
     public async Task<List<Media>> GetTeamSocialMediaAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamSocialMediaAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -7536,7 +7536,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<Media>)")]
     public async Task<ApiResponse<List<Media>>> GetTeamSocialMediaAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7613,7 +7613,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;int&gt;</returns>
     public ApiResponse<List<int>> GetTeamYearsParticipatedWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7680,7 +7680,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of List<int>")]
     public async Task<List<int>> GetTeamYearsParticipatedAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<int>> localVarResponse = await GetTeamYearsParticipatedAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -7698,7 +7698,7 @@ public partial class TeamApi : ITeamApi
     [return: Description("Task of ApiResponse (List<int>)")]
     public async Task<ApiResponse<List<int>>> GetTeamYearsParticipatedAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -7775,7 +7775,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Team&gt;</returns>
     public ApiResponse<List<Team>> GetTeamsWithHttpInfo(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -7834,7 +7834,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of List&lt;Team&gt;</returns>
     [return: Description("Task of List<Team>")]
     public async Task<List<Team>> GetTeamsAsync(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetTeamsAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -7850,7 +7850,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetTeamsAsyncWithHttpInfoAsync(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
@@ -7924,7 +7924,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Team&gt;</returns>
     public ApiResponse<List<Team>> GetTeamsByYearWithHttpInfo(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -7985,7 +7985,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of List&lt;Team&gt;</returns>
     [return: Description("Task of List<Team>")]
     public async Task<List<Team>> GetTeamsByYearAsync(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetTeamsByYearAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -8002,7 +8002,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetTeamsByYearAsyncWithHttpInfoAsync(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
@@ -8077,7 +8077,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetTeamsByYearKeysWithHttpInfo(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -8138,7 +8138,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of List&lt;string&gt;</returns>
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamsByYearKeysAsync(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamsByYearKeysAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -8155,7 +8155,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamsByYearKeysAsyncWithHttpInfoAsync(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
@@ -8230,7 +8230,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;TeamSimple&gt;</returns>
     public ApiResponse<List<TeamSimple>> GetTeamsByYearSimpleWithHttpInfo(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -8291,7 +8291,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
     [return: Description("Task of List<TeamSimple>")]
     public async Task<List<TeamSimple>> GetTeamsByYearSimpleAsync(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsByYearSimpleAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -8308,7 +8308,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetTeamsByYearSimpleAsyncWithHttpInfoAsync(int year, int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
@@ -8381,7 +8381,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetTeamsKeysWithHttpInfo(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -8440,7 +8440,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of List&lt;string&gt;</returns>
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetTeamsKeysAsync(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamsKeysAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -8456,7 +8456,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamsKeysAsyncWithHttpInfoAsync(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
@@ -8527,7 +8527,7 @@ public partial class TeamApi : ITeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;TeamSimple&gt;</returns>
     public ApiResponse<List<TeamSimple>> GetTeamsSimpleWithHttpInfo(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -8586,7 +8586,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
     [return: Description("Task of List<TeamSimple>")]
     public async Task<List<TeamSimple>> GetTeamsSimpleAsync(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsSimpleAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
         return [.. localVarResponse.Data];
@@ -8602,7 +8602,7 @@ public partial class TeamApi : ITeamApi
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetTeamsSimpleAsyncWithHttpInfoAsync(int pageNum,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();

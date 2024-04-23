@@ -606,7 +606,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Event&gt;</returns>
     public IList<Event>? GetDistrictEvents(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = GetDistrictEventsWithHttpInfo(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -620,7 +620,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Event&gt;</returns>
     public ApiResponse<List<Event>> GetDistrictEventsWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -687,7 +687,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<Event>")]
     public async Task<List<Event>> GetDistrictEventsAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = await GetDistrictEventsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -705,7 +705,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetDistrictEventsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -768,7 +768,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
     public IList<string>? GetDistrictEventsKeys(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetDistrictEventsKeysWithHttpInfo(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -782,7 +782,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetDistrictEventsKeysWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -849,7 +849,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetDistrictEventsKeysAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictEventsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -867,7 +867,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetDistrictEventsKeysAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -930,7 +930,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;EventSimple&gt;</returns>
     public IList<EventSimple>? GetDistrictEventsSimple(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = GetDistrictEventsSimpleWithHttpInfo(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -944,7 +944,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;EventSimple&gt;</returns>
     public ApiResponse<List<EventSimple>> GetDistrictEventsSimpleWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1011,7 +1011,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<EventSimple>")]
     public async Task<List<EventSimple>> GetDistrictEventsSimpleAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = await GetDistrictEventsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1029,7 +1029,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetDistrictEventsSimpleAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1092,7 +1092,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;DistrictRanking&gt;</returns>
     public IList<DistrictRanking>? GetDistrictRankings(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictRanking>> localVarResponse = GetDistrictRankingsWithHttpInfo(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1106,7 +1106,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;DistrictRanking&gt;</returns>
     public ApiResponse<List<DistrictRanking>> GetDistrictRankingsWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1173,7 +1173,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<DistrictRanking>")]
     public async Task<List<DistrictRanking>> GetDistrictRankingsAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1191,7 +1191,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<DistrictRanking>)")]
     public async Task<ApiResponse<List<DistrictRanking>>> GetDistrictRankingsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1254,7 +1254,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Team&gt;</returns>
     public IList<Team>? GetDistrictTeams(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetDistrictTeamsWithHttpInfo(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1268,7 +1268,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;Team&gt;</returns>
     public ApiResponse<List<Team>> GetDistrictTeamsWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1335,7 +1335,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<Team>")]
     public async Task<List<Team>> GetDistrictTeamsAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetDistrictTeamsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1353,7 +1353,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetDistrictTeamsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1416,7 +1416,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
     public IList<string>? GetDistrictTeamsKeys(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetDistrictTeamsKeysWithHttpInfo(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1430,7 +1430,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;string&gt;</returns>
     public ApiResponse<List<string>> GetDistrictTeamsKeysWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1497,7 +1497,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<string>")]
     public async Task<List<string>> GetDistrictTeamsKeysAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1515,7 +1515,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetDistrictTeamsKeysAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1578,7 +1578,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;TeamSimple&gt;</returns>
     public IList<TeamSimple>? GetDistrictTeamsSimple(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = GetDistrictTeamsSimpleWithHttpInfo(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1592,7 +1592,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;TeamSimple&gt;</returns>
     public ApiResponse<List<TeamSimple>> GetDistrictTeamsSimpleWithHttpInfo(string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1659,7 +1659,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<TeamSimple>")]
     public async Task<List<TeamSimple>> GetDistrictTeamsSimpleAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1677,7 +1677,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'districtKey' is set
         if (districtKey is null)
@@ -1740,7 +1740,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;DistrictList&gt;</returns>
     public IList<DistrictList>? GetDistrictsByYear(int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictList>> localVarResponse = GetDistrictsByYearWithHttpInfo(year, ifModifiedSince);
         return localVarResponse.Data;
@@ -1754,7 +1754,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;DistrictList&gt;</returns>
     public ApiResponse<List<DistrictList>> GetDistrictsByYearWithHttpInfo(int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         RequestOptions localVarRequestOptions = new();
 
@@ -1814,7 +1814,7 @@ public partial class DistrictApi : IDistrictApi
     [KernelFunction, Description("Gets a list of districts and their corresponding district key, for the given year.")]
     [return: Description("Task of List<DistrictList>")]
     public async Task<List<DistrictList>> GetDistrictsByYearAsync(int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictList>> localVarResponse = await GetDistrictsByYearAsyncWithHttpInfoAsync(year, ifModifiedSince);
         return localVarResponse.Data;
@@ -1831,7 +1831,7 @@ public partial class DistrictApi : IDistrictApi
 //[KernelFunction, Description("Gets a list of districts and their corresponding district key, for the given year.")]
     [return: Description("Task of ApiResponse (List<DistrictList>)")]
     public async Task<ApiResponse<List<DistrictList>>> GetDistrictsByYearAsyncWithHttpInfoAsync(int year,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
 
         RequestOptions localVarRequestOptions = new();
@@ -1889,7 +1889,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>EventDistrictPoints</returns>
     public EventDistrictPoints GetEventDistrictPoints(string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<EventDistrictPoints> localVarResponse = GetEventDistrictPointsWithHttpInfo(eventKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1903,7 +1903,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of EventDistrictPoints</returns>
     public ApiResponse<EventDistrictPoints> GetEventDistrictPointsWithHttpInfo(string eventKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -1970,7 +1970,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of EventDistrictPoints")]
     public async Task<EventDistrictPoints> GetEventDistrictPointsAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         ApiResponse<EventDistrictPoints> localVarResponse = await GetEventDistrictPointsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -1988,7 +1988,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (EventDistrictPoints)")]
     public async Task<ApiResponse<EventDistrictPoints>> GetEventDistrictPointsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
-            [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+             string? ifModifiedSince = default)
     {
         // verify the required parameter 'eventKey' is set
         if (eventKey is null)
@@ -2051,7 +2051,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;DistrictList&gt;</returns>
     public IList<DistrictList>? GetTeamDistricts(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictList>> localVarResponse = GetTeamDistrictsWithHttpInfo(teamKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -2065,7 +2065,7 @@ public partial class DistrictApi : IDistrictApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>ApiResponse of List&lt;DistrictList&gt;</returns>
     public ApiResponse<List<DistrictList>> GetTeamDistrictsWithHttpInfo(string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
@@ -2132,7 +2132,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of List<DistrictList>")]
     public async Task<List<DistrictList>> GetTeamDistrictsAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         ApiResponse<List<DistrictList>> localVarResponse = await GetTeamDistrictsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
         return localVarResponse.Data;
@@ -2150,7 +2150,7 @@ public partial class DistrictApi : IDistrictApi
     [return: Description("Task of ApiResponse (List<DistrictList>)")]
     public async Task<ApiResponse<List<DistrictList>>> GetTeamDistrictsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
-        [Description("Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)")] string? ifModifiedSince = default)
+         string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
         if (teamKey is null)
