@@ -1402,7 +1402,7 @@ public partial class DistrictApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>EventDistrictPoints</returns>
-    public EventDistrictPoints GetEventDistrictPoints(string eventKey,
+    public EventDistrictPoints? GetEventDistrictPoints(string eventKey,
          string? ifModifiedSince = default)
     {
         ApiResponse<EventDistrictPoints> localVarResponse = GetEventDistrictPointsWithHttpInfo(eventKey, ifModifiedSince);
@@ -1482,7 +1482,7 @@ public partial class DistrictApi
     /// <returns>Task of EventDistrictPoints</returns>
     [KernelFunction, Description("Gets a list of team rankings for the Event.")]
     [return: Description("Task of EventDistrictPoints")]
-    public async Task<EventDistrictPoints> GetEventDistrictPointsAsync(
+    public async Task<EventDistrictPoints?> GetEventDistrictPointsAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {

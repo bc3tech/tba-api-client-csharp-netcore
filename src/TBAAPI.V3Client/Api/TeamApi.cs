@@ -1331,7 +1331,7 @@ public partial class TeamApi
     /// <returns>Task of Dictionary&lt;string, TeamEventStatus&gt;</returns>
     [KernelFunction, Description("Gets a key-value list of the event statuses for teams competing at the given event.")]
     [return: Description("Task of Dictionary<string, TeamEventStatus>")]
-    public async Task<Dictionary<string, TeamEventStatus>> GetEventTeamsStatusesAsync(
+    public async Task<Dictionary<string, TeamEventStatus>?> GetEventTeamsStatusesAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
@@ -1414,7 +1414,7 @@ public partial class TeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Team</returns>
     [return: Description("Team")]
-    public Team GetTeam(string teamKey,
+    public Team? GetTeam(string teamKey,
          string? ifModifiedSince = default)
     {
         ApiResponse<Team> localVarResponse = GetTeamWithHttpInfo(teamKey, ifModifiedSince);
@@ -1494,7 +1494,7 @@ public partial class TeamApi
     /// <returns>Task of Team</returns>
     [KernelFunction, Description("Gets a 'Team' object for the team referenced by the given key.")]
     [return: Description("Task of Team")]
-    public async Task<Team> GetTeamAsync(
+    public async Task<Team?> GetTeamAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
@@ -2789,7 +2789,7 @@ public partial class TeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>TeamEventStatus</returns>
     [return: Description("TeamEventStatus")]
-    public TeamEventStatus GetTeamEventStatus(string teamKey, string eventKey,
+    public TeamEventStatus? GetTeamEventStatus(string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
         ApiResponse<TeamEventStatus> localVarResponse = GetTeamEventStatusWithHttpInfo(teamKey, eventKey, ifModifiedSince);
@@ -2878,7 +2878,7 @@ public partial class TeamApi
     /// <returns>Task of TeamEventStatus</returns>
     [KernelFunction, Description("Gets the competition rank and status of the team at the given event.")]
     [return: Description("Task of TeamEventStatus")]
-    public async Task<TeamEventStatus> GetTeamEventStatusAsync(
+    public async Task<TeamEventStatus?> GetTeamEventStatusAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
@@ -4043,7 +4043,7 @@ public partial class TeamApi
     /// <returns>Task of Dictionary&lt;string, TeamEventStatus&gt;</returns>
     [KernelFunction, Description("Gets a key-value list of the event statuses for events this team has competed at in the given year.")]
     [return: Description("Task of Dictionary<string, TeamEventStatus>")]
-    public async Task<Dictionary<string, TeamEventStatus>> GetTeamEventsStatusesByYearAsync(
+    public async Task<Dictionary<string, TeamEventStatus>?> GetTeamEventsStatusesByYearAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
@@ -5328,7 +5328,7 @@ public partial class TeamApi
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>TeamSimple</returns>
     [return: Description("TeamSimple")]
-    public TeamSimple GetTeamSimple(string teamKey,
+    public TeamSimple? GetTeamSimple(string teamKey,
          string? ifModifiedSince = default)
     {
         ApiResponse<TeamSimple> localVarResponse = GetTeamSimpleWithHttpInfo(teamKey, ifModifiedSince);
@@ -5408,7 +5408,7 @@ public partial class TeamApi
     /// <returns>Task of TeamSimple</returns>
     [KernelFunction, Description("Gets a 'Team_Simple' object for the team referenced by the given key.")]
     [return: Description("Task of TeamSimple")]
-    public async Task<TeamSimple> GetTeamSimpleAsync(
+    public async Task<TeamSimple?> GetTeamSimpleAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
