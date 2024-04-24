@@ -215,7 +215,6 @@ public partial class EventApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
-//[KernelFunction, Description("Gets a list of events in the given district.")]
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetDistrictEventsAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -377,7 +376,6 @@ public partial class EventApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets a list of event keys for events in the given district.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetDistrictEventsKeysAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -539,7 +537,6 @@ public partial class EventApi
     /// <param name="districtKey">TBA District Key, eg '2016fim'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
-//[KernelFunction, Description("Gets a short-form list of events in the given district.")]
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetDistrictEventsSimpleAsyncWithHttpInfoAsync(
         [Description("District Key, eg '2016fim'")] string districtKey,
@@ -701,7 +698,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Event)</returns>
-//[KernelFunction, Description("Gets an Event.")]
     [return: Description("Task of ApiResponse (Event)")]
     public async Task<ApiResponse<Event>> GetEventAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -863,7 +859,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EliminationAlliance&gt;)</returns>
-//[KernelFunction, Description("Gets a list of Elimination Alliances for the given Event.")]
     [return: Description("Task of ApiResponse (List<EliminationAlliance>)")]
     public async Task<ApiResponse<List<EliminationAlliance>>> GetEventAlliancesAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1025,7 +1020,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Award&gt;)</returns>
-//[KernelFunction, Description("Gets a list of awards from the given event.")]
     [return: Description("Task of ApiResponse (List<Award>)")]
     public async Task<ApiResponse<List<Award>>> GetEventAwardsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1187,7 +1181,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (EventDistrictPoints)</returns>
-//[KernelFunction, Description("Gets a list of team rankings for the Event.")]
     [return: Description("Task of ApiResponse (EventDistrictPoints)")]
     public async Task<ApiResponse<EventDistrictPoints>> GetEventDistrictPointsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1349,7 +1342,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (EventInsights)</returns>
-//[KernelFunction, Description("Gets a set of Event-specific insights for the given Event.")]
     [return: Description("Task of ApiResponse (EventInsights)")]
     public async Task<ApiResponse<EventInsights>> GetEventInsightsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1511,7 +1503,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets an array of Match Keys for the given event key that have timeseries data. Returns an empty array if no matches have timeseries data. *WARNING:* This is *not* official data, and is subject to a significant possibility of error, or missing data. Do not rely on this data for any purpose. In fact, pretend we made it up. *WARNING:* This endpoint and corresponding data models are under *active development* and may change at any time, including in breaking ways.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetEventMatchTimeseriesAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1673,7 +1664,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-//[KernelFunction, Description("Gets a list of matches for the given event.")]
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetEventMatchesAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1835,7 +1825,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets a list of match keys for the given event.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetEventMatchesKeysAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -1997,7 +1986,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;MatchSimple&gt;)</returns>
-//[KernelFunction, Description("Gets a short-form list of matches for the given event.")]
     [return: Description("Task of ApiResponse (List<MatchSimple>)")]
     public async Task<ApiResponse<List<MatchSimple>>> GetEventMatchesSimpleAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -2159,7 +2147,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (EventOPRs)</returns>
-//[KernelFunction, Description("Gets a set of Event OPRs (including OPR, DPR, and CCWM) for the given Event.")]
     [return: Description("Task of ApiResponse (EventOPRs)")]
     public async Task<ApiResponse<EventOPRs>> GetEventOPRsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -2321,7 +2308,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
-//[KernelFunction, Description("Gets information on TBA-generated predictions for the given Event. Contains year-specific information. *WARNING* This endpoint is currently under development and may change at any time.")]
     [return: Description("Task of ApiResponse (Object)")]
     public async Task<ApiResponse<object>> GetEventPredictionsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -2483,7 +2469,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (EventRanking)</returns>
-//[KernelFunction, Description("Gets a list of team rankings for the Event.")]
     [return: Description("Task of ApiResponse (EventRanking)")]
     public async Task<ApiResponse<EventRanking>> GetEventRankingsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -2645,7 +2630,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (EventSimple)</returns>
-//[KernelFunction, Description("Gets a short-form Event.")]
     [return: Description("Task of ApiResponse (EventSimple)")]
     public async Task<ApiResponse<EventSimple>> GetEventSimpleAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -2807,7 +2791,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
-//[KernelFunction, Description("Gets a list of 'Team' objects that competed in the given event.")]
     [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetEventTeamsAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -2969,7 +2952,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets a list of 'Team' keys that competed in the given event.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetEventTeamsKeysAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -3131,7 +3113,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
-//[KernelFunction, Description("Gets a short-form list of 'Team' objects that competed in the given event.")]
     [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetEventTeamsSimpleAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -3293,7 +3274,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, TeamEventStatus&gt;)</returns>
-//[KernelFunction, Description("Gets a key-value list of the event statuses for teams competing at the given event.")]
     [return: Description("Task of ApiResponse (Dictionary<string, TeamEventStatus>)")]
     public async Task<ApiResponse<Dictionary<string, TeamEventStatus>>> GetEventTeamsStatusesAsyncWithHttpInfoAsync(
             [Description("Event Key, eg '2016nytr'")] string eventKey,
@@ -3448,7 +3428,6 @@ public partial class EventApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
-//[KernelFunction, Description("Gets a list of events in the given year.")]
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetEventsByYearAsyncWithHttpInfoAsync(int year,
          string? ifModifiedSince = default)
@@ -3597,7 +3576,6 @@ public partial class EventApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets a list of event keys in the given year.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetEventsByYearKeysAsyncWithHttpInfoAsync(int year,
          string? ifModifiedSince = default)
@@ -3746,7 +3724,6 @@ public partial class EventApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
-//[KernelFunction, Description("Gets a short-form list of events in the given year.")]
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetEventsByYearSimpleAsyncWithHttpInfoAsync(int year,
          string? ifModifiedSince = default)
@@ -3913,7 +3890,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Award&gt;)</returns>
-//[KernelFunction, Description("Gets a list of awards the given team won at the given event.")]
     [return: Description("Task of ApiResponse (List<Award>)")]
     public async Task<ApiResponse<List<Award>>> GetTeamEventAwardsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -4093,7 +4069,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-//[KernelFunction, Description("Gets a list of matches for the given team and event.")]
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamEventMatchesAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -4273,7 +4248,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets a list of match keys for matches for the given team and event.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -4453,7 +4427,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Match&gt;)</returns>
-//[KernelFunction, Description("Gets a short-form list of matches for the given team and event.")]
     [return: Description("Task of ApiResponse (List<Match>)")]
     public async Task<ApiResponse<List<Match>>> GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -4633,7 +4606,6 @@ public partial class EventApi
     /// <param name="eventKey">TBA Event Key, eg '2016nytr'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (TeamEventStatus)</returns>
-//[KernelFunction, Description("Gets the competition rank and status of the team at the given event.")]
     [return: Description("Task of ApiResponse (TeamEventStatus)")]
     public async Task<ApiResponse<TeamEventStatus>> GetTeamEventStatusAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
@@ -4802,7 +4774,6 @@ public partial class EventApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
-//[KernelFunction, Description("Gets a list of all events this team has competed at.")]
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetTeamEventsAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
@@ -4953,7 +4924,8 @@ public partial class EventApi
     [KernelFunction, Description("Gets a list of events this team has competed at in the given year.")]
     [return: Description("List of Event values, possibly null")]
     public async Task<List<Event>?> GetTeamEventsByYearAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Event>> localVarResponse = await GetTeamEventsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
@@ -4969,10 +4941,10 @@ public partial class EventApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Event&gt;)</returns>
-//[KernelFunction, Description("Gets a list of events this team has competed at in the given year.")]
     [return: Description("Task of ApiResponse (List<Event>)")]
     public async Task<ApiResponse<List<Event>>> GetTeamEventsByYearAsyncWithHttpInfoAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
@@ -5121,7 +5093,8 @@ public partial class EventApi
     [KernelFunction, Description("Gets a list of the event keys for events this team has competed at in the given year.")]
     [return: Description("List of string values, possibly null")]
     public async Task<List<string>?> GetTeamEventsByYearKeysAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
@@ -5137,10 +5110,10 @@ public partial class EventApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets a list of the event keys for events this team has competed at in the given year.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
@@ -5289,7 +5262,8 @@ public partial class EventApi
     [KernelFunction, Description("Gets a short-form list of events this team has competed at in the given year.")]
     [return: Description("List of EventSimple values, possibly null")]
     public async Task<List<EventSimple>?> GetTeamEventsByYearSimpleAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
@@ -5305,10 +5279,10 @@ public partial class EventApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
-//[KernelFunction, Description("Gets a short-form list of events this team has competed at in the given year.")]
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
@@ -5468,7 +5442,6 @@ public partial class EventApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-//[KernelFunction, Description("Gets a list of the event keys for all events this team has competed at.")]
     [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamEventsKeysAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
@@ -5630,7 +5603,6 @@ public partial class EventApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;EventSimple&gt;)</returns>
-//[KernelFunction, Description("Gets a short-form list of all events this team has competed at.")]
     [return: Description("Task of ApiResponse (List<EventSimple>)")]
     public async Task<ApiResponse<List<EventSimple>>> GetTeamEventsSimpleAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
@@ -5781,7 +5753,8 @@ public partial class EventApi
     [KernelFunction, Description("Gets a key-value list of the event statuses for events this team has competed at in the given year.")]
     [return: Description("Task of Dictionary<string, TeamEventStatus>")]
     public async Task<Dictionary<string, TeamEventStatus>?> GetTeamEventsStatusesByYearAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
@@ -5797,10 +5770,10 @@ public partial class EventApi
     /// <param name="year">Competition Year (or Season). Must be 4 digits.</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, TeamEventStatus&gt;)</returns>
-//[KernelFunction, Description("Gets a key-value list of the event statuses for events this team has competed at in the given year.")]
     [return: Description("Task of ApiResponse (Dictionary<string, TeamEventStatus>)")]
     public async Task<ApiResponse<Dictionary<string, TeamEventStatus>>> GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(
-        [Description("Team Key, eg 'frc254'")] string teamKey, int year,
+        [Description("Team Key, eg 'frc254'")] string teamKey,
+        [Description("The year to limit the data search to")] int year,
          string? ifModifiedSince = default)
     {
         // verify the required parameter 'teamKey' is set
