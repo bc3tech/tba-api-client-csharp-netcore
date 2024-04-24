@@ -203,7 +203,7 @@ public partial class EventApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Event>> localVarResponse = await GetDistrictEventsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<Event>> localVarResponse = await GetDistrictEventsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -260,7 +260,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/district/{district_key}/events", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/district/{district_key}/events", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -365,7 +365,7 @@ public partial class EventApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetDistrictEventsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetDistrictEventsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -422,7 +422,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/events/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/events/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -527,7 +527,7 @@ public partial class EventApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<EventSimple>> localVarResponse = await GetDistrictEventsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<EventSimple>> localVarResponse = await GetDistrictEventsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -584,7 +584,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/district/{district_key}/events/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/district/{district_key}/events/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -689,7 +689,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<Event> localVarResponse = await GetEventAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<Event> localVarResponse = await GetEventAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -746,7 +746,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<Event> localVarResponse = await this.AsynchronousClient.GetAsync<Event>("/event/{event_key}", localVarRequestOptions, this.Configuration);
+        ApiResponse<Event> localVarResponse = await this.AsynchronousClient.GetAsync<Event>("/event/{event_key}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -851,7 +851,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<EliminationAlliance>> localVarResponse = await GetEventAlliancesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<EliminationAlliance>> localVarResponse = await GetEventAlliancesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -908,7 +908,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<EliminationAlliance>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EliminationAlliance>>("/event/{event_key}/alliances", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<EliminationAlliance>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EliminationAlliance>>("/event/{event_key}/alliances", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1013,7 +1013,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<Award>> localVarResponse = await GetEventAwardsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<Award>> localVarResponse = await GetEventAwardsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1070,7 +1070,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/event/{event_key}/awards", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/event/{event_key}/awards", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1175,7 +1175,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<EventDistrictPoints> localVarResponse = await GetEventDistrictPointsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<EventDistrictPoints> localVarResponse = await GetEventDistrictPointsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1232,7 +1232,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<EventDistrictPoints> localVarResponse = await this.AsynchronousClient.GetAsync<EventDistrictPoints>("/event/{event_key}/district_points", localVarRequestOptions, this.Configuration);
+        ApiResponse<EventDistrictPoints> localVarResponse = await this.AsynchronousClient.GetAsync<EventDistrictPoints>("/event/{event_key}/district_points", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1337,7 +1337,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<EventInsights> localVarResponse = await GetEventInsightsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<EventInsights> localVarResponse = await GetEventInsightsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1394,7 +1394,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<EventInsights> localVarResponse = await this.AsynchronousClient.GetAsync<EventInsights>("/event/{event_key}/insights", localVarRequestOptions, this.Configuration);
+        ApiResponse<EventInsights> localVarResponse = await this.AsynchronousClient.GetAsync<EventInsights>("/event/{event_key}/insights", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1499,7 +1499,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetEventMatchTimeseriesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetEventMatchTimeseriesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1556,7 +1556,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/matches/timeseries", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/matches/timeseries", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1661,7 +1661,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetEventMatchesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetEventMatchesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1718,7 +1718,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/event/{event_key}/matches", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/event/{event_key}/matches", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1823,7 +1823,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetEventMatchesKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetEventMatchesKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1880,7 +1880,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/matches/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/matches/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1985,7 +1985,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<MatchSimple>> localVarResponse = await GetEventMatchesSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<MatchSimple>> localVarResponse = await GetEventMatchesSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -2042,7 +2042,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<MatchSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<MatchSimple>>("/event/{event_key}/matches/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<MatchSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<MatchSimple>>("/event/{event_key}/matches/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2147,7 +2147,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<EventOPRs> localVarResponse = await GetEventOPRsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<EventOPRs> localVarResponse = await GetEventOPRsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -2204,7 +2204,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<EventOPRs> localVarResponse = await this.AsynchronousClient.GetAsync<EventOPRs>("/event/{event_key}/oprs", localVarRequestOptions, this.Configuration);
+        ApiResponse<EventOPRs> localVarResponse = await this.AsynchronousClient.GetAsync<EventOPRs>("/event/{event_key}/oprs", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2309,7 +2309,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<object> localVarResponse = await GetEventPredictionsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<object> localVarResponse = await GetEventPredictionsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -2366,7 +2366,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<object> localVarResponse = await this.AsynchronousClient.GetAsync<object>("/event/{event_key}/predictions", localVarRequestOptions, this.Configuration);
+        ApiResponse<object> localVarResponse = await this.AsynchronousClient.GetAsync<object>("/event/{event_key}/predictions", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2471,7 +2471,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<EventRanking> localVarResponse = await GetEventRankingsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<EventRanking> localVarResponse = await GetEventRankingsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -2528,7 +2528,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<EventRanking> localVarResponse = await this.AsynchronousClient.GetAsync<EventRanking>("/event/{event_key}/rankings", localVarRequestOptions, this.Configuration);
+        ApiResponse<EventRanking> localVarResponse = await this.AsynchronousClient.GetAsync<EventRanking>("/event/{event_key}/rankings", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2633,7 +2633,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<EventSimple> localVarResponse = await GetEventSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<EventSimple> localVarResponse = await GetEventSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -2690,7 +2690,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<EventSimple> localVarResponse = await this.AsynchronousClient.GetAsync<EventSimple>("/event/{event_key}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<EventSimple> localVarResponse = await this.AsynchronousClient.GetAsync<EventSimple>("/event/{event_key}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2795,7 +2795,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<Team>> localVarResponse = await GetEventTeamsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<Team>> localVarResponse = await GetEventTeamsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -2852,7 +2852,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/event/{event_key}/teams", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/event/{event_key}/teams", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2957,7 +2957,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetEventTeamsKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetEventTeamsKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3014,7 +3014,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/teams/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/teams/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3119,7 +3119,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<TeamSimple>> localVarResponse = await GetEventTeamsSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<TeamSimple>> localVarResponse = await GetEventTeamsSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3176,7 +3176,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/event/{event_key}/teams/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/event/{event_key}/teams/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3281,7 +3281,7 @@ public partial class EventApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetEventTeamsStatusesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetEventTeamsStatusesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3338,7 +3338,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/event/{event_key}/teams/statuses", localVarRequestOptions, this.Configuration);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/event/{event_key}/teams/statuses", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3436,7 +3436,7 @@ public partial class EventApi
     public async Task<List<Event>?> GetEventsByYearAsync(int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Event>> localVarResponse = await GetEventsByYearAsyncWithHttpInfoAsync(year, ifModifiedSince);
+        ApiResponse<List<Event>> localVarResponse = await GetEventsByYearAsyncWithHttpInfoAsync(year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3487,7 +3487,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/events/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/events/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3585,7 +3585,7 @@ public partial class EventApi
     public async Task<List<string>?> GetEventsByYearKeysAsync(int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetEventsByYearKeysAsyncWithHttpInfoAsync(year, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetEventsByYearKeysAsyncWithHttpInfoAsync(year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3636,7 +3636,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/events/{year}/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/events/{year}/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3734,7 +3734,7 @@ public partial class EventApi
     public async Task<List<EventSimple>?> GetEventsByYearSimpleAsync(int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<EventSimple>> localVarResponse = await GetEventsByYearSimpleAsyncWithHttpInfoAsync(year, ifModifiedSince);
+        ApiResponse<List<EventSimple>> localVarResponse = await GetEventsByYearSimpleAsyncWithHttpInfoAsync(year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3785,7 +3785,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/events/{year}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/events/{year}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3900,7 +3900,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Award>> localVarResponse = await GetTeamEventAwardsAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Award>> localVarResponse = await GetTeamEventAwardsAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3965,7 +3965,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/event/{event_key}/awards", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/event/{event_key}/awards", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4080,7 +4080,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -4145,7 +4145,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4260,7 +4260,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -4325,7 +4325,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/event/{event_key}/matches/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/event/{event_key}/matches/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4440,7 +4440,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -4505,7 +4505,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4620,7 +4620,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<TeamEventStatus> localVarResponse = await GetTeamEventStatusAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<TeamEventStatus> localVarResponse = await GetTeamEventStatusAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -4685,7 +4685,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<TeamEventStatus> localVarResponse = await this.AsynchronousClient.GetAsync<TeamEventStatus>("/team/{team_key}/event/{event_key}/status", localVarRequestOptions, this.Configuration);
+        ApiResponse<TeamEventStatus> localVarResponse = await this.AsynchronousClient.GetAsync<TeamEventStatus>("/team/{team_key}/event/{event_key}/status", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4790,7 +4790,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -4847,7 +4847,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4956,7 +4956,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -5015,7 +5015,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5124,7 +5124,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -5183,7 +5183,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/{year}/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/{year}/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5292,7 +5292,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -5351,7 +5351,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/{year}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/{year}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5456,7 +5456,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamEventsKeysAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamEventsKeysAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -5513,7 +5513,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5618,7 +5618,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -5675,7 +5675,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5784,7 +5784,7 @@ public partial class EventApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -5843,7 +5843,7 @@ public partial class EventApi
 
         // make the HTTP request
 
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/team/{team_key}/events/{year}/statuses", localVarRequestOptions, this.Configuration);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/team/{team_key}/events/{year}/statuses", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {

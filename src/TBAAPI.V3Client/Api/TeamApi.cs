@@ -202,7 +202,7 @@ public partial class TeamApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -259,7 +259,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<DistrictRanking>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictRanking>>("/district/{district_key}/rankings", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<DistrictRanking>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictRanking>>("/district/{district_key}/rankings", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -363,7 +363,7 @@ public partial class TeamApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Team>> localVarResponse = await GetDistrictTeamsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<Team>> localVarResponse = await GetDistrictTeamsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -420,7 +420,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/district/{district_key}/teams", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/district/{district_key}/teams", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -525,7 +525,7 @@ public partial class TeamApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -582,7 +582,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/teams/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/teams/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -687,7 +687,7 @@ public partial class TeamApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<TeamSimple>> localVarResponse = await GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<TeamSimple>> localVarResponse = await GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -744,7 +744,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/district/{district_key}/teams/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/district/{district_key}/teams/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -849,7 +849,7 @@ public partial class TeamApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<Team>> localVarResponse = await GetEventTeamsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<Team>> localVarResponse = await GetEventTeamsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -906,7 +906,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/event/{event_key}/teams", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/event/{event_key}/teams", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1011,7 +1011,7 @@ public partial class TeamApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetEventTeamsKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetEventTeamsKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -1068,7 +1068,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/teams/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/event/{event_key}/teams/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1173,7 +1173,7 @@ public partial class TeamApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<List<TeamSimple>> localVarResponse = await GetEventTeamsSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<List<TeamSimple>> localVarResponse = await GetEventTeamsSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -1230,7 +1230,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/event/{event_key}/teams/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/event/{event_key}/teams/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1335,7 +1335,7 @@ public partial class TeamApi
             [Description("Event Key, eg '2016nytr'")] string eventKey,
              string? ifModifiedSince = default)
     {
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetEventTeamsStatusesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetEventTeamsStatusesAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1392,7 +1392,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/event/{event_key}/teams/statuses", localVarRequestOptions, this.Configuration);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/event/{event_key}/teams/statuses", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1498,7 +1498,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<Team> localVarResponse = await GetTeamAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<Team> localVarResponse = await GetTeamAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -1555,7 +1555,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<Team> localVarResponse = await this.AsynchronousClient.GetAsync<Team>("/team/{team_key}", localVarRequestOptions, this.Configuration);
+        ApiResponse<Team> localVarResponse = await this.AsynchronousClient.GetAsync<Team>("/team/{team_key}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1660,7 +1660,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -1717,7 +1717,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/awards", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/awards", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1826,7 +1826,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -1885,7 +1885,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/awards/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/awards/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -1990,7 +1990,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<DistrictList>> localVarResponse = await GetTeamDistrictsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<DistrictList>> localVarResponse = await GetTeamDistrictsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -2047,7 +2047,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<DistrictList>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictList>>("/team/{team_key}/districts", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<DistrictList>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictList>>("/team/{team_key}/districts", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2162,7 +2162,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Award>> localVarResponse = await GetTeamEventAwardsAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Award>> localVarResponse = await GetTeamEventAwardsAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -2227,7 +2227,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/event/{event_key}/awards", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Award>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Award>>("/team/{team_key}/event/{event_key}/awards", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2342,7 +2342,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
     }
 
@@ -2406,7 +2406,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2521,7 +2521,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -2586,7 +2586,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/event/{event_key}/matches/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/event/{event_key}/matches/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2701,7 +2701,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamEventMatchesSimpleAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -2766,7 +2766,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/event/{event_key}/matches/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -2882,7 +2882,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string eventKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<TeamEventStatus> localVarResponse = await GetTeamEventStatusAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince);
+        ApiResponse<TeamEventStatus> localVarResponse = await GetTeamEventStatusAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -2947,7 +2947,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<TeamEventStatus> localVarResponse = await this.AsynchronousClient.GetAsync<TeamEventStatus>("/team/{team_key}/event/{event_key}/status", localVarRequestOptions, this.Configuration);
+        ApiResponse<TeamEventStatus> localVarResponse = await this.AsynchronousClient.GetAsync<TeamEventStatus>("/team/{team_key}/event/{event_key}/status", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3052,7 +3052,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -3109,7 +3109,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3218,7 +3218,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<Event>> localVarResponse = await GetTeamEventsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -3277,7 +3277,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Event>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Event>>("/team/{team_key}/events/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3386,7 +3386,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -3445,7 +3445,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/{year}/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/{year}/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3554,7 +3554,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -3613,7 +3613,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/{year}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/{year}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3718,7 +3718,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamEventsKeysAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamEventsKeysAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -3775,7 +3775,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/events/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -3880,7 +3880,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<EventSimple>> localVarResponse = await GetTeamEventsSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -3937,7 +3937,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<EventSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<EventSimple>>("/team/{team_key}/events/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4047,7 +4047,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await GetTeamEventsStatusesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -4106,7 +4106,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/team/{team_key}/events/{year}/statuses", localVarRequestOptions, this.Configuration);
+        ApiResponse<Dictionary<string, TeamEventStatus>> localVarResponse = await this.AsynchronousClient.GetAsync<Dictionary<string, TeamEventStatus>>("/team/{team_key}/events/{year}/statuses", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4215,7 +4215,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Match>> localVarResponse = await GetTeamMatchesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<Match>> localVarResponse = await GetTeamMatchesByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -4274,7 +4274,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/matches/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Match>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Match>>("/team/{team_key}/matches/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4383,7 +4383,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -4442,7 +4442,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/matches/{year}/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/team/{team_key}/matches/{year}/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4551,7 +4551,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<MatchSimple>> localVarResponse = await GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<MatchSimple>> localVarResponse = await GetTeamMatchesByYearSimpleAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -4610,7 +4610,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<MatchSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<MatchSimple>>("/team/{team_key}/matches/{year}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<MatchSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<MatchSimple>>("/team/{team_key}/matches/{year}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4725,7 +4725,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string mediaTag,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagAsyncWithHttpInfoAsync(teamKey, mediaTag, ifModifiedSince);
+        ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagAsyncWithHttpInfoAsync(teamKey, mediaTag, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -4790,7 +4790,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/media/tag/{media_tag}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/media/tag/{media_tag}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -4909,7 +4909,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, string mediaTag, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagYearAsyncWithHttpInfoAsync(teamKey, mediaTag, year, ifModifiedSince);
+        ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagYearAsyncWithHttpInfoAsync(teamKey, mediaTag, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -4976,7 +4976,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/media/tag/{media_tag}/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/media/tag/{media_tag}/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5085,7 +5085,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey, int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince);
+        ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -5144,7 +5144,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/media/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/media/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5249,7 +5249,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<TeamRobot>> localVarResponse = await GetTeamRobotsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<TeamRobot>> localVarResponse = await GetTeamRobotsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -5306,7 +5306,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<TeamRobot>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamRobot>>("/team/{team_key}/robots", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<TeamRobot>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamRobot>>("/team/{team_key}/robots", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5412,7 +5412,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<TeamSimple> localVarResponse = await GetTeamSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<TeamSimple> localVarResponse = await GetTeamSimpleAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -5469,7 +5469,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<TeamSimple> localVarResponse = await this.AsynchronousClient.GetAsync<TeamSimple>("/team/{team_key}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<TeamSimple> localVarResponse = await this.AsynchronousClient.GetAsync<TeamSimple>("/team/{team_key}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5574,7 +5574,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Media>> localVarResponse = await GetTeamSocialMediaAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<Media>> localVarResponse = await GetTeamSocialMediaAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -5631,7 +5631,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/social_media", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Media>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Media>>("/team/{team_key}/social_media", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5736,7 +5736,7 @@ public partial class TeamApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<int>> localVarResponse = await GetTeamYearsParticipatedAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<int>> localVarResponse = await GetTeamYearsParticipatedAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -5793,7 +5793,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<int>> localVarResponse = await this.AsynchronousClient.GetAsync<List<int>>("/team/{team_key}/years_participated", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<int>> localVarResponse = await this.AsynchronousClient.GetAsync<List<int>>("/team/{team_key}/years_participated", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -5890,7 +5890,7 @@ public partial class TeamApi
     public async Task<List<Team>?> GetTeamsAsync(int pageNum,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Team>> localVarResponse = await GetTeamsAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
+        ApiResponse<List<Team>> localVarResponse = await GetTeamsAsyncWithHttpInfoAsync(pageNum, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -5940,7 +5940,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/teams/{page_num}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/teams/{page_num}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -6041,7 +6041,7 @@ public partial class TeamApi
     public async Task<List<Team>?> GetTeamsByYearAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<Team>> localVarResponse = await GetTeamsByYearAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
+        ApiResponse<List<Team>> localVarResponse = await GetTeamsByYearAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -6093,7 +6093,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/teams/{year}/{page_num}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<Team>> localVarResponse = await this.AsynchronousClient.GetAsync<List<Team>>("/teams/{year}/{page_num}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -6194,7 +6194,7 @@ public partial class TeamApi
     public async Task<List<string>?> GetTeamsByYearKeysAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamsByYearKeysAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamsByYearKeysAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -6246,7 +6246,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/teams/{year}/{page_num}/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/teams/{year}/{page_num}/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -6347,7 +6347,7 @@ public partial class TeamApi
     public async Task<List<TeamSimple>?> GetTeamsByYearSimpleAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsByYearSimpleAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince);
+        ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsByYearSimpleAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -6399,7 +6399,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/teams/{year}/{page_num}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/teams/{year}/{page_num}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -6496,7 +6496,7 @@ public partial class TeamApi
     public async Task<List<string>?> GetTeamsKeysAsync(int pageNum,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetTeamsKeysAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetTeamsKeysAsyncWithHttpInfoAsync(pageNum, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -6546,7 +6546,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/teams/{page_num}/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/teams/{page_num}/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -6642,7 +6642,7 @@ public partial class TeamApi
     public async Task<List<TeamSimple>?> GetTeamsSimpleAsync(int pageNum,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsSimpleAsyncWithHttpInfoAsync(pageNum, ifModifiedSince);
+        ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsSimpleAsyncWithHttpInfoAsync(pageNum, ifModifiedSince).ConfigureAwait(false);
         return [.. localVarResponse.Data];
 
     }
@@ -6692,7 +6692,7 @@ public partial class TeamApi
 
         // make the HTTP request
 
-        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/teams/{page_num}/simple", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<TeamSimple>> localVarResponse = await this.AsynchronousClient.GetAsync<List<TeamSimple>>("/teams/{page_num}/simple", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
