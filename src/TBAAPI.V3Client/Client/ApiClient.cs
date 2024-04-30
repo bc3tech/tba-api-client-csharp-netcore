@@ -61,9 +61,9 @@ public partial class ApiClient : ISynchronousClient, IAsynchronousClient
     /// <param name="method">Swagger Client Custom HttpMethod</param>
     /// <returns>RestSharp's HttpMethod instance.</returns>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    private static RestSharp.Method Method(HttpMethod method)
+    private static Method Method(HttpMethod method)
     {
-        RestSharp.Method other = method switch
+        Method other = method switch
         {
             HttpMethod.Get => RestSharp.Method.GET,
             HttpMethod.Post => RestSharp.Method.POST,

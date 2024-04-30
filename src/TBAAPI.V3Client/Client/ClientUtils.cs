@@ -18,6 +18,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
+using Common;
+
 /// <summary>
 /// Utility functions providing some benefit to API client consumers.
 /// </summary>

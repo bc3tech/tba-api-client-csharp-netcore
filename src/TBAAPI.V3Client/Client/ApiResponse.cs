@@ -14,6 +14,8 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
+using Common;
+
 /// <summary>
 /// Provides a non-generic contract for the ApiResponse wrapper.
 /// </summary>

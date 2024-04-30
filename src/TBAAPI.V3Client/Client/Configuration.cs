@@ -51,7 +51,7 @@ public class Configuration : IReadableConfiguration
         //        string.Format("Error calling {0}: {1}", methodName, response.RawContent),
         //        response.RawContent)
         //    : (Exception?)null;
-        return default(Exception?);
+        return default;
     };
 
     #endregion Static Members

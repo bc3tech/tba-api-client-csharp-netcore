@@ -14,6 +14,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
+using Common;
+
 /// <summary>
 /// A container for generalized request inputs. This type allows consumers to extend the request functionality
 /// by abstracting away from the default (built-in) request framework (e.g. RestSharp).
