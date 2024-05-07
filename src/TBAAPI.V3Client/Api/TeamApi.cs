@@ -4052,7 +4052,6 @@ public partial class TeamApi
     /// <param name="teamKey">TBA Team Key, eg 'frc254'</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;int&gt;)</returns>
-    [return: Description("Task of ApiResponse (List<int>)")]
     public async Task<ApiResponse<List<int>>> GetTeamYearsParticipatedAsyncWithHttpInfoAsync(
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
@@ -4117,7 +4116,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Team&gt;</returns>
-    [return: Description("List<Team>")]
     public IList<Team>? GetTeams(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetTeamsWithHttpInfo(pageNum, ifModifiedSince);
@@ -4189,7 +4187,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
-    [return: Description("List of Team values, possibly null")]
     public async Task<List<Team>?> GetTeamsDetailedAsync(int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4205,7 +4202,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
-    [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetTeamsAsyncWithHttpInfoAsync(int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4265,7 +4261,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;Team&gt;</returns>
-    [return: Description("List<Team>")]
     public IList<Team>? GetTeamsByYear(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetTeamsByYearWithHttpInfo(year, pageNum, ifModifiedSince);
@@ -4340,7 +4335,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;Team&gt;</returns>
-    [return: Description("List of Team values, possibly null")]
     public async Task<List<Team>?> GetTeamsByYearDetailedAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4357,7 +4351,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;Team&gt;)</returns>
-    [return: Description("Task of ApiResponse (List<Team>)")]
     public async Task<ApiResponse<List<Team>>> GetTeamsByYearAsyncWithHttpInfoAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4418,7 +4411,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [return: Description("List<string>")]
     public IList<string>? GetTeamsByYearKeys(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamsByYearKeysWithHttpInfo(year, pageNum, ifModifiedSince);
@@ -4493,7 +4485,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
-    [return: Description("List of string values, possibly null")]
     public async Task<List<string>?> GetTeamsByYearKeysAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4510,7 +4501,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamsByYearKeysAsyncWithHttpInfoAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4571,7 +4561,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;TeamSimple&gt;</returns>
-    [return: Description("List<TeamSimple>")]
     public IList<TeamSimple>? GetTeamsByYearSimple(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = GetTeamsByYearSimpleWithHttpInfo(year, pageNum, ifModifiedSince);
@@ -4646,8 +4635,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
-    [KernelFunction, Description("Gets a list of 'Team' objects that competed in the given year, paginated in groups of 500.")]
-    [return: Description("List of TeamSimple values, possibly null")]
     public async Task<List<TeamSimple>?> GetTeamsByYearAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4664,7 +4651,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
-    [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetTeamsByYearSimpleAsyncWithHttpInfoAsync(int year, int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4724,7 +4710,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>List&lt;string&gt;</returns>
-    [return: Description("List<string>")]
     public IList<string>? GetTeamsKeys(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamsKeysWithHttpInfo(pageNum, ifModifiedSince);
@@ -4796,7 +4781,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;string&gt;</returns>
-    [return: Description("List of string values, possibly null")]
     public async Task<List<string>?> GetTeamsKeysAsync(int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4812,7 +4796,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-    [return: Description("Task of ApiResponse (List<string>)")]
     public async Task<ApiResponse<List<string>>> GetTeamsKeysAsyncWithHttpInfoAsync(int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4942,7 +4925,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of List&lt;TeamSimple&gt;</returns>
-    [return: Description("List of TeamSimple values, possibly null")]
     public async Task<List<TeamSimple>?> GetTeamsAsync(int pageNum,
          string? ifModifiedSince = default)
     {
@@ -4958,7 +4940,6 @@ public partial class TeamApi
     /// <param name="pageNum">Page number of results to return, zero-indexed</param>
     /// <param name="ifModifiedSince">Value of the 'Last-Modified' header in the most recently cached response by the client. (optional)</param>
     /// <returns>Task of ApiResponse (List&lt;TeamSimple&gt;)</returns>
-    [return: Description("Task of ApiResponse (List<TeamSimple>)")]
     public async Task<ApiResponse<List<TeamSimple>>> GetTeamsSimpleAsyncWithHttpInfoAsync(int pageNum,
          string? ifModifiedSince = default)
     {
