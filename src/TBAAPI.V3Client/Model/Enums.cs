@@ -2,12 +2,15 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
+using Microsoft.Extensions.EnumStrings;
+
 using TBAAPI.V3Client.Json;
 
 /// <summary>
 /// The competition level the match was played at.
 /// </summary>
 /// <value>The competition level the match was played at.</value>
+[EnumStrings(ExtensionClassModifiers = "public static")]
 [JsonConverter(typeof(JsonStringEnumConverterWithEnumMemberSupport<CompLevelEnum>))]
 public enum CompLevelEnum
 {
@@ -46,6 +49,7 @@ public enum CompLevelEnum
 /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
 /// </summary>
 /// <value>The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.</value>
+[EnumStrings(ExtensionClassModifiers = "public static")]
 [JsonConverter(typeof(JsonStringEnumConverterWithEnumMemberSupport<WinningAllianceEnum>))]
 public enum WinningAllianceEnum
 {
@@ -72,6 +76,7 @@ public enum WinningAllianceEnum
 /// String type of the media element.
 /// </summary>
 /// <value>String type of the media element.</value>
+[EnumStrings(ExtensionClassModifiers = "public static")]
 [JsonConverter(typeof(JsonStringEnumConverterWithEnumMemberSupport<TypeEnum>))]
 public enum TypeEnum
 {
