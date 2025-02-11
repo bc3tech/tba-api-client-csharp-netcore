@@ -8,7 +8,8 @@ public class JsonStringEnumConverterWithEnumMemberSupport<T> : JsonConverter<T> 
 {
     public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        if (reader.TokenType != JsonTokenType.String)
+        if (reader.TokenType is not JsonTokenType.String
+            || typeToConvert != typeof(T))
         {
             throw new JsonException();
         }

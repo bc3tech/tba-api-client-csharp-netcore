@@ -36,7 +36,7 @@ public partial record MatchSimple : IValidatableObject
     /// The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.
     /// </summary>
     /// <value>The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie.</value>
-    [DataMember(Name = "winning_alliance", EmitDefaultValue = false), JsonPropertyName("winning_alliance"), JsonConverter(typeof(OpenAPIEnumConverter<WinningAllianceEnum>))]
+    [DataMember(Name = "winning_alliance", EmitDefaultValue = false), JsonPropertyName("winning_alliance")]
     public WinningAllianceEnum? WinningAlliance { get; set; }
 
     /// <summary>
