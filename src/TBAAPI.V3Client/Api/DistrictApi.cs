@@ -203,7 +203,7 @@ public partial class DistrictApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetDistrictEventsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetDistrictEventsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -259,7 +259,7 @@ public partial class DistrictApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/events/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/events/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -364,7 +364,7 @@ public partial class DistrictApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<DistrictRanking>> localVarResponse = await GetDistrictRankingsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -420,7 +420,7 @@ public partial class DistrictApi
 
         // make the HTTP request
 
-        ApiResponse<List<DistrictRanking>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictRanking>>("/district/{district_key}/rankings", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<DistrictRanking>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictRanking>>("/district/{district_key}/rankings", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -525,7 +525,7 @@ public partial class DistrictApi
         [Description("District Key, eg '2016fim'")] string districtKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince);
+        ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -581,7 +581,7 @@ public partial class DistrictApi
 
         // make the HTTP request
 
-        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/teams/keys", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<string>> localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/district/{district_key}/teams/keys", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -679,7 +679,7 @@ public partial class DistrictApi
     public async Task<List<DistrictList>?> GetDistrictsByYearAsync(int year,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<DistrictList>> localVarResponse = await GetDistrictsByYearAsyncWithHttpInfoAsync(year, ifModifiedSince);
+        ApiResponse<List<DistrictList>> localVarResponse = await GetDistrictsByYearAsyncWithHttpInfoAsync(year, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -729,7 +729,7 @@ public partial class DistrictApi
 
         // make the HTTP request
 
-        ApiResponse<List<DistrictList>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictList>>("/districts/{year}", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<DistrictList>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictList>>("/districts/{year}", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
@@ -834,7 +834,7 @@ public partial class DistrictApi
         [Description("Team Key, eg 'frc254'")] string teamKey,
          string? ifModifiedSince = default)
     {
-        ApiResponse<List<DistrictList>> localVarResponse = await GetTeamDistrictsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince);
+        ApiResponse<List<DistrictList>> localVarResponse = await GetTeamDistrictsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
         return localVarResponse.Data;
 
     }
@@ -890,7 +890,7 @@ public partial class DistrictApi
 
         // make the HTTP request
 
-        ApiResponse<List<DistrictList>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictList>>("/team/{team_key}/districts", localVarRequestOptions, this.Configuration);
+        ApiResponse<List<DistrictList>> localVarResponse = await this.AsynchronousClient.GetAsync<List<DistrictList>>("/team/{team_key}/districts", localVarRequestOptions, this.Configuration).ConfigureAwait(false);
 
         if (this.ExceptionFactory is not null)
         {
