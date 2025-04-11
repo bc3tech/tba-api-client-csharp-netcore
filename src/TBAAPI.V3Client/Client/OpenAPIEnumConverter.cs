@@ -33,6 +33,7 @@ public class OpenAPIEnumConverter<T> : JsonConverter<T?> where T : Enum
     }
 
     /// <inheritdoc/>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "EA0006:Replace uses of 'Enum.GetName' and 'Enum.ToString' for improved performance", Justification = "Can't")]
     public override void Write(Utf8JsonWriter writer, T? value, JsonSerializerOptions options)
     {
         if (value is null)

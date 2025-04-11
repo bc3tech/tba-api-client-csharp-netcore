@@ -28,6 +28,7 @@ public class JsonStringEnumConverterWithEnumMemberSupport<T> : JsonConverter<T> 
         return (T)Enum.Parse(enumType, enumMember.Name);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "EA0006:Replace uses of 'Enum.GetName' and 'Enum.ToString' for improved performance", Justification = "Can't")]
     public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
     {
         System.Reflection.MemberInfo enumMember = typeof(T).GetMember(value.ToString()).First();

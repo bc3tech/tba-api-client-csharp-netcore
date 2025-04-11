@@ -22,7 +22,7 @@ using TBAAPI.V3Client.Model;
 /// <summary>
 /// Represents a collection of functions to interact with the API endpoints
 /// </summary>
-public partial class TeamApi
+internal partial class TeamApi
 {
     private ExceptionFactory _exceptionFactory = (name, response) => null;
 
@@ -122,7 +122,7 @@ public partial class TeamApi
     public IList<Team>? GetDistrictTeams(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetDistrictTeamsWithHttpInfo(districtKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -203,7 +203,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetDistrictTeamsAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -283,7 +283,7 @@ public partial class TeamApi
     public IList<string>? GetDistrictTeamsKeys(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetDistrictTeamsKeysWithHttpInfo(districtKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -364,7 +364,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetDistrictTeamsKeysAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -444,7 +444,7 @@ public partial class TeamApi
     public IList<TeamSimple>? GetDistrictTeamsSimple(string districtKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = GetDistrictTeamsSimpleWithHttpInfo(districtKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -525,7 +525,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetDistrictTeamsSimpleAsyncWithHttpInfoAsync(districtKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -605,7 +605,7 @@ public partial class TeamApi
     public IList<Team>? GetEventTeams(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetEventTeamsWithHttpInfo(eventKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -686,7 +686,7 @@ public partial class TeamApi
              string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetEventTeamsAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -766,7 +766,7 @@ public partial class TeamApi
     public IList<string>? GetEventTeamsKeys(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetEventTeamsKeysWithHttpInfo(eventKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -847,7 +847,7 @@ public partial class TeamApi
              string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetEventTeamsKeysAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -927,7 +927,7 @@ public partial class TeamApi
     public IList<TeamSimple>? GetEventTeamsSimple(string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = GetEventTeamsSimpleWithHttpInfo(eventKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -1008,7 +1008,7 @@ public partial class TeamApi
              string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetEventTeamsSimpleAsyncWithHttpInfoAsync(eventKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -1411,7 +1411,7 @@ public partial class TeamApi
     public IList<Award>? GetTeamAwards(string teamKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = GetTeamAwardsWithHttpInfo(teamKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -1492,7 +1492,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -1573,7 +1573,7 @@ public partial class TeamApi
     public IList<Award>? GetTeamAwardsByYear(string teamKey, int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = GetTeamAwardsByYearWithHttpInfo(teamKey, year, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -1658,7 +1658,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = await GetTeamAwardsByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -1741,7 +1741,7 @@ public partial class TeamApi
     public IList<Award>? GetTeamEventAwards(string teamKey, string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = GetTeamEventAwardsWithHttpInfo(teamKey, eventKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -1831,7 +1831,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Award>> localVarResponse = await GetTeamEventAwardsAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -1920,7 +1920,7 @@ public partial class TeamApi
     public IList<string>? GetTeamEventMatchesKeys(string teamKey, string eventKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamEventMatchesKeysWithHttpInfo(teamKey, eventKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -2010,7 +2010,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamEventMatchesKeysAsyncWithHttpInfoAsync(teamKey, eventKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -2279,7 +2279,7 @@ public partial class TeamApi
     public IList<string>? GetTeamEventsByYearKeys(string teamKey, int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamEventsByYearKeysWithHttpInfo(teamKey, year, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -2364,7 +2364,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamEventsByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -2447,7 +2447,7 @@ public partial class TeamApi
     public IList<string>? GetTeamEventsKeys(string teamKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamEventsKeysWithHttpInfo(teamKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -2528,7 +2528,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamEventsKeysAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -2777,7 +2777,7 @@ public partial class TeamApi
     public IList<string>? GetTeamMatchesByYearKeys(string teamKey, int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamMatchesByYearKeysWithHttpInfo(teamKey, year, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -2861,7 +2861,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamMatchesByYearKeysAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -2944,7 +2944,7 @@ public partial class TeamApi
     public IList<Media>? GetTeamMediaByTag(string teamKey, string mediaTag, string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = GetTeamMediaByTagWithHttpInfo(teamKey, mediaTag, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -3034,7 +3034,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagAsyncWithHttpInfoAsync(teamKey, mediaTag, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -3124,7 +3124,7 @@ public partial class TeamApi
     public IList<Media>? GetTeamMediaByTagYear(string teamKey, string mediaTag, int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = GetTeamMediaByTagYearWithHttpInfo(teamKey, mediaTag, year, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -3218,7 +3218,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByTagYearAsyncWithHttpInfoAsync(teamKey, mediaTag, year, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -3310,7 +3310,7 @@ public partial class TeamApi
     public IList<Media>? GetTeamMediaByYear(string teamKey, int year, string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = GetTeamMediaByYearWithHttpInfo(teamKey, year, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -3394,7 +3394,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamMediaByYearAsyncWithHttpInfoAsync(teamKey, year, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -3476,7 +3476,7 @@ public partial class TeamApi
     public IList<TeamRobot>? GetTeamRobots(string teamKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamRobot>> localVarResponse = GetTeamRobotsWithHttpInfo(teamKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -3557,7 +3557,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamRobot>> localVarResponse = await GetTeamRobotsAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -3799,7 +3799,7 @@ public partial class TeamApi
     public IList<Media>? GetTeamSocialMedia(string teamKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = GetTeamSocialMediaWithHttpInfo(teamKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -3880,7 +3880,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Media>> localVarResponse = await GetTeamSocialMediaAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -3960,7 +3960,7 @@ public partial class TeamApi
     public IList<int>? GetTeamYearsParticipated(string teamKey, string? ifModifiedSince = default)
     {
         ApiResponse<List<int>> localVarResponse = GetTeamYearsParticipatedWithHttpInfo(teamKey, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -4041,7 +4041,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<int>> localVarResponse = await GetTeamYearsParticipatedAsyncWithHttpInfoAsync(teamKey, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -4119,7 +4119,7 @@ public partial class TeamApi
     public IList<Team>? GetTeams(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetTeamsWithHttpInfo(pageNum, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -4191,7 +4191,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetTeamsAsyncWithHttpInfoAsync(pageNum, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -4264,7 +4264,7 @@ public partial class TeamApi
     public IList<Team>? GetTeamsByYear(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = GetTeamsByYearWithHttpInfo(year, pageNum, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -4339,7 +4339,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<Team>> localVarResponse = await GetTeamsByYearAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -4414,7 +4414,7 @@ public partial class TeamApi
     public IList<string>? GetTeamsByYearKeys(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamsByYearKeysWithHttpInfo(year, pageNum, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -4489,7 +4489,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamsByYearKeysAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -4564,7 +4564,7 @@ public partial class TeamApi
     public IList<TeamSimple>? GetTeamsByYearSimple(int year, int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = GetTeamsByYearSimpleWithHttpInfo(year, pageNum, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -4639,7 +4639,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsByYearSimpleAsyncWithHttpInfoAsync(year, pageNum, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -4713,7 +4713,7 @@ public partial class TeamApi
     public IList<string>? GetTeamsKeys(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = GetTeamsKeysWithHttpInfo(pageNum, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -4785,7 +4785,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<string>> localVarResponse = await GetTeamsKeysAsyncWithHttpInfoAsync(pageNum, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
@@ -4857,7 +4857,7 @@ public partial class TeamApi
     public IList<TeamSimple>? GetTeamsSimple(int pageNum, string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = GetTeamsSimpleWithHttpInfo(pageNum, ifModifiedSince);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
     }
 
     /// <summary>
@@ -4929,7 +4929,7 @@ public partial class TeamApi
          string? ifModifiedSince = default)
     {
         ApiResponse<List<TeamSimple>> localVarResponse = await GetTeamsSimpleAsyncWithHttpInfoAsync(pageNum, ifModifiedSince).ConfigureAwait(false);
-        return [.. localVarResponse.Data];
+        return [.. localVarResponse.Data ?? []];
 
     }
 
